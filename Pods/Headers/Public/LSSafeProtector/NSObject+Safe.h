@@ -1,0 +1,1 @@
+../../../LSSafeProtector/LSSafeProtector/Foundation/NSObject+Safe.h

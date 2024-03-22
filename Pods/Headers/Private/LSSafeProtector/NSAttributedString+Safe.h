@@ -1,0 +1,1 @@
+../../../LSSafeProtector/LSSafeProtector/Foundation/NSAttributedString+Safe.h
