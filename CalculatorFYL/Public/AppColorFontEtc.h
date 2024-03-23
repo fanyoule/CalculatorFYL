@@ -75,6 +75,11 @@
 ///退出登录成功
 #define     FYL_LoginOutSeccessRefreshData                 @"LoginOutSeccess_refreshData"
 
+///APP主题色 key
+#define     FYL_MainAppColor                @"MainAppColor"
+///APP 文字字号
+#define     FYL_TitleFont            @"MainAppTitleFont"
+
 
 #ifdef DEBUG
 #define     FlurryAPIKey        @"XTF5F3FJDJB89JPD34HX"

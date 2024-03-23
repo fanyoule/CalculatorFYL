@@ -190,6 +190,13 @@
 		67246D3C2BAC3F0B0088B0A3 /* UILabel+WY_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246D352BAC3F0B0088B0A3 /* UILabel+WY_Extension.m */; };
 		67246D3D2BAC3F0B0088B0A3 /* UILabel+WY_RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246D372BAC3F0B0088B0A3 /* UILabel+WY_RichText.m */; };
 		67246D472BAC3F480088B0A3 /* YLWKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246D432BAC3F480088B0A3 /* YLWKViewController.m */; };
+		67850B652BAE824300A44336 /* FYLHistoricalRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67850B622BAE824300A44336 /* FYLHistoricalRecordCell.m */; };
+		67850B662BAE824300A44336 /* FYLHistoricalRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67850B632BAE824300A44336 /* FYLHistoricalRecordCell.xib */; };
+		67850B6A2BAE826B00A44336 /* YLUserToolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67850B682BAE826B00A44336 /* YLUserToolManager.m */; };
+		67850B6D2BAEA5ED00A44336 /* FYLRegularKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67850B6C2BAEA5ED00A44336 /* FYLRegularKeyboardView.m */; };
+		67850B6F2BAEA5F800A44336 /* FYLRegularKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67850B6E2BAEA5F800A44336 /* FYLRegularKeyboardView.xib */; };
+		67850B712BAEB3C300A44336 /* FYLVIPKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67850B702BAEB3C300A44336 /* FYLVIPKeyboardView.xib */; };
+		67850B742BAEB3D500A44336 /* FYLVIPKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67850B732BAEB3D500A44336 /* FYLVIPKeyboardView.m */; };
 		6CDC59FA4271E71A005BDB80 /* libPods-CalculatorFYL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E26AD402AEEF2CEEC4FD367 /* libPods-CalculatorFYL.a */; };
 /* End PBXBuildFile section */
 
@@ -448,6 +455,17 @@
 		67246D372BAC3F0B0088B0A3 /* UILabel+WY_RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+WY_RichText.m"; sourceTree = "<group>"; };
 		67246D422BAC3F480088B0A3 /* YLWKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLWKViewController.h; sourceTree = "<group>"; };
 		67246D432BAC3F480088B0A3 /* YLWKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLWKViewController.m; sourceTree = "<group>"; };
+		67850B612BAE824300A44336 /* FYLHistoricalRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYLHistoricalRecordCell.h; sourceTree = "<group>"; };
+		67850B622BAE824300A44336 /* FYLHistoricalRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYLHistoricalRecordCell.m; sourceTree = "<group>"; };
+		67850B632BAE824300A44336 /* FYLHistoricalRecordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYLHistoricalRecordCell.xib; sourceTree = "<group>"; };
+		67850B682BAE826B00A44336 /* YLUserToolManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLUserToolManager.m; sourceTree = "<group>"; };
+		67850B692BAE826B00A44336 /* YLUserToolManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLUserToolManager.h; sourceTree = "<group>"; };
+		67850B6B2BAEA5ED00A44336 /* FYLRegularKeyboardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLRegularKeyboardView.h; sourceTree = "<group>"; };
+		67850B6C2BAEA5ED00A44336 /* FYLRegularKeyboardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLRegularKeyboardView.m; sourceTree = "<group>"; };
+		67850B6E2BAEA5F800A44336 /* FYLRegularKeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYLRegularKeyboardView.xib; sourceTree = "<group>"; };
+		67850B702BAEB3C300A44336 /* FYLVIPKeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYLVIPKeyboardView.xib; sourceTree = "<group>"; };
+		67850B722BAEB3D500A44336 /* FYLVIPKeyboardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLVIPKeyboardView.h; sourceTree = "<group>"; };
+		67850B732BAEB3D500A44336 /* FYLVIPKeyboardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLVIPKeyboardView.m; sourceTree = "<group>"; };
 		907C02B7A81BF044A173DE4C /* Pods-CalculatorFYL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorFYL.debug.xcconfig"; path = "Target Support Files/Pods-CalculatorFYL/Pods-CalculatorFYL.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -592,6 +610,8 @@
 		672468D32BAC1B880088B0A3 /* UserInfomation */ = {
 			isa = PBXGroup;
 			children = (
+				67850B692BAE826B00A44336 /* YLUserToolManager.h */,
+				67850B682BAE826B00A44336 /* YLUserToolManager.m */,
 				672468D12BAC1B880088B0A3 /* ZJ_UserLoginInfomation.h */,
 				672468D22BAC1B880088B0A3 /* ZJ_UserLoginInfomation.m */,
 			);
@@ -754,6 +774,8 @@
 		67246C322BAC258E0088B0A3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				67850B672BAE824C00A44336 /* View */,
+				67850B642BAE824300A44336 /* Cell */,
 				67246C332BAC25AC0088B0A3 /* YLHomeViewController.h */,
 				67246C342BAC25AC0088B0A3 /* YLHomeViewController.m */,
 			);
@@ -1017,6 +1039,29 @@
 			path = BAWebViewController;
 			sourceTree = "<group>";
 		};
+		67850B642BAE824300A44336 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				67850B612BAE824300A44336 /* FYLHistoricalRecordCell.h */,
+				67850B622BAE824300A44336 /* FYLHistoricalRecordCell.m */,
+				67850B632BAE824300A44336 /* FYLHistoricalRecordCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		67850B672BAE824C00A44336 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				67850B6B2BAEA5ED00A44336 /* FYLRegularKeyboardView.h */,
+				67850B6C2BAEA5ED00A44336 /* FYLRegularKeyboardView.m */,
+				67850B6E2BAEA5F800A44336 /* FYLRegularKeyboardView.xib */,
+				67850B722BAEB3D500A44336 /* FYLVIPKeyboardView.h */,
+				67850B732BAEB3D500A44336 /* FYLVIPKeyboardView.m */,
+				67850B702BAEB3C300A44336 /* FYLVIPKeyboardView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1147,6 +1192,7 @@
 				6724693D2BAC1BC80088B0A3 /* www6*4.bmp in Resources */,
 				672469302BAC1BC80088B0A3 /* text_emoji_31.png in Resources */,
 				67246CD62BAC3BBE0088B0A3 /* 8c68c4c2-e995-4227-9481-59c01d481c08-流星.gif in Resources */,
+				67850B712BAEB3C300A44336 /* FYLVIPKeyboardView.xib in Resources */,
 				672469232BAC1BC80088B0A3 /* text_emoji_18.png in Resources */,
 				67246D112BAC3BBE0088B0A3 /* f7e0c6a0-e838-4465-a0e3-043dc8ff2b73-流水.gif in Resources */,
 				6724692E2BAC1BC80088B0A3 /* text_emoji_29.png in Resources */,
@@ -1190,6 +1236,7 @@
 				67246CFE2BAC3BBE0088B0A3 /* b8013b14-2bbb-4c2c-8a97-140c07c0ec81-未标题-1_0011_多彩流星雨.png in Resources */,
 				67246D042BAC3BBE0088B0A3 /* cc61e823-c572-406a-a83e-230af7d50f14-未标题-1_0018_蓝色流星.png in Resources */,
 				67246CCE2BAC3BBE0088B0A3 /* 3ccfd562-1978-4be1-8092-f0e1ee031c0a-未标题-1_0017_黄色流星.png in Resources */,
+				67850B6F2BAEA5F800A44336 /* FYLRegularKeyboardView.xib in Resources */,
 				672469372BAC1BC80088B0A3 /* text_emoji_38.png in Resources */,
 				67246CF12BAC3BBE0088B0A3 /* 82921e53-de0b-4417-9c1c-0d2d712a71fb-潮流.gif in Resources */,
 				67246D142BAC3BBE0088B0A3 /* fe84474e-b534-498d-a8c3-f1b9e15696f2-伸缩.gif in Resources */,
@@ -1202,6 +1249,7 @@
 				67246CD22BAC3BBE0088B0A3 /* 06e265e5-7cc2-4a74-9d69-92b3cc33d7fe-堆叠.gif in Resources */,
 				672469222BAC1BC80088B0A3 /* text_emoji_17.png in Resources */,
 				6724693B2BAC1BC80088B0A3 /* www6*3.bmp in Resources */,
+				67850B662BAE824300A44336 /* FYLHistoricalRecordCell.xib in Resources */,
 				67246D072BAC3BBE0088B0A3 /* da44231f-4982-40e7-86f1-479f495016bb-紫色-正向跑动.gif in Resources */,
 				67246CF72BAC3BBE0088B0A3 /* 8322486c-b0fd-4727-b87c-b82e1b1e4e7f-绿色反向跑动.gif in Resources */,
 				6724692A2BAC1BC80088B0A3 /* text_emoji_25.png in Resources */,
@@ -1326,6 +1374,7 @@
 				67246D3C2BAC3F0B0088B0A3 /* UILabel+WY_Extension.m in Sources */,
 				67246C552BAC3B0F0088B0A3 /* MBProgressHUD+XBLoading.m in Sources */,
 				67246D232BAC3C760088B0A3 /* UITextField+LimitLength.m in Sources */,
+				67850B6A2BAE826B00A44336 /* YLUserToolManager.m in Sources */,
 				67246C2F2BAC23480088B0A3 /* FYLPasswordLoginViewController.m in Sources */,
 				67246D472BAC3F480088B0A3 /* YLWKViewController.m in Sources */,
 				672468912BAC1A680088B0A3 /* ViewController.m in Sources */,
@@ -1334,6 +1383,7 @@
 				672468D72BAC1B880088B0A3 /* BaseModel.m in Sources */,
 				67246C592BAC3B480088B0A3 /* PublicHelpers.m in Sources */,
 				67246C312BAC23480088B0A3 /* YLLoginViewController.m in Sources */,
+				67850B6D2BAEA5ED00A44336 /* FYLRegularKeyboardView.m in Sources */,
 				67246D1D2BAC3C1F0088B0A3 /* CommonManagement.m in Sources */,
 				67246D3D2BAC3F0B0088B0A3 /* UILabel+WY_RichText.m in Sources */,
 				67246C4A2BAC396C0088B0A3 /* YLMySetViewController.m in Sources */,
@@ -1343,6 +1393,7 @@
 				67246D272BAC3CFE0088B0A3 /* ZZLabel.m in Sources */,
 				67246C2C2BAC23480088B0A3 /* FYLCreatePasswordViewController.m in Sources */,
 				6724689C2BAC1A6A0088B0A3 /* main.m in Sources */,
+				67850B652BAE824300A44336 /* FYLHistoricalRecordCell.m in Sources */,
 				67246C302BAC23480088B0A3 /* FYLVerificationCodeLoginViewController.m in Sources */,
 				67246C542BAC3B0F0088B0A3 /* LoadingStyleManager.m in Sources */,
 				67246C292BAC23480088B0A3 /* HWTFCodeBView.m in Sources */,
@@ -1357,6 +1408,7 @@
 				67246C2A2BAC23480088B0A3 /* SMSCodeInputView.m in Sources */,
 				67246C2E2BAC23480088B0A3 /* FYLLoginBaseViewController.m in Sources */,
 				67246D3B2BAC3F0B0088B0A3 /* NSMutableParagraphStyle+WY_Extension.m in Sources */,
+				67850B742BAEB3D500A44336 /* FYLVIPKeyboardView.m in Sources */,
 				672468DB2BAC1B880088B0A3 /* YLTabbar_View.m in Sources */,
 				67246D2D2BAC3DAC0088B0A3 /* ToolManagement.m in Sources */,
 				67246D182BAC3BBE0088B0A3 /* Reachability.m in Sources */,
