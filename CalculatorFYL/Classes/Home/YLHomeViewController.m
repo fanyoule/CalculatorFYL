@@ -45,6 +45,16 @@ FYLRegularKeyboardViewdelegate
 -(void)fyl_RegularKeyboardDidSelectedButton:(UIButton *)btn{
     NSString * title = btn.titleLabel.text;
     self.L_contect.text = [NSString stringWithFormat:@"%@%@",self.L_contect.text,title];
+    CGFloat width_text = [self.L_contect.text jk_widthWithFont:PxM56Font constrainedToHeight:50];
+    if (width_text>kScreenWidth) {
+//        [self.L_contect mas_updateConstraints:^(MASConstraintMaker *make) {
+//            make.width.mas_equalTo(width_text);
+//        }];
+        self.L_contect.frame = CGRectMake(0, 15, width_text, 30);
+        self.V_scroll.contentSize = CGSizeMake(width_text+30, 50);
+        [self.V_scroll setContentOffset:CGPointMake(width_text-kScreenWidth, 0) animated:NO];
+    }
+    
     
 }
 
@@ -170,24 +180,23 @@ FYLRegularKeyboardViewdelegate
     }];
     UIScrollView * V_scroll = [[UIScrollView alloc]init];
     self.V_scroll = V_scroll;
-    V_scroll.contentSize = CGSizeMake(kScreenWidth*2, 30);
+//    V_scroll.backgroundColor = UIColor.blueColor;
+    V_scroll.contentSize = CGSizeMake(kScreenWidth, 50);
+    V_scroll.scrollEnabled = YES;
+    V_scroll.showsHorizontalScrollIndicator = YES;
     [V_contect addSubview:V_scroll];
     [V_scroll mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(B_top.mas_bottom);
         make.left.bottom.right.mas_equalTo(V_contect);
     }];
-    UIView * v_line = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 1)];
-    [V_scroll addSubview:v_line];
     
-    ZZLabel * L_contect = [[ZZLabel alloc]initWithTextColor:UIColor.whiteColor Font:[YLUserToolManager getAppTitleFont] TextString:@""];
+    ZZLabel * L_contect = [[ZZLabel alloc]initWithTextColor:UIColor.whiteColor Font:PxM56Font TextString:@""];
+    L_contect.userInteractionEnabled = YES;
     L_contect.textAlignment = NSTextAlignmentRight;
     self.L_contect = L_contect;
+    L_contect.frame = CGRectMake(0, 15, kScreenWidth, 30);
     [V_scroll addSubview:L_contect];
-    [L_contect mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(v_line.mas_bottom);
-        make.left.bottom.mas_equalTo(V_contect);
-        make.width.mas_equalTo(kScreenWidth);
-    }];
+
     UIView * V_bg_storehistory = [[UIView alloc]init];
     V_bg_storehistory.hidden = YES;
     self.V_storehistory = V_bg_storehistory;
