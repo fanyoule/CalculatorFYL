@@ -85,11 +85,7 @@
 
 -(void)longPressAction:(UILongPressGestureRecognizer *)sender{
     UIButton * btn =(UIButton *) sender.view;
-    ;
-    
-    
-//    originPoint = btn.center;
-//   __block BOOL contain;
+    [sender.view.superview bringSubviewToFront:btn];
     if (sender.state == UIGestureRecognizerStateBegan) {
         _startPoint = [sender locationInView:sender.view];
         _originPoint = CGPointMake(btn.center.x, btn.center.y);

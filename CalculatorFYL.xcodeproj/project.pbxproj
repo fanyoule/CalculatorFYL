@@ -197,6 +197,10 @@
 		67850B6F2BAEA5F800A44336 /* FYLRegularKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67850B6E2BAEA5F800A44336 /* FYLRegularKeyboardView.xib */; };
 		67850B712BAEB3C300A44336 /* FYLVIPKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67850B702BAEB3C300A44336 /* FYLVIPKeyboardView.xib */; };
 		67850B742BAEB3D500A44336 /* FYLVIPKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67850B732BAEB3D500A44336 /* FYLVIPKeyboardView.m */; };
+		67DB322D2BB2D27900D3AD80 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 67DB32292BB2D27900D3AD80 /* click.wav */; };
+		67DB322E2BB2D27900D3AD80 /* click2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 67DB322A2BB2D27900D3AD80 /* click2.wav */; };
+		67DB322F2BB2D27900D3AD80 /* click3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 67DB322B2BB2D27900D3AD80 /* click3.wav */; };
+		67DB32302BB2D27900D3AD80 /* click1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 67DB322C2BB2D27900D3AD80 /* click1.wav */; };
 		6CDC59FA4271E71A005BDB80 /* libPods-CalculatorFYL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E26AD402AEEF2CEEC4FD367 /* libPods-CalculatorFYL.a */; };
 /* End PBXBuildFile section */
 
@@ -466,6 +470,10 @@
 		67850B702BAEB3C300A44336 /* FYLVIPKeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYLVIPKeyboardView.xib; sourceTree = "<group>"; };
 		67850B722BAEB3D500A44336 /* FYLVIPKeyboardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLVIPKeyboardView.h; sourceTree = "<group>"; };
 		67850B732BAEB3D500A44336 /* FYLVIPKeyboardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLVIPKeyboardView.m; sourceTree = "<group>"; };
+		67DB32292BB2D27900D3AD80 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
+		67DB322A2BB2D27900D3AD80 /* click2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click2.wav; sourceTree = "<group>"; };
+		67DB322B2BB2D27900D3AD80 /* click3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click3.wav; sourceTree = "<group>"; };
+		67DB322C2BB2D27900D3AD80 /* click1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click1.wav; sourceTree = "<group>"; };
 		907C02B7A81BF044A173DE4C /* Pods-CalculatorFYL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorFYL.debug.xcconfig"; path = "Target Support Files/Pods-CalculatorFYL/Pods-CalculatorFYL.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -695,6 +703,7 @@
 		672469112BAC1BC80088B0A3 /* 3SDK */ = {
 			isa = PBXGroup;
 			children = (
+				67DB32282BB2D25900D3AD80 /* music */,
 				672469102BAC1BC80088B0A3 /* Font */,
 			);
 			path = 3SDK;
@@ -1062,6 +1071,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		67DB32282BB2D25900D3AD80 /* music */ = {
+			isa = PBXGroup;
+			children = (
+				67DB32292BB2D27900D3AD80 /* click.wav */,
+				67DB322C2BB2D27900D3AD80 /* click1.wav */,
+				67DB322A2BB2D27900D3AD80 /* click2.wav */,
+				67DB322B2BB2D27900D3AD80 /* click3.wav */,
+			);
+			path = music;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1193,6 +1213,7 @@
 				672469302BAC1BC80088B0A3 /* text_emoji_31.png in Resources */,
 				67246CD62BAC3BBE0088B0A3 /* 8c68c4c2-e995-4227-9481-59c01d481c08-流星.gif in Resources */,
 				67850B712BAEB3C300A44336 /* FYLVIPKeyboardView.xib in Resources */,
+				67DB322F2BB2D27900D3AD80 /* click3.wav in Resources */,
 				672469232BAC1BC80088B0A3 /* text_emoji_18.png in Resources */,
 				67246D112BAC3BBE0088B0A3 /* f7e0c6a0-e838-4465-a0e3-043dc8ff2b73-流水.gif in Resources */,
 				6724692E2BAC1BC80088B0A3 /* text_emoji_29.png in Resources */,
@@ -1227,6 +1248,7 @@
 				67246CFD2BAC3BBE0088B0A3 /* b993c721-2c80-42be-a64b-49fb3c8d5bbd-绿色-正向跑动.gif in Resources */,
 				67246D0C2BAC3BBE0088B0A3 /* ebca5d5b-82aa-42a2-aa24-6acf7d5ff138-未标题-1_0015_紫色流星.png in Resources */,
 				67246CE02BAC3BBE0088B0A3 /* 98bedc1e-3ef7-4f5c-bed0-9dbd207a5b50-CSFX.gif in Resources */,
+				67DB322D2BB2D27900D3AD80 /* click.wav in Resources */,
 				67246CDD2BAC3BBE0088B0A3 /* 71bd35f0-2ab1-4779-8499-ffc735c9ac66-未标题-1_0020_红色流星.png in Resources */,
 				67246CCD2BAC3BBE0088B0A3 /* 2c34c312-27b2-478f-8e43-134260fd9fbe-追光.gif in Resources */,
 				672469142BAC1BC80088B0A3 /* text_emoji_03.png in Resources */,
@@ -1240,6 +1262,7 @@
 				672469372BAC1BC80088B0A3 /* text_emoji_38.png in Resources */,
 				67246CF12BAC3BBE0088B0A3 /* 82921e53-de0b-4417-9c1c-0d2d712a71fb-潮流.gif in Resources */,
 				67246D142BAC3BBE0088B0A3 /* fe84474e-b534-498d-a8c3-f1b9e15696f2-伸缩.gif in Resources */,
+				67DB322E2BB2D27900D3AD80 /* click2.wav in Resources */,
 				672469212BAC1BC80088B0A3 /* text_emoji_16.png in Resources */,
 				67246CD32BAC3BBE0088B0A3 /* 6fff4d56-3d7b-4ac9-b6f6-ff5e3f44445b-未标题-1_0030_三色追光.png in Resources */,
 				67246CC02BAC3BBE0088B0A3 /* DreamColorModelClass.json in Resources */,
@@ -1281,6 +1304,7 @@
 				672469172BAC1BC80088B0A3 /* text_emoji_06.png in Resources */,
 				67246CBF2BAC3BBE0088B0A3 /* DreamColorDIY.json in Resources */,
 				67246CC52BAC3BBE0088B0A3 /* 0aed2994-a71c-4efa-b47d-3c42046350c5-黄色-反向跑动.gif in Resources */,
+				67DB32302BB2D27900D3AD80 /* click1.wav in Resources */,
 				67246CCB2BAC3BBE0088B0A3 /* 1dec3135-a887-4416-aff4-9a35ba2eb0b8-爱与梦幻.gif in Resources */,
 				672468942BAC1A680088B0A3 /* Base in Resources */,
 				67246D102BAC3BBE0088B0A3 /* f6f5c54f-6fa4-46d5-a22a-801ee712152f-未标题-1_0032_三色堆叠.png in Resources */,

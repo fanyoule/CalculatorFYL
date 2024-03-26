@@ -162,9 +162,9 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5c-Uc-9yF">
                     <rect key="frame" x="196.66666666666666" y="452.66666666666669" width="97.999999999999972" height="97.666666666666686"/>
                     <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="22"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="·">
+                    <state key="normal" title=".">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>

@@ -9,7 +9,7 @@
 #import "FYLHistoricalRecordCell.h"
 #import "FYLRegularKeyboardView.h"
 #import "FYLVIPKeyboardView.h"
-
+#define MaxCount 20
 @interface YLHomeViewController ()
 <
 UITableViewDelegate,
@@ -29,7 +29,14 @@ FYLRegularKeyboardViewdelegate
 @end
 
 @implementation YLHomeViewController
-
+{
+    NSString * numberBefore;    //前个数字
+    NSString * numberCurrent;   //当前数字
+    NSString * actionType;      //当前存储的加减乘除动作  + - * /
+    double result;
+    BOOL  isActionTypeMove;     //加减乘除已经做了移位
+    BOOL  isStatusEqual;        //是否按了等号
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -41,24 +48,164 @@ FYLRegularKeyboardViewdelegate
     self.view.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
 //    NSLog(@"%@---%@",NSStringFromCGRect(self.view.frame) ,NSStringFromCGRect(self.view.frame));
 }
+-(void)playSoundEffect:(NSString *)name{
+    NSString *audioFile=[[NSBundle mainBundle] pathForResource:name ofType:nil];
+    NSURL *fileUrl=[NSURL fileURLWithPath:audioFile];
+    SystemSoundID soundID=0;//获得系统声音ID
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)(fileUrl), &soundID);
+    AudioServicesPlaySystemSound(soundID);//播放音效
+}
+-(void)clearDate{
+    numberBefore=nil;
+    numberCurrent=@"0";
+    actionType=nil;
+    result=0;
+    isActionTypeMove=NO;
+    isStatusEqual=NO;
+    self.L_contect.text=@"0";
+    self.V_scroll.contentSize = CGSizeMake(kScreenWidth, 50);
+    [self.V_scroll setContentOffset:CGPointMake(5, 0) animated:NO];
+}
 
 -(void)fyl_RegularKeyboardDidSelectedButton:(UIButton *)btn{
-    NSString * title = btn.titleLabel.text;
-    self.L_contect.text = [NSString stringWithFormat:@"%@%@",self.L_contect.text,title];
-    CGFloat width_text = [self.L_contect.text jk_widthWithFont:PxM56Font constrainedToHeight:50];
-    if (width_text>kScreenWidth) {
-//        [self.L_contect mas_updateConstraints:^(MASConstraintMaker *make) {
-//            make.width.mas_equalTo(width_text);
-//        }];
-        self.L_contect.frame = CGRectMake(0, 15, width_text, 30);
-        self.V_scroll.contentSize = CGSizeMake(width_text+30, 50);
-        [self.V_scroll setContentOffset:CGPointMake(width_text-kScreenWidth, 0) animated:NO];
+//    NSString * title = btn.titleLabel.text;
+//    self.L_contect.text = [NSString stringWithFormat:@"%@%@",self.L_contect.text,title];
+    
+    
+    [self playSoundEffect:@"click.wav"];
+    
+    
+    if ([btn.titleLabel.text isEqualToString:@"0"]) {
+        [self numberGreate:0];
+    }else if ([btn.titleLabel.text isEqualToString:@"1"]){
+        [self numberGreate:1];
+    }else if ([btn.titleLabel.text isEqualToString:@"2"]){
+        [self numberGreate:2];
+    }else if ([btn.titleLabel.text isEqualToString:@"3"]){
+        [self numberGreate:3];
+    }else if ([btn.titleLabel.text isEqualToString:@"4"]){
+        [self numberGreate:4];
+    }else if ([btn.titleLabel.text isEqualToString:@"5"]){
+        [self numberGreate:5];
+    }else if ([btn.titleLabel.text isEqualToString:@"6"]){
+        [self numberGreate:6];
+    }else if ([btn.titleLabel.text isEqualToString:@"7"]){
+        [self numberGreate:7];
+    }else if ([btn.titleLabel.text isEqualToString:@"8"]){
+        [self numberGreate:8];
+    }else if ([btn.titleLabel.text isEqualToString:@"9"]){
+        [self numberGreate:9];
+    }else if ([btn.titleLabel.text isEqualToString:@"."]){
+        [self actionPoint];
+    }else if ([btn.titleLabel.text isEqualToString:@"C"]){
+        [self clearDate];
+    }else if ([btn.titleLabel.text isEqualToString:@"÷"]){
+        
+    }else if ([btn.titleLabel.text isEqualToString:@"×"]){
+        
+    }else if ([btn.titleLabel.text isEqualToString:@"←"]){
+        
+    }else if ([btn.titleLabel.text isEqualToString:@"－"]){
+        
+    }else if ([btn.titleLabel.text isEqualToString:@"＋"]){
+        
+    }else if ([btn.titleLabel.text isEqualToString:@"＝"]){
+        
     }
     
     
 }
+-(void)numberGreate:(int)number{//number形式参数
+    if (isStatusEqual) {
+        [self clearDate];
+    }
+    if (actionType&&!isActionTypeMove){
+        numberBefore=numberCurrent;
+        numberCurrent=@"0";
+        isActionTypeMove=YES;
+    }
+    if ([numberCurrent isEqualToString:@"0"]) {
+        numberCurrent=[NSString stringWithFormat:@"%d",number];
+    }else if([self stringHasPoint:numberCurrent]) {
+        if (numberCurrent.length>=MaxCount) {
+            return;
+        }else{
+            numberCurrent=[NSString stringWithFormat:@"%@%d",numberCurrent,number];
+        }
+    }else if (numberCurrent.length>=MaxCount) {
+        return;
+    }else{
+        if (IS_VALID_STRING(numberCurrent)) {
+            numberCurrent=[NSString stringWithFormat:@"%@%d",numberCurrent,number];
+        }else{
+            numberCurrent=[NSString stringWithFormat:@"%d",number];
+        }
+        
+    }
+    [self setNumberDisplay:numberCurrent];
 
+}
+-(void)setNumberDisplay:(NSString *)numberDisplay{
+    self.L_contect.text=[self setNumber:numberDisplay];
+    CGFloat width_text = [self.L_contect.text jk_widthWithFont:PxM56Font constrainedToHeight:50];
+    if (width_text>kScreenWidth) {
+        self.L_contect.frame = CGRectMake(0, 15, width_text, 30);
+        self.V_scroll.contentSize = CGSizeMake(width_text+30, 50);
+        [self.V_scroll setContentOffset:CGPointMake(width_text-kScreenWidth, 0) animated:NO];
+    }
+}
+//点击小数点
+-(void)actionPoint{
+    if ([self stringHasPoint:numberCurrent]) {
+        return;
+    }else{
+        numberCurrent=[NSString stringWithFormat:@"%@.",numberCurrent];
+        [self setNumberDisplay:numberCurrent];
+    }
+}
+-(NSString *)setNumber:(NSString *)number{
+    NSMutableString *strnumber=[[NSMutableString alloc]init];
+    strnumber=[number mutableCopy];
+    int length=(int)strnumber.length;
+    int index;
+    NSRange rang=[strnumber rangeOfString:@"."];
+    if (rang.length>0) {
+        for ( int j=0; j<=length; j++) {
+            NSString *Char=[strnumber substringWithRange:NSMakeRange(j, 1)];
+            if ([Char isEqualToString:@"."]) {
+                index=j;
+                break;
+            }
+        }if (3<index&&index<=9) {
+            for (int i=index; i>3; i=i-3) {//找出小数点为位置i
+                if ([[strnumber substringWithRange:NSMakeRange(i-4,1)]isEqualToString:@"-"]) {
+                    break;
+                }else{
+                    [strnumber insertString:@"," atIndex:i-3];
+                }
+            }
+        }
+    } else if (3<length) {
+        for (int i=length; i>3; i=i-3) {
+            if ([[strnumber substringWithRange:NSMakeRange(i-4,1)]isEqualToString:@"-"]) {
+                break;
+            }else{
+                [strnumber insertString:@"," atIndex:i-3];
+            }
+        }
+    }
 
+    number=[strnumber copy];
+    return number;
+}
+-(BOOL)stringHasPoint:(NSString *)string{
+    NSRange rang=[string rangeOfString:@"."];
+    if (rang.length>0) {
+        return YES;
+    }else{
+        return NO;
+    }
+}
 #pragma mark -- 向下or向上
 -(void)didSelectedxiagxiaClicked:(UIButton *)btn{
     if (self.directionType == 1) {//向上
