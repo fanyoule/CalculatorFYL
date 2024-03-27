@@ -190,6 +190,10 @@
 		67246D3C2BAC3F0B0088B0A3 /* UILabel+WY_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246D352BAC3F0B0088B0A3 /* UILabel+WY_Extension.m */; };
 		67246D3D2BAC3F0B0088B0A3 /* UILabel+WY_RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246D372BAC3F0B0088B0A3 /* UILabel+WY_RichText.m */; };
 		67246D472BAC3F480088B0A3 /* YLWKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246D432BAC3F480088B0A3 /* YLWKViewController.m */; };
+		673041392BB426B200EF02AB /* Calculate+Health.m in Sources */ = {isa = PBXBuildFile; fileRef = 673041372BB426B100EF02AB /* Calculate+Health.m */; };
+		6730413E2BB426D600EF02AB /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 6730413A2BB426D600EF02AB /* Stack.m */; };
+		6730413F2BB426D600EF02AB /* Calculate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6730413B2BB426D600EF02AB /* Calculate.m */; };
+		673041422BB4274300EF02AB /* advancedCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 673041412BB4274300EF02AB /* advancedCalculator.m */; };
 		67850B652BAE824300A44336 /* FYLHistoricalRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67850B622BAE824300A44336 /* FYLHistoricalRecordCell.m */; };
 		67850B662BAE824300A44336 /* FYLHistoricalRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67850B632BAE824300A44336 /* FYLHistoricalRecordCell.xib */; };
 		67850B6A2BAE826B00A44336 /* YLUserToolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67850B682BAE826B00A44336 /* YLUserToolManager.m */; };
@@ -459,6 +463,14 @@
 		67246D372BAC3F0B0088B0A3 /* UILabel+WY_RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+WY_RichText.m"; sourceTree = "<group>"; };
 		67246D422BAC3F480088B0A3 /* YLWKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLWKViewController.h; sourceTree = "<group>"; };
 		67246D432BAC3F480088B0A3 /* YLWKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLWKViewController.m; sourceTree = "<group>"; };
+		673041372BB426B100EF02AB /* Calculate+Health.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Calculate+Health.m"; sourceTree = "<group>"; };
+		673041382BB426B200EF02AB /* Calculate+Health.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Calculate+Health.h"; sourceTree = "<group>"; };
+		6730413A2BB426D600EF02AB /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		6730413B2BB426D600EF02AB /* Calculate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculate.m; sourceTree = "<group>"; };
+		6730413C2BB426D600EF02AB /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		6730413D2BB426D600EF02AB /* Calculate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculate.h; sourceTree = "<group>"; };
+		673041402BB4274300EF02AB /* advancedCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = advancedCalculator.h; sourceTree = "<group>"; };
+		673041412BB4274300EF02AB /* advancedCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = advancedCalculator.m; sourceTree = "<group>"; };
 		67850B612BAE824300A44336 /* FYLHistoricalRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYLHistoricalRecordCell.h; sourceTree = "<group>"; };
 		67850B622BAE824300A44336 /* FYLHistoricalRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYLHistoricalRecordCell.m; sourceTree = "<group>"; };
 		67850B632BAE824300A44336 /* FYLHistoricalRecordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYLHistoricalRecordCell.xib; sourceTree = "<group>"; };
@@ -783,6 +795,7 @@
 		67246C322BAC258E0088B0A3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				673041362BB426A700EF02AB /* Model */,
 				67850B672BAE824C00A44336 /* View */,
 				67850B642BAE824300A44336 /* Cell */,
 				67246C332BAC25AC0088B0A3 /* YLHomeViewController.h */,
@@ -1046,6 +1059,21 @@
 				67246D432BAC3F480088B0A3 /* YLWKViewController.m */,
 			);
 			path = BAWebViewController;
+			sourceTree = "<group>";
+		};
+		673041362BB426A700EF02AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				673041402BB4274300EF02AB /* advancedCalculator.h */,
+				673041412BB4274300EF02AB /* advancedCalculator.m */,
+				6730413D2BB426D600EF02AB /* Calculate.h */,
+				6730413B2BB426D600EF02AB /* Calculate.m */,
+				6730413C2BB426D600EF02AB /* Stack.h */,
+				6730413A2BB426D600EF02AB /* Stack.m */,
+				673041382BB426B200EF02AB /* Calculate+Health.h */,
+				673041372BB426B100EF02AB /* Calculate+Health.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		67850B642BAE824300A44336 /* Cell */ = {
@@ -1398,6 +1426,7 @@
 				67246D3C2BAC3F0B0088B0A3 /* UILabel+WY_Extension.m in Sources */,
 				67246C552BAC3B0F0088B0A3 /* MBProgressHUD+XBLoading.m in Sources */,
 				67246D232BAC3C760088B0A3 /* UITextField+LimitLength.m in Sources */,
+				6730413E2BB426D600EF02AB /* Stack.m in Sources */,
 				67850B6A2BAE826B00A44336 /* YLUserToolManager.m in Sources */,
 				67246C2F2BAC23480088B0A3 /* FYLPasswordLoginViewController.m in Sources */,
 				67246D472BAC3F480088B0A3 /* YLWKViewController.m in Sources */,
@@ -1409,6 +1438,7 @@
 				67246C312BAC23480088B0A3 /* YLLoginViewController.m in Sources */,
 				67850B6D2BAEA5ED00A44336 /* FYLRegularKeyboardView.m in Sources */,
 				67246D1D2BAC3C1F0088B0A3 /* CommonManagement.m in Sources */,
+				673041422BB4274300EF02AB /* advancedCalculator.m in Sources */,
 				67246D3D2BAC3F0B0088B0A3 /* UILabel+WY_RichText.m in Sources */,
 				67246C4A2BAC396C0088B0A3 /* YLMySetViewController.m in Sources */,
 				672468DA2BAC1B880088B0A3 /* YLNavigationViewController.m in Sources */,
@@ -1423,8 +1453,10 @@
 				67246C292BAC23480088B0A3 /* HWTFCodeBView.m in Sources */,
 				67246C2D2BAC23480088B0A3 /* FYLForgotPasswordViewController.m in Sources */,
 				67246D3A2BAC3F0B0088B0A3 /* NSMutableAttributedString+WY_Extension.m in Sources */,
+				673041392BB426B200EF02AB /* Calculate+Health.m in Sources */,
 				67246C392BAC25ED0088B0A3 /* YLMyViewController.m in Sources */,
 				67246D152BAC3BBE0088B0A3 /* YLRequestCacheManagement.m in Sources */,
+				6730413F2BB426D600EF02AB /* Calculate.m in Sources */,
 				67246C4E2BAC3B010088B0A3 /* SVProgressHUD+YLLoading.m in Sources */,
 				67246C2B2BAC23480088B0A3 /* SMSCodeView.m in Sources */,
 				67246D192BAC3BBE0088B0A3 /* YXHTTPRequst.m in Sources */,

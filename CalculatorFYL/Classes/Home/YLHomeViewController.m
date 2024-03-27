@@ -9,6 +9,8 @@
 #import "FYLHistoricalRecordCell.h"
 #import "FYLRegularKeyboardView.h"
 #import "FYLVIPKeyboardView.h"
+#import "advancedCalculator.h"
+
 #define MaxCount 20
 @interface YLHomeViewController ()
 <
@@ -26,6 +28,8 @@ FYLRegularKeyboardViewdelegate
 
 ///方向 0向下 1向上
 @property(nonatomic,assign)NSInteger directionType;
+@property (strong, nonatomic) advancedCalculator *calculate;
+@property int flag;
 @end
 
 @implementation YLHomeViewController
@@ -55,66 +59,192 @@ FYLRegularKeyboardViewdelegate
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)(fileUrl), &soundID);
     AudioServicesPlaySystemSound(soundID);//播放音效
 }
+#pragma mark -- 清空
 -(void)clearDate{
-    numberBefore=nil;
-    numberCurrent=@"0";
-    actionType=nil;
-    result=0;
-    isActionTypeMove=NO;
-    isStatusEqual=NO;
-    self.L_contect.text=@"0";
+    self.L_contect.text=@"";
+    [self.calculator clearAll];
+    _flag=0;
     self.V_scroll.contentSize = CGSizeMake(kScreenWidth, 50);
     [self.V_scroll setContentOffset:CGPointMake(5, 0) animated:NO];
 }
 
 -(void)fyl_RegularKeyboardDidSelectedButton:(UIButton *)btn{
-//    NSString * title = btn.titleLabel.text;
-//    self.L_contect.text = [NSString stringWithFormat:@"%@%@",self.L_contect.text,title];
-    
     
     [self playSoundEffect:@"click.wav"];
     
     
     if ([btn.titleLabel.text isEqualToString:@"0"]) {
-        [self numberGreate:0];
+        [self changeNumberGreateBtn:btn];
     }else if ([btn.titleLabel.text isEqualToString:@"1"]){
-        [self numberGreate:1];
+        [self changeNumberGreateBtn:btn];
+//        [self numberGreate:1];
     }else if ([btn.titleLabel.text isEqualToString:@"2"]){
-        [self numberGreate:2];
+        [self changeNumberGreateBtn:btn];
+//        [self numberGreate:2];
     }else if ([btn.titleLabel.text isEqualToString:@"3"]){
-        [self numberGreate:3];
+        [self changeNumberGreateBtn:btn];
+//        [self numberGreate:3];
     }else if ([btn.titleLabel.text isEqualToString:@"4"]){
-        [self numberGreate:4];
+        [self changeNumberGreateBtn:btn];
+//        [self numberGreate:4];
     }else if ([btn.titleLabel.text isEqualToString:@"5"]){
-        [self numberGreate:5];
+        [self changeNumberGreateBtn:btn];
+//        [self numberGreate:5];
     }else if ([btn.titleLabel.text isEqualToString:@"6"]){
-        [self numberGreate:6];
+        [self changeNumberGreateBtn:btn];
+//        [self numberGreate:6];
     }else if ([btn.titleLabel.text isEqualToString:@"7"]){
-        [self numberGreate:7];
+        [self changeNumberGreateBtn:btn];
+//        [self numberGreate:7];
     }else if ([btn.titleLabel.text isEqualToString:@"8"]){
-        [self numberGreate:8];
+        [self changeNumberGreateBtn:btn];
+//        [self numberGreate:8];
     }else if ([btn.titleLabel.text isEqualToString:@"9"]){
-        [self numberGreate:9];
+        [self changeNumberGreateBtn:btn];
+//        [self numberGreate:9];
     }else if ([btn.titleLabel.text isEqualToString:@"."]){
-        [self actionPoint];
+        if ([self stringHasPoint:self.L_contect.text]) {
+            return;
+        }
+        if (!IS_VALID_STRING(self.L_contect.text)) {
+            self.L_contect.text = @"0";
+            [self.calculator.input appendString:@"0"];
+        }
+        [self changeNumberGreateBtn:btn];
+//        [self actionPoint];
     }else if ([btn.titleLabel.text isEqualToString:@"C"]){
         [self clearDate];
     }else if ([btn.titleLabel.text isEqualToString:@"÷"]){
-        
+        [self changeNumberGreateBtn:btn];
+//        [self actionTodo:btn type:@"÷"];
     }else if ([btn.titleLabel.text isEqualToString:@"×"]){
-        
+        [self changeNumberGreateBtn:btn];
+//        [self actionTodo:btn type:@"×"];
     }else if ([btn.titleLabel.text isEqualToString:@"←"]){
-        
-    }else if ([btn.titleLabel.text isEqualToString:@"－"]){
-        
-    }else if ([btn.titleLabel.text isEqualToString:@"＋"]){
-        
-    }else if ([btn.titleLabel.text isEqualToString:@"＝"]){
-        
+        [self clearLastBit];
+    }else if ([btn.titleLabel.text isEqualToString:@"-"]){
+        [self changeNumberGreateBtn:btn];
+//        [self actionTodo:btn type:@"-"];
+    }else if ([btn.titleLabel.text isEqualToString:@"+"]){
+        [self changeNumberGreateBtn:btn];
+//        [self actionTodo:btn type:@"+"];
+    }else if ([btn.titleLabel.text isEqualToString:@"="]){
+        [self actionEqual];
     }
     
     
 }
+-(void)changeNumberGreateBtn:(UIButton *)btn{
+    if([self.L_contect.text length]!=0&&_flag==1){
+        NSString *ch=[[btn titleLabel] text];
+        if([ch isEqualToString:@"("]||[ch isEqualToString:@"×"]
+           ||[ch isEqualToString:@"÷"]
+           ||[ch isEqualToString:@"+"]
+           ||[ch isEqualToString:@"-"]
+           ||[ch isEqualToString:@")"]){
+            self.L_contect.text=@"暂不支持连续运算";
+            self.calculator.input=nil;
+            _flag=1;
+            return;
+        }else{
+            self.L_contect.text=nil;
+            self.calculator.input=nil;
+            _flag=0;
+        }
+    }
+    
+    //这种处理的原因是对x ÷进行实际运算的替换* /，但显示仍然是x +
+    if([[[btn titleLabel] text] isEqualToString:@"×"]){
+        [self.calculator.input appendString:@"*"];
+    }else if([[[btn titleLabel] text] isEqualToString:@"÷"]){
+        [self.calculator.input appendString:@"/"];
+    }else{
+        [self.calculator.input appendString:[[btn titleLabel] text]];
+    }
+    
+    NSMutableString *originalString=[NSMutableString stringWithString:self.L_contect.text];
+    [originalString appendString:[[btn titleLabel] text]];
+    self.L_contect.text=originalString;
+    self.calculator.screen=originalString;
+}
+
+
+#pragma mark -- 等于
+-(void)actionEqual{
+    if([self.L_contect.text length]==0){
+        self.L_contect.text=@"Error input!";
+        return;
+    }
+    
+    NSMutableString *calculateResult=[NSMutableString stringWithString:self.calculator.input];
+    [calculateResult appendString:@"="];
+    self.L_contect.text=[self.calculator ExpressionCalculate:calculateResult];
+    NSMutableString *tempStr=[NSMutableString stringWithString:self.L_contect.text];;
+    self.calculator.screen = tempStr;//每次计算之后，将结果也保存在screen中
+    self.calculate.input = tempStr;
+//    if (!numberBefore) {
+//        return;
+//    }
+//    if (!isStatusEqual) {
+//        [self calculationType];
+//    }else{
+//        numberBefore=[self subString:result];
+//        [self calculationType];
+//    }
+//    NSString *resultStr=[self subString:result];
+//    [self setNumberDisplay:resultStr];
+//    [savehistoryData historyAdd: [self time] beforeNum:[self setNumber:numberBefore] operationType:actionType CurrentNub:[self setNumber:numberCurrent] result:[self setNumber:resultStr]];
+//    [self readHistoryData];
+//    isStatusEqual=YES;
+}
+#pragma mark -- 末尾清除
+-(void)clearLastBit{
+    
+    NSInteger length=[self.calculator.input length];
+    if(length>0){
+        [self.calculator.input deleteCharactersInRange:NSMakeRange(length-1, 1)];
+        //一定也要对输入框中的表达式进行处理，因为input里面的× ÷和显示的* /不同
+        NSMutableString *delResultString=[NSMutableString stringWithString:self.L_contect.text];
+        [delResultString deleteCharactersInRange:NSMakeRange(length-1, 1)];
+        NSLog(@"deleteResult=%@",self.calculator.input);
+        self.calculator.screen=delResultString;
+        self.L_contect.text=delResultString;
+    }
+    
+}
+-(void)actionTodo:(UIButton *)button type:(NSString *)type{
+    isActionTypeMove=NO;
+    if ([numberCurrent isEqualToString:@"0"]) {
+        return;
+    }
+    if (numberBefore&&![numberCurrent isEqualToString:@""]&&actionType){
+        if (isStatusEqual) {
+            numberCurrent=[self subString:result];
+            isStatusEqual=NO;
+        }else{
+            [self calculationType];
+            numberCurrent=[self subString:result];
+            [self setNumberDisplay:numberCurrent];
+            NSLog(@"NU%@",numberCurrent);
+        }
+    }
+    actionType=type;
+}
+#pragma mark -- 算法（+—*÷）
+-(void)calculationType{
+    if ([actionType isEqualToString:@"+"]) {
+        result=[numberBefore doubleValue]+[numberCurrent doubleValue];
+    }else if([actionType isEqualToString:@"-"]){
+        result=[numberBefore doubleValue]-[numberCurrent doubleValue];
+    }else if([actionType isEqualToString:@"×"]){
+        result=[numberBefore doubleValue]*[numberCurrent doubleValue];
+    }else if([actionType isEqualToString:@"÷"]){
+        result=[numberBefore doubleValue]/[numberCurrent doubleValue];
+    }
+
+}
+
+
 -(void)numberGreate:(int)number{//number形式参数
     if (isStatusEqual) {
         [self clearDate];
@@ -205,6 +335,22 @@ FYLRegularKeyboardViewdelegate
     }else{
         return NO;
     }
+}
+-(NSString*)subString:(double)value{   //截取字符串
+    NSString *str=[NSString stringWithFormat:@"%lf",value];
+    int index=(int) str.length;
+    int i;
+    for (i=(int)str.length;i>0;i--) {
+        NSString *lastChar=[str substringWithRange:NSMakeRange(i-1, 1)];
+        if (![lastChar isEqualToString:@"0"]) {
+            index=i;
+            if ([lastChar isEqualToString:@"."]) {
+                index--;
+            }break;
+        }
+    }
+    NSString *subString=[str substringWithRange:NSMakeRange(0, index)];
+    return subString;
 }
 #pragma mark -- 向下or向上
 -(void)didSelectedxiagxiaClicked:(UIButton *)btn{
@@ -384,7 +530,12 @@ FYLRegularKeyboardViewdelegate
     return _vipKey;
 }
 
-
+-(advancedCalculator *)calculator{
+    if(!_calculate){
+        _calculate=[[advancedCalculator alloc]init];
+    }
+    return _calculate;
+}
 /*
 #pragma mark - Navigation
 
