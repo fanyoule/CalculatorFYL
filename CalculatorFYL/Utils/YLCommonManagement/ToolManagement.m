@@ -178,10 +178,10 @@
 //字符串转时间戳 如：2017-4-10 17:15:10
 - (NSString *)getTimeStrWithString:(NSString *)str{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];// 创建一个时间格式化对象
-    [dateFormatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"]; //设定时间的格式
+    [dateFormatter setDateFormat:@"YYYY-MM-dd"]; //设定时间的格式
     NSLog(@"dateFormatter == %@",dateFormatter);
     NSDate *tempDate = [dateFormatter dateFromString:str];//将字符串转换为时间对象
-    NSString *timeStr = [NSString stringWithFormat:@"%ld", (long)[tempDate timeIntervalSince1970]*1000];//字符串转成时间戳,精确到毫秒*1000
+    NSString *timeStr = [NSString stringWithFormat:@"%ld", (long)[tempDate timeIntervalSince1970]];//字符串转成时间戳,精确到毫秒*1000
     return timeStr;
 }
 
@@ -201,11 +201,11 @@
     // 时间戳转日期
     
     // 传入的时间戳timeStr如果是精确到毫秒的记得要/1000
-    NSTimeInterval timeInterval = [timestamp doubleValue]/1000;
+    NSTimeInterval timeInterval = [timestamp doubleValue];
     NSDate *detailDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     // 实例化一个NSDateFormatter对象，设定时间格式，这里可以设置成自己需要的格式
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSString *dateStr = [dateFormatter stringFromDate:detailDate];
 
     return dateStr;

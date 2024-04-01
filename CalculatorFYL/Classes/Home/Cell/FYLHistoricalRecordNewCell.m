@@ -20,16 +20,13 @@
 -(void)configeUI{
     
     self.backgroundColor = UIColor.clearColor;
-    self.selectionStyle = 0;
-
+//    self.selectionStyle = 0;
     [self.contentView addSubview:self.L_contect];
-    self.L_contect.preferredMaxLayoutWidth = 200;
     [self.L_contect mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.contentView).offset(5);
-        make.left.mas_equalTo(self.contentView).offset(12);
-        make.right.mas_equalTo(self.contentView).offset(-12);
-        make.height.mas_greaterThanOrEqualTo(20).priorityHigh();
-        make.bottom.mas_equalTo(self.contentView).offset(-5);
+        make.top.equalTo(self.contentView.mas_top).offset(5);
+        make.bottom.equalTo(self.contentView.mas_bottom).offset(-2);
+        make.leading.equalTo(self.contentView.mas_leading).offset(10.0);
+        make.trailing.equalTo(self.contentView.mas_trailing).offset(-10.0);
     }];
 }
 - (void)awakeFromNib {

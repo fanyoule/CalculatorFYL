@@ -190,6 +190,24 @@
 		67246D3C2BAC3F0B0088B0A3 /* UILabel+WY_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246D352BAC3F0B0088B0A3 /* UILabel+WY_Extension.m */; };
 		67246D3D2BAC3F0B0088B0A3 /* UILabel+WY_RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246D372BAC3F0B0088B0A3 /* UILabel+WY_RichText.m */; };
 		67246D472BAC3F480088B0A3 /* YLWKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246D432BAC3F480088B0A3 /* YLWKViewController.m */; };
+		6725DA652BBAB7D000695EA1 /* MSElementTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725DA432BBAB7D000695EA1 /* MSElementTable.m */; };
+		6725DA662BBAB7D000695EA1 /* MSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725DA452BBAB7D000695EA1 /* MSParser.m */; };
+		6725DA672BBAB7D000695EA1 /* MSScaner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725DA472BBAB7D000695EA1 /* MSScaner.m */; };
+		6725DA682BBAB7D000695EA1 /* MSStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725DA492BBAB7D000695EA1 /* MSStack.m */; };
+		6725DA692BBAB7D000695EA1 /* NSError+MSExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725DA4B2BBAB7D000695EA1 /* NSError+MSExpression.m */; };
+		6725DA6A2BBAB7D000695EA1 /* MSExpressionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725DA4E2BBAB7D000695EA1 /* MSExpressionHelper.m */; };
+		6725DA6B2BBAB7D000695EA1 /* MSConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725DA512BBAB7D000695EA1 /* MSConstant.m */; };
+		6725DA6C2BBAB7D000695EA1 /* MSElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725DA532BBAB7D000695EA1 /* MSElement.m */; };
+		6725DA6D2BBAB7D000695EA1 /* MSFunctionOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725DA552BBAB7D000695EA1 /* MSFunctionOperator.m */; };
+		6725DA6E2BBAB7D000695EA1 /* MSNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725DA572BBAB7D000695EA1 /* MSNumber.m */; };
+		6725DA6F2BBAB7D000695EA1 /* MSNumberGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725DA592BBAB7D000695EA1 /* MSNumberGroup.m */; };
+		6725DA702BBAB7D000695EA1 /* MSOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725DA5B2BBAB7D000695EA1 /* MSOperator.m */; };
+		6725DA712BBAB7D000695EA1 /* MSPairOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725DA5D2BBAB7D000695EA1 /* MSPairOperator.m */; };
+		6725DA722BBAB7D000695EA1 /* MSValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725DA5F2BBAB7D000695EA1 /* MSValue.m */; };
+		6725DA732BBAB7D000695EA1 /* MSValueOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725DA612BBAB7D000695EA1 /* MSValueOperator.m */; };
+		6725DA762BBABE7C00695EA1 /* YLShareDeviceOuterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725DA752BBABE7C00695EA1 /* YLShareDeviceOuterModel.m */; };
+		6725DA792BBAC2C000695EA1 /* YLDIYEditBoxListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725DA772BBAC2C000695EA1 /* YLDIYEditBoxListView.m */; };
+		6725DA7D2BBAC2F400695EA1 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725DA7B2BBAC2F400695EA1 /* BaseView.m */; };
 		67261E8F2BB7ECB000433DD1 /* FYLHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67261E8E2BB7ECB000433DD1 /* FYLHistoryModel.m */; };
 		67261E922BB8181F00433DD1 /* FYLHistoricalRecordNewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67261E912BB8181F00433DD1 /* FYLHistoricalRecordNewCell.m */; };
 		673041392BB426B200EF02AB /* Calculate+Health.m in Sources */ = {isa = PBXBuildFile; fileRef = 673041372BB426B100EF02AB /* Calculate+Health.m */; };
@@ -465,6 +483,43 @@
 		67246D372BAC3F0B0088B0A3 /* UILabel+WY_RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+WY_RichText.m"; sourceTree = "<group>"; };
 		67246D422BAC3F480088B0A3 /* YLWKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLWKViewController.h; sourceTree = "<group>"; };
 		67246D432BAC3F480088B0A3 /* YLWKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLWKViewController.m; sourceTree = "<group>"; };
+		6725DA422BBAB7D000695EA1 /* MSElementTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSElementTable.h; sourceTree = "<group>"; };
+		6725DA432BBAB7D000695EA1 /* MSElementTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSElementTable.m; sourceTree = "<group>"; };
+		6725DA442BBAB7D000695EA1 /* MSParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSParser.h; sourceTree = "<group>"; };
+		6725DA452BBAB7D000695EA1 /* MSParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSParser.m; sourceTree = "<group>"; };
+		6725DA462BBAB7D000695EA1 /* MSScaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSScaner.h; sourceTree = "<group>"; };
+		6725DA472BBAB7D000695EA1 /* MSScaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSScaner.m; sourceTree = "<group>"; };
+		6725DA482BBAB7D000695EA1 /* MSStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSStack.h; sourceTree = "<group>"; };
+		6725DA492BBAB7D000695EA1 /* MSStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSStack.m; sourceTree = "<group>"; };
+		6725DA4A2BBAB7D000695EA1 /* NSError+MSExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+MSExpression.h"; sourceTree = "<group>"; };
+		6725DA4B2BBAB7D000695EA1 /* NSError+MSExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+MSExpression.m"; sourceTree = "<group>"; };
+		6725DA4D2BBAB7D000695EA1 /* MSExpressionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSExpressionHelper.h; sourceTree = "<group>"; };
+		6725DA4E2BBAB7D000695EA1 /* MSExpressionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSExpressionHelper.m; sourceTree = "<group>"; };
+		6725DA502BBAB7D000695EA1 /* MSConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSConstant.h; sourceTree = "<group>"; };
+		6725DA512BBAB7D000695EA1 /* MSConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSConstant.m; sourceTree = "<group>"; };
+		6725DA522BBAB7D000695EA1 /* MSElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSElement.h; sourceTree = "<group>"; };
+		6725DA532BBAB7D000695EA1 /* MSElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSElement.m; sourceTree = "<group>"; };
+		6725DA542BBAB7D000695EA1 /* MSFunctionOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSFunctionOperator.h; sourceTree = "<group>"; };
+		6725DA552BBAB7D000695EA1 /* MSFunctionOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSFunctionOperator.m; sourceTree = "<group>"; };
+		6725DA562BBAB7D000695EA1 /* MSNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNumber.h; sourceTree = "<group>"; };
+		6725DA572BBAB7D000695EA1 /* MSNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNumber.m; sourceTree = "<group>"; };
+		6725DA582BBAB7D000695EA1 /* MSNumberGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNumberGroup.h; sourceTree = "<group>"; };
+		6725DA592BBAB7D000695EA1 /* MSNumberGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSNumberGroup.m; sourceTree = "<group>"; };
+		6725DA5A2BBAB7D000695EA1 /* MSOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOperator.h; sourceTree = "<group>"; };
+		6725DA5B2BBAB7D000695EA1 /* MSOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOperator.m; sourceTree = "<group>"; };
+		6725DA5C2BBAB7D000695EA1 /* MSPairOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPairOperator.h; sourceTree = "<group>"; };
+		6725DA5D2BBAB7D000695EA1 /* MSPairOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPairOperator.m; sourceTree = "<group>"; };
+		6725DA5E2BBAB7D000695EA1 /* MSValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSValue.h; sourceTree = "<group>"; };
+		6725DA5F2BBAB7D000695EA1 /* MSValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSValue.m; sourceTree = "<group>"; };
+		6725DA602BBAB7D000695EA1 /* MSValueOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSValueOperator.h; sourceTree = "<group>"; };
+		6725DA612BBAB7D000695EA1 /* MSValueOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSValueOperator.m; sourceTree = "<group>"; };
+		6725DA632BBAB7D000695EA1 /* MathStringExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathStringExpression.h; sourceTree = "<group>"; };
+		6725DA742BBABE7C00695EA1 /* YLShareDeviceOuterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLShareDeviceOuterModel.h; sourceTree = "<group>"; };
+		6725DA752BBABE7C00695EA1 /* YLShareDeviceOuterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLShareDeviceOuterModel.m; sourceTree = "<group>"; };
+		6725DA772BBAC2C000695EA1 /* YLDIYEditBoxListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLDIYEditBoxListView.m; sourceTree = "<group>"; };
+		6725DA782BBAC2C000695EA1 /* YLDIYEditBoxListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLDIYEditBoxListView.h; sourceTree = "<group>"; };
+		6725DA7A2BBAC2F400695EA1 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
+		6725DA7B2BBAC2F400695EA1 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
 		67261E8D2BB7ECB000433DD1 /* FYLHistoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYLHistoryModel.h; sourceTree = "<group>"; };
 		67261E8E2BB7ECB000433DD1 /* FYLHistoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYLHistoryModel.m; sourceTree = "<group>"; };
 		67261E902BB8181F00433DD1 /* FYLHistoricalRecordNewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLHistoricalRecordNewCell.h; sourceTree = "<group>"; };
@@ -647,6 +702,7 @@
 		672468D62BAC1B880088B0A3 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				6725DA7C2BBAC2F400695EA1 /* BaseView */,
 				672468C02BAC1B880088B0A3 /* BaseModel */,
 				672468C72BAC1B880088B0A3 /* BaseNavigation */,
 				672468CE2BAC1B880088B0A3 /* TabbarViewController */,
@@ -721,6 +777,7 @@
 		672469112BAC1BC80088B0A3 /* 3SDK */ = {
 			isa = PBXGroup;
 			children = (
+				6725DA642BBAB7D000695EA1 /* MathStringExpression */,
 				67DB32282BB2D25900D3AD80 /* music */,
 				672469102BAC1BC80088B0A3 /* Font */,
 			);
@@ -1067,9 +1124,82 @@
 			path = BAWebViewController;
 			sourceTree = "<group>";
 		};
+		6725DA4C2BBAB7D000695EA1 /* ExpressionParser */ = {
+			isa = PBXGroup;
+			children = (
+				6725DA422BBAB7D000695EA1 /* MSElementTable.h */,
+				6725DA432BBAB7D000695EA1 /* MSElementTable.m */,
+				6725DA442BBAB7D000695EA1 /* MSParser.h */,
+				6725DA452BBAB7D000695EA1 /* MSParser.m */,
+				6725DA462BBAB7D000695EA1 /* MSScaner.h */,
+				6725DA472BBAB7D000695EA1 /* MSScaner.m */,
+				6725DA482BBAB7D000695EA1 /* MSStack.h */,
+				6725DA492BBAB7D000695EA1 /* MSStack.m */,
+				6725DA4A2BBAB7D000695EA1 /* NSError+MSExpression.h */,
+				6725DA4B2BBAB7D000695EA1 /* NSError+MSExpression.m */,
+			);
+			path = ExpressionParser;
+			sourceTree = "<group>";
+		};
+		6725DA4F2BBAB7D000695EA1 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				6725DA4D2BBAB7D000695EA1 /* MSExpressionHelper.h */,
+				6725DA4E2BBAB7D000695EA1 /* MSExpressionHelper.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		6725DA622BBAB7D000695EA1 /* Operator */ = {
+			isa = PBXGroup;
+			children = (
+				6725DA502BBAB7D000695EA1 /* MSConstant.h */,
+				6725DA512BBAB7D000695EA1 /* MSConstant.m */,
+				6725DA522BBAB7D000695EA1 /* MSElement.h */,
+				6725DA532BBAB7D000695EA1 /* MSElement.m */,
+				6725DA542BBAB7D000695EA1 /* MSFunctionOperator.h */,
+				6725DA552BBAB7D000695EA1 /* MSFunctionOperator.m */,
+				6725DA562BBAB7D000695EA1 /* MSNumber.h */,
+				6725DA572BBAB7D000695EA1 /* MSNumber.m */,
+				6725DA582BBAB7D000695EA1 /* MSNumberGroup.h */,
+				6725DA592BBAB7D000695EA1 /* MSNumberGroup.m */,
+				6725DA5A2BBAB7D000695EA1 /* MSOperator.h */,
+				6725DA5B2BBAB7D000695EA1 /* MSOperator.m */,
+				6725DA5C2BBAB7D000695EA1 /* MSPairOperator.h */,
+				6725DA5D2BBAB7D000695EA1 /* MSPairOperator.m */,
+				6725DA5E2BBAB7D000695EA1 /* MSValue.h */,
+				6725DA5F2BBAB7D000695EA1 /* MSValue.m */,
+				6725DA602BBAB7D000695EA1 /* MSValueOperator.h */,
+				6725DA612BBAB7D000695EA1 /* MSValueOperator.m */,
+			);
+			path = Operator;
+			sourceTree = "<group>";
+		};
+		6725DA642BBAB7D000695EA1 /* MathStringExpression */ = {
+			isa = PBXGroup;
+			children = (
+				6725DA4C2BBAB7D000695EA1 /* ExpressionParser */,
+				6725DA4F2BBAB7D000695EA1 /* Helper */,
+				6725DA622BBAB7D000695EA1 /* Operator */,
+				6725DA632BBAB7D000695EA1 /* MathStringExpression.h */,
+			);
+			path = MathStringExpression;
+			sourceTree = "<group>";
+		};
+		6725DA7C2BBAC2F400695EA1 /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				6725DA7A2BBAC2F400695EA1 /* BaseView.h */,
+				6725DA7B2BBAC2F400695EA1 /* BaseView.m */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
 		673041362BB426A700EF02AB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6725DA742BBABE7C00695EA1 /* YLShareDeviceOuterModel.h */,
+				6725DA752BBABE7C00695EA1 /* YLShareDeviceOuterModel.m */,
 				67261E8D2BB7ECB000433DD1 /* FYLHistoryModel.h */,
 				67261E8E2BB7ECB000433DD1 /* FYLHistoryModel.m */,
 				673041402BB4274300EF02AB /* advancedCalculator.h */,
@@ -1099,6 +1229,8 @@
 		67850B672BAE824C00A44336 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6725DA782BBAC2C000695EA1 /* YLDIYEditBoxListView.h */,
+				6725DA772BBAC2C000695EA1 /* YLDIYEditBoxListView.m */,
 				67850B6B2BAEA5ED00A44336 /* FYLRegularKeyboardView.h */,
 				67850B6C2BAEA5ED00A44336 /* FYLRegularKeyboardView.m */,
 				67850B6E2BAEA5F800A44336 /* FYLRegularKeyboardView.xib */,
@@ -1440,16 +1572,21 @@
 				67850B6A2BAE826B00A44336 /* YLUserToolManager.m in Sources */,
 				67246C2F2BAC23480088B0A3 /* FYLPasswordLoginViewController.m in Sources */,
 				67246D472BAC3F480088B0A3 /* YLWKViewController.m in Sources */,
+				6725DA732BBAB7D000695EA1 /* MSValueOperator.m in Sources */,
 				672468912BAC1A680088B0A3 /* ViewController.m in Sources */,
 				672468DF2BAC1B880088B0A3 /* ZJ_UserLoginInfomation.m in Sources */,
 				6724688B2BAC1A680088B0A3 /* AppDelegate.m in Sources */,
+				6725DA6E2BBAB7D000695EA1 /* MSNumber.m in Sources */,
+				6725DA712BBAB7D000695EA1 /* MSPairOperator.m in Sources */,
 				672468D72BAC1B880088B0A3 /* BaseModel.m in Sources */,
 				67246C592BAC3B480088B0A3 /* PublicHelpers.m in Sources */,
 				67246C312BAC23480088B0A3 /* YLLoginViewController.m in Sources */,
+				6725DA652BBAB7D000695EA1 /* MSElementTable.m in Sources */,
 				67850B6D2BAEA5ED00A44336 /* FYLRegularKeyboardView.m in Sources */,
 				67246D1D2BAC3C1F0088B0A3 /* CommonManagement.m in Sources */,
 				673041422BB4274300EF02AB /* advancedCalculator.m in Sources */,
 				67261E922BB8181F00433DD1 /* FYLHistoricalRecordNewCell.m in Sources */,
+				6725DA6C2BBAB7D000695EA1 /* MSElement.m in Sources */,
 				67246D3D2BAC3F0B0088B0A3 /* UILabel+WY_RichText.m in Sources */,
 				67246C4A2BAC396C0088B0A3 /* YLMySetViewController.m in Sources */,
 				672468DA2BAC1B880088B0A3 /* YLNavigationViewController.m in Sources */,
@@ -1458,19 +1595,27 @@
 				67246D272BAC3CFE0088B0A3 /* ZZLabel.m in Sources */,
 				67246C2C2BAC23480088B0A3 /* FYLCreatePasswordViewController.m in Sources */,
 				6724689C2BAC1A6A0088B0A3 /* main.m in Sources */,
+				6725DA6F2BBAB7D000695EA1 /* MSNumberGroup.m in Sources */,
 				67850B652BAE824300A44336 /* FYLHistoricalRecordCell.m in Sources */,
+				6725DA7D2BBAC2F400695EA1 /* BaseView.m in Sources */,
 				67246C302BAC23480088B0A3 /* FYLVerificationCodeLoginViewController.m in Sources */,
 				67246C542BAC3B0F0088B0A3 /* LoadingStyleManager.m in Sources */,
+				6725DA792BBAC2C000695EA1 /* YLDIYEditBoxListView.m in Sources */,
 				67246C292BAC23480088B0A3 /* HWTFCodeBView.m in Sources */,
 				67246C2D2BAC23480088B0A3 /* FYLForgotPasswordViewController.m in Sources */,
 				67246D3A2BAC3F0B0088B0A3 /* NSMutableAttributedString+WY_Extension.m in Sources */,
+				6725DA6D2BBAB7D000695EA1 /* MSFunctionOperator.m in Sources */,
 				673041392BB426B200EF02AB /* Calculate+Health.m in Sources */,
 				67246C392BAC25ED0088B0A3 /* YLMyViewController.m in Sources */,
 				67246D152BAC3BBE0088B0A3 /* YLRequestCacheManagement.m in Sources */,
+				6725DA692BBAB7D000695EA1 /* NSError+MSExpression.m in Sources */,
 				6730413F2BB426D600EF02AB /* Calculate.m in Sources */,
 				67246C4E2BAC3B010088B0A3 /* SVProgressHUD+YLLoading.m in Sources */,
+				6725DA6A2BBAB7D000695EA1 /* MSExpressionHelper.m in Sources */,
 				67246C2B2BAC23480088B0A3 /* SMSCodeView.m in Sources */,
+				6725DA762BBABE7C00695EA1 /* YLShareDeviceOuterModel.m in Sources */,
 				67246D192BAC3BBE0088B0A3 /* YXHTTPRequst.m in Sources */,
+				6725DA672BBAB7D000695EA1 /* MSScaner.m in Sources */,
 				67246D222BAC3C760088B0A3 /* SHMEmojiMethod.m in Sources */,
 				67246C2A2BAC23480088B0A3 /* SMSCodeInputView.m in Sources */,
 				67261E8F2BB7ECB000433DD1 /* FYLHistoryModel.m in Sources */,
@@ -1479,8 +1624,13 @@
 				67850B742BAEB3D500A44336 /* FYLVIPKeyboardView.m in Sources */,
 				672468DB2BAC1B880088B0A3 /* YLTabbar_View.m in Sources */,
 				67246D2D2BAC3DAC0088B0A3 /* ToolManagement.m in Sources */,
+				6725DA702BBAB7D000695EA1 /* MSOperator.m in Sources */,
 				67246D182BAC3BBE0088B0A3 /* Reachability.m in Sources */,
+				6725DA682BBAB7D000695EA1 /* MSStack.m in Sources */,
+				6725DA662BBAB7D000695EA1 /* MSParser.m in Sources */,
+				6725DA6B2BBAB7D000695EA1 /* MSConstant.m in Sources */,
 				67246C352BAC25AC0088B0A3 /* YLHomeViewController.m in Sources */,
+				6725DA722BBAB7D000695EA1 /* MSValue.m in Sources */,
 				672468E02BAC1B880088B0A3 /* BaseViewController.m in Sources */,
 				672468DD2BAC1B880088B0A3 /* YLTabBarViewController.m in Sources */,
 				672468D92BAC1B880088B0A3 /* NavigationBarHandler.m in Sources */,

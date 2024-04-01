@@ -299,6 +299,7 @@ static UIImage *BackgroundImage = nil;
             //防止上拉加载 tableview会向上偏移
             _tableV.contentInsetAdjustmentBehavior= UIScrollViewContentInsetAdjustmentNever;
         }
+       
         _table_groupV.separatorStyle = UITableViewCellSeparatorStyleNone;
         _table_groupV.showsVerticalScrollIndicator = NO;
     }

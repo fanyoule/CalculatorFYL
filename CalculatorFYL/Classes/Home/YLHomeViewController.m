@@ -9,9 +9,10 @@
 #import "FYLHistoricalRecordCell.h"
 #import "FYLRegularKeyboardView.h"
 #import "FYLVIPKeyboardView.h"
-#import "advancedCalculator.h"
+#import "YLShareDeviceOuterModel.h"
 #import "FYLHistoryModel.h"
 #import "FYLHistoricalRecordNewCell.h"
+#import "YLDIYEditBoxListView.h"
 
 #define MaxCount 20
 @interface YLHomeViewController ()
@@ -27,11 +28,11 @@ FYLRegularKeyboardViewdelegate
 @property(nonatomic,strong)UIView * V_bg_bottom;
 @property(nonatomic,strong)FYLRegularKeyboardView * regularKey;
 @property(nonatomic,strong)FYLVIPKeyboardView * vipKey;
-
+@property(nonatomic,strong)NSMutableArray * outDataArr;
 ///方向 0向下 1向上
 @property(nonatomic,assign)NSInteger directionType;
-@property (strong, nonatomic) advancedCalculator *calculate;
-@property int flag;
+//@property (strong, nonatomic) advancedCalculator *calculate;
+//@property int flag;
 
 
 @end
@@ -49,7 +50,7 @@ FYLRegularKeyboardViewdelegate
     [super viewDidLoad];
     
     [self creatUI];
-    
+    [self readHistoryData];
 }
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
@@ -58,9 +59,14 @@ FYLRegularKeyboardViewdelegate
 }
 #pragma mark 读取历史记录
 -(void)readHistoryData{
+    [self.dataArray removeAllObjects];
     [self.dataArray addObjectsFromArray: [FYLHistoryModel obtainTheModelUserHistory:@"123"]];
-    [self.table_groupV reloadData];//UITableViewScrollPosition
-    [self.table_groupV scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.dataArray.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:NO];
+    [self handleDataIntoModels];
+    if (self.dataArray.count>0) {
+        YLShareDeviceOuterModel * outModel = self.outDataArr.lastObject;
+        [self.table_groupV scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:outModel.detailModelArr.count-1 inSection:self.outDataArr.count-1] atScrollPosition:UITableViewScrollPositionNone animated:NO];
+
+    }
 }
 -(void)playSoundEffect:(NSString *)name{
     NSString *audioFile=[[NSBundle mainBundle] pathForResource:name ofType:nil];
@@ -72,8 +78,6 @@ FYLRegularKeyboardViewdelegate
 #pragma mark -- 清空
 -(void)clearDate{
     self.L_contect.text=@"";
-    [self.calculator clearAll];
-    _flag=0;
     self.V_scroll.contentSize = CGSizeMake(kScreenWidth, 50);
     [self.V_scroll setContentOffset:CGPointMake(5, 0) animated:NO];
 }
@@ -118,7 +122,6 @@ FYLRegularKeyboardViewdelegate
         }
         if (!IS_VALID_STRING(self.L_contect.text)) {
             self.L_contect.text = @"0";
-            [self.calculator.input appendString:@"0"];
         }
         [self changeNumberGreateBtn:btn];
 
@@ -144,116 +147,83 @@ FYLRegularKeyboardViewdelegate
     
 }
 -(void)changeNumberGreateBtn:(UIButton *)btn{
-    if([self.L_contect.text length]!=0&&_flag==1){
-        NSString *ch=[[btn titleLabel] text];
-        if([ch isEqualToString:@"("]
-           ||[ch isEqualToString:@"×"]
-           ||[ch isEqualToString:@"÷"]
-           ||[ch isEqualToString:@"+"]
-           ||[ch isEqualToString:@"-"]
-           ||[ch isEqualToString:@")"]){
-            self.L_contect.text=@"暂不支持连续运算";
-            self.calculator.input=nil;
-            _flag=1;
-            return;
-        }else{
-            self.L_contect.text=nil;
-            self.calculator.input=nil;
-            _flag=0;
-        }
-    }
-    
-    //这种处理的原因是对x ÷进行实际运算的替换* /，但显示仍然是x +
-    if([[[btn titleLabel] text] isEqualToString:@"×"]){
-        [self.calculator.input appendString:@"*"];
-    }else if([[[btn titleLabel] text] isEqualToString:@"÷"]){
-        [self.calculator.input appendString:@"/"];
-    }
-    else{
-        [self.calculator.input appendString:[[btn titleLabel] text]];
-    }
-    
+   
     NSMutableString *originalString=[NSMutableString stringWithString:self.L_contect.text];
     [originalString appendString:[[btn titleLabel] text]];
     self.L_contect.text=originalString;
-    self.calculator.screen=originalString;
+    [self refreshWidthContent];
 }
 
 
 #pragma mark -- 等于
 -(void)actionEqual{
-    if([self.L_contect.text length]==0){
-        self.L_contect.text=@"Error input!";
+    if(!IS_VALID_STRING(self.L_contect.text)){
         return;
     }
     
-    NSMutableString *calculateResult=[NSMutableString stringWithString:self.calculator.input];
-    [calculateResult appendString:@"="];
-    self.L_contect.text=[self.calculator ExpressionCalculate:calculateResult];
-    NSMutableString *tempStr=[NSMutableString stringWithString:self.L_contect.text];;
-    self.calculator.screen = tempStr;//每次计算之后，将结果也保存在screen中
-    self.calculate.input = tempStr;
+    NSString* jsExpString = self.L_contect.text;
+    NSString* old_str = self.L_contect.text;
+    jsExpString = [jsExpString stringByReplacingOccurrencesOfString:@"×" withString:@"*"];
+    jsExpString = [jsExpString stringByReplacingOccurrencesOfString:@"÷" withString:@"/"];
+    jsExpString = [jsExpString stringByReplacingOccurrencesOfString:@"%" withString:@"*0.01"];
+    //表达式预测试
+    BOOL allRight = [MSExpressionHelper helperCheckExpression:jsExpString usingBlock:^(NSError *error, NSRange range) {
+        NSLog(@"%@",error);
+    }];
     
-    NSString * calculateResult_new = [calculateResult stringByReplacingOccurrencesOfString:@"*" withString:@"×"];
-    NSString * calculateResult_new2 = [calculateResult_new stringByReplacingOccurrencesOfString:@"/" withString:@"÷"];
-    NSString * currtime = [[ToolManagement sharedManager]currentTimeStr];
-    FYLHistoryModel * model = [[FYLHistoryModel alloc]init];
-    model.time = currtime;
-    model.text = [NSString stringWithFormat:@"%@%@",calculateResult_new2,tempStr];
-    model.userName = @"123";
-    BOOL success = [model saveToDB];
-    if (success) {
-        [self readHistoryData];
+    if(allRight){
+        
+        //计算表达式
+        NSDecimalNumber* computeResult = [MSParser parserComputeNumberExpression:jsExpString error:nil];
+        NSDecimal decimal = computeResult.decimalValue;
+        NSDecimal desDecimal;
+        NSDecimalRound(&desDecimal, &decimal , 3, NSRoundPlain);
+        NSLog(@"保留3位小数计算结果为：%@",[NSDecimalNumber decimalNumberWithDecimal:desDecimal]);
+        NSString * jieguo = [NSString stringWithFormat:@"%@",[NSDecimalNumber decimalNumberWithDecimal:desDecimal].stringValue];
+        self.L_contect.text= jieguo;
+        [self refreshWidthContent];
+        NSString * calculateResult_new2 = old_str;
+        NSString * currtime = [[PublicHelpers shareManager]getCurrentDate];
+        FYLHistoryModel * model = [[FYLHistoryModel alloc]init];
+        model.time = [[ToolManagement sharedManager]getTimeStrWithString:currtime];
+        model.text = [NSString stringWithFormat:@"%@=%@",calculateResult_new2,jieguo];
+        model.userName = @"123";
+        BOOL success = [model saveToDB];
+        if (success) {
+            [self readHistoryData];
+        }
+        
+        //表达式转JS表达式
+        NSString* jsExpression = [MSParser parserJSExpressionFromExpression:jsExpString error:nil];
+        NSLog(@"转JS表达式结果为：%@",jsExpression);
     }
+    
+
+    
+    
+    
     
     
 
+}
+-(void)refreshWidthContent{
+    CGFloat width_text = [self.L_contect.text jk_widthWithFont:PxM56Font constrainedToHeight:50];
+    if (width_text>kScreenWidth) {
+        self.L_contect.frame = CGRectMake(0, 15, width_text, 30);
+        self.V_scroll.contentSize = CGSizeMake(width_text+30, 50);
+        [self.V_scroll setContentOffset:CGPointMake(width_text-kScreenWidth, 0) animated:NO];
+    }
 }
 #pragma mark -- 末尾清除
 -(void)clearLastBit{
-    
-    NSInteger length=[self.calculator.input length];
+    NSInteger length=[self.L_contect.text length];
     if(length>0){
-        [self.calculator.input deleteCharactersInRange:NSMakeRange(length-1, 1)];
         //一定也要对输入框中的表达式进行处理，因为input里面的× ÷和显示的* /不同
         NSMutableString *delResultString=[NSMutableString stringWithString:self.L_contect.text];
         [delResultString deleteCharactersInRange:NSMakeRange(length-1, 1)];
-        NSLog(@"deleteResult=%@",self.calculator.input);
-        self.calculator.screen=delResultString;
         self.L_contect.text=delResultString;
     }
     
-}
--(void)actionTodo:(UIButton *)button type:(NSString *)type{
-    isActionTypeMove=NO;
-    if ([numberCurrent isEqualToString:@"0"]) {
-        return;
-    }
-    if (numberBefore&&![numberCurrent isEqualToString:@""]&&actionType){
-        if (isStatusEqual) {
-            numberCurrent=[self subString:result];
-            isStatusEqual=NO;
-        }else{
-            [self calculationType];
-            numberCurrent=[self subString:result];
-            [self setNumberDisplay:numberCurrent];
-            NSLog(@"NU%@",numberCurrent);
-        }
-    }
-    actionType=type;
-}
-#pragma mark -- 算法（+—*÷）
--(void)calculationType{
-    if ([actionType isEqualToString:@"+"]) {
-        result=[numberBefore doubleValue]+[numberCurrent doubleValue];
-    }else if([actionType isEqualToString:@"-"]){
-        result=[numberBefore doubleValue]-[numberCurrent doubleValue];
-    }else if([actionType isEqualToString:@"×"]){
-        result=[numberBefore doubleValue]*[numberCurrent doubleValue];
-    }else if([actionType isEqualToString:@"÷"]){
-        result=[numberBefore doubleValue]/[numberCurrent doubleValue];
-    }
-
 }
 
 
@@ -404,48 +374,121 @@ FYLRegularKeyboardViewdelegate
     
 }
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.dataArray.count;
+    if (self.outDataArr.count>section) {
+        YLShareDeviceOuterModel * model = self.outDataArr[section];
+        return model.detailModelArr.count;
+    }
+    return 0;
 }
-//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    return 50;
-//}
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 1;
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return self.outDataArr.count;
 }
+
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 40;
+    return 35;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    
+    return 0.1;
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView * V_root = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 40)];
-    V_root.backgroundColor = UIColor.yellowColor;
-    ZZLabel * L_title = [[ZZLabel alloc]initWithTextColor:UIColor.redColor Font:Px30Font TextString:@"2024.03.11"];
+    UIView * V_root = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 35)];
+    V_root.backgroundColor = UIColor.clearColor;
+    ZZLabel * L_title = [[ZZLabel alloc]initWithTextColor:[YLUserToolManager getAppMainColor] Font:[YLUserToolManager getAppTitleFont] TextString:@"Function settings"];
+    L_title.frame = CGRectMake(10, 0, kScreenWidth-16*2, 30);
     [V_root addSubview:L_title];
-    L_title.frame = V_root.frame;
-    [V_root addSubview:L_title];
+    if (self.outDataArr.count>section) {
+        YLShareDeviceOuterModel * model = self.outDataArr[section];
+        NSString * timeStr = [[ToolManagement sharedManager]timeWithYearMonthDayCountDown:model.Date];
+        L_title.text = timeStr;
+    }
+    return V_root;
+}
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    UIView * V_root = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 0.1)];
+    V_root.backgroundColor = UIColor.clearColor;
     return V_root;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     FYLHistoricalRecordNewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"FYLHistoricalRecordNewCell" forIndexPath:indexPath];
-    if (self.dataArray.count>indexPath.row) {
-        FYLHistoryModel * model = self.dataArray[indexPath.row];
-        if (IS_VALID_STRING(model.text)) {
-            cell.L_contect.text = model.text;
-        }else{
-            cell.L_contect.text = @"";
+    if (self.outDataArr.count>indexPath.section) {
+        YLShareDeviceOuterModel * outerModel = self.outDataArr[indexPath.section];
+        if (outerModel.detailModelArr.count>indexPath.row) {
+            FYLHistoryModel * listModel = outerModel.detailModelArr[indexPath.row];
+            cell.L_contect.text = listModel.text;
         }
     }
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    if (self.outDataArr.count>indexPath.section) {
+        YLShareDeviceOuterModel * outModel = self.outDataArr[indexPath.section];
+        if (outModel.detailModelArr.count>indexPath.row) {
+            FYLHistoryModel * model = outModel.detailModelArr[indexPath.row];
+            NSArray * arrTitle = @[NSLocalizedString(@"插入备注", nil),NSLocalizedString(@"编辑", nil),NSLocalizedString(@"复制该行", nil),NSLocalizedString(@"复制全部", nil),NSLocalizedString(@"删除该行", nil),NSLocalizedString(@"清空", nil),NSLocalizedString(@"取消", nil)];
+            YLDIYEditBoxListView * view= [[YLDIYEditBoxListView alloc]initWithFrame:CGRectZero withIndexListCount:self.dataArray.count withArrTitle:arrTitle];
+            view.didSelectedClickedBtnBlock = ^(NSInteger indexType) {
+                NSLog(@"动态图list中某个画板--%ld",indexType);
+              
+            };
+            [view show];
+            
+            
+        }
+    }
     
 }
 
+/**
+ * 把请求到的数据整理，然后放到数据源中
+ */
+- (void)handleDataIntoModels {
+    //如果请求到的数据为空，则直接返回
+    [self.outDataArr removeAllObjects];
 
+//    if (self.dataArray.count == 0) return;
+    
+    NSMutableArray *timeArr = [NSMutableArray array];
+    //首先把原数组中数据的日期取出来放入timeArr
+    [self.dataArray enumerateObjectsUsingBlock:^(FYLHistoryModel *model, NSUInteger idx, BOOL *stop) {
+        //这里只是根据日期判断，所以去掉时间字符串
+        if (IS_VALID_STRING(model.time)) {
+            [timeArr addObject:model.time];
+        }
+    }];
+    
+    //日期去重
+    NSSet *set = [NSSet setWithArray:timeArr];
+    NSArray *userArray = [set allObjects];
+    
+    //重新降序排序
+    NSSortDescriptor *sd1 = [NSSortDescriptor sortDescriptorWithKey:nil ascending:NO];//yes升序排列，no,降序排列
+    NSArray *descendingDateArr = [userArray sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sd1, nil]];
+    
+    //此时得到的descendingDateArr就是按照时间降序排好的日期数组
+    
+    //根据日期数组的个数，生成对应数量的外层model，外层model的detailModelArr置为空数组，放置子model（每一行显示的数据model）
+    [descendingDateArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        YLShareDeviceOuterModel *om = [[YLShareDeviceOuterModel alloc]init];
+        NSMutableArray *arr = [NSMutableArray array];
+        om.detailModelArr = arr;
+        [self.outDataArr addObject:om];
+    }];
+    
+    //遍历未经处理的数组，取其中每个数据的日期，看与降序排列的日期数组相比，若日期匹配就把这个数据装到对应的外层model中
+    [self.dataArray enumerateObjectsUsingBlock:^(FYLHistoryModel *model, NSUInteger idx, BOOL * _Nonnull stop) {
+        for (NSString *str in descendingDateArr) {
+            if([str isEqualToString:model.time]) {
+                YLShareDeviceOuterModel *om = [self.outDataArr objectAtIndex:[descendingDateArr indexOfObject:str]];
+                om.Date = str;
+                [om.detailModelArr addObject:model];
+            }
+        }
+    }];
+    
+    [self.table_groupV reloadData];
+}
 
 
 -(void)creatUI{
@@ -522,7 +565,9 @@ FYLRegularKeyboardViewdelegate
     
     [self.table_groupV registerClass:[FYLHistoricalRecordNewCell class] forCellReuseIdentifier:@"FYLHistoricalRecordNewCell"];
     self.table_groupV.backgroundColor = UIColor.clearColor;
+    self.table_groupV.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAlways;
     self.table_groupV.rowHeight = UITableViewAutomaticDimension;
+    self.table_groupV.estimatedRowHeight = 30;
     [self.view addSubview:self.table_groupV];
     self.table_groupV.delegate = self;
     self.table_groupV.dataSource = self;
@@ -552,11 +597,11 @@ FYLRegularKeyboardViewdelegate
     return _vipKey;
 }
 
--(advancedCalculator *)calculator{
-    if(!_calculate){
-        _calculate=[[advancedCalculator alloc]init];
+-(NSMutableArray *)outDataArr{
+    if (!_outDataArr) {
+        _outDataArr = [NSMutableArray array];
     }
-    return _calculate;
+    return _outDataArr;
 }
 /*
 #pragma mark - Navigation
