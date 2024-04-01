@@ -10,6 +10,8 @@
 #import "FYLRegularKeyboardView.h"
 #import "FYLVIPKeyboardView.h"
 #import "advancedCalculator.h"
+#import "FYLHistoryModel.h"
+#import "FYLHistoricalRecordNewCell.h"
 
 #define MaxCount 20
 @interface YLHomeViewController ()
@@ -30,6 +32,8 @@ FYLRegularKeyboardViewdelegate
 @property(nonatomic,assign)NSInteger directionType;
 @property (strong, nonatomic) advancedCalculator *calculate;
 @property int flag;
+
+
 @end
 
 @implementation YLHomeViewController
@@ -51,6 +55,12 @@ FYLRegularKeyboardViewdelegate
     [super viewDidLayoutSubviews];
     self.view.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
 //    NSLog(@"%@---%@",NSStringFromCGRect(self.view.frame) ,NSStringFromCGRect(self.view.frame));
+}
+#pragma mark 读取历史记录
+-(void)readHistoryData{
+    [self.dataArray addObjectsFromArray: [FYLHistoryModel obtainTheModelUserHistory:@"123"]];
+    [self.table_groupV reloadData];//UITableViewScrollPosition
+    [self.table_groupV scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.dataArray.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:NO];
 }
 -(void)playSoundEffect:(NSString *)name{
     NSString *audioFile=[[NSBundle mainBundle] pathForResource:name ofType:nil];
@@ -77,31 +87,31 @@ FYLRegularKeyboardViewdelegate
         [self changeNumberGreateBtn:btn];
     }else if ([btn.titleLabel.text isEqualToString:@"1"]){
         [self changeNumberGreateBtn:btn];
-//        [self numberGreate:1];
+
     }else if ([btn.titleLabel.text isEqualToString:@"2"]){
         [self changeNumberGreateBtn:btn];
-//        [self numberGreate:2];
+
     }else if ([btn.titleLabel.text isEqualToString:@"3"]){
         [self changeNumberGreateBtn:btn];
-//        [self numberGreate:3];
+
     }else if ([btn.titleLabel.text isEqualToString:@"4"]){
         [self changeNumberGreateBtn:btn];
-//        [self numberGreate:4];
+
     }else if ([btn.titleLabel.text isEqualToString:@"5"]){
         [self changeNumberGreateBtn:btn];
-//        [self numberGreate:5];
+
     }else if ([btn.titleLabel.text isEqualToString:@"6"]){
         [self changeNumberGreateBtn:btn];
-//        [self numberGreate:6];
+
     }else if ([btn.titleLabel.text isEqualToString:@"7"]){
         [self changeNumberGreateBtn:btn];
-//        [self numberGreate:7];
+
     }else if ([btn.titleLabel.text isEqualToString:@"8"]){
         [self changeNumberGreateBtn:btn];
-//        [self numberGreate:8];
+
     }else if ([btn.titleLabel.text isEqualToString:@"9"]){
         [self changeNumberGreateBtn:btn];
-//        [self numberGreate:9];
+
     }else if ([btn.titleLabel.text isEqualToString:@"."]){
         if ([self stringHasPoint:self.L_contect.text]) {
             return;
@@ -111,23 +121,22 @@ FYLRegularKeyboardViewdelegate
             [self.calculator.input appendString:@"0"];
         }
         [self changeNumberGreateBtn:btn];
-//        [self actionPoint];
+
     }else if ([btn.titleLabel.text isEqualToString:@"C"]){
         [self clearDate];
     }else if ([btn.titleLabel.text isEqualToString:@"÷"]){
         [self changeNumberGreateBtn:btn];
-//        [self actionTodo:btn type:@"÷"];
+
     }else if ([btn.titleLabel.text isEqualToString:@"×"]){
         [self changeNumberGreateBtn:btn];
-//        [self actionTodo:btn type:@"×"];
+
     }else if ([btn.titleLabel.text isEqualToString:@"←"]){
         [self clearLastBit];
     }else if ([btn.titleLabel.text isEqualToString:@"-"]){
         [self changeNumberGreateBtn:btn];
-//        [self actionTodo:btn type:@"-"];
     }else if ([btn.titleLabel.text isEqualToString:@"+"]){
         [self changeNumberGreateBtn:btn];
-//        [self actionTodo:btn type:@"+"];
+
     }else if ([btn.titleLabel.text isEqualToString:@"="]){
         [self actionEqual];
     }
@@ -137,7 +146,8 @@ FYLRegularKeyboardViewdelegate
 -(void)changeNumberGreateBtn:(UIButton *)btn{
     if([self.L_contect.text length]!=0&&_flag==1){
         NSString *ch=[[btn titleLabel] text];
-        if([ch isEqualToString:@"("]||[ch isEqualToString:@"×"]
+        if([ch isEqualToString:@"("]
+           ||[ch isEqualToString:@"×"]
            ||[ch isEqualToString:@"÷"]
            ||[ch isEqualToString:@"+"]
            ||[ch isEqualToString:@"-"]
@@ -158,7 +168,8 @@ FYLRegularKeyboardViewdelegate
         [self.calculator.input appendString:@"*"];
     }else if([[[btn titleLabel] text] isEqualToString:@"÷"]){
         [self.calculator.input appendString:@"/"];
-    }else{
+    }
+    else{
         [self.calculator.input appendString:[[btn titleLabel] text]];
     }
     
@@ -182,20 +193,21 @@ FYLRegularKeyboardViewdelegate
     NSMutableString *tempStr=[NSMutableString stringWithString:self.L_contect.text];;
     self.calculator.screen = tempStr;//每次计算之后，将结果也保存在screen中
     self.calculate.input = tempStr;
-//    if (!numberBefore) {
-//        return;
-//    }
-//    if (!isStatusEqual) {
-//        [self calculationType];
-//    }else{
-//        numberBefore=[self subString:result];
-//        [self calculationType];
-//    }
-//    NSString *resultStr=[self subString:result];
-//    [self setNumberDisplay:resultStr];
-//    [savehistoryData historyAdd: [self time] beforeNum:[self setNumber:numberBefore] operationType:actionType CurrentNub:[self setNumber:numberCurrent] result:[self setNumber:resultStr]];
-//    [self readHistoryData];
-//    isStatusEqual=YES;
+    
+    NSString * calculateResult_new = [calculateResult stringByReplacingOccurrencesOfString:@"*" withString:@"×"];
+    NSString * calculateResult_new2 = [calculateResult_new stringByReplacingOccurrencesOfString:@"/" withString:@"÷"];
+    NSString * currtime = [[ToolManagement sharedManager]currentTimeStr];
+    FYLHistoryModel * model = [[FYLHistoryModel alloc]init];
+    model.time = currtime;
+    model.text = [NSString stringWithFormat:@"%@%@",calculateResult_new2,tempStr];
+    model.userName = @"123";
+    BOOL success = [model saveToDB];
+    if (success) {
+        [self readHistoryData];
+    }
+    
+    
+
 }
 #pragma mark -- 末尾清除
 -(void)clearLastBit{
@@ -393,14 +405,14 @@ FYLRegularKeyboardViewdelegate
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return self.dataArray.count;
 }
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
-}
+//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    return 50;
+//}
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 1;
 }
@@ -417,7 +429,15 @@ FYLRegularKeyboardViewdelegate
     return V_root;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    FYLHistoricalRecordCell * cell = [tableView dequeueReusableCellWithIdentifier:@"FYLHistoricalRecordCell" forIndexPath:indexPath];
+    FYLHistoricalRecordNewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"FYLHistoricalRecordNewCell" forIndexPath:indexPath];
+    if (self.dataArray.count>indexPath.row) {
+        FYLHistoryModel * model = self.dataArray[indexPath.row];
+        if (IS_VALID_STRING(model.text)) {
+            cell.L_contect.text = model.text;
+        }else{
+            cell.L_contect.text = @"";
+        }
+    }
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -500,8 +520,9 @@ FYLRegularKeyboardViewdelegate
         make.left.bottom.right.mas_equalTo(V_contect);
     }];
     
-    
+    [self.table_groupV registerClass:[FYLHistoricalRecordNewCell class] forCellReuseIdentifier:@"FYLHistoricalRecordNewCell"];
     self.table_groupV.backgroundColor = UIColor.clearColor;
+    self.table_groupV.rowHeight = UITableViewAutomaticDimension;
     [self.view addSubview:self.table_groupV];
     self.table_groupV.delegate = self;
     self.table_groupV.dataSource = self;
@@ -509,6 +530,7 @@ FYLRegularKeyboardViewdelegate
         make.top.mas_equalTo(self.navigationBar).mas_offset(20);
         make.left.and.right.mas_equalTo(self.view);
         make.bottom.mas_equalTo(V_contect.mas_top);
+        
     }];
     
     [self.table_groupV registerNib:[UINib nibWithNibName:@"FYLHistoricalRecordCell" bundle:nil] forCellReuseIdentifier:@"FYLHistoricalRecordCell"];

@@ -190,6 +190,8 @@
 		67246D3C2BAC3F0B0088B0A3 /* UILabel+WY_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246D352BAC3F0B0088B0A3 /* UILabel+WY_Extension.m */; };
 		67246D3D2BAC3F0B0088B0A3 /* UILabel+WY_RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246D372BAC3F0B0088B0A3 /* UILabel+WY_RichText.m */; };
 		67246D472BAC3F480088B0A3 /* YLWKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246D432BAC3F480088B0A3 /* YLWKViewController.m */; };
+		67261E8F2BB7ECB000433DD1 /* FYLHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67261E8E2BB7ECB000433DD1 /* FYLHistoryModel.m */; };
+		67261E922BB8181F00433DD1 /* FYLHistoricalRecordNewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67261E912BB8181F00433DD1 /* FYLHistoricalRecordNewCell.m */; };
 		673041392BB426B200EF02AB /* Calculate+Health.m in Sources */ = {isa = PBXBuildFile; fileRef = 673041372BB426B100EF02AB /* Calculate+Health.m */; };
 		6730413E2BB426D600EF02AB /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 6730413A2BB426D600EF02AB /* Stack.m */; };
 		6730413F2BB426D600EF02AB /* Calculate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6730413B2BB426D600EF02AB /* Calculate.m */; };
@@ -463,6 +465,10 @@
 		67246D372BAC3F0B0088B0A3 /* UILabel+WY_RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+WY_RichText.m"; sourceTree = "<group>"; };
 		67246D422BAC3F480088B0A3 /* YLWKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLWKViewController.h; sourceTree = "<group>"; };
 		67246D432BAC3F480088B0A3 /* YLWKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLWKViewController.m; sourceTree = "<group>"; };
+		67261E8D2BB7ECB000433DD1 /* FYLHistoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYLHistoryModel.h; sourceTree = "<group>"; };
+		67261E8E2BB7ECB000433DD1 /* FYLHistoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYLHistoryModel.m; sourceTree = "<group>"; };
+		67261E902BB8181F00433DD1 /* FYLHistoricalRecordNewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLHistoricalRecordNewCell.h; sourceTree = "<group>"; };
+		67261E912BB8181F00433DD1 /* FYLHistoricalRecordNewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLHistoricalRecordNewCell.m; sourceTree = "<group>"; };
 		673041372BB426B100EF02AB /* Calculate+Health.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Calculate+Health.m"; sourceTree = "<group>"; };
 		673041382BB426B200EF02AB /* Calculate+Health.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Calculate+Health.h"; sourceTree = "<group>"; };
 		6730413A2BB426D600EF02AB /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
@@ -1064,6 +1070,8 @@
 		673041362BB426A700EF02AB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				67261E8D2BB7ECB000433DD1 /* FYLHistoryModel.h */,
+				67261E8E2BB7ECB000433DD1 /* FYLHistoryModel.m */,
 				673041402BB4274300EF02AB /* advancedCalculator.h */,
 				673041412BB4274300EF02AB /* advancedCalculator.m */,
 				6730413D2BB426D600EF02AB /* Calculate.h */,
@@ -1082,6 +1090,8 @@
 				67850B612BAE824300A44336 /* FYLHistoricalRecordCell.h */,
 				67850B622BAE824300A44336 /* FYLHistoricalRecordCell.m */,
 				67850B632BAE824300A44336 /* FYLHistoricalRecordCell.xib */,
+				67261E902BB8181F00433DD1 /* FYLHistoricalRecordNewCell.h */,
+				67261E912BB8181F00433DD1 /* FYLHistoricalRecordNewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1439,6 +1449,7 @@
 				67850B6D2BAEA5ED00A44336 /* FYLRegularKeyboardView.m in Sources */,
 				67246D1D2BAC3C1F0088B0A3 /* CommonManagement.m in Sources */,
 				673041422BB4274300EF02AB /* advancedCalculator.m in Sources */,
+				67261E922BB8181F00433DD1 /* FYLHistoricalRecordNewCell.m in Sources */,
 				67246D3D2BAC3F0B0088B0A3 /* UILabel+WY_RichText.m in Sources */,
 				67246C4A2BAC396C0088B0A3 /* YLMySetViewController.m in Sources */,
 				672468DA2BAC1B880088B0A3 /* YLNavigationViewController.m in Sources */,
@@ -1462,6 +1473,7 @@
 				67246D192BAC3BBE0088B0A3 /* YXHTTPRequst.m in Sources */,
 				67246D222BAC3C760088B0A3 /* SHMEmojiMethod.m in Sources */,
 				67246C2A2BAC23480088B0A3 /* SMSCodeInputView.m in Sources */,
+				67261E8F2BB7ECB000433DD1 /* FYLHistoryModel.m in Sources */,
 				67246C2E2BAC23480088B0A3 /* FYLLoginBaseViewController.m in Sources */,
 				67246D3B2BAC3F0B0088B0A3 /* NSMutableParagraphStyle+WY_Extension.m in Sources */,
 				67850B742BAEB3D500A44336 /* FYLVIPKeyboardView.m in Sources */,
