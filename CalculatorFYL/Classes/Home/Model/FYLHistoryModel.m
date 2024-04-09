@@ -40,7 +40,8 @@
     one.text = self.text;
     one.userName = self.userName;
     one.resultStr = self.resultStr;
-    
+    one.state = self.state;
+    one.textHeight = self.textHeight;
     return one;
 }
 - (BOOL)isEqual:(id)object {
@@ -86,6 +87,8 @@
             m.time = device.time;
             m.text = device.text;
             m.resultStr = device.resultStr;
+            m.state = device.state;
+            m.textHeight = device.textHeight;
             [FYLHistoryModel updateToDB:m where:querySql];
         }
     }
@@ -117,7 +120,7 @@
     whereSQL = [NSString stringWithFormat:@"userName = '%@'",model.userName];
     
     if(!IS_VALID_STRING(whereSQL)){return NO;}
-    BOOL isSuccess =[[FYLHistoryModel getUsingLKDBHelper] updateToDBWithTableName:@"FYLHistoryModel" set:[NSString stringWithFormat:@"text = '%@',time = '%@',userName = '%@',resultStr = '%@'",model.text,model.time,model.userName,model.resultStr] where:whereSQL];
+    BOOL isSuccess =[[FYLHistoryModel getUsingLKDBHelper] updateToDBWithTableName:@"FYLHistoryModel" set:[NSString stringWithFormat:@"text = '%@',time = '%@',userName = '%@',resultStr = '%@',state = %ld,textHeight = %ld",model.text,model.time,model.userName,model.resultStr,model.state,model.textHeight] where:whereSQL];
     
     return isSuccess;
     
@@ -129,8 +132,6 @@
 {
     return [model deleteToDB];
 }
-
-
 // 获取所有设备的UUID
 +(NSArray *)obtainTheUUIDOfAllStoredDevices{
     return [FYLHistoryModel searchColumn:@"uuid" where:@"" orderBy:@"" offset:0 count:0];
@@ -157,7 +158,7 @@
 }
 
 +(BOOL)removeUserWifiDevice{
-   BOOL isSeccess = [FYLHistoryModel deleteWithWhere:@{@"userName":IS_VALID_STRING(ZJ_UserLoginInfomation.getUsername)?ZJ_UserLoginInfomation.getUsername:@""}];
+   BOOL isSeccess = [FYLHistoryModel deleteWithWhere:@{@"userName":IS_VALID_STRING(ZJ_UserLoginInfomation.getUsername)?ZJ_UserLoginInfomation.getUsername:@"123"}];
     return isSeccess;
 }
 +(NSArray *)searchLocalMyWifiDeviceModel{

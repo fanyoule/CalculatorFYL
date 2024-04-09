@@ -48,13 +48,6 @@ typedef void(^httpResponseFailure)(NSURLSessionDataTask *task, id cacheData, NSE
 
 -(void)handleHttpHeader:(NSString *)key value:(id)value;
 
-- (void)networking:(NSString *)urlString
-        parameters:(NSDictionary *)parame
-            method:(YXRequstMethodType)TYPE
-            showErrorView:(BOOL)isShowView
-           success:(httpResponseSuccess)success
-          failsure:(httpResponseFailure)failsure;
-
 - (void)yl_networking:(NSString *)urlString
         parameters:(NSDictionary *)parame
             method:(YXRequstMethodType)TYPE

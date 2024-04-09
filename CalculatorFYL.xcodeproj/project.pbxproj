@@ -71,113 +71,12 @@
 		6724693D2BAC1BC80088B0A3 /* www6*4.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 6724690D2BAC1BC80088B0A3 /* www6*4.bmp */; };
 		6724693E2BAC1BC80088B0A3 /* www6*6_red.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 6724690E2BAC1BC80088B0A3 /* www6*6_red.bmp */; };
 		6724693F2BAC1BC80088B0A3 /* www6*6.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 6724690F2BAC1BC80088B0A3 /* www6*6.bmp */; };
-		67246C282BAC23480088B0A3 /* FYLUserProtocolTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246C132BAC23470088B0A3 /* FYLUserProtocolTipView.m */; };
-		67246C292BAC23480088B0A3 /* HWTFCodeBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246C152BAC23470088B0A3 /* HWTFCodeBView.m */; };
-		67246C2A2BAC23480088B0A3 /* SMSCodeInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246C172BAC23470088B0A3 /* SMSCodeInputView.m */; };
-		67246C2B2BAC23480088B0A3 /* SMSCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246C192BAC23470088B0A3 /* SMSCodeView.m */; };
-		67246C2C2BAC23480088B0A3 /* FYLCreatePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246C1C2BAC23470088B0A3 /* FYLCreatePasswordViewController.m */; };
-		67246C2D2BAC23480088B0A3 /* FYLForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246C1E2BAC23470088B0A3 /* FYLForgotPasswordViewController.m */; };
-		67246C2E2BAC23480088B0A3 /* FYLLoginBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246C202BAC23470088B0A3 /* FYLLoginBaseViewController.m */; };
-		67246C2F2BAC23480088B0A3 /* FYLPasswordLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246C222BAC23470088B0A3 /* FYLPasswordLoginViewController.m */; };
-		67246C302BAC23480088B0A3 /* FYLVerificationCodeLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246C242BAC23470088B0A3 /* FYLVerificationCodeLoginViewController.m */; };
-		67246C312BAC23480088B0A3 /* YLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246C262BAC23470088B0A3 /* YLLoginViewController.m */; };
 		67246C352BAC25AC0088B0A3 /* YLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246C342BAC25AC0088B0A3 /* YLHomeViewController.m */; };
 		67246C392BAC25ED0088B0A3 /* YLMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246C382BAC25ED0088B0A3 /* YLMyViewController.m */; };
 		67246C4A2BAC396C0088B0A3 /* YLMySetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246C492BAC396C0088B0A3 /* YLMySetViewController.m */; };
-		67246C4E2BAC3B010088B0A3 /* SVProgressHUD+YLLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246C4C2BAC3B010088B0A3 /* SVProgressHUD+YLLoading.m */; };
 		67246C542BAC3B0F0088B0A3 /* LoadingStyleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246C502BAC3B0F0088B0A3 /* LoadingStyleManager.m */; };
 		67246C552BAC3B0F0088B0A3 /* MBProgressHUD+XBLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246C522BAC3B0F0088B0A3 /* MBProgressHUD+XBLoading.m */; };
 		67246C592BAC3B480088B0A3 /* PublicHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246C572BAC3B480088B0A3 /* PublicHelpers.m */; };
-		67246CBF2BAC3BBE0088B0A3 /* DreamColorDIY.json in Resources */ = {isa = PBXBuildFile; fileRef = 67246C5A2BAC3BBE0088B0A3 /* DreamColorDIY.json */; };
-		67246CC02BAC3BBE0088B0A3 /* DreamColorModelClass.json in Resources */ = {isa = PBXBuildFile; fileRef = 67246C5B2BAC3BBE0088B0A3 /* DreamColorModelClass.json */; };
-		67246CC12BAC3BBE0088B0A3 /* DreamColorModelClassPage.json in Resources */ = {isa = PBXBuildFile; fileRef = 67246C5C2BAC3BBE0088B0A3 /* DreamColorModelClassPage.json */; };
-		67246CC22BAC3BBE0088B0A3 /* DreamColorModelPage.json in Resources */ = {isa = PBXBuildFile; fileRef = 67246C5D2BAC3BBE0088B0A3 /* DreamColorModelPage.json */; };
-		67246CC32BAC3BBE0088B0A3 /* DreamColorRhythmDevice.json in Resources */ = {isa = PBXBuildFile; fileRef = 67246C5E2BAC3BBE0088B0A3 /* DreamColorRhythmDevice.json */; };
-		67246CC42BAC3BBE0088B0A3 /* DreamColorRhythmPhoneAndDevice.json in Resources */ = {isa = PBXBuildFile; fileRef = 67246C5F2BAC3BBE0088B0A3 /* DreamColorRhythmPhoneAndDevice.json */; };
-		67246CC52BAC3BBE0088B0A3 /* 0aed2994-a71c-4efa-b47d-3c42046350c5-黄色-反向跑动.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C612BAC3BBE0088B0A3 /* 0aed2994-a71c-4efa-b47d-3c42046350c5-黄色-反向跑动.gif */; };
-		67246CC62BAC3BBE0088B0A3 /* 0b23e3d2-4ead-409e-82e2-ee9ca2a28a82-BS.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C622BAC3BBE0088B0A3 /* 0b23e3d2-4ead-409e-82e2-ee9ca2a28a82-BS.gif */; };
-		67246CC72BAC3BBE0088B0A3 /* 0e30fdec-da67-40a1-9c75-df4114707c0d-未标题-1_0001_星闪.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246C632BAC3BBE0088B0A3 /* 0e30fdec-da67-40a1-9c75-df4114707c0d-未标题-1_0001_星闪.png */; };
-		67246CC82BAC3BBE0088B0A3 /* 1bea890b-1fcf-47eb-aeb1-7e327eb5c1f3-雪中小屋.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C642BAC3BBE0088B0A3 /* 1bea890b-1fcf-47eb-aeb1-7e327eb5c1f3-雪中小屋.gif */; };
-		67246CC92BAC3BBE0088B0A3 /* 1d99726d-44d5-4674-a5db-0e7bf58c23f4-未标题-1_0029_七色追光.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246C652BAC3BBE0088B0A3 /* 1d99726d-44d5-4674-a5db-0e7bf58c23f4-未标题-1_0029_七色追光.png */; };
-		67246CCA2BAC3BBE0088B0A3 /* 1dc7733c-1d28-4daa-8841-313497a71685-ZPlscSNQuWy84YhSze2D.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C662BAC3BBE0088B0A3 /* 1dc7733c-1d28-4daa-8841-313497a71685-ZPlscSNQuWy84YhSze2D.gif */; };
-		67246CCB2BAC3BBE0088B0A3 /* 1dec3135-a887-4416-aff4-9a35ba2eb0b8-爱与梦幻.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C672BAC3BBE0088B0A3 /* 1dec3135-a887-4416-aff4-9a35ba2eb0b8-爱与梦幻.gif */; };
-		67246CCC2BAC3BBE0088B0A3 /* 1eaf05fd-c9cd-4030-95b7-52b9047167d6-6HE7WjbVihdbmlcK5Y8r.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C682BAC3BBE0088B0A3 /* 1eaf05fd-c9cd-4030-95b7-52b9047167d6-6HE7WjbVihdbmlcK5Y8r.gif */; };
-		67246CCD2BAC3BBE0088B0A3 /* 2c34c312-27b2-478f-8e43-134260fd9fbe-追光.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C692BAC3BBE0088B0A3 /* 2c34c312-27b2-478f-8e43-134260fd9fbe-追光.gif */; };
-		67246CCE2BAC3BBE0088B0A3 /* 3ccfd562-1978-4be1-8092-f0e1ee031c0a-未标题-1_0017_黄色流星.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246C6A2BAC3BBE0088B0A3 /* 3ccfd562-1978-4be1-8092-f0e1ee031c0a-未标题-1_0017_黄色流星.png */; };
-		67246CCF2BAC3BBE0088B0A3 /* 5c1ef1f3-82df-4c7a-97ef-a8709e1820c8-未标题-1_0036_七色流水.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246C6B2BAC3BBE0088B0A3 /* 5c1ef1f3-82df-4c7a-97ef-a8709e1820c8-未标题-1_0036_七色流水.png */; };
-		67246CD02BAC3BBE0088B0A3 /* 5f6cd30a-96f5-4156-90dc-297930d1fe79-流星雨.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C6C2BAC3BBE0088B0A3 /* 5f6cd30a-96f5-4156-90dc-297930d1fe79-流星雨.gif */; };
-		67246CD12BAC3BBE0088B0A3 /* 6d9ac503-63cf-41c9-9e89-7665465e9575-蓝色反向跑动.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C6D2BAC3BBE0088B0A3 /* 6d9ac503-63cf-41c9-9e89-7665465e9575-蓝色反向跑动.gif */; };
-		67246CD22BAC3BBE0088B0A3 /* 06e265e5-7cc2-4a74-9d69-92b3cc33d7fe-堆叠.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C6E2BAC3BBE0088B0A3 /* 06e265e5-7cc2-4a74-9d69-92b3cc33d7fe-堆叠.gif */; };
-		67246CD32BAC3BBE0088B0A3 /* 6fff4d56-3d7b-4ac9-b6f6-ff5e3f44445b-未标题-1_0030_三色追光.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246C6F2BAC3BBE0088B0A3 /* 6fff4d56-3d7b-4ac9-b6f6-ff5e3f44445b-未标题-1_0030_三色追光.png */; };
-		67246CD42BAC3BBE0088B0A3 /* 07ae00a9-f652-4173-92f4-e8e0199a5931-8c6bbd88-6f61-43c7-a9b3-3b538296bcfe.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246C702BAC3BBE0088B0A3 /* 07ae00a9-f652-4173-92f4-e8e0199a5931-8c6bbd88-6f61-43c7-a9b3-3b538296bcfe.png */; };
-		67246CD52BAC3BBE0088B0A3 /* 8bc13b2a-55cd-46a6-9e76-0a258ed06602-反弹.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C712BAC3BBE0088B0A3 /* 8bc13b2a-55cd-46a6-9e76-0a258ed06602-反弹.gif */; };
-		67246CD62BAC3BBE0088B0A3 /* 8c68c4c2-e995-4227-9481-59c01d481c08-流星.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C722BAC3BBE0088B0A3 /* 8c68c4c2-e995-4227-9481-59c01d481c08-流星.gif */; };
-		67246CD72BAC3BBE0088B0A3 /* 9f6600cd-018a-4d22-bd4a-58737a2c572f-lQHPKdfJecNPesvMtM0C7rC5sZqBATe5RgVg1dXjSf0A_750_180.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C732BAC3BBE0088B0A3 /* 9f6600cd-018a-4d22-bd4a-58737a2c572f-lQHPKdfJecNPesvMtM0C7rC5sZqBATe5RgVg1dXjSf0A_750_180.gif */; };
-		67246CD82BAC3BBE0088B0A3 /* 12d1d7d6-2e45-4909-99c3-485b7d9155cf-未标题-1_0028_多彩伸缩.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246C742BAC3BBE0088B0A3 /* 12d1d7d6-2e45-4909-99c3-485b7d9155cf-未标题-1_0028_多彩伸缩.png */; };
-		67246CD92BAC3BBE0088B0A3 /* 28a1707d-f14f-4ff1-93c8-cbc2a6216102-闪现.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C752BAC3BBE0088B0A3 /* 28a1707d-f14f-4ff1-93c8-cbc2a6216102-闪现.gif */; };
-		67246CDA2BAC3BBE0088B0A3 /* 35ef4189-00b7-4d77-a518-f5d4872151cf-未标题-1_0025_蓝色伸缩.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246C762BAC3BBE0088B0A3 /* 35ef4189-00b7-4d77-a518-f5d4872151cf-未标题-1_0025_蓝色伸缩.png */; };
-		67246CDB2BAC3BBE0088B0A3 /* 48cddee3-751a-44ca-9a7a-c8c7b1b1637b-未标题-1_0013_三色流星雨.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246C772BAC3BBE0088B0A3 /* 48cddee3-751a-44ca-9a7a-c8c7b1b1637b-未标题-1_0013_三色流星雨.png */; };
-		67246CDC2BAC3BBE0088B0A3 /* 61f28049-ca85-425d-b52a-2b8a62786ff2-派对.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C782BAC3BBE0088B0A3 /* 61f28049-ca85-425d-b52a-2b8a62786ff2-派对.gif */; };
-		67246CDD2BAC3BBE0088B0A3 /* 71bd35f0-2ab1-4779-8499-ffc735c9ac66-未标题-1_0020_红色流星.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246C792BAC3BBE0088B0A3 /* 71bd35f0-2ab1-4779-8499-ffc735c9ac66-未标题-1_0020_红色流星.png */; };
-		67246CDE2BAC3BBE0088B0A3 /* 75e20132-c920-4f71-babc-8c0bb85a5699-派对.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C7A2BAC3BBE0088B0A3 /* 75e20132-c920-4f71-babc-8c0bb85a5699-派对.gif */; };
-		67246CDF2BAC3BBE0088B0A3 /* 91cf60e4-990c-4545-b8c2-ebbe360b6cb0-未标题-1_0002_反弹.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246C7B2BAC3BBE0088B0A3 /* 91cf60e4-990c-4545-b8c2-ebbe360b6cb0-未标题-1_0002_反弹.png */; };
-		67246CE02BAC3BBE0088B0A3 /* 98bedc1e-3ef7-4f5c-bed0-9dbd207a5b50-CSFX.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C7C2BAC3BBE0088B0A3 /* 98bedc1e-3ef7-4f5c-bed0-9dbd207a5b50-CSFX.gif */; };
-		67246CE12BAC3BBE0088B0A3 /* 98fbf4af-3698-4a3d-913a-8c9925a3f525-工作.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C7D2BAC3BBE0088B0A3 /* 98fbf4af-3698-4a3d-913a-8c9925a3f525-工作.gif */; };
-		67246CE22BAC3BBE0088B0A3 /* 108f576b-551c-4c44-a6b8-ca5a637f48f9-未标题-1_0023_青色伸缩.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246C7E2BAC3BBE0088B0A3 /* 108f576b-551c-4c44-a6b8-ca5a637f48f9-未标题-1_0023_青色伸缩.png */; };
-		67246CE32BAC3BBE0088B0A3 /* 173d648d-b9bc-4ecb-93e5-b60cd6ce5604-红色-正向跑动.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C7F2BAC3BBE0088B0A3 /* 173d648d-b9bc-4ecb-93e5-b60cd6ce5604-红色-正向跑动.gif */; };
-		67246CE42BAC3BBE0088B0A3 /* 530da05d-8975-4af9-941f-272490050484-JEuxHscZWwQnihrQSdy7.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C802BAC3BBE0088B0A3 /* 530da05d-8975-4af9-941f-272490050484-JEuxHscZWwQnihrQSdy7.gif */; };
-		67246CE52BAC3BBE0088B0A3 /* 559a8658-f911-4699-b098-db55546d3c0f-y7duh5Jhu6VR2a6fOS5p.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C812BAC3BBE0088B0A3 /* 559a8658-f911-4699-b098-db55546d3c0f-y7duh5Jhu6VR2a6fOS5p.gif */; };
-		67246CE62BAC3BBE0088B0A3 /* 568d2c52-710f-44f1-be5e-b61ab045c114-霓虹世界.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C822BAC3BBE0088B0A3 /* 568d2c52-710f-44f1-be5e-b61ab045c114-霓虹世界.gif */; };
-		67246CE72BAC3BBE0088B0A3 /* 770d8b37-3f16-435d-9465-7187dc144191-未标题-1_0014_白色流星.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246C832BAC3BBE0088B0A3 /* 770d8b37-3f16-435d-9465-7187dc144191-未标题-1_0014_白色流星.png */; };
-		67246CE82BAC3BBE0088B0A3 /* 828f7a76-4a2d-451f-9f8d-ebe6de4ed6ed-爱与梦幻.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C842BAC3BBE0088B0A3 /* 828f7a76-4a2d-451f-9f8d-ebe6de4ed6ed-爱与梦幻.gif */; };
-		67246CE92BAC3BBE0088B0A3 /* 980a20bd-6dca-4e3f-ba38-b3710f4d66d7-圣诞节.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C852BAC3BBE0088B0A3 /* 980a20bd-6dca-4e3f-ba38-b3710f4d66d7-圣诞节.gif */; };
-		67246CEA2BAC3BBE0088B0A3 /* 1408e75c-2987-484d-949b-c5e8c88e8e03-未标题-1_0026_绿色伸缩.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246C862BAC3BBE0088B0A3 /* 1408e75c-2987-484d-949b-c5e8c88e8e03-未标题-1_0026_绿色伸缩.png */; };
-		67246CEB2BAC3BBE0088B0A3 /* 1738e572-3a0d-4149-af85-496d02d2d722-派对.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C872BAC3BBE0088B0A3 /* 1738e572-3a0d-4149-af85-496d02d2d722-派对.gif */; };
-		67246CEC2BAC3BBE0088B0A3 /* 2365c1fe-3297-47d7-a016-6eadfe3591a2-5VKMT7sNZZsFK5A8j4Za.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C882BAC3BBE0088B0A3 /* 2365c1fe-3297-47d7-a016-6eadfe3591a2-5VKMT7sNZZsFK5A8j4Za.gif */; };
-		67246CED2BAC3BBE0088B0A3 /* 3621a32e-bf72-4d70-a33b-28fa13a621e8-青色反向跑动.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C892BAC3BBE0088B0A3 /* 3621a32e-bf72-4d70-a33b-28fa13a621e8-青色反向跑动.gif */; };
-		67246CEE2BAC3BBE0088B0A3 /* 5338bf62-8752-4a57-b048-aa9495e316c5-绽放.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C8A2BAC3BBE0088B0A3 /* 5338bf62-8752-4a57-b048-aa9495e316c5-绽放.gif */; };
-		67246CEF2BAC3BBE0088B0A3 /* 6087d253-09db-4f51-956d-bfe2c6934316-未标题-1_0027_红色伸缩.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246C8B2BAC3BBE0088B0A3 /* 6087d253-09db-4f51-956d-bfe2c6934316-未标题-1_0027_红色伸缩.png */; };
-		67246CF02BAC3BBE0088B0A3 /* 8470e1ec-9a44-4429-bc9c-e6dd236bd80c-云海彩景.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C8C2BAC3BBE0088B0A3 /* 8470e1ec-9a44-4429-bc9c-e6dd236bd80c-云海彩景.gif */; };
-		67246CF12BAC3BBE0088B0A3 /* 82921e53-de0b-4417-9c1c-0d2d712a71fb-潮流.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C8D2BAC3BBE0088B0A3 /* 82921e53-de0b-4417-9c1c-0d2d712a71fb-潮流.gif */; };
-		67246CF22BAC3BBE0088B0A3 /* 94803aae-d1ae-402c-8bf1-aa72ac67a8a4-未标题-1_0016_青色流星.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246C8E2BAC3BBE0088B0A3 /* 94803aae-d1ae-402c-8bf1-aa72ac67a8a4-未标题-1_0016_青色流星.png */; };
-		67246CF32BAC3BBE0088B0A3 /* 0169453b-dc3e-48ff-b69e-e83a2b20a6d9-未标题-1_0021_白色伸缩.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246C8F2BAC3BBE0088B0A3 /* 0169453b-dc3e-48ff-b69e-e83a2b20a6d9-未标题-1_0021_白色伸缩.png */; };
-		67246CF42BAC3BBE0088B0A3 /* 236515cf-0653-4fda-9ffa-14745a40781f-BS.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C902BAC3BBE0088B0A3 /* 236515cf-0653-4fda-9ffa-14745a40781f-BS.gif */; };
-		67246CF52BAC3BBE0088B0A3 /* 247365e6-7c14-4058-9d7f-c3a0a6b4937f-未标题-1_0000_绽放.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246C912BAC3BBE0088B0A3 /* 247365e6-7c14-4058-9d7f-c3a0a6b4937f-未标题-1_0000_绽放.png */; };
-		67246CF62BAC3BBE0088B0A3 /* 3688449c-f352-41fb-8609-ee9821ffe24f-蓝色-正向跑动.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C922BAC3BBE0088B0A3 /* 3688449c-f352-41fb-8609-ee9821ffe24f-蓝色-正向跑动.gif */; };
-		67246CF72BAC3BBE0088B0A3 /* 8322486c-b0fd-4727-b87c-b82e1b1e4e7f-绿色反向跑动.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C932BAC3BBE0088B0A3 /* 8322486c-b0fd-4727-b87c-b82e1b1e4e7f-绿色反向跑动.gif */; };
-		67246CF82BAC3BBE0088B0A3 /* 66439633-6893-480a-8c9a-2167b1531888-夏日牧歌.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C942BAC3BBE0088B0A3 /* 66439633-6893-480a-8c9a-2167b1531888-夏日牧歌.gif */; };
-		67246CF92BAC3BBE0088B0A3 /* a37cfc3e-db76-43cd-948c-50e992f79f11-海之梦-NEW.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C952BAC3BBE0088B0A3 /* a37cfc3e-db76-43cd-948c-50e992f79f11-海之梦-NEW.gif */; };
-		67246CFA2BAC3BBE0088B0A3 /* a7186ac0-ec9e-4a91-b64b-b3fffaf8d118-未标题-1_0012_七色流星雨.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246C962BAC3BBE0088B0A3 /* a7186ac0-ec9e-4a91-b64b-b3fffaf8d118-未标题-1_0012_七色流星雨.png */; };
-		67246CFB2BAC3BBE0088B0A3 /* ae185577-2f03-470f-a825-a94f104261f6-未标题-1_0031_七色堆叠.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246C972BAC3BBE0088B0A3 /* ae185577-2f03-470f-a825-a94f104261f6-未标题-1_0031_七色堆叠.png */; };
-		67246CFC2BAC3BBE0088B0A3 /* b156fdd6-1b4a-4c75-870f-5f71929cadce-红色-反向跑动.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C982BAC3BBE0088B0A3 /* b156fdd6-1b4a-4c75-870f-5f71929cadce-红色-反向跑动.gif */; };
-		67246CFD2BAC3BBE0088B0A3 /* b993c721-2c80-42be-a64b-49fb3c8d5bbd-绿色-正向跑动.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C992BAC3BBE0088B0A3 /* b993c721-2c80-42be-a64b-49fb3c8d5bbd-绿色-正向跑动.gif */; };
-		67246CFE2BAC3BBE0088B0A3 /* b8013b14-2bbb-4c2c-8a97-140c07c0ec81-未标题-1_0011_多彩流星雨.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246C9A2BAC3BBE0088B0A3 /* b8013b14-2bbb-4c2c-8a97-140c07c0ec81-未标题-1_0011_多彩流星雨.png */; };
-		67246CFF2BAC3BBE0088B0A3 /* b9596043-14bf-41ec-b2f2-8ab382b22726-lxHDZYT8TbBvPN3YrL4u.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C9B2BAC3BBE0088B0A3 /* b9596043-14bf-41ec-b2f2-8ab382b22726-lxHDZYT8TbBvPN3YrL4u.gif */; };
-		67246D002BAC3BBE0088B0A3 /* c85fe74b-971b-4f2c-ab2b-6b1702e07e89-yZAHxN4CzU9xkuIHfxq1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C9C2BAC3BBE0088B0A3 /* c85fe74b-971b-4f2c-ab2b-6b1702e07e89-yZAHxN4CzU9xkuIHfxq1.gif */; };
-		67246D012BAC3BBE0088B0A3 /* c692ebe1-1f75-4105-bf31-a737056c2684-未标题-1_0019_绿色流星.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246C9D2BAC3BBE0088B0A3 /* c692ebe1-1f75-4105-bf31-a737056c2684-未标题-1_0019_绿色流星.png */; };
-		67246D022BAC3BBE0088B0A3 /* c8667d47-49d4-4784-8867-2a0ce9561097-母亲节.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246C9E2BAC3BBE0088B0A3 /* c8667d47-49d4-4784-8867-2a0ce9561097-母亲节.gif */; };
-		67246D032BAC3BBE0088B0A3 /* c0882008-3793-4069-bd88-d05ed28c7aa5-未标题-1_0024_黄色伸缩.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246C9F2BAC3BBE0088B0A3 /* c0882008-3793-4069-bd88-d05ed28c7aa5-未标题-1_0024_黄色伸缩.png */; };
-		67246D042BAC3BBE0088B0A3 /* cc61e823-c572-406a-a83e-230af7d50f14-未标题-1_0018_蓝色流星.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246CA02BAC3BBE0088B0A3 /* cc61e823-c572-406a-a83e-230af7d50f14-未标题-1_0018_蓝色流星.png */; };
-		67246D052BAC3BBE0088B0A3 /* d64b981d-1da4-4fe0-883c-d8a1894c24f2-海上火焰.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246CA12BAC3BBE0088B0A3 /* d64b981d-1da4-4fe0-883c-d8a1894c24f2-海上火焰.gif */; };
-		67246D062BAC3BBE0088B0A3 /* d7434e66-40bb-4878-945e-08b8b61be7bd-假日.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246CA22BAC3BBE0088B0A3 /* d7434e66-40bb-4878-945e-08b8b61be7bd-假日.gif */; };
-		67246D072BAC3BBE0088B0A3 /* da44231f-4982-40e7-86f1-479f495016bb-紫色-正向跑动.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246CA32BAC3BBE0088B0A3 /* da44231f-4982-40e7-86f1-479f495016bb-紫色-正向跑动.gif */; };
-		67246D082BAC3BBE0088B0A3 /* df28bf73-af8f-46a1-87ba-13c0eb064609-黄色-正向跑动.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246CA42BAC3BBE0088B0A3 /* df28bf73-af8f-46a1-87ba-13c0eb064609-黄色-正向跑动.gif */; };
-		67246D092BAC3BBE0088B0A3 /* e0abe9db-37fe-482a-bfca-28299fb09266-紫色反向跑动.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246CA52BAC3BBE0088B0A3 /* e0abe9db-37fe-482a-bfca-28299fb09266-紫色反向跑动.gif */; };
-		67246D0A2BAC3BBE0088B0A3 /* e4375a6b-ef3b-42ca-b89a-f2c15d6452e4-父亲节.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246CA62BAC3BBE0088B0A3 /* e4375a6b-ef3b-42ca-b89a-f2c15d6452e4-父亲节.gif */; };
-		67246D0B2BAC3BBE0088B0A3 /* eaaca7c9-8a02-4780-9aa3-679732a6def8-MLxCnt2FmjUSPxn71nxd.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246CA72BAC3BBE0088B0A3 /* eaaca7c9-8a02-4780-9aa3-679732a6def8-MLxCnt2FmjUSPxn71nxd.gif */; };
-		67246D0C2BAC3BBE0088B0A3 /* ebca5d5b-82aa-42a2-aa24-6acf7d5ff138-未标题-1_0015_紫色流星.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246CA82BAC3BBE0088B0A3 /* ebca5d5b-82aa-42a2-aa24-6acf7d5ff138-未标题-1_0015_紫色流星.png */; };
-		67246D0D2BAC3BBE0088B0A3 /* ecc64dc0-ac7b-4d6f-ac25-766f204f8089-未标题-1_0022_紫色伸缩.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246CA92BAC3BBE0088B0A3 /* ecc64dc0-ac7b-4d6f-ac25-766f204f8089-未标题-1_0022_紫色伸缩.png */; };
-		67246D0E2BAC3BBE0088B0A3 /* ef5173f9-9c98-40d1-a659-3dd3e9985b53-vq3madrypNLosKFQqDTn.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246CAA2BAC3BBE0088B0A3 /* ef5173f9-9c98-40d1-a659-3dd3e9985b53-vq3madrypNLosKFQqDTn.gif */; };
-		67246D0F2BAC3BBE0088B0A3 /* f0fb4dec-e0c7-47d5-adf9-5767d528d428-母亲节.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246CAB2BAC3BBE0088B0A3 /* f0fb4dec-e0c7-47d5-adf9-5767d528d428-母亲节.gif */; };
-		67246D102BAC3BBE0088B0A3 /* f6f5c54f-6fa4-46d5-a22a-801ee712152f-未标题-1_0032_三色堆叠.png in Resources */ = {isa = PBXBuildFile; fileRef = 67246CAC2BAC3BBE0088B0A3 /* f6f5c54f-6fa4-46d5-a22a-801ee712152f-未标题-1_0032_三色堆叠.png */; };
-		67246D112BAC3BBE0088B0A3 /* f7e0c6a0-e838-4465-a0e3-043dc8ff2b73-流水.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246CAD2BAC3BBE0088B0A3 /* f7e0c6a0-e838-4465-a0e3-043dc8ff2b73-流水.gif */; };
-		67246D122BAC3BBE0088B0A3 /* fe4de676-1901-469c-94d0-db211c1094b7-情人节.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246CAE2BAC3BBE0088B0A3 /* fe4de676-1901-469c-94d0-db211c1094b7-情人节.gif */; };
-		67246D132BAC3BBE0088B0A3 /* fe9e77df-3f95-4991-b9d5-2f062fb8d75b-5eh8EO3zjyDO8vP3K6VJ.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246CAF2BAC3BBE0088B0A3 /* fe9e77df-3f95-4991-b9d5-2f062fb8d75b-5eh8EO3zjyDO8vP3K6VJ.gif */; };
-		67246D142BAC3BBE0088B0A3 /* fe84474e-b534-498d-a8c3-f1b9e15696f2-伸缩.gif in Resources */ = {isa = PBXBuildFile; fileRef = 67246CB02BAC3BBE0088B0A3 /* fe84474e-b534-498d-a8c3-f1b9e15696f2-伸缩.gif */; };
-		67246D152BAC3BBE0088B0A3 /* YLRequestCacheManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246CB32BAC3BBE0088B0A3 /* YLRequestCacheManagement.m */; };
-		67246D162BAC3BBE0088B0A3 /* YTKKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246CB52BAC3BBE0088B0A3 /* YTKKeyValueStore.m */; };
-		67246D172BAC3BBE0088B0A3 /* CacheToolManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246CB82BAC3BBE0088B0A3 /* CacheToolManagement.m */; };
-		67246D182BAC3BBE0088B0A3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246CBA2BAC3BBE0088B0A3 /* Reachability.m */; };
 		67246D192BAC3BBE0088B0A3 /* YXHTTPRequst.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246CBD2BAC3BBE0088B0A3 /* YXHTTPRequst.m */; };
 		67246D1D2BAC3C1F0088B0A3 /* CommonManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246D1B2BAC3C1F0088B0A3 /* CommonManagement.m */; };
 		67246D222BAC3C760088B0A3 /* SHMEmojiMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 67246D1E2BAC3C760088B0A3 /* SHMEmojiMethod.m */; };
@@ -331,134 +230,18 @@
 		672469412BAC1BEB0088B0A3 /* ConstantHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstantHeader.h; sourceTree = "<group>"; };
 		672469422BAC1BEB0088B0A3 /* NetworkRequestAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkRequestAPI.h; sourceTree = "<group>"; };
 		672469432BAC1BEB0088B0A3 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		67246C122BAC23470088B0A3 /* FYLUserProtocolTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYLUserProtocolTipView.h; sourceTree = "<group>"; };
-		67246C132BAC23470088B0A3 /* FYLUserProtocolTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYLUserProtocolTipView.m; sourceTree = "<group>"; };
-		67246C142BAC23470088B0A3 /* HWTFCodeBView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTFCodeBView.h; sourceTree = "<group>"; };
-		67246C152BAC23470088B0A3 /* HWTFCodeBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTFCodeBView.m; sourceTree = "<group>"; };
-		67246C162BAC23470088B0A3 /* SMSCodeInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSCodeInputView.h; sourceTree = "<group>"; };
-		67246C172BAC23470088B0A3 /* SMSCodeInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSCodeInputView.m; sourceTree = "<group>"; };
-		67246C182BAC23470088B0A3 /* SMSCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSCodeView.h; sourceTree = "<group>"; };
-		67246C192BAC23470088B0A3 /* SMSCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSCodeView.m; sourceTree = "<group>"; };
-		67246C1B2BAC23470088B0A3 /* FYLCreatePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYLCreatePasswordViewController.h; sourceTree = "<group>"; };
-		67246C1C2BAC23470088B0A3 /* FYLCreatePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYLCreatePasswordViewController.m; sourceTree = "<group>"; };
-		67246C1D2BAC23470088B0A3 /* FYLForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYLForgotPasswordViewController.h; sourceTree = "<group>"; };
-		67246C1E2BAC23470088B0A3 /* FYLForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYLForgotPasswordViewController.m; sourceTree = "<group>"; };
-		67246C1F2BAC23470088B0A3 /* FYLLoginBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYLLoginBaseViewController.h; sourceTree = "<group>"; };
-		67246C202BAC23470088B0A3 /* FYLLoginBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYLLoginBaseViewController.m; sourceTree = "<group>"; };
-		67246C212BAC23470088B0A3 /* FYLPasswordLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYLPasswordLoginViewController.h; sourceTree = "<group>"; };
-		67246C222BAC23470088B0A3 /* FYLPasswordLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYLPasswordLoginViewController.m; sourceTree = "<group>"; };
-		67246C232BAC23470088B0A3 /* FYLVerificationCodeLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYLVerificationCodeLoginViewController.h; sourceTree = "<group>"; };
-		67246C242BAC23470088B0A3 /* FYLVerificationCodeLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYLVerificationCodeLoginViewController.m; sourceTree = "<group>"; };
-		67246C252BAC23470088B0A3 /* YLLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLLoginViewController.h; sourceTree = "<group>"; };
-		67246C262BAC23470088B0A3 /* YLLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLLoginViewController.m; sourceTree = "<group>"; };
 		67246C332BAC25AC0088B0A3 /* YLHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLHomeViewController.h; sourceTree = "<group>"; };
 		67246C342BAC25AC0088B0A3 /* YLHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLHomeViewController.m; sourceTree = "<group>"; };
 		67246C372BAC25ED0088B0A3 /* YLMyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLMyViewController.h; sourceTree = "<group>"; };
 		67246C382BAC25ED0088B0A3 /* YLMyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLMyViewController.m; sourceTree = "<group>"; };
 		67246C482BAC396C0088B0A3 /* YLMySetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLMySetViewController.h; sourceTree = "<group>"; };
 		67246C492BAC396C0088B0A3 /* YLMySetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLMySetViewController.m; sourceTree = "<group>"; };
-		67246C4B2BAC3B010088B0A3 /* SVProgressHUD+YLLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD+YLLoading.h"; sourceTree = "<group>"; };
-		67246C4C2BAC3B010088B0A3 /* SVProgressHUD+YLLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD+YLLoading.m"; sourceTree = "<group>"; };
 		67246C4F2BAC3B0F0088B0A3 /* LoadingStyleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingStyleManager.h; sourceTree = "<group>"; };
 		67246C502BAC3B0F0088B0A3 /* LoadingStyleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingStyleManager.m; sourceTree = "<group>"; };
 		67246C512BAC3B0F0088B0A3 /* MBProgressHUD+XBLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+XBLoading.h"; sourceTree = "<group>"; };
 		67246C522BAC3B0F0088B0A3 /* MBProgressHUD+XBLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+XBLoading.m"; sourceTree = "<group>"; };
 		67246C562BAC3B480088B0A3 /* PublicHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicHelpers.h; sourceTree = "<group>"; };
 		67246C572BAC3B480088B0A3 /* PublicHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicHelpers.m; sourceTree = "<group>"; };
-		67246C5A2BAC3BBE0088B0A3 /* DreamColorDIY.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DreamColorDIY.json; sourceTree = "<group>"; };
-		67246C5B2BAC3BBE0088B0A3 /* DreamColorModelClass.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DreamColorModelClass.json; sourceTree = "<group>"; };
-		67246C5C2BAC3BBE0088B0A3 /* DreamColorModelClassPage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DreamColorModelClassPage.json; sourceTree = "<group>"; };
-		67246C5D2BAC3BBE0088B0A3 /* DreamColorModelPage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DreamColorModelPage.json; sourceTree = "<group>"; };
-		67246C5E2BAC3BBE0088B0A3 /* DreamColorRhythmDevice.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DreamColorRhythmDevice.json; sourceTree = "<group>"; };
-		67246C5F2BAC3BBE0088B0A3 /* DreamColorRhythmPhoneAndDevice.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DreamColorRhythmPhoneAndDevice.json; sourceTree = "<group>"; };
-		67246C612BAC3BBE0088B0A3 /* 0aed2994-a71c-4efa-b47d-3c42046350c5-黄色-反向跑动.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "0aed2994-a71c-4efa-b47d-3c42046350c5-黄色-反向跑动.gif"; sourceTree = "<group>"; };
-		67246C622BAC3BBE0088B0A3 /* 0b23e3d2-4ead-409e-82e2-ee9ca2a28a82-BS.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "0b23e3d2-4ead-409e-82e2-ee9ca2a28a82-BS.gif"; sourceTree = "<group>"; };
-		67246C632BAC3BBE0088B0A3 /* 0e30fdec-da67-40a1-9c75-df4114707c0d-未标题-1_0001_星闪.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0e30fdec-da67-40a1-9c75-df4114707c0d-未标题-1_0001_星闪.png"; sourceTree = "<group>"; };
-		67246C642BAC3BBE0088B0A3 /* 1bea890b-1fcf-47eb-aeb1-7e327eb5c1f3-雪中小屋.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "1bea890b-1fcf-47eb-aeb1-7e327eb5c1f3-雪中小屋.gif"; sourceTree = "<group>"; };
-		67246C652BAC3BBE0088B0A3 /* 1d99726d-44d5-4674-a5db-0e7bf58c23f4-未标题-1_0029_七色追光.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1d99726d-44d5-4674-a5db-0e7bf58c23f4-未标题-1_0029_七色追光.png"; sourceTree = "<group>"; };
-		67246C662BAC3BBE0088B0A3 /* 1dc7733c-1d28-4daa-8841-313497a71685-ZPlscSNQuWy84YhSze2D.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "1dc7733c-1d28-4daa-8841-313497a71685-ZPlscSNQuWy84YhSze2D.gif"; sourceTree = "<group>"; };
-		67246C672BAC3BBE0088B0A3 /* 1dec3135-a887-4416-aff4-9a35ba2eb0b8-爱与梦幻.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "1dec3135-a887-4416-aff4-9a35ba2eb0b8-爱与梦幻.gif"; sourceTree = "<group>"; };
-		67246C682BAC3BBE0088B0A3 /* 1eaf05fd-c9cd-4030-95b7-52b9047167d6-6HE7WjbVihdbmlcK5Y8r.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "1eaf05fd-c9cd-4030-95b7-52b9047167d6-6HE7WjbVihdbmlcK5Y8r.gif"; sourceTree = "<group>"; };
-		67246C692BAC3BBE0088B0A3 /* 2c34c312-27b2-478f-8e43-134260fd9fbe-追光.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "2c34c312-27b2-478f-8e43-134260fd9fbe-追光.gif"; sourceTree = "<group>"; };
-		67246C6A2BAC3BBE0088B0A3 /* 3ccfd562-1978-4be1-8092-f0e1ee031c0a-未标题-1_0017_黄色流星.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3ccfd562-1978-4be1-8092-f0e1ee031c0a-未标题-1_0017_黄色流星.png"; sourceTree = "<group>"; };
-		67246C6B2BAC3BBE0088B0A3 /* 5c1ef1f3-82df-4c7a-97ef-a8709e1820c8-未标题-1_0036_七色流水.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5c1ef1f3-82df-4c7a-97ef-a8709e1820c8-未标题-1_0036_七色流水.png"; sourceTree = "<group>"; };
-		67246C6C2BAC3BBE0088B0A3 /* 5f6cd30a-96f5-4156-90dc-297930d1fe79-流星雨.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "5f6cd30a-96f5-4156-90dc-297930d1fe79-流星雨.gif"; sourceTree = "<group>"; };
-		67246C6D2BAC3BBE0088B0A3 /* 6d9ac503-63cf-41c9-9e89-7665465e9575-蓝色反向跑动.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "6d9ac503-63cf-41c9-9e89-7665465e9575-蓝色反向跑动.gif"; sourceTree = "<group>"; };
-		67246C6E2BAC3BBE0088B0A3 /* 06e265e5-7cc2-4a74-9d69-92b3cc33d7fe-堆叠.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "06e265e5-7cc2-4a74-9d69-92b3cc33d7fe-堆叠.gif"; sourceTree = "<group>"; };
-		67246C6F2BAC3BBE0088B0A3 /* 6fff4d56-3d7b-4ac9-b6f6-ff5e3f44445b-未标题-1_0030_三色追光.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "6fff4d56-3d7b-4ac9-b6f6-ff5e3f44445b-未标题-1_0030_三色追光.png"; sourceTree = "<group>"; };
-		67246C702BAC3BBE0088B0A3 /* 07ae00a9-f652-4173-92f4-e8e0199a5931-8c6bbd88-6f61-43c7-a9b3-3b538296bcfe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "07ae00a9-f652-4173-92f4-e8e0199a5931-8c6bbd88-6f61-43c7-a9b3-3b538296bcfe.png"; sourceTree = "<group>"; };
-		67246C712BAC3BBE0088B0A3 /* 8bc13b2a-55cd-46a6-9e76-0a258ed06602-反弹.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "8bc13b2a-55cd-46a6-9e76-0a258ed06602-反弹.gif"; sourceTree = "<group>"; };
-		67246C722BAC3BBE0088B0A3 /* 8c68c4c2-e995-4227-9481-59c01d481c08-流星.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "8c68c4c2-e995-4227-9481-59c01d481c08-流星.gif"; sourceTree = "<group>"; };
-		67246C732BAC3BBE0088B0A3 /* 9f6600cd-018a-4d22-bd4a-58737a2c572f-lQHPKdfJecNPesvMtM0C7rC5sZqBATe5RgVg1dXjSf0A_750_180.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "9f6600cd-018a-4d22-bd4a-58737a2c572f-lQHPKdfJecNPesvMtM0C7rC5sZqBATe5RgVg1dXjSf0A_750_180.gif"; sourceTree = "<group>"; };
-		67246C742BAC3BBE0088B0A3 /* 12d1d7d6-2e45-4909-99c3-485b7d9155cf-未标题-1_0028_多彩伸缩.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "12d1d7d6-2e45-4909-99c3-485b7d9155cf-未标题-1_0028_多彩伸缩.png"; sourceTree = "<group>"; };
-		67246C752BAC3BBE0088B0A3 /* 28a1707d-f14f-4ff1-93c8-cbc2a6216102-闪现.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "28a1707d-f14f-4ff1-93c8-cbc2a6216102-闪现.gif"; sourceTree = "<group>"; };
-		67246C762BAC3BBE0088B0A3 /* 35ef4189-00b7-4d77-a518-f5d4872151cf-未标题-1_0025_蓝色伸缩.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "35ef4189-00b7-4d77-a518-f5d4872151cf-未标题-1_0025_蓝色伸缩.png"; sourceTree = "<group>"; };
-		67246C772BAC3BBE0088B0A3 /* 48cddee3-751a-44ca-9a7a-c8c7b1b1637b-未标题-1_0013_三色流星雨.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "48cddee3-751a-44ca-9a7a-c8c7b1b1637b-未标题-1_0013_三色流星雨.png"; sourceTree = "<group>"; };
-		67246C782BAC3BBE0088B0A3 /* 61f28049-ca85-425d-b52a-2b8a62786ff2-派对.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "61f28049-ca85-425d-b52a-2b8a62786ff2-派对.gif"; sourceTree = "<group>"; };
-		67246C792BAC3BBE0088B0A3 /* 71bd35f0-2ab1-4779-8499-ffc735c9ac66-未标题-1_0020_红色流星.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "71bd35f0-2ab1-4779-8499-ffc735c9ac66-未标题-1_0020_红色流星.png"; sourceTree = "<group>"; };
-		67246C7A2BAC3BBE0088B0A3 /* 75e20132-c920-4f71-babc-8c0bb85a5699-派对.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "75e20132-c920-4f71-babc-8c0bb85a5699-派对.gif"; sourceTree = "<group>"; };
-		67246C7B2BAC3BBE0088B0A3 /* 91cf60e4-990c-4545-b8c2-ebbe360b6cb0-未标题-1_0002_反弹.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "91cf60e4-990c-4545-b8c2-ebbe360b6cb0-未标题-1_0002_反弹.png"; sourceTree = "<group>"; };
-		67246C7C2BAC3BBE0088B0A3 /* 98bedc1e-3ef7-4f5c-bed0-9dbd207a5b50-CSFX.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "98bedc1e-3ef7-4f5c-bed0-9dbd207a5b50-CSFX.gif"; sourceTree = "<group>"; };
-		67246C7D2BAC3BBE0088B0A3 /* 98fbf4af-3698-4a3d-913a-8c9925a3f525-工作.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "98fbf4af-3698-4a3d-913a-8c9925a3f525-工作.gif"; sourceTree = "<group>"; };
-		67246C7E2BAC3BBE0088B0A3 /* 108f576b-551c-4c44-a6b8-ca5a637f48f9-未标题-1_0023_青色伸缩.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "108f576b-551c-4c44-a6b8-ca5a637f48f9-未标题-1_0023_青色伸缩.png"; sourceTree = "<group>"; };
-		67246C7F2BAC3BBE0088B0A3 /* 173d648d-b9bc-4ecb-93e5-b60cd6ce5604-红色-正向跑动.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "173d648d-b9bc-4ecb-93e5-b60cd6ce5604-红色-正向跑动.gif"; sourceTree = "<group>"; };
-		67246C802BAC3BBE0088B0A3 /* 530da05d-8975-4af9-941f-272490050484-JEuxHscZWwQnihrQSdy7.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "530da05d-8975-4af9-941f-272490050484-JEuxHscZWwQnihrQSdy7.gif"; sourceTree = "<group>"; };
-		67246C812BAC3BBE0088B0A3 /* 559a8658-f911-4699-b098-db55546d3c0f-y7duh5Jhu6VR2a6fOS5p.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "559a8658-f911-4699-b098-db55546d3c0f-y7duh5Jhu6VR2a6fOS5p.gif"; sourceTree = "<group>"; };
-		67246C822BAC3BBE0088B0A3 /* 568d2c52-710f-44f1-be5e-b61ab045c114-霓虹世界.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "568d2c52-710f-44f1-be5e-b61ab045c114-霓虹世界.gif"; sourceTree = "<group>"; };
-		67246C832BAC3BBE0088B0A3 /* 770d8b37-3f16-435d-9465-7187dc144191-未标题-1_0014_白色流星.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "770d8b37-3f16-435d-9465-7187dc144191-未标题-1_0014_白色流星.png"; sourceTree = "<group>"; };
-		67246C842BAC3BBE0088B0A3 /* 828f7a76-4a2d-451f-9f8d-ebe6de4ed6ed-爱与梦幻.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "828f7a76-4a2d-451f-9f8d-ebe6de4ed6ed-爱与梦幻.gif"; sourceTree = "<group>"; };
-		67246C852BAC3BBE0088B0A3 /* 980a20bd-6dca-4e3f-ba38-b3710f4d66d7-圣诞节.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "980a20bd-6dca-4e3f-ba38-b3710f4d66d7-圣诞节.gif"; sourceTree = "<group>"; };
-		67246C862BAC3BBE0088B0A3 /* 1408e75c-2987-484d-949b-c5e8c88e8e03-未标题-1_0026_绿色伸缩.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1408e75c-2987-484d-949b-c5e8c88e8e03-未标题-1_0026_绿色伸缩.png"; sourceTree = "<group>"; };
-		67246C872BAC3BBE0088B0A3 /* 1738e572-3a0d-4149-af85-496d02d2d722-派对.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "1738e572-3a0d-4149-af85-496d02d2d722-派对.gif"; sourceTree = "<group>"; };
-		67246C882BAC3BBE0088B0A3 /* 2365c1fe-3297-47d7-a016-6eadfe3591a2-5VKMT7sNZZsFK5A8j4Za.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "2365c1fe-3297-47d7-a016-6eadfe3591a2-5VKMT7sNZZsFK5A8j4Za.gif"; sourceTree = "<group>"; };
-		67246C892BAC3BBE0088B0A3 /* 3621a32e-bf72-4d70-a33b-28fa13a621e8-青色反向跑动.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "3621a32e-bf72-4d70-a33b-28fa13a621e8-青色反向跑动.gif"; sourceTree = "<group>"; };
-		67246C8A2BAC3BBE0088B0A3 /* 5338bf62-8752-4a57-b048-aa9495e316c5-绽放.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "5338bf62-8752-4a57-b048-aa9495e316c5-绽放.gif"; sourceTree = "<group>"; };
-		67246C8B2BAC3BBE0088B0A3 /* 6087d253-09db-4f51-956d-bfe2c6934316-未标题-1_0027_红色伸缩.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "6087d253-09db-4f51-956d-bfe2c6934316-未标题-1_0027_红色伸缩.png"; sourceTree = "<group>"; };
-		67246C8C2BAC3BBE0088B0A3 /* 8470e1ec-9a44-4429-bc9c-e6dd236bd80c-云海彩景.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "8470e1ec-9a44-4429-bc9c-e6dd236bd80c-云海彩景.gif"; sourceTree = "<group>"; };
-		67246C8D2BAC3BBE0088B0A3 /* 82921e53-de0b-4417-9c1c-0d2d712a71fb-潮流.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "82921e53-de0b-4417-9c1c-0d2d712a71fb-潮流.gif"; sourceTree = "<group>"; };
-		67246C8E2BAC3BBE0088B0A3 /* 94803aae-d1ae-402c-8bf1-aa72ac67a8a4-未标题-1_0016_青色流星.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "94803aae-d1ae-402c-8bf1-aa72ac67a8a4-未标题-1_0016_青色流星.png"; sourceTree = "<group>"; };
-		67246C8F2BAC3BBE0088B0A3 /* 0169453b-dc3e-48ff-b69e-e83a2b20a6d9-未标题-1_0021_白色伸缩.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "0169453b-dc3e-48ff-b69e-e83a2b20a6d9-未标题-1_0021_白色伸缩.png"; sourceTree = "<group>"; };
-		67246C902BAC3BBE0088B0A3 /* 236515cf-0653-4fda-9ffa-14745a40781f-BS.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "236515cf-0653-4fda-9ffa-14745a40781f-BS.gif"; sourceTree = "<group>"; };
-		67246C912BAC3BBE0088B0A3 /* 247365e6-7c14-4058-9d7f-c3a0a6b4937f-未标题-1_0000_绽放.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "247365e6-7c14-4058-9d7f-c3a0a6b4937f-未标题-1_0000_绽放.png"; sourceTree = "<group>"; };
-		67246C922BAC3BBE0088B0A3 /* 3688449c-f352-41fb-8609-ee9821ffe24f-蓝色-正向跑动.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "3688449c-f352-41fb-8609-ee9821ffe24f-蓝色-正向跑动.gif"; sourceTree = "<group>"; };
-		67246C932BAC3BBE0088B0A3 /* 8322486c-b0fd-4727-b87c-b82e1b1e4e7f-绿色反向跑动.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "8322486c-b0fd-4727-b87c-b82e1b1e4e7f-绿色反向跑动.gif"; sourceTree = "<group>"; };
-		67246C942BAC3BBE0088B0A3 /* 66439633-6893-480a-8c9a-2167b1531888-夏日牧歌.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "66439633-6893-480a-8c9a-2167b1531888-夏日牧歌.gif"; sourceTree = "<group>"; };
-		67246C952BAC3BBE0088B0A3 /* a37cfc3e-db76-43cd-948c-50e992f79f11-海之梦-NEW.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "a37cfc3e-db76-43cd-948c-50e992f79f11-海之梦-NEW.gif"; sourceTree = "<group>"; };
-		67246C962BAC3BBE0088B0A3 /* a7186ac0-ec9e-4a91-b64b-b3fffaf8d118-未标题-1_0012_七色流星雨.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "a7186ac0-ec9e-4a91-b64b-b3fffaf8d118-未标题-1_0012_七色流星雨.png"; sourceTree = "<group>"; };
-		67246C972BAC3BBE0088B0A3 /* ae185577-2f03-470f-a825-a94f104261f6-未标题-1_0031_七色堆叠.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ae185577-2f03-470f-a825-a94f104261f6-未标题-1_0031_七色堆叠.png"; sourceTree = "<group>"; };
-		67246C982BAC3BBE0088B0A3 /* b156fdd6-1b4a-4c75-870f-5f71929cadce-红色-反向跑动.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "b156fdd6-1b4a-4c75-870f-5f71929cadce-红色-反向跑动.gif"; sourceTree = "<group>"; };
-		67246C992BAC3BBE0088B0A3 /* b993c721-2c80-42be-a64b-49fb3c8d5bbd-绿色-正向跑动.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "b993c721-2c80-42be-a64b-49fb3c8d5bbd-绿色-正向跑动.gif"; sourceTree = "<group>"; };
-		67246C9A2BAC3BBE0088B0A3 /* b8013b14-2bbb-4c2c-8a97-140c07c0ec81-未标题-1_0011_多彩流星雨.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "b8013b14-2bbb-4c2c-8a97-140c07c0ec81-未标题-1_0011_多彩流星雨.png"; sourceTree = "<group>"; };
-		67246C9B2BAC3BBE0088B0A3 /* b9596043-14bf-41ec-b2f2-8ab382b22726-lxHDZYT8TbBvPN3YrL4u.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "b9596043-14bf-41ec-b2f2-8ab382b22726-lxHDZYT8TbBvPN3YrL4u.gif"; sourceTree = "<group>"; };
-		67246C9C2BAC3BBE0088B0A3 /* c85fe74b-971b-4f2c-ab2b-6b1702e07e89-yZAHxN4CzU9xkuIHfxq1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "c85fe74b-971b-4f2c-ab2b-6b1702e07e89-yZAHxN4CzU9xkuIHfxq1.gif"; sourceTree = "<group>"; };
-		67246C9D2BAC3BBE0088B0A3 /* c692ebe1-1f75-4105-bf31-a737056c2684-未标题-1_0019_绿色流星.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "c692ebe1-1f75-4105-bf31-a737056c2684-未标题-1_0019_绿色流星.png"; sourceTree = "<group>"; };
-		67246C9E2BAC3BBE0088B0A3 /* c8667d47-49d4-4784-8867-2a0ce9561097-母亲节.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "c8667d47-49d4-4784-8867-2a0ce9561097-母亲节.gif"; sourceTree = "<group>"; };
-		67246C9F2BAC3BBE0088B0A3 /* c0882008-3793-4069-bd88-d05ed28c7aa5-未标题-1_0024_黄色伸缩.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "c0882008-3793-4069-bd88-d05ed28c7aa5-未标题-1_0024_黄色伸缩.png"; sourceTree = "<group>"; };
-		67246CA02BAC3BBE0088B0A3 /* cc61e823-c572-406a-a83e-230af7d50f14-未标题-1_0018_蓝色流星.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cc61e823-c572-406a-a83e-230af7d50f14-未标题-1_0018_蓝色流星.png"; sourceTree = "<group>"; };
-		67246CA12BAC3BBE0088B0A3 /* d64b981d-1da4-4fe0-883c-d8a1894c24f2-海上火焰.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "d64b981d-1da4-4fe0-883c-d8a1894c24f2-海上火焰.gif"; sourceTree = "<group>"; };
-		67246CA22BAC3BBE0088B0A3 /* d7434e66-40bb-4878-945e-08b8b61be7bd-假日.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "d7434e66-40bb-4878-945e-08b8b61be7bd-假日.gif"; sourceTree = "<group>"; };
-		67246CA32BAC3BBE0088B0A3 /* da44231f-4982-40e7-86f1-479f495016bb-紫色-正向跑动.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "da44231f-4982-40e7-86f1-479f495016bb-紫色-正向跑动.gif"; sourceTree = "<group>"; };
-		67246CA42BAC3BBE0088B0A3 /* df28bf73-af8f-46a1-87ba-13c0eb064609-黄色-正向跑动.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "df28bf73-af8f-46a1-87ba-13c0eb064609-黄色-正向跑动.gif"; sourceTree = "<group>"; };
-		67246CA52BAC3BBE0088B0A3 /* e0abe9db-37fe-482a-bfca-28299fb09266-紫色反向跑动.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "e0abe9db-37fe-482a-bfca-28299fb09266-紫色反向跑动.gif"; sourceTree = "<group>"; };
-		67246CA62BAC3BBE0088B0A3 /* e4375a6b-ef3b-42ca-b89a-f2c15d6452e4-父亲节.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "e4375a6b-ef3b-42ca-b89a-f2c15d6452e4-父亲节.gif"; sourceTree = "<group>"; };
-		67246CA72BAC3BBE0088B0A3 /* eaaca7c9-8a02-4780-9aa3-679732a6def8-MLxCnt2FmjUSPxn71nxd.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "eaaca7c9-8a02-4780-9aa3-679732a6def8-MLxCnt2FmjUSPxn71nxd.gif"; sourceTree = "<group>"; };
-		67246CA82BAC3BBE0088B0A3 /* ebca5d5b-82aa-42a2-aa24-6acf7d5ff138-未标题-1_0015_紫色流星.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ebca5d5b-82aa-42a2-aa24-6acf7d5ff138-未标题-1_0015_紫色流星.png"; sourceTree = "<group>"; };
-		67246CA92BAC3BBE0088B0A3 /* ecc64dc0-ac7b-4d6f-ac25-766f204f8089-未标题-1_0022_紫色伸缩.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ecc64dc0-ac7b-4d6f-ac25-766f204f8089-未标题-1_0022_紫色伸缩.png"; sourceTree = "<group>"; };
-		67246CAA2BAC3BBE0088B0A3 /* ef5173f9-9c98-40d1-a659-3dd3e9985b53-vq3madrypNLosKFQqDTn.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ef5173f9-9c98-40d1-a659-3dd3e9985b53-vq3madrypNLosKFQqDTn.gif"; sourceTree = "<group>"; };
-		67246CAB2BAC3BBE0088B0A3 /* f0fb4dec-e0c7-47d5-adf9-5767d528d428-母亲节.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "f0fb4dec-e0c7-47d5-adf9-5767d528d428-母亲节.gif"; sourceTree = "<group>"; };
-		67246CAC2BAC3BBE0088B0A3 /* f6f5c54f-6fa4-46d5-a22a-801ee712152f-未标题-1_0032_三色堆叠.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "f6f5c54f-6fa4-46d5-a22a-801ee712152f-未标题-1_0032_三色堆叠.png"; sourceTree = "<group>"; };
-		67246CAD2BAC3BBE0088B0A3 /* f7e0c6a0-e838-4465-a0e3-043dc8ff2b73-流水.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "f7e0c6a0-e838-4465-a0e3-043dc8ff2b73-流水.gif"; sourceTree = "<group>"; };
-		67246CAE2BAC3BBE0088B0A3 /* fe4de676-1901-469c-94d0-db211c1094b7-情人节.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "fe4de676-1901-469c-94d0-db211c1094b7-情人节.gif"; sourceTree = "<group>"; };
-		67246CAF2BAC3BBE0088B0A3 /* fe9e77df-3f95-4991-b9d5-2f062fb8d75b-5eh8EO3zjyDO8vP3K6VJ.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "fe9e77df-3f95-4991-b9d5-2f062fb8d75b-5eh8EO3zjyDO8vP3K6VJ.gif"; sourceTree = "<group>"; };
-		67246CB02BAC3BBE0088B0A3 /* fe84474e-b534-498d-a8c3-f1b9e15696f2-伸缩.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "fe84474e-b534-498d-a8c3-f1b9e15696f2-伸缩.gif"; sourceTree = "<group>"; };
-		67246CB22BAC3BBE0088B0A3 /* YLRequestCacheManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLRequestCacheManagement.h; sourceTree = "<group>"; };
-		67246CB32BAC3BBE0088B0A3 /* YLRequestCacheManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLRequestCacheManagement.m; sourceTree = "<group>"; };
-		67246CB42BAC3BBE0088B0A3 /* YTKKeyValueStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKKeyValueStore.h; sourceTree = "<group>"; };
-		67246CB52BAC3BBE0088B0A3 /* YTKKeyValueStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKKeyValueStore.m; sourceTree = "<group>"; };
-		67246CB72BAC3BBE0088B0A3 /* CacheToolManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheToolManagement.h; sourceTree = "<group>"; };
-		67246CB82BAC3BBE0088B0A3 /* CacheToolManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheToolManagement.m; sourceTree = "<group>"; };
-		67246CB92BAC3BBE0088B0A3 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		67246CBA2BAC3BBE0088B0A3 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		67246CBC2BAC3BBE0088B0A3 /* YXHTTPRequst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXHTTPRequst.h; sourceTree = "<group>"; };
 		67246CBD2BAC3BBE0088B0A3 /* YXHTTPRequst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXHTTPRequst.m; sourceTree = "<group>"; };
 		67246D1A2BAC3C1F0088B0A3 /* CommonManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonManagement.h; sourceTree = "<group>"; };
@@ -805,7 +588,6 @@
 				67246CBE2BAC3BBE0088B0A3 /* NetworkRequest */,
 				67246C582BAC3B480088B0A3 /* PublicHelpers */,
 				67246C532BAC3B0F0088B0A3 /* MBProgressHUD */,
-				67246C4D2BAC3B010088B0A3 /* SVProgressHUD */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -815,44 +597,8 @@
 			children = (
 				67246C362BAC25D70088B0A3 /* My */,
 				67246C322BAC258E0088B0A3 /* Home */,
-				67246C272BAC23470088B0A3 /* LoginAndRegistration */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		67246C1A2BAC23470088B0A3 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				67246C122BAC23470088B0A3 /* FYLUserProtocolTipView.h */,
-				67246C132BAC23470088B0A3 /* FYLUserProtocolTipView.m */,
-				67246C142BAC23470088B0A3 /* HWTFCodeBView.h */,
-				67246C152BAC23470088B0A3 /* HWTFCodeBView.m */,
-				67246C162BAC23470088B0A3 /* SMSCodeInputView.h */,
-				67246C172BAC23470088B0A3 /* SMSCodeInputView.m */,
-				67246C182BAC23470088B0A3 /* SMSCodeView.h */,
-				67246C192BAC23470088B0A3 /* SMSCodeView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		67246C272BAC23470088B0A3 /* LoginAndRegistration */ = {
-			isa = PBXGroup;
-			children = (
-				67246C1A2BAC23470088B0A3 /* View */,
-				67246C1F2BAC23470088B0A3 /* FYLLoginBaseViewController.h */,
-				67246C202BAC23470088B0A3 /* FYLLoginBaseViewController.m */,
-				67246C1B2BAC23470088B0A3 /* FYLCreatePasswordViewController.h */,
-				67246C1C2BAC23470088B0A3 /* FYLCreatePasswordViewController.m */,
-				67246C1D2BAC23470088B0A3 /* FYLForgotPasswordViewController.h */,
-				67246C1E2BAC23470088B0A3 /* FYLForgotPasswordViewController.m */,
-				67246C212BAC23470088B0A3 /* FYLPasswordLoginViewController.h */,
-				67246C222BAC23470088B0A3 /* FYLPasswordLoginViewController.m */,
-				67246C232BAC23470088B0A3 /* FYLVerificationCodeLoginViewController.h */,
-				67246C242BAC23470088B0A3 /* FYLVerificationCodeLoginViewController.m */,
-				67246C252BAC23470088B0A3 /* YLLoginViewController.h */,
-				67246C262BAC23470088B0A3 /* YLLoginViewController.m */,
-			);
-			path = LoginAndRegistration;
 			sourceTree = "<group>";
 		};
 		67246C322BAC258E0088B0A3 /* Home */ = {
@@ -886,15 +632,6 @@
 			path = SetViewController;
 			sourceTree = "<group>";
 		};
-		67246C4D2BAC3B010088B0A3 /* SVProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				67246C4B2BAC3B010088B0A3 /* SVProgressHUD+YLLoading.h */,
-				67246C4C2BAC3B010088B0A3 /* SVProgressHUD+YLLoading.m */,
-			);
-			path = SVProgressHUD;
-			sourceTree = "<group>";
-		};
 		67246C532BAC3B0F0088B0A3 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -915,135 +652,9 @@
 			path = PublicHelpers;
 			sourceTree = "<group>";
 		};
-		67246C602BAC3BBE0088B0A3 /* CacheJson */ = {
-			isa = PBXGroup;
-			children = (
-				67246C5A2BAC3BBE0088B0A3 /* DreamColorDIY.json */,
-				67246C5B2BAC3BBE0088B0A3 /* DreamColorModelClass.json */,
-				67246C5C2BAC3BBE0088B0A3 /* DreamColorModelClassPage.json */,
-				67246C5D2BAC3BBE0088B0A3 /* DreamColorModelPage.json */,
-				67246C5E2BAC3BBE0088B0A3 /* DreamColorRhythmDevice.json */,
-				67246C5F2BAC3BBE0088B0A3 /* DreamColorRhythmPhoneAndDevice.json */,
-			);
-			path = CacheJson;
-			sourceTree = "<group>";
-		};
-		67246CB12BAC3BBE0088B0A3 /* images */ = {
-			isa = PBXGroup;
-			children = (
-				67246C612BAC3BBE0088B0A3 /* 0aed2994-a71c-4efa-b47d-3c42046350c5-黄色-反向跑动.gif */,
-				67246C622BAC3BBE0088B0A3 /* 0b23e3d2-4ead-409e-82e2-ee9ca2a28a82-BS.gif */,
-				67246C632BAC3BBE0088B0A3 /* 0e30fdec-da67-40a1-9c75-df4114707c0d-未标题-1_0001_星闪.png */,
-				67246C642BAC3BBE0088B0A3 /* 1bea890b-1fcf-47eb-aeb1-7e327eb5c1f3-雪中小屋.gif */,
-				67246C652BAC3BBE0088B0A3 /* 1d99726d-44d5-4674-a5db-0e7bf58c23f4-未标题-1_0029_七色追光.png */,
-				67246C662BAC3BBE0088B0A3 /* 1dc7733c-1d28-4daa-8841-313497a71685-ZPlscSNQuWy84YhSze2D.gif */,
-				67246C672BAC3BBE0088B0A3 /* 1dec3135-a887-4416-aff4-9a35ba2eb0b8-爱与梦幻.gif */,
-				67246C682BAC3BBE0088B0A3 /* 1eaf05fd-c9cd-4030-95b7-52b9047167d6-6HE7WjbVihdbmlcK5Y8r.gif */,
-				67246C692BAC3BBE0088B0A3 /* 2c34c312-27b2-478f-8e43-134260fd9fbe-追光.gif */,
-				67246C6A2BAC3BBE0088B0A3 /* 3ccfd562-1978-4be1-8092-f0e1ee031c0a-未标题-1_0017_黄色流星.png */,
-				67246C6B2BAC3BBE0088B0A3 /* 5c1ef1f3-82df-4c7a-97ef-a8709e1820c8-未标题-1_0036_七色流水.png */,
-				67246C6C2BAC3BBE0088B0A3 /* 5f6cd30a-96f5-4156-90dc-297930d1fe79-流星雨.gif */,
-				67246C6D2BAC3BBE0088B0A3 /* 6d9ac503-63cf-41c9-9e89-7665465e9575-蓝色反向跑动.gif */,
-				67246C6E2BAC3BBE0088B0A3 /* 06e265e5-7cc2-4a74-9d69-92b3cc33d7fe-堆叠.gif */,
-				67246C6F2BAC3BBE0088B0A3 /* 6fff4d56-3d7b-4ac9-b6f6-ff5e3f44445b-未标题-1_0030_三色追光.png */,
-				67246C702BAC3BBE0088B0A3 /* 07ae00a9-f652-4173-92f4-e8e0199a5931-8c6bbd88-6f61-43c7-a9b3-3b538296bcfe.png */,
-				67246C712BAC3BBE0088B0A3 /* 8bc13b2a-55cd-46a6-9e76-0a258ed06602-反弹.gif */,
-				67246C722BAC3BBE0088B0A3 /* 8c68c4c2-e995-4227-9481-59c01d481c08-流星.gif */,
-				67246C732BAC3BBE0088B0A3 /* 9f6600cd-018a-4d22-bd4a-58737a2c572f-lQHPKdfJecNPesvMtM0C7rC5sZqBATe5RgVg1dXjSf0A_750_180.gif */,
-				67246C742BAC3BBE0088B0A3 /* 12d1d7d6-2e45-4909-99c3-485b7d9155cf-未标题-1_0028_多彩伸缩.png */,
-				67246C752BAC3BBE0088B0A3 /* 28a1707d-f14f-4ff1-93c8-cbc2a6216102-闪现.gif */,
-				67246C762BAC3BBE0088B0A3 /* 35ef4189-00b7-4d77-a518-f5d4872151cf-未标题-1_0025_蓝色伸缩.png */,
-				67246C772BAC3BBE0088B0A3 /* 48cddee3-751a-44ca-9a7a-c8c7b1b1637b-未标题-1_0013_三色流星雨.png */,
-				67246C782BAC3BBE0088B0A3 /* 61f28049-ca85-425d-b52a-2b8a62786ff2-派对.gif */,
-				67246C792BAC3BBE0088B0A3 /* 71bd35f0-2ab1-4779-8499-ffc735c9ac66-未标题-1_0020_红色流星.png */,
-				67246C7A2BAC3BBE0088B0A3 /* 75e20132-c920-4f71-babc-8c0bb85a5699-派对.gif */,
-				67246C7B2BAC3BBE0088B0A3 /* 91cf60e4-990c-4545-b8c2-ebbe360b6cb0-未标题-1_0002_反弹.png */,
-				67246C7C2BAC3BBE0088B0A3 /* 98bedc1e-3ef7-4f5c-bed0-9dbd207a5b50-CSFX.gif */,
-				67246C7D2BAC3BBE0088B0A3 /* 98fbf4af-3698-4a3d-913a-8c9925a3f525-工作.gif */,
-				67246C7E2BAC3BBE0088B0A3 /* 108f576b-551c-4c44-a6b8-ca5a637f48f9-未标题-1_0023_青色伸缩.png */,
-				67246C7F2BAC3BBE0088B0A3 /* 173d648d-b9bc-4ecb-93e5-b60cd6ce5604-红色-正向跑动.gif */,
-				67246C802BAC3BBE0088B0A3 /* 530da05d-8975-4af9-941f-272490050484-JEuxHscZWwQnihrQSdy7.gif */,
-				67246C812BAC3BBE0088B0A3 /* 559a8658-f911-4699-b098-db55546d3c0f-y7duh5Jhu6VR2a6fOS5p.gif */,
-				67246C822BAC3BBE0088B0A3 /* 568d2c52-710f-44f1-be5e-b61ab045c114-霓虹世界.gif */,
-				67246C832BAC3BBE0088B0A3 /* 770d8b37-3f16-435d-9465-7187dc144191-未标题-1_0014_白色流星.png */,
-				67246C842BAC3BBE0088B0A3 /* 828f7a76-4a2d-451f-9f8d-ebe6de4ed6ed-爱与梦幻.gif */,
-				67246C852BAC3BBE0088B0A3 /* 980a20bd-6dca-4e3f-ba38-b3710f4d66d7-圣诞节.gif */,
-				67246C862BAC3BBE0088B0A3 /* 1408e75c-2987-484d-949b-c5e8c88e8e03-未标题-1_0026_绿色伸缩.png */,
-				67246C872BAC3BBE0088B0A3 /* 1738e572-3a0d-4149-af85-496d02d2d722-派对.gif */,
-				67246C882BAC3BBE0088B0A3 /* 2365c1fe-3297-47d7-a016-6eadfe3591a2-5VKMT7sNZZsFK5A8j4Za.gif */,
-				67246C892BAC3BBE0088B0A3 /* 3621a32e-bf72-4d70-a33b-28fa13a621e8-青色反向跑动.gif */,
-				67246C8A2BAC3BBE0088B0A3 /* 5338bf62-8752-4a57-b048-aa9495e316c5-绽放.gif */,
-				67246C8B2BAC3BBE0088B0A3 /* 6087d253-09db-4f51-956d-bfe2c6934316-未标题-1_0027_红色伸缩.png */,
-				67246C8C2BAC3BBE0088B0A3 /* 8470e1ec-9a44-4429-bc9c-e6dd236bd80c-云海彩景.gif */,
-				67246C8D2BAC3BBE0088B0A3 /* 82921e53-de0b-4417-9c1c-0d2d712a71fb-潮流.gif */,
-				67246C8E2BAC3BBE0088B0A3 /* 94803aae-d1ae-402c-8bf1-aa72ac67a8a4-未标题-1_0016_青色流星.png */,
-				67246C8F2BAC3BBE0088B0A3 /* 0169453b-dc3e-48ff-b69e-e83a2b20a6d9-未标题-1_0021_白色伸缩.png */,
-				67246C902BAC3BBE0088B0A3 /* 236515cf-0653-4fda-9ffa-14745a40781f-BS.gif */,
-				67246C912BAC3BBE0088B0A3 /* 247365e6-7c14-4058-9d7f-c3a0a6b4937f-未标题-1_0000_绽放.png */,
-				67246C922BAC3BBE0088B0A3 /* 3688449c-f352-41fb-8609-ee9821ffe24f-蓝色-正向跑动.gif */,
-				67246C932BAC3BBE0088B0A3 /* 8322486c-b0fd-4727-b87c-b82e1b1e4e7f-绿色反向跑动.gif */,
-				67246C942BAC3BBE0088B0A3 /* 66439633-6893-480a-8c9a-2167b1531888-夏日牧歌.gif */,
-				67246C952BAC3BBE0088B0A3 /* a37cfc3e-db76-43cd-948c-50e992f79f11-海之梦-NEW.gif */,
-				67246C962BAC3BBE0088B0A3 /* a7186ac0-ec9e-4a91-b64b-b3fffaf8d118-未标题-1_0012_七色流星雨.png */,
-				67246C972BAC3BBE0088B0A3 /* ae185577-2f03-470f-a825-a94f104261f6-未标题-1_0031_七色堆叠.png */,
-				67246C982BAC3BBE0088B0A3 /* b156fdd6-1b4a-4c75-870f-5f71929cadce-红色-反向跑动.gif */,
-				67246C992BAC3BBE0088B0A3 /* b993c721-2c80-42be-a64b-49fb3c8d5bbd-绿色-正向跑动.gif */,
-				67246C9A2BAC3BBE0088B0A3 /* b8013b14-2bbb-4c2c-8a97-140c07c0ec81-未标题-1_0011_多彩流星雨.png */,
-				67246C9B2BAC3BBE0088B0A3 /* b9596043-14bf-41ec-b2f2-8ab382b22726-lxHDZYT8TbBvPN3YrL4u.gif */,
-				67246C9C2BAC3BBE0088B0A3 /* c85fe74b-971b-4f2c-ab2b-6b1702e07e89-yZAHxN4CzU9xkuIHfxq1.gif */,
-				67246C9D2BAC3BBE0088B0A3 /* c692ebe1-1f75-4105-bf31-a737056c2684-未标题-1_0019_绿色流星.png */,
-				67246C9E2BAC3BBE0088B0A3 /* c8667d47-49d4-4784-8867-2a0ce9561097-母亲节.gif */,
-				67246C9F2BAC3BBE0088B0A3 /* c0882008-3793-4069-bd88-d05ed28c7aa5-未标题-1_0024_黄色伸缩.png */,
-				67246CA02BAC3BBE0088B0A3 /* cc61e823-c572-406a-a83e-230af7d50f14-未标题-1_0018_蓝色流星.png */,
-				67246CA12BAC3BBE0088B0A3 /* d64b981d-1da4-4fe0-883c-d8a1894c24f2-海上火焰.gif */,
-				67246CA22BAC3BBE0088B0A3 /* d7434e66-40bb-4878-945e-08b8b61be7bd-假日.gif */,
-				67246CA32BAC3BBE0088B0A3 /* da44231f-4982-40e7-86f1-479f495016bb-紫色-正向跑动.gif */,
-				67246CA42BAC3BBE0088B0A3 /* df28bf73-af8f-46a1-87ba-13c0eb064609-黄色-正向跑动.gif */,
-				67246CA52BAC3BBE0088B0A3 /* e0abe9db-37fe-482a-bfca-28299fb09266-紫色反向跑动.gif */,
-				67246CA62BAC3BBE0088B0A3 /* e4375a6b-ef3b-42ca-b89a-f2c15d6452e4-父亲节.gif */,
-				67246CA72BAC3BBE0088B0A3 /* eaaca7c9-8a02-4780-9aa3-679732a6def8-MLxCnt2FmjUSPxn71nxd.gif */,
-				67246CA82BAC3BBE0088B0A3 /* ebca5d5b-82aa-42a2-aa24-6acf7d5ff138-未标题-1_0015_紫色流星.png */,
-				67246CA92BAC3BBE0088B0A3 /* ecc64dc0-ac7b-4d6f-ac25-766f204f8089-未标题-1_0022_紫色伸缩.png */,
-				67246CAA2BAC3BBE0088B0A3 /* ef5173f9-9c98-40d1-a659-3dd3e9985b53-vq3madrypNLosKFQqDTn.gif */,
-				67246CAB2BAC3BBE0088B0A3 /* f0fb4dec-e0c7-47d5-adf9-5767d528d428-母亲节.gif */,
-				67246CAC2BAC3BBE0088B0A3 /* f6f5c54f-6fa4-46d5-a22a-801ee712152f-未标题-1_0032_三色堆叠.png */,
-				67246CAD2BAC3BBE0088B0A3 /* f7e0c6a0-e838-4465-a0e3-043dc8ff2b73-流水.gif */,
-				67246CAE2BAC3BBE0088B0A3 /* fe4de676-1901-469c-94d0-db211c1094b7-情人节.gif */,
-				67246CAF2BAC3BBE0088B0A3 /* fe9e77df-3f95-4991-b9d5-2f062fb8d75b-5eh8EO3zjyDO8vP3K6VJ.gif */,
-				67246CB02BAC3BBE0088B0A3 /* fe84474e-b534-498d-a8c3-f1b9e15696f2-伸缩.gif */,
-			);
-			path = images;
-			sourceTree = "<group>";
-		};
-		67246CB62BAC3BBE0088B0A3 /* DBManagement */ = {
-			isa = PBXGroup;
-			children = (
-				67246C602BAC3BBE0088B0A3 /* CacheJson */,
-				67246CB12BAC3BBE0088B0A3 /* images */,
-				67246CB22BAC3BBE0088B0A3 /* YLRequestCacheManagement.h */,
-				67246CB32BAC3BBE0088B0A3 /* YLRequestCacheManagement.m */,
-				67246CB42BAC3BBE0088B0A3 /* YTKKeyValueStore.h */,
-				67246CB52BAC3BBE0088B0A3 /* YTKKeyValueStore.m */,
-			);
-			path = DBManagement;
-			sourceTree = "<group>";
-		};
-		67246CBB2BAC3BBE0088B0A3 /* HttpRequstCache */ = {
-			isa = PBXGroup;
-			children = (
-				67246CB62BAC3BBE0088B0A3 /* DBManagement */,
-				67246CB72BAC3BBE0088B0A3 /* CacheToolManagement.h */,
-				67246CB82BAC3BBE0088B0A3 /* CacheToolManagement.m */,
-				67246CB92BAC3BBE0088B0A3 /* Reachability.h */,
-				67246CBA2BAC3BBE0088B0A3 /* Reachability.m */,
-			);
-			path = HttpRequstCache;
-			sourceTree = "<group>";
-		};
 		67246CBE2BAC3BBE0088B0A3 /* NetworkRequest */ = {
 			isa = PBXGroup;
 			children = (
-				67246CBB2BAC3BBE0088B0A3 /* HttpRequstCache */,
 				67246CBC2BAC3BBE0088B0A3 /* YXHTTPRequst.h */,
 				67246CBD2BAC3BBE0088B0A3 /* YXHTTPRequst.m */,
 			);
@@ -1357,148 +968,62 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67246CDE2BAC3BBE0088B0A3 /* 75e20132-c920-4f71-babc-8c0bb85a5699-派对.gif in Resources */,
-				67246CEB2BAC3BBE0088B0A3 /* 1738e572-3a0d-4149-af85-496d02d2d722-派对.gif in Resources */,
 				6724691A2BAC1BC80088B0A3 /* text_emoji_09.png in Resources */,
 				672469192BAC1BC80088B0A3 /* text_emoji_08.png in Resources */,
 				672469162BAC1BC80088B0A3 /* text_emoji_05.png in Resources */,
-				67246D032BAC3BBE0088B0A3 /* c0882008-3793-4069-bd88-d05ed28c7aa5-未标题-1_0024_黄色伸缩.png in Resources */,
-				67246D002BAC3BBE0088B0A3 /* c85fe74b-971b-4f2c-ab2b-6b1702e07e89-yZAHxN4CzU9xkuIHfxq1.gif in Resources */,
 				672469292BAC1BC80088B0A3 /* text_emoji_24.png in Resources */,
 				672469242BAC1BC80088B0A3 /* text_emoji_19.png in Resources */,
-				67246CDC2BAC3BBE0088B0A3 /* 61f28049-ca85-425d-b52a-2b8a62786ff2-派对.gif in Resources */,
-				67246CDF2BAC3BBE0088B0A3 /* 91cf60e4-990c-4545-b8c2-ebbe360b6cb0-未标题-1_0002_反弹.png in Resources */,
-				67246CFB2BAC3BBE0088B0A3 /* ae185577-2f03-470f-a825-a94f104261f6-未标题-1_0031_七色堆叠.png in Resources */,
-				67246CEE2BAC3BBE0088B0A3 /* 5338bf62-8752-4a57-b048-aa9495e316c5-绽放.gif in Resources */,
-				67246CD12BAC3BBE0088B0A3 /* 6d9ac503-63cf-41c9-9e89-7665465e9575-蓝色反向跑动.gif in Resources */,
 				672469382BAC1BC80088B0A3 /* ark-pixel-12px-monospaced-latin.ttf in Resources */,
-				67246D012BAC3BBE0088B0A3 /* c692ebe1-1f75-4105-bf31-a737056c2684-未标题-1_0019_绿色流星.png in Resources */,
-				67246D132BAC3BBE0088B0A3 /* fe9e77df-3f95-4991-b9d5-2f062fb8d75b-5eh8EO3zjyDO8vP3K6VJ.gif in Resources */,
-				67246CFA2BAC3BBE0088B0A3 /* a7186ac0-ec9e-4a91-b64b-b3fffaf8d118-未标题-1_0012_七色流星雨.png in Resources */,
-				67246CED2BAC3BBE0088B0A3 /* 3621a32e-bf72-4d70-a33b-28fa13a621e8-青色反向跑动.gif in Resources */,
-				67246CE82BAC3BBE0088B0A3 /* 828f7a76-4a2d-451f-9f8d-ebe6de4ed6ed-爱与梦幻.gif in Resources */,
-				67246CD82BAC3BBE0088B0A3 /* 12d1d7d6-2e45-4909-99c3-485b7d9155cf-未标题-1_0028_多彩伸缩.png in Resources */,
-				67246CEA2BAC3BBE0088B0A3 /* 1408e75c-2987-484d-949b-c5e8c88e8e03-未标题-1_0026_绿色伸缩.png in Resources */,
 				6724693D2BAC1BC80088B0A3 /* www6*4.bmp in Resources */,
 				672469302BAC1BC80088B0A3 /* text_emoji_31.png in Resources */,
-				67246CD62BAC3BBE0088B0A3 /* 8c68c4c2-e995-4227-9481-59c01d481c08-流星.gif in Resources */,
 				67850B712BAEB3C300A44336 /* FYLVIPKeyboardView.xib in Resources */,
 				67DB322F2BB2D27900D3AD80 /* click3.wav in Resources */,
 				672469232BAC1BC80088B0A3 /* text_emoji_18.png in Resources */,
-				67246D112BAC3BBE0088B0A3 /* f7e0c6a0-e838-4465-a0e3-043dc8ff2b73-流水.gif in Resources */,
 				6724692E2BAC1BC80088B0A3 /* text_emoji_29.png in Resources */,
-				67246CF02BAC3BBE0088B0A3 /* 8470e1ec-9a44-4429-bc9c-e6dd236bd80c-云海彩景.gif in Resources */,
-				67246CE42BAC3BBE0088B0A3 /* 530da05d-8975-4af9-941f-272490050484-JEuxHscZWwQnihrQSdy7.gif in Resources */,
-				67246CFF2BAC3BBE0088B0A3 /* b9596043-14bf-41ec-b2f2-8ab382b22726-lxHDZYT8TbBvPN3YrL4u.gif in Resources */,
-				67246CE32BAC3BBE0088B0A3 /* 173d648d-b9bc-4ecb-93e5-b60cd6ce5604-红色-正向跑动.gif in Resources */,
 				672469252BAC1BC80088B0A3 /* text_emoji_20.png in Resources */,
 				672469262BAC1BC80088B0A3 /* text_emoji_21.png in Resources */,
-				67246CD42BAC3BBE0088B0A3 /* 07ae00a9-f652-4173-92f4-e8e0199a5931-8c6bbd88-6f61-43c7-a9b3-3b538296bcfe.png in Resources */,
-				67246D082BAC3BBE0088B0A3 /* df28bf73-af8f-46a1-87ba-13c0eb064609-黄色-正向跑动.gif in Resources */,
-				67246CF22BAC3BBE0088B0A3 /* 94803aae-d1ae-402c-8bf1-aa72ac67a8a4-未标题-1_0016_青色流星.png in Resources */,
-				67246CDB2BAC3BBE0088B0A3 /* 48cddee3-751a-44ca-9a7a-c8c7b1b1637b-未标题-1_0013_三色流星雨.png in Resources */,
-				67246CC22BAC3BBE0088B0A3 /* DreamColorModelPage.json in Resources */,
 				6724692F2BAC1BC80088B0A3 /* text_emoji_30.png in Resources */,
-				67246CEF2BAC3BBE0088B0A3 /* 6087d253-09db-4f51-956d-bfe2c6934316-未标题-1_0027_红色伸缩.png in Resources */,
-				67246CD52BAC3BBE0088B0A3 /* 8bc13b2a-55cd-46a6-9e76-0a258ed06602-反弹.gif in Resources */,
 				6724693F2BAC1BC80088B0A3 /* www6*6.bmp in Resources */,
-				67246D092BAC3BBE0088B0A3 /* e0abe9db-37fe-482a-bfca-28299fb09266-紫色反向跑动.gif in Resources */,
 				672469272BAC1BC80088B0A3 /* text_emoji_22.png in Resources */,
-				67246CE12BAC3BBE0088B0A3 /* 98fbf4af-3698-4a3d-913a-8c9925a3f525-工作.gif in Resources */,
-				67246CF32BAC3BBE0088B0A3 /* 0169453b-dc3e-48ff-b69e-e83a2b20a6d9-未标题-1_0021_白色伸缩.png in Resources */,
-				67246CC72BAC3BBE0088B0A3 /* 0e30fdec-da67-40a1-9c75-df4114707c0d-未标题-1_0001_星闪.png in Resources */,
 				672469352BAC1BC80088B0A3 /* text_emoji_36.png in Resources */,
 				6724691F2BAC1BC80088B0A3 /* text_emoji_14.png in Resources */,
 				6724691C2BAC1BC80088B0A3 /* text_emoji_11.png in Resources */,
-				67246CCA2BAC3BBE0088B0A3 /* 1dc7733c-1d28-4daa-8841-313497a71685-ZPlscSNQuWy84YhSze2D.gif in Resources */,
-				67246CE52BAC3BBE0088B0A3 /* 559a8658-f911-4699-b098-db55546d3c0f-y7duh5Jhu6VR2a6fOS5p.gif in Resources */,
-				67246CE22BAC3BBE0088B0A3 /* 108f576b-551c-4c44-a6b8-ca5a637f48f9-未标题-1_0023_青色伸缩.png in Resources */,
-				67246CF92BAC3BBE0088B0A3 /* a37cfc3e-db76-43cd-948c-50e992f79f11-海之梦-NEW.gif in Resources */,
-				67246D122BAC3BBE0088B0A3 /* fe4de676-1901-469c-94d0-db211c1094b7-情人节.gif in Resources */,
-				67246CFD2BAC3BBE0088B0A3 /* b993c721-2c80-42be-a64b-49fb3c8d5bbd-绿色-正向跑动.gif in Resources */,
-				67246D0C2BAC3BBE0088B0A3 /* ebca5d5b-82aa-42a2-aa24-6acf7d5ff138-未标题-1_0015_紫色流星.png in Resources */,
-				67246CE02BAC3BBE0088B0A3 /* 98bedc1e-3ef7-4f5c-bed0-9dbd207a5b50-CSFX.gif in Resources */,
 				67DB322D2BB2D27900D3AD80 /* click.wav in Resources */,
-				67246CDD2BAC3BBE0088B0A3 /* 71bd35f0-2ab1-4779-8499-ffc735c9ac66-未标题-1_0020_红色流星.png in Resources */,
-				67246CCD2BAC3BBE0088B0A3 /* 2c34c312-27b2-478f-8e43-134260fd9fbe-追光.gif in Resources */,
 				672469142BAC1BC80088B0A3 /* text_emoji_03.png in Resources */,
 				6724693A2BAC1BC80088B0A3 /* www6*3_red.bmp in Resources */,
-				67246D0B2BAC3BBE0088B0A3 /* eaaca7c9-8a02-4780-9aa3-679732a6def8-MLxCnt2FmjUSPxn71nxd.gif in Resources */,
 				6724692C2BAC1BC80088B0A3 /* text_emoji_27.png in Resources */,
-				67246CFE2BAC3BBE0088B0A3 /* b8013b14-2bbb-4c2c-8a97-140c07c0ec81-未标题-1_0011_多彩流星雨.png in Resources */,
-				67246D042BAC3BBE0088B0A3 /* cc61e823-c572-406a-a83e-230af7d50f14-未标题-1_0018_蓝色流星.png in Resources */,
-				67246CCE2BAC3BBE0088B0A3 /* 3ccfd562-1978-4be1-8092-f0e1ee031c0a-未标题-1_0017_黄色流星.png in Resources */,
 				67850B6F2BAEA5F800A44336 /* FYLRegularKeyboardView.xib in Resources */,
 				672469372BAC1BC80088B0A3 /* text_emoji_38.png in Resources */,
-				67246CF12BAC3BBE0088B0A3 /* 82921e53-de0b-4417-9c1c-0d2d712a71fb-潮流.gif in Resources */,
-				67246D142BAC3BBE0088B0A3 /* fe84474e-b534-498d-a8c3-f1b9e15696f2-伸缩.gif in Resources */,
 				67DB322E2BB2D27900D3AD80 /* click2.wav in Resources */,
 				672469212BAC1BC80088B0A3 /* text_emoji_16.png in Resources */,
-				67246CD32BAC3BBE0088B0A3 /* 6fff4d56-3d7b-4ac9-b6f6-ff5e3f44445b-未标题-1_0030_三色追光.png in Resources */,
-				67246CC02BAC3BBE0088B0A3 /* DreamColorModelClass.json in Resources */,
-				67246CC92BAC3BBE0088B0A3 /* 1d99726d-44d5-4674-a5db-0e7bf58c23f4-未标题-1_0029_七色追光.png in Resources */,
 				6724692B2BAC1BC80088B0A3 /* text_emoji_26.png in Resources */,
 				6724693C2BAC1BC80088B0A3 /* www6*4_red.bmp in Resources */,
-				67246CD22BAC3BBE0088B0A3 /* 06e265e5-7cc2-4a74-9d69-92b3cc33d7fe-堆叠.gif in Resources */,
 				672469222BAC1BC80088B0A3 /* text_emoji_17.png in Resources */,
 				6724693B2BAC1BC80088B0A3 /* www6*3.bmp in Resources */,
 				67850B662BAE824300A44336 /* FYLHistoricalRecordCell.xib in Resources */,
-				67246D072BAC3BBE0088B0A3 /* da44231f-4982-40e7-86f1-479f495016bb-紫色-正向跑动.gif in Resources */,
-				67246CF72BAC3BBE0088B0A3 /* 8322486c-b0fd-4727-b87c-b82e1b1e4e7f-绿色反向跑动.gif in Resources */,
 				6724692A2BAC1BC80088B0A3 /* text_emoji_25.png in Resources */,
-				67246D062BAC3BBE0088B0A3 /* d7434e66-40bb-4878-945e-08b8b61be7bd-假日.gif in Resources */,
-				67246CC62BAC3BBE0088B0A3 /* 0b23e3d2-4ead-409e-82e2-ee9ca2a28a82-BS.gif in Resources */,
-				67246CFC2BAC3BBE0088B0A3 /* b156fdd6-1b4a-4c75-870f-5f71929cadce-红色-反向跑动.gif in Resources */,
-				67246CD72BAC3BBE0088B0A3 /* 9f6600cd-018a-4d22-bd4a-58737a2c572f-lQHPKdfJecNPesvMtM0C7rC5sZqBATe5RgVg1dXjSf0A_750_180.gif in Resources */,
 				672469182BAC1BC80088B0A3 /* text_emoji_07.png in Resources */,
 				672469122BAC1BC80088B0A3 /* text_emoji_01.png in Resources */,
 				672468962BAC1A6A0088B0A3 /* Assets.xcassets in Resources */,
 				672469202BAC1BC80088B0A3 /* text_emoji_15.png in Resources */,
 				6724692D2BAC1BC80088B0A3 /* text_emoji_28.png in Resources */,
 				6724693E2BAC1BC80088B0A3 /* www6*6_red.bmp in Resources */,
-				67246D0D2BAC3BBE0088B0A3 /* ecc64dc0-ac7b-4d6f-ac25-766f204f8089-未标题-1_0022_紫色伸缩.png in Resources */,
-				67246CCF2BAC3BBE0088B0A3 /* 5c1ef1f3-82df-4c7a-97ef-a8709e1820c8-未标题-1_0036_七色流水.png in Resources */,
 				672469332BAC1BC80088B0A3 /* text_emoji_34.png in Resources */,
-				67246CDA2BAC3BBE0088B0A3 /* 35ef4189-00b7-4d77-a518-f5d4872151cf-未标题-1_0025_蓝色伸缩.png in Resources */,
-				67246CF82BAC3BBE0088B0A3 /* 66439633-6893-480a-8c9a-2167b1531888-夏日牧歌.gif in Resources */,
-				67246CC32BAC3BBE0088B0A3 /* DreamColorRhythmDevice.json in Resources */,
-				67246CEC2BAC3BBE0088B0A3 /* 2365c1fe-3297-47d7-a016-6eadfe3591a2-5VKMT7sNZZsFK5A8j4Za.gif in Resources */,
-				67246CE92BAC3BBE0088B0A3 /* 980a20bd-6dca-4e3f-ba38-b3710f4d66d7-圣诞节.gif in Resources */,
 				672469392BAC1BC80088B0A3 /* WenQuanDianZhenZhengHei.ttf in Resources */,
-				67246D0E2BAC3BBE0088B0A3 /* ef5173f9-9c98-40d1-a659-3dd3e9985b53-vq3madrypNLosKFQqDTn.gif in Resources */,
-				67246D0A2BAC3BBE0088B0A3 /* e4375a6b-ef3b-42ca-b89a-f2c15d6452e4-父亲节.gif in Resources */,
 				672469132BAC1BC80088B0A3 /* text_emoji_02.png in Resources */,
-				67246CE62BAC3BBE0088B0A3 /* 568d2c52-710f-44f1-be5e-b61ab045c114-霓虹世界.gif in Resources */,
 				672469282BAC1BC80088B0A3 /* text_emoji_23.png in Resources */,
 				672468992BAC1A6A0088B0A3 /* Base in Resources */,
 				672469172BAC1BC80088B0A3 /* text_emoji_06.png in Resources */,
-				67246CBF2BAC3BBE0088B0A3 /* DreamColorDIY.json in Resources */,
-				67246CC52BAC3BBE0088B0A3 /* 0aed2994-a71c-4efa-b47d-3c42046350c5-黄色-反向跑动.gif in Resources */,
 				67DB32302BB2D27900D3AD80 /* click1.wav in Resources */,
-				67246CCB2BAC3BBE0088B0A3 /* 1dec3135-a887-4416-aff4-9a35ba2eb0b8-爱与梦幻.gif in Resources */,
 				672468942BAC1A680088B0A3 /* Base in Resources */,
-				67246D102BAC3BBE0088B0A3 /* f6f5c54f-6fa4-46d5-a22a-801ee712152f-未标题-1_0032_三色堆叠.png in Resources */,
-				67246CE72BAC3BBE0088B0A3 /* 770d8b37-3f16-435d-9465-7187dc144191-未标题-1_0014_白色流星.png in Resources */,
 				6724691D2BAC1BC80088B0A3 /* text_emoji_12.png in Resources */,
-				67246CD02BAC3BBE0088B0A3 /* 5f6cd30a-96f5-4156-90dc-297930d1fe79-流星雨.gif in Resources */,
 				6724691B2BAC1BC80088B0A3 /* text_emoji_10.png in Resources */,
-				67246CC12BAC3BBE0088B0A3 /* DreamColorModelClassPage.json in Resources */,
 				672469312BAC1BC80088B0A3 /* text_emoji_32.png in Resources */,
 				672469322BAC1BC80088B0A3 /* text_emoji_33.png in Resources */,
-				67246CF42BAC3BBE0088B0A3 /* 236515cf-0653-4fda-9ffa-14745a40781f-BS.gif in Resources */,
 				672469342BAC1BC80088B0A3 /* text_emoji_35.png in Resources */,
 				672469362BAC1BC80088B0A3 /* text_emoji_37.png in Resources */,
-				67246CF62BAC3BBE0088B0A3 /* 3688449c-f352-41fb-8609-ee9821ffe24f-蓝色-正向跑动.gif in Resources */,
-				67246CC42BAC3BBE0088B0A3 /* DreamColorRhythmPhoneAndDevice.json in Resources */,
 				672469152BAC1BC80088B0A3 /* text_emoji_04.png in Resources */,
 				6724691E2BAC1BC80088B0A3 /* text_emoji_13.png in Resources */,
-				67246CCC2BAC3BBE0088B0A3 /* 1eaf05fd-c9cd-4030-95b7-52b9047167d6-6HE7WjbVihdbmlcK5Y8r.gif in Resources */,
-				67246CD92BAC3BBE0088B0A3 /* 28a1707d-f14f-4ff1-93c8-cbc2a6216102-闪现.gif in Resources */,
-				67246D0F2BAC3BBE0088B0A3 /* f0fb4dec-e0c7-47d5-adf9-5767d528d428-母亲节.gif in Resources */,
-				67246CC82BAC3BBE0088B0A3 /* 1bea890b-1fcf-47eb-aeb1-7e327eb5c1f3-雪中小屋.gif in Resources */,
-				67246D022BAC3BBE0088B0A3 /* c8667d47-49d4-4784-8867-2a0ce9561097-母亲节.gif in Resources */,
-				67246CF52BAC3BBE0088B0A3 /* 247365e6-7c14-4058-9d7f-c3a0a6b4937f-未标题-1_0000_绽放.png in Resources */,
-				67246D052BAC3BBE0088B0A3 /* d64b981d-1da4-4fe0-883c-d8a1894c24f2-海上火焰.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1570,7 +1095,6 @@
 				67246D232BAC3C760088B0A3 /* UITextField+LimitLength.m in Sources */,
 				6730413E2BB426D600EF02AB /* Stack.m in Sources */,
 				67850B6A2BAE826B00A44336 /* YLUserToolManager.m in Sources */,
-				67246C2F2BAC23480088B0A3 /* FYLPasswordLoginViewController.m in Sources */,
 				67246D472BAC3F480088B0A3 /* YLWKViewController.m in Sources */,
 				6725DA732BBAB7D000695EA1 /* MSValueOperator.m in Sources */,
 				672468912BAC1A680088B0A3 /* ViewController.m in Sources */,
@@ -1580,7 +1104,6 @@
 				6725DA712BBAB7D000695EA1 /* MSPairOperator.m in Sources */,
 				672468D72BAC1B880088B0A3 /* BaseModel.m in Sources */,
 				67246C592BAC3B480088B0A3 /* PublicHelpers.m in Sources */,
-				67246C312BAC23480088B0A3 /* YLLoginViewController.m in Sources */,
 				6725DA652BBAB7D000695EA1 /* MSElementTable.m in Sources */,
 				67850B6D2BAEA5ED00A44336 /* FYLRegularKeyboardView.m in Sources */,
 				67246D1D2BAC3C1F0088B0A3 /* CommonManagement.m in Sources */,
@@ -1591,41 +1114,30 @@
 				67246C4A2BAC396C0088B0A3 /* YLMySetViewController.m in Sources */,
 				672468DA2BAC1B880088B0A3 /* YLNavigationViewController.m in Sources */,
 				672468DC2BAC1B880088B0A3 /* YLTabbarItem_View.m in Sources */,
-				67246D162BAC3BBE0088B0A3 /* YTKKeyValueStore.m in Sources */,
 				67246D272BAC3CFE0088B0A3 /* ZZLabel.m in Sources */,
-				67246C2C2BAC23480088B0A3 /* FYLCreatePasswordViewController.m in Sources */,
 				6724689C2BAC1A6A0088B0A3 /* main.m in Sources */,
 				6725DA6F2BBAB7D000695EA1 /* MSNumberGroup.m in Sources */,
 				67850B652BAE824300A44336 /* FYLHistoricalRecordCell.m in Sources */,
 				6725DA7D2BBAC2F400695EA1 /* BaseView.m in Sources */,
-				67246C302BAC23480088B0A3 /* FYLVerificationCodeLoginViewController.m in Sources */,
 				67246C542BAC3B0F0088B0A3 /* LoadingStyleManager.m in Sources */,
 				6725DA792BBAC2C000695EA1 /* YLDIYEditBoxListView.m in Sources */,
-				67246C292BAC23480088B0A3 /* HWTFCodeBView.m in Sources */,
-				67246C2D2BAC23480088B0A3 /* FYLForgotPasswordViewController.m in Sources */,
 				67246D3A2BAC3F0B0088B0A3 /* NSMutableAttributedString+WY_Extension.m in Sources */,
 				6725DA6D2BBAB7D000695EA1 /* MSFunctionOperator.m in Sources */,
 				673041392BB426B200EF02AB /* Calculate+Health.m in Sources */,
 				67246C392BAC25ED0088B0A3 /* YLMyViewController.m in Sources */,
-				67246D152BAC3BBE0088B0A3 /* YLRequestCacheManagement.m in Sources */,
 				6725DA692BBAB7D000695EA1 /* NSError+MSExpression.m in Sources */,
 				6730413F2BB426D600EF02AB /* Calculate.m in Sources */,
-				67246C4E2BAC3B010088B0A3 /* SVProgressHUD+YLLoading.m in Sources */,
 				6725DA6A2BBAB7D000695EA1 /* MSExpressionHelper.m in Sources */,
-				67246C2B2BAC23480088B0A3 /* SMSCodeView.m in Sources */,
 				6725DA762BBABE7C00695EA1 /* YLShareDeviceOuterModel.m in Sources */,
 				67246D192BAC3BBE0088B0A3 /* YXHTTPRequst.m in Sources */,
 				6725DA672BBAB7D000695EA1 /* MSScaner.m in Sources */,
 				67246D222BAC3C760088B0A3 /* SHMEmojiMethod.m in Sources */,
-				67246C2A2BAC23480088B0A3 /* SMSCodeInputView.m in Sources */,
 				67261E8F2BB7ECB000433DD1 /* FYLHistoryModel.m in Sources */,
-				67246C2E2BAC23480088B0A3 /* FYLLoginBaseViewController.m in Sources */,
 				67246D3B2BAC3F0B0088B0A3 /* NSMutableParagraphStyle+WY_Extension.m in Sources */,
 				67850B742BAEB3D500A44336 /* FYLVIPKeyboardView.m in Sources */,
 				672468DB2BAC1B880088B0A3 /* YLTabbar_View.m in Sources */,
 				67246D2D2BAC3DAC0088B0A3 /* ToolManagement.m in Sources */,
 				6725DA702BBAB7D000695EA1 /* MSOperator.m in Sources */,
-				67246D182BAC3BBE0088B0A3 /* Reachability.m in Sources */,
 				6725DA682BBAB7D000695EA1 /* MSStack.m in Sources */,
 				6725DA662BBAB7D000695EA1 /* MSParser.m in Sources */,
 				6725DA6B2BBAB7D000695EA1 /* MSConstant.m in Sources */,
@@ -1635,8 +1147,6 @@
 				672468DD2BAC1B880088B0A3 /* YLTabBarViewController.m in Sources */,
 				672468D92BAC1B880088B0A3 /* NavigationBarHandler.m in Sources */,
 				672468D82BAC1B880088B0A3 /* BaseNavigationBar.m in Sources */,
-				67246C282BAC23480088B0A3 /* FYLUserProtocolTipView.m in Sources */,
-				67246D172BAC3BBE0088B0A3 /* CacheToolManagement.m in Sources */,
 				67246D2A2BAC3D4B0088B0A3 /* ZZAlertViewTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

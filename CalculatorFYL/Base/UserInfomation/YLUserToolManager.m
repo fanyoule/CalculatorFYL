@@ -31,17 +31,7 @@
     return instance;
 }
 +(BOOL)pushTologioVC{
-    if (!ZJ_UserLoginInfomation.getLogin) {
-        YLLoginViewController * vc = [[YLLoginViewController alloc]init];
-        vc.type = LoginViewTypeFrompassword;
-        YLNavigationViewController * nav = [[YLNavigationViewController alloc]initWithRootViewController:vc];
-        nav.navigationBarHidden = YES;
-        UIViewController * currectVC = [YLUserToolManager lz_getCurrentViewController];
-        [currectVC.navigationController presentViewController:nav animated:YES completion:^{
-
-        }];
-        return YES;
-    }
+    
     return NO;
     
 }

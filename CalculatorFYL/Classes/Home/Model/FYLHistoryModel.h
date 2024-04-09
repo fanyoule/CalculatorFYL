@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy)NSString *resultStr;// 结果
 @property(nonatomic,copy)NSString * userName;//拥有者账号
 @property(nonatomic,assign)NSInteger  textHeight;//内容高度
+@property(nonatomic,assign)HistoryTypeStatus state;
 
 +(void)insert:(FYLHistoryModel *)device;
 // 获取所有的数据
@@ -27,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(FYLHistoryModel *)obtainTheModelBasedOnTheTime:(NSString *)time;
 +(NSArray *)searchLocalMyWifiDeviceModel;
 +(NSArray *)obtainTheModelUserHistory:(NSString *)userName;
-
++(BOOL)removeUserWifiDevice;
 
 
 @end

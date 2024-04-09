@@ -9,7 +9,6 @@ pod 'YYModel'
 pod 'LKDBHelper'
 pod 'TZImagePickerController/Basic' # No location code
 pod 'LSSafeProtector'
-pod 'SVProgressHUD'
 pod 'MBProgressHUD'
 pod 'JKCategories'
 #pod 'TTConsole'# 开发调试工具收集崩溃等

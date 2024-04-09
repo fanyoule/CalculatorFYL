@@ -38,24 +38,27 @@ FYLRegularKeyboardViewdelegate
 @end
 
 @implementation YLHomeViewController
-{
-    NSString * numberBefore;    //前个数字
-    NSString * numberCurrent;   //当前数字
-    NSString * actionType;      //当前存储的加减乘除动作  + - * /
-    double result;
-    BOOL  isActionTypeMove;     //加减乘除已经做了移位
-    BOOL  isStatusEqual;        //是否按了等号
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self creatUI];
     [self readHistoryData];
 }
+// 记录小数点状态  1已输入小数点 0未输入小数点
+int pointFlag = 0;
+// 防止连续输入符号  1已输入运算符  0未输入运算符
+int secondFlag = 0;
+// 记录等于号状态
+int equalFlag = 0;
+// 记录数字后再输入小数点 0数字 1运算符
+int numpoint = 0;
+//记录左括号数量
+int leftbrackets = 0;
+
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     self.view.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
-//    NSLog(@"%@---%@",NSStringFromCGRect(self.view.frame) ,NSStringFromCGRect(self.view.frame));
 }
 #pragma mark 读取历史记录
 -(void)readHistoryData{
@@ -88,60 +91,171 @@ FYLRegularKeyboardViewdelegate
     
     
     if ([btn.titleLabel.text isEqualToString:@"0"]) {
+        
+        secondFlag = 0;
+        numpoint = 0;
+        
+        
         [self changeNumberGreateBtn:btn];
     }else if ([btn.titleLabel.text isEqualToString:@"1"]){
+        secondFlag = 0;
+        numpoint = 0;
+        
         [self changeNumberGreateBtn:btn];
 
     }else if ([btn.titleLabel.text isEqualToString:@"2"]){
+        secondFlag = 0;
+        numpoint = 0;
+        
+        
         [self changeNumberGreateBtn:btn];
 
     }else if ([btn.titleLabel.text isEqualToString:@"3"]){
+        secondFlag = 0;
+        numpoint = 0;
+        
+        
         [self changeNumberGreateBtn:btn];
 
     }else if ([btn.titleLabel.text isEqualToString:@"4"]){
+        secondFlag = 0;
+        numpoint = 0;
+        
+        
         [self changeNumberGreateBtn:btn];
 
     }else if ([btn.titleLabel.text isEqualToString:@"5"]){
+        secondFlag = 0;
+        numpoint = 0;
+        
+        
         [self changeNumberGreateBtn:btn];
 
     }else if ([btn.titleLabel.text isEqualToString:@"6"]){
+        secondFlag = 0;
+        numpoint = 0;
+        
+        
+        
         [self changeNumberGreateBtn:btn];
 
     }else if ([btn.titleLabel.text isEqualToString:@"7"]){
+        secondFlag = 0;
+        numpoint = 0;
+        
+        
+        
         [self changeNumberGreateBtn:btn];
 
     }else if ([btn.titleLabel.text isEqualToString:@"8"]){
+        secondFlag = 0;
+        numpoint = 0;
+        
+        
+        
+        
         [self changeNumberGreateBtn:btn];
 
     }else if ([btn.titleLabel.text isEqualToString:@"9"]){
+        secondFlag = 0;
+        numpoint = 0;
+        
+        
+        
         [self changeNumberGreateBtn:btn];
 
     }else if ([btn.titleLabel.text isEqualToString:@"."]){
-        if ([self stringHasPoint:self.L_contect.text]) {
-            return;
+        if (numpoint == 0 && pointFlag == 0) {
+            if (!IS_VALID_STRING(self.L_contect.text)) {
+                self.L_contect.text = @"0";
+            }
+            pointFlag = 1;
+            [self changeNumberGreateBtn:btn];
         }
-        if (!IS_VALID_STRING(self.L_contect.text)) {
-            self.L_contect.text = @"0";
-        }
-        [self changeNumberGreateBtn:btn];
+        
 
     }else if ([btn.titleLabel.text isEqualToString:@"C"]){
+        pointFlag = 0;
+        secondFlag = 0;
+        equalFlag = 0;
+        leftbrackets = 0;
+        
+        
         [self clearDate];
     }else if ([btn.titleLabel.text isEqualToString:@"÷"]){
-        [self changeNumberGreateBtn:btn];
+        if (secondFlag == 0) {
+            pointFlag = 0;
+            secondFlag = 1;
+            numpoint = 1;
+            [self changeNumberGreateBtn:btn];
+        }
 
     }else if ([btn.titleLabel.text isEqualToString:@"×"]){
-        [self changeNumberGreateBtn:btn];
+        if (secondFlag == 0) {
+            pointFlag = 0;
+            secondFlag = 1;
+            numpoint = 1;
+            [self changeNumberGreateBtn:btn];
+        }
+        
 
     }else if ([btn.titleLabel.text isEqualToString:@"←"]){
+        
+        
+        
         [self clearLastBit];
+        
+        
     }else if ([btn.titleLabel.text isEqualToString:@"-"]){
-        [self changeNumberGreateBtn:btn];
+        if (secondFlag == 0) {
+            pointFlag = 0;
+            secondFlag = 1;
+            numpoint = 1;
+            [self changeNumberGreateBtn:btn];
+        }
+      
     }else if ([btn.titleLabel.text isEqualToString:@"+"]){
-        [self changeNumberGreateBtn:btn];
+        if (secondFlag == 0) {
+            pointFlag = 0;
+            secondFlag = 1;
+            numpoint = 1;
+            [self changeNumberGreateBtn:btn];
+        }
 
     }else if ([btn.titleLabel.text isEqualToString:@"="]){
+        pointFlag = 0;
+        secondFlag = 0;
+        equalFlag = 0;
+        leftbrackets = 0;
+        
         [self actionEqual];
+        if ([self.L_contect.text containsString:@"."]) {
+            pointFlag = 1;
+        }
+    }else if ([btn.titleLabel.text isEqualToString:@"()"]){
+        secondFlag = 0;
+        if (leftbrackets != 0) {
+            leftbrackets--;
+            NSMutableString *originalString=[NSMutableString stringWithString:self.L_contect.text];
+            [originalString appendString:@")"];
+            self.L_contect.text=originalString;
+            [self refreshWidthContent];
+        }else{
+            leftbrackets++;
+            NSMutableString *originalString=[NSMutableString stringWithString:self.L_contect.text];
+            [originalString appendString:@"("];
+            self.L_contect.text=originalString;
+            [self refreshWidthContent];
+        }
+        
+    }else if ([btn.titleLabel.text isEqualToString:@"%"]){
+        if (secondFlag == 0) {
+            pointFlag = 0;
+            secondFlag = 1;
+            numpoint = 1;
+            [self changeNumberGreateBtn:btn];
+        }
+
     }
     
     
@@ -172,7 +286,6 @@ FYLRegularKeyboardViewdelegate
     }];
     
     if(allRight){
-        
         //计算表达式
         NSDecimalNumber* computeResult = [MSParser parserComputeNumberExpression:jsExpString error:nil];
         NSDecimal decimal = computeResult.decimalValue;
@@ -188,6 +301,7 @@ FYLRegularKeyboardViewdelegate
         model.time = [[ToolManagement sharedManager]getTimeStrWithString:currtime];
         model.text = [NSString stringWithFormat:@"%@=%@",calculateResult_new2,jieguo];
         model.userName = @"123";
+    
         BOOL success = [model saveToDB];
         if (success) {
             [self readHistoryData];
@@ -218,45 +332,29 @@ FYLRegularKeyboardViewdelegate
 -(void)clearLastBit{
     NSInteger length=[self.L_contect.text length];
     if(length>0){
-        //一定也要对输入框中的表达式进行处理，因为input里面的× ÷和显示的* /不同
+        NSString * lastStr_old = [self.L_contect.text substringWithRange:NSMakeRange(self.L_contect.text.length-1, 1)];
         NSMutableString *delResultString=[NSMutableString stringWithString:self.L_contect.text];
         [delResultString deleteCharactersInRange:NSMakeRange(length-1, 1)];
         self.L_contect.text=delResultString;
+        NSString * lastStr_new = [self.L_contect.text substringWithRange:NSMakeRange(self.L_contect.text.length-1, 1)];
+        if ([lastStr_old isEqualToString:@"÷"]||[lastStr_old isEqualToString:@"×"]||[lastStr_old isEqualToString:@"-"]||[lastStr_old isEqualToString:@"+"]||[lastStr_old isEqualToString:@"%"]) {
+            secondFlag = 0;
+            
+        }else if ([lastStr_old isEqualToString:@"("]){
+            
+        }else if ([lastStr_old isEqualToString:@")"]){
+            
+        }else if ([lastStr_old isEqualToString:@"."]){
+            pointFlag = 0;
+            
+        }else{
+            
+        }
+       
     }
     
 }
 
-
--(void)numberGreate:(int)number{//number形式参数
-    if (isStatusEqual) {
-        [self clearDate];
-    }
-    if (actionType&&!isActionTypeMove){
-        numberBefore=numberCurrent;
-        numberCurrent=@"0";
-        isActionTypeMove=YES;
-    }
-    if ([numberCurrent isEqualToString:@"0"]) {
-        numberCurrent=[NSString stringWithFormat:@"%d",number];
-    }else if([self stringHasPoint:numberCurrent]) {
-        if (numberCurrent.length>=MaxCount) {
-            return;
-        }else{
-            numberCurrent=[NSString stringWithFormat:@"%@%d",numberCurrent,number];
-        }
-    }else if (numberCurrent.length>=MaxCount) {
-        return;
-    }else{
-        if (IS_VALID_STRING(numberCurrent)) {
-            numberCurrent=[NSString stringWithFormat:@"%@%d",numberCurrent,number];
-        }else{
-            numberCurrent=[NSString stringWithFormat:@"%d",number];
-        }
-        
-    }
-    [self setNumberDisplay:numberCurrent];
-
-}
 -(void)setNumberDisplay:(NSString *)numberDisplay{
     self.L_contect.text=[self setNumber:numberDisplay];
     CGFloat width_text = [self.L_contect.text jk_widthWithFont:PxM56Font constrainedToHeight:50];
@@ -266,15 +364,7 @@ FYLRegularKeyboardViewdelegate
         [self.V_scroll setContentOffset:CGPointMake(width_text-kScreenWidth, 0) animated:NO];
     }
 }
-//点击小数点
--(void)actionPoint{
-    if ([self stringHasPoint:numberCurrent]) {
-        return;
-    }else{
-        numberCurrent=[NSString stringWithFormat:@"%@.",numberCurrent];
-        [self setNumberDisplay:numberCurrent];
-    }
-}
+
 -(NSString *)setNumber:(NSString *)number{
     NSMutableString *strnumber=[[NSMutableString alloc]init];
     strnumber=[number mutableCopy];
@@ -310,30 +400,8 @@ FYLRegularKeyboardViewdelegate
     number=[strnumber copy];
     return number;
 }
--(BOOL)stringHasPoint:(NSString *)string{
-    NSRange rang=[string rangeOfString:@"."];
-    if (rang.length>0) {
-        return YES;
-    }else{
-        return NO;
-    }
-}
--(NSString*)subString:(double)value{   //截取字符串
-    NSString *str=[NSString stringWithFormat:@"%lf",value];
-    int index=(int) str.length;
-    int i;
-    for (i=(int)str.length;i>0;i--) {
-        NSString *lastChar=[str substringWithRange:NSMakeRange(i-1, 1)];
-        if (![lastChar isEqualToString:@"0"]) {
-            index=i;
-            if ([lastChar isEqualToString:@"."]) {
-                index--;
-            }break;
-        }
-    }
-    NSString *subString=[str substringWithRange:NSMakeRange(0, index)];
-    return subString;
-}
+
+
 #pragma mark -- 向下or向上
 -(void)didSelectedxiagxiaClicked:(UIButton *)btn{
     if (self.directionType == 1) {//向上
@@ -423,14 +491,25 @@ FYLRegularKeyboardViewdelegate
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (self.outDataArr.count>indexPath.section) {
+        MJWeakSelf
         YLShareDeviceOuterModel * outModel = self.outDataArr[indexPath.section];
         if (outModel.detailModelArr.count>indexPath.row) {
+            [tableView deselectRowAtIndexPath:indexPath animated:NO];
             FYLHistoryModel * model = outModel.detailModelArr[indexPath.row];
             NSArray * arrTitle = @[NSLocalizedString(@"插入备注", nil),NSLocalizedString(@"编辑", nil),NSLocalizedString(@"复制该行", nil),NSLocalizedString(@"复制全部", nil),NSLocalizedString(@"删除该行", nil),NSLocalizedString(@"清空", nil),NSLocalizedString(@"取消", nil)];
             YLDIYEditBoxListView * view= [[YLDIYEditBoxListView alloc]initWithFrame:CGRectZero withIndexListCount:self.dataArray.count withArrTitle:arrTitle];
             view.didSelectedClickedBtnBlock = ^(NSInteger indexType) {
                 NSLog(@"动态图list中某个画板--%ld",indexType);
-              
+                if (indexType == 4) {//删除
+                   BOOL success = [model deleteToDB];
+                    if (success) {
+                        [weakSelf readHistoryData];
+                    }
+                    
+                }else if (indexType == 5){//清空
+                    [FYLHistoryModel removeUserWifiDevice];
+                    [weakSelf readHistoryData];
+                }
             };
             [view show];
             
@@ -463,7 +542,7 @@ FYLRegularKeyboardViewdelegate
     NSArray *userArray = [set allObjects];
     
     //重新降序排序
-    NSSortDescriptor *sd1 = [NSSortDescriptor sortDescriptorWithKey:nil ascending:NO];//yes升序排列，no,降序排列
+    NSSortDescriptor *sd1 = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES];//yes升序排列，no,降序排列
     NSArray *descendingDateArr = [userArray sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sd1, nil]];
     
     //此时得到的descendingDateArr就是按照时间降序排好的日期数组
@@ -603,6 +682,34 @@ FYLRegularKeyboardViewdelegate
     }
     return _outDataArr;
 }
+
+/**
+ 将string每隔三位添加一个逗号
+ */
+- (NSString *)getCommaTextWithString:(NSString *)string {
+    if ([string containsString:@"e"]) {
+        return string;
+    }
+    BOOL sign = [string hasPrefix:@"-"];
+    NSString *str = sign ? [string substringFromIndex:1] : string;
+    BOOL FLOAT = [string containsString:@"."];
+    NSString *str1 = FLOAT ? [str componentsSeparatedByString:@"."][0] : str;
+    NSString *str2 = FLOAT ? [NSString stringWithFormat:@".%@", [str componentsSeparatedByString:@"."][1]] : @"";
+    NSMutableString *mutableStr = [NSMutableString stringWithString:str1];
+    for (int i = 3; i < 300; i += 3) {
+        if (str1.length > i) {
+            [mutableStr insertString:@"," atIndex:str1.length - i];
+        } else {
+            break;
+        }
+    }
+    if (sign) [mutableStr insertString:@"-" atIndex:0];
+    [mutableStr appendString:str2];
+    return [NSString stringWithString:mutableStr];
+}
+
+
+
 /*
 #pragma mark - Navigation
 

@@ -21,7 +21,6 @@
 #import <mach/mach_host.h>
 #import <mach/processor_info.h>
 
-#import "CacheToolManagement.h"
 
 #ifdef DEBUG
 static CGFloat const KDdefaultTimeOutInteral = 60.0;
@@ -77,7 +76,7 @@ static NSString * showing_400 = @"2";
                 if(model.code.intValue == 1||model.code.intValue == 500){
 
                     //存入数据，有就更新
-                    [[CacheToolManagement sharedManager] writeCacheData:responseObject initialURL:initialURL url:urlString parameters:parame];
+//                    [[CacheToolManagement sharedManager] writeCacheData:responseObject initialURL:initialURL url:urlString parameters:parame];
                     
                 } else if (model.code.intValue==401) {//token过期，需要重新登录
                     [self HandleData401];
@@ -88,7 +87,7 @@ static NSString * showing_400 = @"2";
                 }
             } else {
                 if (isShowView) {
-                    [SVProgressHUD showDetailMessage:NSLocalizedString(@"Data acquisition exception, please restart the app later and try again.", nil) delay:2];
+                    [MBProgressHUD showMessage:NSLocalizedString(@"Data acquisition exception, please restart the app later and try again.", nil) toView:YX_Keywindow delay:2];
                 }
           
             }
@@ -101,14 +100,14 @@ static NSString * showing_400 = @"2";
                 [MBProgressHUD hideHUDForView:YX_Keywindow animated:YES];
             }
             //获取本地数据库数据
-            id obj = [[CacheToolManagement sharedManager] getCacheDataWithURL:urlString parameters:parame initialURL:initialURL];
-            failsure(task, obj, error);
+//            id obj = [[CacheToolManagement sharedManager] getCacheDataWithURL:urlString parameters:parame initialURL:initialURL];
+            failsure(task, nil, error);
 #ifdef DEBUG
             NSLog(@"token---%@\n url---%@，Params--%@,error--%@", [ZJ_UserLoginInfomation getToken],urlString,[PublicHelpers dictionaryToJson:parame],error );
 #endif
             //是否显示toast，若是要缓存的接口，并且有数据，把就不显示toast
-            BOOL isShow = [[CacheToolManagement sharedManager] isThereCachedDataAvailable:(NSDictionary *)obj initialURL:initialURL isShowView:isShowView];
-            [self handleFailureWithURL:yl_url Parameters:parame Action:@"POST" Task:task Error:error isShowView:isShow];
+//            BOOL isShow = [[CacheToolManagement sharedManager] isThereCachedDataAvailable:(NSDictionary *)obj initialURL:initialURL isShowView:isShowView];
+            [self handleFailureWithURL:yl_url Parameters:parame Action:@"POST" Task:task Error:error isShowView:isShowView];
         }];
     } else {
         [self.httpSessionManager GET:urlString parameters:parame headers:@{} progress:^(NSProgress * _Nonnull downloadProgress) {
@@ -134,7 +133,7 @@ static NSString * showing_400 = @"2";
                 }
             } else {
                 if(isShowView){
-                    [SVProgressHUD showDetailMessage:NSLocalizedString(@"Data acquisition exception, please restart the app later and try again.", nil) delay:2];
+                    [MBProgressHUD showMessage:NSLocalizedString(@"Data acquisition exception, please restart the app later and try again.", nil) toView:YX_Keywindow delay:2];
                 }
             }
 #ifdef DEBUG
@@ -145,118 +144,20 @@ static NSString * showing_400 = @"2";
                 [MBProgressHUD hideHUDForView:YX_Keywindow animated:YES];
             }
             //获取本地数据库数据
-            id obj = [[CacheToolManagement sharedManager] getCacheDataWithURL:urlString parameters:parame initialURL:initialURL];
-            failsure(task, obj, error);
+//            id obj = [[CacheToolManagement sharedManager] getCacheDataWithURL:urlString parameters:parame initialURL:initialURL];
+            failsure(task, nil, error);
 #ifdef DEBUG
           NSLog(@"token---%@\n url---%@，Params--%@,error--%@", [ZJ_UserLoginInfomation getToken],urlString,[PublicHelpers dictionaryToJson:parame],error );
 #endif
             //是否显示toast，若是要缓存的接口，并且有数据，把就不显示toast
-            BOOL isShow = [[CacheToolManagement sharedManager] isThereCachedDataAvailable:(NSDictionary *)obj initialURL:initialURL isShowView:isShowView];
+//            BOOL isShow = [[CacheToolManagement sharedManager] isThereCachedDataAvailable:(NSDictionary *)obj initialURL:initialURL isShowView:isShowView];
             // 请求失败处理
-            [self handleFailureWithURL:urlString Parameters:parame Action:@"GET" Task:task Error:error isShowView:isShow];
+            [self handleFailureWithURL:urlString Parameters:parame Action:@"GET" Task:task Error:error isShowView:isShowView];
         }];
       
     }
 }
 
-- (void)networking:(NSString *)urlString parameters:(NSDictionary *)parame method:(YXRequstMethodType)TYPE showErrorView:(BOOL)isShowView success:(httpResponseSuccess)success failsure:(httpResponseFailure)failsure{
-    
-    //超时时间设置
-    //              [self setUserDefineTimeoutInterval];
-    [self setUserDefineCachePolicy];
-    [self handleHttpHeader];
-    NSString *initialURL = [urlString copy];//未拼接的地址接口
-    NSString * yl_url = [NSString stringWithFormat:@"%@",urlString];
-    urlString = [YXHTTPRequst urlAcquisitionPerfectionUrlStr:urlString];
-    urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-    if (TYPE == YXRequstMethodTypeGET) {
-        [self.httpSessionManager GET:urlString parameters:parame headers:@{} progress:^(NSProgress * _Nonnull downloadProgress) {
-        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            success(task,responseObject);
-            if(responseObject && [responseObject isKindOfClass:[NSDictionary class]]){
-                BaseModel *model = [BaseModel loadModelWithDictionary:responseObject];
-                if(model.code.intValue == 1||model.code.intValue == 500){
-                    
-                    //存入数据，有就更新
-//                    [[CacheToolManagement sharedManager] writeCacheData:responseObject initialURL:initialURL url:urlString parameters:parame];
-                    
-                } else if (model.code.intValue==401){//token过期，需要重新登录
-                    [self HandleData401];
-                }
-                else{
-                    if(isShowView){
-                        [self showErrorViewModel:model withUrl:urlString withType:0];
-                    }
-                    
-                }
-            }
-            else{
-                if(isShowView){
-                    [SVProgressHUD showDetailMessage:NSLocalizedString(@"Data acquisition exception, please restart the app later and try again.", nil) delay:2];
-                }
-                
-            }
-#ifdef DEBUG
-            NSLog(@"url---%@，Params--%@,responseObject--%@",urlString,[PublicHelpers dictionaryToJson:parame],[PublicHelpers dictionaryToJson:responseObject] );
-#endif
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            [MBProgressHUD hideHUDForView:YX_Keywindow animated:YES];
-            //获取本地数据库数据
-            id obj = [[CacheToolManagement sharedManager] getCacheDataWithURL:urlString parameters:parame initialURL:initialURL];
-            failsure(task, obj, error);
-#ifdef DEBUG
-            NSLog(@"url---%@，Params--%@,error--%@",urlString,[PublicHelpers dictionaryToJson:parame],error );
-#endif
-            //是否显示toast，若是要缓存的接口，并且有数据，把就不显示toast
-            BOOL isShow = [[CacheToolManagement sharedManager] isThereCachedDataAvailable:(NSDictionary *)obj initialURL:initialURL isShowView:isShowView];
-            // 请求失败处理
-            [self handleFailureWithURL:urlString Parameters:parame Action:@"GET" Task:task Error:error isShowView:isShow];
-        }];
-        
-    }else{
-        [self.httpSessionManager POST:urlString parameters:parame headers:@{} progress:^(NSProgress * _Nonnull uploadProgress) {
-        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            success(task,responseObject);
-            if(responseObject && [responseObject isKindOfClass:[NSDictionary class]]){
-                BaseModel *model = [BaseModel loadModelWithDictionary:responseObject];
-                if(model.code.intValue == 1||model.code.intValue == 500){
-                    
-                    //存入数据，有就更新
-                    [[CacheToolManagement sharedManager] writeCacheData:responseObject initialURL:initialURL url:urlString parameters:parame];
-                    
-                }else if (model.code.intValue==401){//token过期，需要重新登录
-                    [self HandleData401];
-                }
-                else{
-                    if(isShowView){
-                        [self showErrorViewModel:model withUrl:urlString withType:0];
-                    }
-                    
-                }
-            }else{
-                if(isShowView){
-                    [SVProgressHUD showDetailMessage:NSLocalizedString(@"Data acquisition exception, please restart the app later and try again.", nil) delay:2];
-                }
-                
-            }
-#ifdef DEBUG
-            NSLog(@"token---%@\n url---%@，Params--%@,responseObject--%@", ZJ_UserLoginInfomation.getToken ,urlString,[PublicHelpers dictionaryToJson:parame],[PublicHelpers dictionaryToJson:responseObject] );
-#endif
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            [MBProgressHUD hideHUDForView:YX_Keywindow animated:YES];
-            //获取本地数据库数据
-            id obj = [[CacheToolManagement sharedManager] getCacheDataWithURL:urlString parameters:parame initialURL:initialURL];
-            failsure(task, obj, error);
-#ifdef DEBUG
-            NSLog(@"token---%@\n url---%@，Params--%@,error---%@", ZJ_UserLoginInfomation.getToken,urlString,[PublicHelpers dictionaryToJson:parame],error);
-#endif
-            //是否显示toast，若是要缓存的接口，并且有数据，把就不显示toast
-            BOOL isShow = [[CacheToolManagement sharedManager] isThereCachedDataAvailable:(NSDictionary *)obj initialURL:initialURL isShowView:isShowView];
-            [self handleFailureWithURL:yl_url Parameters:parame Action:@"POST" Task:task Error:error isShowView:isShow];
-        }];
-        
-    }
-}
 - (NSData *)appendingWithParameters:(NSDictionary *)parame {
     NSMutableString * retValue = [NSMutableString string];
     for (NSString * key in parame.allKeys) {
@@ -485,241 +386,14 @@ static NSString * showing_400 = @"2";
 #pragma mark - 处理请求失败
 -(void)showErrorViewModel:(BaseModel *)model withUrl:(NSString *)url withType:(NSInteger)type{
    
-        switch (model.code.intValue) {
-            case 3:
-                {
-                    NSString * message = NSLocalizedString(@"Token does not exist",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 10://系统围护中
-                {
-                    NSString * message = NSLocalizedString(@"System maintaining",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 601:
-                {
-                    NSString * message = NSLocalizedString(@"Mail sending failed, please try again later",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 602:
-                {
-                    NSString * message = NSLocalizedString(@"Failed to modify password! Please try again later",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 603:
-                {
-                    NSString * message = NSLocalizedString(@"Group deletion failed",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1000:
-                {
-                    NSString * message = NSLocalizedString(@"Email does not exist",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1002:
-                {
-                    NSString * message = NSLocalizedString(@"User does not exist, please register first",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1003:
-                {
-                    NSString * message = NSLocalizedString(@"User disabled, please contact customer service",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1004:
-                {
-                    NSString * message = NSLocalizedString(@"Account or password error, please try again",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1005:
-                {
-                    NSString * message = NSLocalizedString(@"The password length must be between 6 and 18 digits, including English numbers",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1006:
-                {
-                    NSString * message = NSLocalizedString(@"The original password is wrong, please try again",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1007:
-                {
-                    NSString * message = NSLocalizedString(@"The two passwords do not match",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1008:
-                {
-                    NSString * message = NSLocalizedString(@"Picture upload failed, please try again",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1009:
-                {
-                    NSString * message = NSLocalizedString(@"Email format error, please try again",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1010:
-                {
-                    NSString * message = NSLocalizedString(@"Password setting failed, please try again",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1011:
-                {
-                    if(!(IS_VALID_STRING(url)&&([url isEqualToString:WIFI_RomeGroupDevice]))){//过滤删除设备1011提示
-                        NSString * message = NSLocalizedString(@"Failed to obtain the information. Please try again later",nil);
-                        [SVProgressHUD showDetailMessage:message delay:2];
-                    }
-                    
-                }
-                break;
-            case 1012:
-                {
-                    NSString * message = NSLocalizedString(@"Operation failed. Please try again later",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1013:
-                {
-                    NSString * message = NSLocalizedString(@"Mailbox verification code error, please try again",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1016:
-                {
-                    NSString * message = NSLocalizedString(@"Mail sending failed, please try again",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1017:
-                {
-                    NSString * message = NSLocalizedString(@"Please wait a moment, please do not operate frequently",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1018:
-                {
-                    NSString * message = NSLocalizedString(@"Password reset failed, please try again",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1019:
-                {
-                    NSString * message = NSLocalizedString(@"The device name is the same. Please edit it again",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1020:
-                {
-                    NSString * message = NSLocalizedString(@"The device has been bound to another account. Please unbind and try again",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1021:
-                {
-                    NSString * message = NSLocalizedString(@"Firmware upgrade failed, please check the device network settings",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-           
-            case 1023:
-                {
-                    NSString * message = NSLocalizedString(@"Current equipment is not equipped with network",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1024:
-                {
-                    NSString * message = NSLocalizedString(@"Unable to operate the device, please reset the device first",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1028:
-                {
-                    NSString * message = NSLocalizedString(@"Duplicate group name, please modify the name and save",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-           
-            case 1034:
-                {
-                    NSString * message = NSLocalizedString(@"The mailbox is inconsistent with the current user, invalid mailbox",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1040:
-                {
-                    NSString * message = NSLocalizedString(@"User already exists",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1041://分享时验证输入的邮箱是否存在
-                {
-                    NSString * message = NSLocalizedString(@"The account does not exist",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1043://已共享至该用户，不可重复共享（被分享人同意了分享）
-                {
-                    NSString * message = NSLocalizedString(@"Shared to this user, cannot be shared again",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1044://已发送邀请，请等待对方处理 （被分享人暂未同意）
-                {
-                    NSString * message = NSLocalizedString(@"Invitation has been sent, please wait for the other party to process it",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1047://手机号格式错误
-                {
-                    NSString * message = NSLocalizedString(@"Phone number format error",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1048://短信发送失败
-                {
-                    NSString * message = NSLocalizedString(@"SMS sending failed",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1049://手机验证码错误
-                {
-                    NSString * message = NSLocalizedString(@"Mobile verification code error",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1050://原密码校验失败
-                {
-                    NSString * message = NSLocalizedString(@"The original password fails to be verified. Please enter the correct original password",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            case 1051://短信验证码发送过于频繁
-                {
-                    NSString * message = NSLocalizedString(@"The SMS verification code is sent too frequently",nil);
-                    [SVProgressHUD showDetailMessage:message delay:2];
-                }
-                break;
-            default:
-            {
-                NSString * message = NSLocalizedString(@"Operation failed, please try again.",nil);
-                [SVProgressHUD showDetailMessage:message delay:2];
-            }
-                break;
-        }
+//        switch (model.code.intValue) {
+//            
+//            default:
+//            {
+//
+//            }
+//                break;
+//        }
     
 }
 #pragma mark -- 获取当前手机型号
@@ -886,48 +560,7 @@ static NSString * showing_400 = @"2";
     NSHTTPURLResponse *response = (NSHTTPURLResponse *) task.response;
     NSInteger statusCode = response.statusCode;
     
-//    /** 设置error信息 */
-//    if (statusCode == 0)
-//    {
-//        // 网络不好
-//        error = [[NSError alloc] initWithDomain:kNetWorkNotReachableMsg code:statusCode userInfo:nil];
-//    }
-//    else if (statusCode == 200)
-//    {
-//        // 成功
-//        error = [[NSError alloc] initWithDomain:kNetWorkSuccessMsg code:statusCode userInfo:nil];
-//    }
-//    else
-//    {   // 服务器错误
-//        error = [[NSError alloc] initWithDomain:kNetWorkServerErrorMsg code:statusCode userInfo:nil];
-//    }
-//
-//    /** 捕获error异常 */
-//    @try
-//    {
-//        [NSException raise:kExceptionName format:@"URL=%@\n参数=%@\n错误信息=%@",url,parameters,error];
-//    }
-//    @catch (NSException *exception)
-//    {
-//        NSLog(@"exception : %@",exception);
-//
-//        // 上报错误信息给服务器
-////        [GloriaHandler commitRequestErrorInfo:task URL:url requestData:[GloriaHandler dictionaryOrArrayToJson:parameters] Action:action Error:error];
-//    }
-//    @finally
-//    {
-//        [LCProgressHUD hide];
-    if(![url isEqualToString:GETBANNERS]
-       ||![url isEqualToString:GETAPPDEVICE]
-       )
-    {
-        if(isShow){
-            [SVProgressHUD showDetailMessage:NSLocalizedString(@"Data acquisition exception, please restart the app later and try again.", nil) delay:2];
-        }
-       
-    }
-       
-//    }
+    
 }
 
 @end

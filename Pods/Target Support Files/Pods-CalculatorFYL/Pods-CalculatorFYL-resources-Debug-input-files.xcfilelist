@@ -1,5 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-CalculatorFYL/Pods-CalculatorFYL-resources.sh
+${PODS_CONFIGURATION_BUILD_DIR}/FMDB/FMDB.bundle
 ${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle
-${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle
-${PODS_ROOT}/SVProgressHUD/SVProgressHUD/PrivacyInfo.xcprivacy
+${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.Privacy.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.bundle
 ${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle
