@@ -19,7 +19,8 @@
 <
 UITableViewDelegate,
 UITableViewDataSource,
-FYLRegularKeyboardViewdelegate
+FYLRegularKeyboardViewdelegate,
+FYLVIPKeyboardViewdelegate
 >
 @property(nonatomic,strong)ZZLabel * L_contect;
 @property(nonatomic,strong)UIView * V_contect;
@@ -86,7 +87,7 @@ int leftbrackets = 0;
 }
 
 -(void)fyl_RegularKeyboardDidSelectedButton:(UIButton *)btn{
-    
+    NSLog(@"btn.titleLabel.text----:%@",btn.titleLabel.text);
     [self playSoundEffect:@"click.wav"];
     
     
@@ -578,23 +579,25 @@ int leftbrackets = 0;
     self.V_bg_bottom = V_bg_bottom;
     V_bg_bottom.backgroundColor = UIColor.blueColor;
     [self.view addSubview:V_bg_bottom];
-//    V_bg_bottom.frame = CGRectMake(0, kScreenHeight-SBottomSafeHeight-height_cell*5, kScreenWidth, height_cell*5);
     [V_bg_bottom mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.mas_equalTo(self.view);
         make.bottom.mas_equalTo(self.view);
         make.height.mas_equalTo(height_cell*5);
     }];
-    
-//    [V_bg_bottom addSubview:self.vipKey];
-//    [self.vipKey mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.edges.mas_equalTo(V_bg_bottom);
-//    }];
-    
-    [self.regularKey initializeData];
-    [V_bg_bottom addSubview:self.regularKey];
-    [self.regularKey mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(V_bg_bottom);
-    }];
+    BOOL user_one = YES;
+    if (user_one) {
+        [self.vipKey initializeData];
+        [V_bg_bottom addSubview:self.vipKey];
+        [self.vipKey mas_makeConstraints:^(MASConstraintMaker *make) {
+           make.edges.mas_equalTo(V_bg_bottom);
+        }];
+    }else{
+        [self.regularKey initializeData];
+        [V_bg_bottom addSubview:self.regularKey];
+        [self.regularKey mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(V_bg_bottom);
+        }];
+    }
     
     UIView * V_contect = [[UIView alloc]init];
     V_contect.backgroundColor = UIColor.blackColor;
@@ -672,6 +675,7 @@ int leftbrackets = 0;
 -(FYLVIPKeyboardView *)vipKey{
     if (!_vipKey) {
         _vipKey = [[[NSBundle mainBundle]loadNibNamed:@"FYLVIPKeyboardView" owner:self options:nil]lastObject];
+        _vipKey.delegate = self;
     }
     return _vipKey;
 }
