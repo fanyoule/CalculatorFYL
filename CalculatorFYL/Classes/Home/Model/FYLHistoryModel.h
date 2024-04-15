@@ -6,6 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ZXClassArchived.h"
+
 typedef NS_ENUM(NSInteger, HistoryTypeStatus) {
     HistoryTypeStatus_nol = 0, // 正常文本
     HistoryTypeStatus_beizhu = 1, // 备注
@@ -13,22 +15,22 @@ typedef NS_ENUM(NSInteger, HistoryTypeStatus) {
 NS_ASSUME_NONNULL_BEGIN
 @interface FYLHistoryModel : NSObject
 
-@property(nonatomic, assign)NSInteger ID;
+@property(nonatomic, assign)double IDs;
 @property(nonatomic, copy)NSString *time;//创建时间
-@property(nonatomic, copy)NSString *text;// 内容
+@property(nonatomic, copy)NSString *contect;// 内容
 @property(nonatomic, copy)NSString *resultStr;// 结果
 @property(nonatomic,copy)NSString * userName;//拥有者账号
 @property(nonatomic,assign)NSInteger  textHeight;//内容高度
 @property(nonatomic,assign)HistoryTypeStatus state;
 
-+(void)insert:(FYLHistoryModel *)device;
-// 获取所有的数据
-+(NSArray *)getAll;
-// 根据time获取某个model
-+(FYLHistoryModel *)obtainTheModelBasedOnTheTime:(NSString *)time;
-+(NSArray *)searchLocalMyWifiDeviceModel;
-+(NSArray *)obtainTheModelUserHistory:(NSString *)userName;
-+(BOOL)removeUserWifiDevice;
+//+(void)insert:(FYLHistoryModel *)device;
+//// 获取所有的数据
+//+(NSArray *)getAll;
+//// 根据time获取某个model
+//+(FYLHistoryModel *)obtainTheModelBasedOnTheTime:(NSString *)time;
+//+(NSArray *)searchLocalMyWifiDeviceModel;
+//+(NSArray *)obtainTheModelUserHistory:(NSString *)userName;
+//+(BOOL)removeUserWifiDevice;
 
 
 @end

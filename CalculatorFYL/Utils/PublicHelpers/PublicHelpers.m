@@ -151,7 +151,13 @@ static PublicHelpers *manager = nil;
     NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];
     return strDate;
 }
-
+//获取当前时间 yyyy-MM-dd
+- (NSString *)getCurrentDateHHMMSS{
+    NSDateFormatter  *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];
+    return strDate;
+}
 //获取当前时间 hour
 - (NSInteger)getCurrentHour{
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];

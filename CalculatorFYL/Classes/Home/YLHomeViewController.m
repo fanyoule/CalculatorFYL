@@ -13,7 +13,10 @@
 #import "FYLHistoryModel.h"
 #import "FYLHistoricalRecordNewCell.h"
 #import "YLDIYEditBoxListView.h"
+#import "FYLAddRemarksViewController.h"
 
+#import "ZXDataHandle.h"
+#import "ZXDecimalNumberTool.h"
 #define MaxCount 20
 @interface YLHomeViewController ()
 <
@@ -52,10 +55,13 @@ int pointFlag = 0;
 int secondFlag = 0;
 // 记录等于号状态
 int equalFlag = 0;
-// 记录数字后再输入小数点 0数字 1运算符
+// 记录数字后再输入小数点 1数字 2运算符
 int numpoint = 0;
 //记录左括号数量
 int leftbrackets = 0;
+//百分比 1已输入百分比 0未输入百分比
+int percent = 0;
+
 
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
@@ -64,7 +70,7 @@ int leftbrackets = 0;
 #pragma mark 读取历史记录
 -(void)readHistoryData{
     [self.dataArray removeAllObjects];
-    [self.dataArray addObjectsFromArray: [FYLHistoryModel obtainTheModelUserHistory:@"123"]];
+    [self.dataArray addObjectsFromArray: [FYLHistoryModel zx_dbQuaryAll]];
     [self handleDataIntoModels];
     if (self.dataArray.count>0) {
         YLShareDeviceOuterModel * outModel = self.outDataArr.lastObject;
@@ -88,69 +94,95 @@ int leftbrackets = 0;
 
 -(void)fyl_RegularKeyboardDidSelectedButton:(UIButton *)btn{
     NSLog(@"btn.titleLabel.text----:%@",btn.titleLabel.text);
-    [self playSoundEffect:@"click.wav"];
+//    [self playSoundEffect:@"chu.ogg"];
     
     
     if ([btn.titleLabel.text isEqualToString:@"0"]) {
-        
+        if (percent == 1) {
+            return;
+        }
         secondFlag = 0;
-        numpoint = 0;
+        numpoint = 1;
         
         
         [self changeNumberGreateBtn:btn];
     }else if ([btn.titleLabel.text isEqualToString:@"1"]){
+        if (percent == 1) {
+            return;
+        }
         secondFlag = 0;
-        numpoint = 0;
+        numpoint = 1;
         
         [self changeNumberGreateBtn:btn];
 
     }else if ([btn.titleLabel.text isEqualToString:@"2"]){
+        if (percent == 1) {
+            return;
+        }
         secondFlag = 0;
-        numpoint = 0;
+        numpoint = 1;
         
         
         [self changeNumberGreateBtn:btn];
 
     }else if ([btn.titleLabel.text isEqualToString:@"3"]){
+        if (percent == 1) {
+            return;
+        }
         secondFlag = 0;
-        numpoint = 0;
+        numpoint = 1;
         
         
         [self changeNumberGreateBtn:btn];
 
     }else if ([btn.titleLabel.text isEqualToString:@"4"]){
+        if (percent == 1) {
+            return;
+        }
         secondFlag = 0;
-        numpoint = 0;
+        numpoint = 1;
         
         
         [self changeNumberGreateBtn:btn];
 
     }else if ([btn.titleLabel.text isEqualToString:@"5"]){
+        if (percent == 1) {
+            return;
+        }
         secondFlag = 0;
-        numpoint = 0;
+        numpoint = 1;
         
         
         [self changeNumberGreateBtn:btn];
 
     }else if ([btn.titleLabel.text isEqualToString:@"6"]){
+        if (percent == 1) {
+            return;
+        }
         secondFlag = 0;
-        numpoint = 0;
+        numpoint = 1;
         
         
         
         [self changeNumberGreateBtn:btn];
 
     }else if ([btn.titleLabel.text isEqualToString:@"7"]){
+        if (percent == 1) {
+            return;
+        }
         secondFlag = 0;
-        numpoint = 0;
+        numpoint = 1;
         
         
         
         [self changeNumberGreateBtn:btn];
 
     }else if ([btn.titleLabel.text isEqualToString:@"8"]){
+        if (percent == 1) {
+            return;
+        }
         secondFlag = 0;
-        numpoint = 0;
+        numpoint = 1;
         
         
         
@@ -158,15 +190,18 @@ int leftbrackets = 0;
         [self changeNumberGreateBtn:btn];
 
     }else if ([btn.titleLabel.text isEqualToString:@"9"]){
+        if (percent == 1) {
+            return;
+        }
         secondFlag = 0;
-        numpoint = 0;
+        numpoint = 1;
         
         
         
         [self changeNumberGreateBtn:btn];
 
     }else if ([btn.titleLabel.text isEqualToString:@"."]){
-        if (numpoint == 0 && pointFlag == 0) {
+        if (numpoint == 1 && pointFlag == 0 && percent == 0) {
             if (!IS_VALID_STRING(self.L_contect.text)) {
                 self.L_contect.text = @"0";
             }
@@ -180,14 +215,17 @@ int leftbrackets = 0;
         secondFlag = 0;
         equalFlag = 0;
         leftbrackets = 0;
-        
+        percent = 0;
+        numpoint = 0;
         
         [self clearDate];
     }else if ([btn.titleLabel.text isEqualToString:@"÷"]){
         if (secondFlag == 0) {
             pointFlag = 0;
             secondFlag = 1;
-            numpoint = 1;
+            numpoint = 2;
+            percent = 0;
+            
             [self changeNumberGreateBtn:btn];
         }
 
@@ -195,7 +233,9 @@ int leftbrackets = 0;
         if (secondFlag == 0) {
             pointFlag = 0;
             secondFlag = 1;
-            numpoint = 1;
+            numpoint = 2;
+            percent = 0;
+            
             [self changeNumberGreateBtn:btn];
         }
         
@@ -211,7 +251,9 @@ int leftbrackets = 0;
         if (secondFlag == 0) {
             pointFlag = 0;
             secondFlag = 1;
-            numpoint = 1;
+            numpoint = 2;
+            percent = 0;
+            
             [self changeNumberGreateBtn:btn];
         }
       
@@ -219,7 +261,9 @@ int leftbrackets = 0;
         if (secondFlag == 0) {
             pointFlag = 0;
             secondFlag = 1;
-            numpoint = 1;
+            numpoint = 2;
+            percent = 0;
+            
             [self changeNumberGreateBtn:btn];
         }
 
@@ -228,6 +272,8 @@ int leftbrackets = 0;
         secondFlag = 0;
         equalFlag = 0;
         leftbrackets = 0;
+        percent = 0;
+        numpoint = 1;
         
         [self actionEqual];
         if ([self.L_contect.text containsString:@"."]) {
@@ -250,10 +296,11 @@ int leftbrackets = 0;
         }
         
     }else if ([btn.titleLabel.text isEqualToString:@"%"]){
-        if (secondFlag == 0) {
+        if (secondFlag == 0 && numpoint == 1 && percent == 0) {
             pointFlag = 0;
-            secondFlag = 1;
-            numpoint = 1;
+            percent = 1;
+            
+            
             [self changeNumberGreateBtn:btn];
         }
 
@@ -300,10 +347,11 @@ int leftbrackets = 0;
         NSString * currtime = [[PublicHelpers shareManager]getCurrentDate];
         FYLHistoryModel * model = [[FYLHistoryModel alloc]init];
         model.time = [[ToolManagement sharedManager]getTimeStrWithString:currtime];
-        model.text = [NSString stringWithFormat:@"%@=%@",calculateResult_new2,jieguo];
+        model.contect = [NSString stringWithFormat:@"%@=%@",calculateResult_new2,jieguo];
         model.userName = @"123";
-    
-        BOOL success = [model saveToDB];
+        NSString * ids_time = [NSString stringWithFormat:@"%@%u",[[ToolManagement sharedManager]currentTimeStr],arc4random_uniform(1000)];
+        model.IDs = ids_time.doubleValue;
+        BOOL success = [model zx_dbSave];
         if (success) {
             [self readHistoryData];
         }
@@ -338,7 +386,7 @@ int leftbrackets = 0;
         [delResultString deleteCharactersInRange:NSMakeRange(length-1, 1)];
         self.L_contect.text=delResultString;
         NSString * lastStr_new = [self.L_contect.text substringWithRange:NSMakeRange(self.L_contect.text.length-1, 1)];
-        if ([lastStr_old isEqualToString:@"÷"]||[lastStr_old isEqualToString:@"×"]||[lastStr_old isEqualToString:@"-"]||[lastStr_old isEqualToString:@"+"]||[lastStr_old isEqualToString:@"%"]) {
+        if ([lastStr_old isEqualToString:@"÷"]||[lastStr_old isEqualToString:@"×"]||[lastStr_old isEqualToString:@"-"]||[lastStr_old isEqualToString:@"+"]) {
             secondFlag = 0;
             
         }else if ([lastStr_old isEqualToString:@"("]){
@@ -348,7 +396,10 @@ int leftbrackets = 0;
         }else if ([lastStr_old isEqualToString:@"."]){
             pointFlag = 0;
             
-        }else{
+        }else if ([lastStr_old isEqualToString:@"%"]){
+            percent = 0;
+        }
+        else{
             
         }
        
@@ -485,7 +536,7 @@ int leftbrackets = 0;
         YLShareDeviceOuterModel * outerModel = self.outDataArr[indexPath.section];
         if (outerModel.detailModelArr.count>indexPath.row) {
             FYLHistoryModel * listModel = outerModel.detailModelArr[indexPath.row];
-            cell.L_contect.text = listModel.text;
+            cell.L_contect.text = listModel.contect;
         }
     }
     return cell;
@@ -497,18 +548,21 @@ int leftbrackets = 0;
         if (outModel.detailModelArr.count>indexPath.row) {
             [tableView deselectRowAtIndexPath:indexPath animated:NO];
             FYLHistoryModel * model = outModel.detailModelArr[indexPath.row];
-            NSArray * arrTitle = @[NSLocalizedString(@"插入备注", nil),NSLocalizedString(@"编辑", nil),NSLocalizedString(@"复制该行", nil),NSLocalizedString(@"复制全部", nil),NSLocalizedString(@"删除该行", nil),NSLocalizedString(@"清空", nil),NSLocalizedString(@"取消", nil)];
+            NSArray * arrTitle = @[NSLocalizedString(@"Insert note", nil),NSLocalizedString(@"编辑", nil),NSLocalizedString(@"复制该行", nil),NSLocalizedString(@"复制全部", nil),NSLocalizedString(@"删除该行", nil),NSLocalizedString(@"清空", nil),NSLocalizedString(@"取消", nil)];
             YLDIYEditBoxListView * view= [[YLDIYEditBoxListView alloc]initWithFrame:CGRectZero withIndexListCount:self.dataArray.count withArrTitle:arrTitle];
             view.didSelectedClickedBtnBlock = ^(NSInteger indexType) {
                 NSLog(@"动态图list中某个画板--%ld",indexType);
-                if (indexType == 4) {//删除
-                   BOOL success = [model deleteToDB];
+                if (indexType == 0) {//插入备注
+                    [self addRemarks];
+                }else if (indexType == 4) {//删除
+                    NSString * sqStr = [NSString stringWithFormat:@"IDs=%.f",model.IDs];
+                    BOOL success = [FYLHistoryModel zx_dbDropWhere:sqStr];
                     if (success) {
                         [weakSelf readHistoryData];
                     }
                     
                 }else if (indexType == 5){//清空
-                    [FYLHistoryModel removeUserWifiDevice];
+                    [FYLHistoryModel zx_dbDropTable];
                     [weakSelf readHistoryData];
                 }
             };
@@ -519,6 +573,11 @@ int leftbrackets = 0;
     }
     
 }
+-(void)addRemarks{
+    FYLAddRemarksViewController * vc = [[FYLAddRemarksViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 /**
  * 把请求到的数据整理，然后放到数据源中

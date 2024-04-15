@@ -35,6 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)getDateStringWithTimeStr:(NSString *)str;
 //字符串转时间戳 如：2017-4-10 17:15:10
 - (NSString *)getTimeStrWithString:(NSString *)str;
+- (NSString *)yl_getDateStringWithTimeStr:(NSString *)str;
 // 字符串转date
 - (NSDate *)theStringToTurnWithString:(NSString *)str;
 // 时间戳转日期

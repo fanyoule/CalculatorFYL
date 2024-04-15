@@ -83,7 +83,7 @@ static UIImage *BackgroundImage = nil;
     if (@available(iOS 13.0, *)) {
         self.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
     }
-    self.view.backgroundColor = UIColor.whiteColor;
+    self.view.backgroundColor = UIColor.blackColor;
   
     UIImageView * M_bg = [[UIImageView alloc]init];
     self.M_bg = M_bg;
@@ -96,7 +96,7 @@ static UIImage *BackgroundImage = nil;
 
     self.navigationBar = [[BaseNavigationBar alloc] init];
 //    self.navigationBar.backgroundColor = UIColorHEXAlpha(0xF5F5F5,1);
-    self.navigationBar.backgroundColor = UIColor.clearColor;
+    self.navigationBar.backgroundColor = UIColor.blackColor;
     self.navigationBar.navBgView.backgroundColor = UIColor.clearColor;
     self.navigationBar.frame = CGRectMake(0, 0, kScreenWidth, YX_NavViewHeight);
     [self setNavigationBarTitleColor:rgba(255, 254, 254, 1)];
