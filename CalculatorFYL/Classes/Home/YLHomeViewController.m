@@ -6,7 +6,6 @@
 //
 
 #import "YLHomeViewController.h"
-#import "FYLHistoricalRecordCell.h"
 #import "FYLRegularKeyboardView.h"
 #import "FYLVIPKeyboardView.h"
 #import "YLShareDeviceOuterModel.h"
@@ -42,12 +41,15 @@ FYLVIPKeyboardViewdelegate
 @end
 
 @implementation YLHomeViewController
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self readHistoryData];
 
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self creatUI];
-    [self readHistoryData];
 }
 // 记录小数点状态  1已输入小数点 0未输入小数点
 int pointFlag = 0;
@@ -537,6 +539,17 @@ int percent = 0;
         if (outerModel.detailModelArr.count>indexPath.row) {
             FYLHistoryModel * listModel = outerModel.detailModelArr[indexPath.row];
             cell.L_contect.text = listModel.contect;
+            cell.L_contect.font = [YLUserToolManager getAppTitleFont];
+            if (listModel.textDirectionType == 0) {
+                cell.L_contect.textAlignment = NSTextAlignmentLeft;
+            }else{
+                cell.L_contect.textAlignment = NSTextAlignmentRight;
+            }
+            if (listModel.state == HistoryTypeStatus_beizhu) {
+                cell.L_contect.textColor = [YLUserToolManager getAppMainColor];
+            }else{
+                cell.L_contect.textColor = UIColor.whiteColor;
+            }
         }
     }
     return cell;
@@ -549,22 +562,47 @@ int percent = 0;
             [tableView deselectRowAtIndexPath:indexPath animated:NO];
             FYLHistoryModel * model = outModel.detailModelArr[indexPath.row];
             NSArray * arrTitle = @[NSLocalizedString(@"Insert note", nil),NSLocalizedString(@"编辑", nil),NSLocalizedString(@"复制该行", nil),NSLocalizedString(@"复制全部", nil),NSLocalizedString(@"删除该行", nil),NSLocalizedString(@"清空", nil),NSLocalizedString(@"取消", nil)];
-            YLDIYEditBoxListView * view= [[YLDIYEditBoxListView alloc]initWithFrame:CGRectZero withIndexListCount:self.dataArray.count withArrTitle:arrTitle];
+            if (model.state == HistoryTypeStatus_nol) {
+                arrTitle = @[NSLocalizedString(@"Insert note", nil),NSLocalizedString(@"分段求和", nil),NSLocalizedString(@"求和", nil),NSLocalizedString(@"复制该行", nil),NSLocalizedString(@"复制全部", nil),NSLocalizedString(@"删除该行", nil),NSLocalizedString(@"清空", nil),NSLocalizedString(@"取消", nil)];
+            }
+           
+            YLDIYEditBoxListView * view= [[YLDIYEditBoxListView alloc]initWithFrame:CGRectZero withIndexListCount:arrTitle.count withArrTitle:arrTitle];
             view.didSelectedClickedBtnBlock = ^(NSInteger indexType) {
                 NSLog(@"动态图list中某个画板--%ld",indexType);
-                if (indexType == 0) {//插入备注
-                    [self addRemarks];
-                }else if (indexType == 4) {//删除
-                    NSString * sqStr = [NSString stringWithFormat:@"IDs=%.f",model.IDs];
-                    BOOL success = [FYLHistoryModel zx_dbDropWhere:sqStr];
-                    if (success) {
-                        [weakSelf readHistoryData];
+                if (model.state == HistoryTypeStatus_nol) {
+                    if (indexType == 0) {//插入备注
+                        [weakSelf addRemarksModel:model withType:0];
+                    }else if (indexType == 1){//分段求和
+                        
+                    }else if (indexType == 2){//求和
+                        
+                    }else if (indexType == 3){//复制
+                        
+                    }else if (indexType == 4){//复制全部
+                        
+                    }else if (indexType == 5){//删除行
+                        [weakSelf deleteCurrentModel:model];
+                    }else if (indexType == 6){//清空
+                        [weakSelf deleteAllModel];
                     }
                     
-                }else if (indexType == 5){//清空
-                    [FYLHistoryModel zx_dbDropTable];
-                    [weakSelf readHistoryData];
+                }else{
+                    if (indexType == 0) {//插入备注
+                        [weakSelf addRemarksModel:model withType:0];
+                    }else if (indexType == 1) {//编辑
+                        [weakSelf addRemarksModel:model withType:1];
+                    }else if (indexType == 2) {//复制
+                       
+                    }else if (indexType == 3) {//复制全部
+                        
+                    }else if (indexType == 4) {//删除
+                        [weakSelf deleteCurrentModel:model];
+                    }else if (indexType == 5){//清空
+                        [weakSelf deleteAllModel];
+                    }
+                    
                 }
+               
             };
             [view show];
             
@@ -573,8 +611,29 @@ int percent = 0;
     }
     
 }
--(void)addRemarks{
+#pragma mark -- 清空
+-(void)deleteAllModel{
+   BOOL success = [FYLHistoryModel zx_dbDropTable];
+    if (success) {
+        [self readHistoryData];
+    }
+    
+}
+#pragma mark -- 删除当前行
+-(void)deleteCurrentModel:(FYLHistoryModel *)model{
+    NSString * sqStr = [NSString stringWithFormat:@"IDs=%.f",model.IDs];
+    BOOL success = [FYLHistoryModel zx_dbDropWhere:sqStr];
+    if (success) {
+        [self readHistoryData];
+    }
+}
+#pragma mark -- 添加备注
+-(void)addRemarksModel:(FYLHistoryModel *)model withType:(NSInteger)type{
+    
     FYLAddRemarksViewController * vc = [[FYLAddRemarksViewController alloc]init];
+    vc.dataArray = self.dataArray;
+    vc.Model = model;
+    vc.fyl_edit = type;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -719,7 +778,6 @@ int percent = 0;
         
     }];
     
-    [self.table_groupV registerNib:[UINib nibWithNibName:@"FYLHistoricalRecordCell" bundle:nil] forCellReuseIdentifier:@"FYLHistoricalRecordCell"];
     [self.view layoutIfNeeded];
     
 }

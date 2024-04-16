@@ -35,6 +35,8 @@
 #import "YLUserToolManager.h"
 #import "ToolManagement.h"
 #import "MathStringExpression.h"
+#import "FYLHistoryModel.h"
+
 
 
 #endif /* PrefixHeader_pch */

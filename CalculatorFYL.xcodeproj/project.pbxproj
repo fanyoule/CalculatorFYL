@@ -109,10 +109,6 @@
 		6725DA7D2BBAC2F400695EA1 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6725DA7B2BBAC2F400695EA1 /* BaseView.m */; };
 		67261E8F2BB7ECB000433DD1 /* FYLHistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67261E8E2BB7ECB000433DD1 /* FYLHistoryModel.m */; };
 		67261E922BB8181F00433DD1 /* FYLHistoricalRecordNewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67261E912BB8181F00433DD1 /* FYLHistoricalRecordNewCell.m */; };
-		673041392BB426B200EF02AB /* Calculate+Health.m in Sources */ = {isa = PBXBuildFile; fileRef = 673041372BB426B100EF02AB /* Calculate+Health.m */; };
-		6730413E2BB426D600EF02AB /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 6730413A2BB426D600EF02AB /* Stack.m */; };
-		6730413F2BB426D600EF02AB /* Calculate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6730413B2BB426D600EF02AB /* Calculate.m */; };
-		673041422BB4274300EF02AB /* advancedCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 673041412BB4274300EF02AB /* advancedCalculator.m */; };
 		673200552BC6837D00DCB42C /* two.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 673200322BC6837B00DCB42C /* two.mp3 */; };
 		673200562BC6837D00DCB42C /* seven.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 673200332BC6837B00DCB42C /* seven.mp3 */; };
 		673200572BC6837D00DCB42C /* gang_three.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 673200342BC6837B00DCB42C /* gang_three.mp3 */; };
@@ -151,8 +147,6 @@
 		6732FFD52BC65CCA00DCB42C /* FYLAddRemarksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6732FFD42BC65CCA00DCB42C /* FYLAddRemarksViewController.m */; };
 		6732FFEC2BC66D1F00DCB42C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6732FFEA2BC66D1F00DCB42C /* Localizable.strings */; };
 		6732FFEF2BC66D9D00DCB42C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6732FFED2BC66D9D00DCB42C /* InfoPlist.strings */; };
-		67850B652BAE824300A44336 /* FYLHistoricalRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67850B622BAE824300A44336 /* FYLHistoricalRecordCell.m */; };
-		67850B662BAE824300A44336 /* FYLHistoricalRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67850B632BAE824300A44336 /* FYLHistoricalRecordCell.xib */; };
 		67850B6A2BAE826B00A44336 /* YLUserToolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67850B682BAE826B00A44336 /* YLUserToolManager.m */; };
 		67850B6D2BAEA5ED00A44336 /* FYLRegularKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67850B6C2BAEA5ED00A44336 /* FYLRegularKeyboardView.m */; };
 		67850B6F2BAEA5F800A44336 /* FYLRegularKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67850B6E2BAEA5F800A44336 /* FYLRegularKeyboardView.xib */; };
@@ -369,14 +363,6 @@
 		67261E8E2BB7ECB000433DD1 /* FYLHistoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYLHistoryModel.m; sourceTree = "<group>"; };
 		67261E902BB8181F00433DD1 /* FYLHistoricalRecordNewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLHistoricalRecordNewCell.h; sourceTree = "<group>"; };
 		67261E912BB8181F00433DD1 /* FYLHistoricalRecordNewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLHistoricalRecordNewCell.m; sourceTree = "<group>"; };
-		673041372BB426B100EF02AB /* Calculate+Health.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Calculate+Health.m"; sourceTree = "<group>"; };
-		673041382BB426B200EF02AB /* Calculate+Health.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Calculate+Health.h"; sourceTree = "<group>"; };
-		6730413A2BB426D600EF02AB /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
-		6730413B2BB426D600EF02AB /* Calculate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculate.m; sourceTree = "<group>"; };
-		6730413C2BB426D600EF02AB /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
-		6730413D2BB426D600EF02AB /* Calculate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculate.h; sourceTree = "<group>"; };
-		673041402BB4274300EF02AB /* advancedCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = advancedCalculator.h; sourceTree = "<group>"; };
-		673041412BB4274300EF02AB /* advancedCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = advancedCalculator.m; sourceTree = "<group>"; };
 		673200002BC66EDE00DCB42C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		673200012BC66EDE00DCB42C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		673200022BC66EED00DCB42C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
@@ -475,9 +461,6 @@
 		6732FFFD2BC66EBD00DCB42C /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		6732FFFE2BC66EDE00DCB42C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		6732FFFF2BC66EDE00DCB42C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		67850B612BAE824300A44336 /* FYLHistoricalRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYLHistoricalRecordCell.h; sourceTree = "<group>"; };
-		67850B622BAE824300A44336 /* FYLHistoricalRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYLHistoricalRecordCell.m; sourceTree = "<group>"; };
-		67850B632BAE824300A44336 /* FYLHistoricalRecordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FYLHistoricalRecordCell.xib; sourceTree = "<group>"; };
 		67850B682BAE826B00A44336 /* YLUserToolManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLUserToolManager.m; sourceTree = "<group>"; };
 		67850B692BAE826B00A44336 /* YLUserToolManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLUserToolManager.h; sourceTree = "<group>"; };
 		67850B6B2BAEA5ED00A44336 /* FYLRegularKeyboardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLRegularKeyboardView.h; sourceTree = "<group>"; };
@@ -1029,14 +1012,6 @@
 				6725DA752BBABE7C00695EA1 /* YLShareDeviceOuterModel.m */,
 				67261E8D2BB7ECB000433DD1 /* FYLHistoryModel.h */,
 				67261E8E2BB7ECB000433DD1 /* FYLHistoryModel.m */,
-				673041402BB4274300EF02AB /* advancedCalculator.h */,
-				673041412BB4274300EF02AB /* advancedCalculator.m */,
-				6730413D2BB426D600EF02AB /* Calculate.h */,
-				6730413B2BB426D600EF02AB /* Calculate.m */,
-				6730413C2BB426D600EF02AB /* Stack.h */,
-				6730413A2BB426D600EF02AB /* Stack.m */,
-				673041382BB426B200EF02AB /* Calculate+Health.h */,
-				673041372BB426B100EF02AB /* Calculate+Health.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1053,9 +1028,6 @@
 		67850B642BAE824300A44336 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				67850B612BAE824300A44336 /* FYLHistoricalRecordCell.h */,
-				67850B622BAE824300A44336 /* FYLHistoricalRecordCell.m */,
-				67850B632BAE824300A44336 /* FYLHistoricalRecordCell.xib */,
 				67261E902BB8181F00433DD1 /* FYLHistoricalRecordNewCell.h */,
 				67261E912BB8181F00433DD1 /* FYLHistoricalRecordNewCell.m */,
 			);
@@ -1375,7 +1347,6 @@
 				6724693B2BAC1BC80088B0A3 /* www6*3.bmp in Resources */,
 				673200752BC6837D00DCB42C /* gang_dian.mp3 in Resources */,
 				673200772BC6837D00DCB42C /* jia.mp3 in Resources */,
-				67850B662BAE824300A44336 /* FYLHistoricalRecordCell.xib in Resources */,
 				6724692A2BAC1BC80088B0A3 /* text_emoji_25.png in Resources */,
 				672469182BAC1BC80088B0A3 /* text_emoji_07.png in Resources */,
 				672469122BAC1BC80088B0A3 /* text_emoji_01.png in Resources */,
@@ -1484,7 +1455,6 @@
 				67246D3C2BAC3F0B0088B0A3 /* UILabel+WY_Extension.m in Sources */,
 				67246C552BAC3B0F0088B0A3 /* MBProgressHUD+XBLoading.m in Sources */,
 				67246D232BAC3C760088B0A3 /* UITextField+LimitLength.m in Sources */,
-				6730413E2BB426D600EF02AB /* Stack.m in Sources */,
 				67850B6A2BAE826B00A44336 /* YLUserToolManager.m in Sources */,
 				67246D472BAC3F480088B0A3 /* YLWKViewController.m in Sources */,
 				6725DA732BBAB7D000695EA1 /* MSValueOperator.m in Sources */,
@@ -1501,7 +1471,6 @@
 				67850B6D2BAEA5ED00A44336 /* FYLRegularKeyboardView.m in Sources */,
 				6789CFE52BCD34510024FB54 /* ZXDataStoreSQlite.m in Sources */,
 				67246D1D2BAC3C1F0088B0A3 /* CommonManagement.m in Sources */,
-				673041422BB4274300EF02AB /* advancedCalculator.m in Sources */,
 				67261E922BB8181F00433DD1 /* FYLHistoricalRecordNewCell.m in Sources */,
 				6789CFE32BCD34510024FB54 /* ZXClassArchived.m in Sources */,
 				6725DA6C2BBAB7D000695EA1 /* MSElement.m in Sources */,
@@ -1517,7 +1486,6 @@
 				6789CFDB2BCD34510024FB54 /* NSDictionary+ZXDataConvert.m in Sources */,
 				6725DA6F2BBAB7D000695EA1 /* MSNumberGroup.m in Sources */,
 				6789CFDD2BCD34510024FB54 /* NSObject+ZXToJson.m in Sources */,
-				67850B652BAE824300A44336 /* FYLHistoricalRecordCell.m in Sources */,
 				6789CFDC2BCD34510024FB54 /* NSObject+ZXToDic.m in Sources */,
 				6725DA7D2BBAC2F400695EA1 /* BaseView.m in Sources */,
 				67246C542BAC3B0F0088B0A3 /* LoadingStyleManager.m in Sources */,
@@ -1528,10 +1496,8 @@
 				6789CFD02BCD34510024FB54 /* NSMutableArray+ZXSafetySet.m in Sources */,
 				67246D3A2BAC3F0B0088B0A3 /* NSMutableAttributedString+WY_Extension.m in Sources */,
 				6725DA6D2BBAB7D000695EA1 /* MSFunctionOperator.m in Sources */,
-				673041392BB426B200EF02AB /* Calculate+Health.m in Sources */,
 				67246C392BAC25ED0088B0A3 /* YLMyViewController.m in Sources */,
 				6725DA692BBAB7D000695EA1 /* NSError+MSExpression.m in Sources */,
-				6730413F2BB426D600EF02AB /* Calculate.m in Sources */,
 				6725DA6A2BBAB7D000695EA1 /* MSExpressionHelper.m in Sources */,
 				6725DA762BBABE7C00695EA1 /* YLShareDeviceOuterModel.m in Sources */,
 				6789CFDE2BCD34510024FB54 /* NSObject+ZXToModel.m in Sources */,

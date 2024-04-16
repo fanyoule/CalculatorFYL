@@ -12,6 +12,10 @@ typedef NS_ENUM(NSInteger, HistoryTypeStatus) {
     HistoryTypeStatus_nol = 0, // 正常文本
     HistoryTypeStatus_beizhu = 1, // 备注
 };
+typedef NS_ENUM(NSInteger, HistoryTypeTextDirectionType) {
+    HistoryTextDirectionType_zuo = 0, // 左对齐
+    HistoryTextDirectionType_you = 1, // 右对齐
+};
 NS_ASSUME_NONNULL_BEGIN
 @interface FYLHistoryModel : NSObject
 
@@ -22,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy)NSString * userName;//拥有者账号
 @property(nonatomic,assign)NSInteger  textHeight;//内容高度
 @property(nonatomic,assign)HistoryTypeStatus state;
+@property(nonatomic,assign)HistoryTypeTextDirectionType textDirectionType;
 
 //+(void)insert:(FYLHistoryModel *)device;
 //// 获取所有的数据

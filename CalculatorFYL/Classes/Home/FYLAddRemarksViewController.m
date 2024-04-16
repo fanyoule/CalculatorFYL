@@ -7,11 +7,13 @@
 
 #import "FYLAddRemarksViewController.h"
 #import "UITextView+Placeholder.h"
+#import "ZXDataHandle.h"
+#import "ZXDecimalNumberTool.h"
 
 @interface FYLAddRemarksViewController ()
 @property(nonatomic,strong)UITextView * V_text;
 @property(nonatomic,strong)UIView * V_bg_bottom;
-
+@property(nonatomic,assign)NSInteger textDirectionType;
 
 @end
 
@@ -47,7 +49,49 @@
 
 }
 #pragma mark 将多条记录存储到数据库
--(void)test12{
+-(void)rightItemClicked{
+    if (!IS_VALID_STRING(self.V_text.text)) {
+        return;
+    }
+    __block NSUInteger index;
+    [self.dataArray enumerateObjectsUsingBlock:^(FYLHistoryModel *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isEqual:self.Model]) {
+            index = idx;
+            *stop = YES;
+            NSLog(@"需要插入的位置====：%ld",idx);
+        }
+    }];
+    if (self.fyl_edit == 1) {
+        self.Model.contect = self.V_text.text;
+        self.Model.textDirectionType = self.textDirectionType;
+        NSString * sqStr = [NSString stringWithFormat:@"IDs=%.f",self.Model.IDs];
+        BOOL res = [self.Model zx_dbUpdateWhere:sqStr];
+        NSLog(@"修改结果--%i",res);
+        if (res) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        
+    }else{
+        FYLHistoryModel * remarksModel = [[FYLHistoryModel alloc]init];
+        remarksModel.time = self.Model.time;
+        remarksModel.state = HistoryTypeStatus_beizhu;
+        remarksModel.contect = self.V_text.text;
+        remarksModel.userName = @"123";
+        remarksModel.textDirectionType = self.textDirectionType;
+        NSString * ids_time = [NSString stringWithFormat:@"%@%u",[[ToolManagement sharedManager]currentTimeStr],arc4random_uniform(1000)];
+        remarksModel.IDs = ids_time.doubleValue;
+        [self.dataArray insertObject:remarksModel atIndex:index+1];
+        [FYLHistoryModel zx_dbDropTable];
+        BOOL res = [self.dataArray zx_dbSave];
+        NSLog(@"添加结果--%i",res);
+        if (res) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        
+    }
+    
+    
+    
     NSMutableArray *appleArr = [NSMutableArray array];
 //    for (NSUInteger i = 0; i < 10; i++) {
 //        Apple *apple = [[Apple alloc]init];
@@ -57,7 +101,7 @@
 //        [appleArr addObject:apple];
 //    }
 //    BOOL res = [appleArr zx_dbSave];
-    NSLog(@"结果--%i",res);
+//    NSLog(@"结果--%i",res);
 }
 -(void)didSelectedLeftTextClicked:(UIButton *)btn{
     if (btn.tag == 0) {
@@ -70,11 +114,13 @@
             self.V_text.text = [NSString stringWithFormat:@"%@ %@ ",self.V_text.text,paste.string];
         }
     }else if (btn.tag == 2){
+        self.textDirectionType = 0;
         self.V_text.textAlignment = NSTextAlignmentLeft;
         self.V_text.placeholderTextView.textAlignment = NSTextAlignmentLeft;
         self.V_text.selectedRange = NSMakeRange(self.V_text.text.length, 1);
 
     }else if (btn.tag == 3){
+        self.textDirectionType = 1;
         self.V_text.textAlignment = NSTextAlignmentRight;
         self.V_text.placeholderTextView.textAlignment = NSTextAlignmentRight;
         self.V_text.selectedRange = NSMakeRange(self.V_text.text.length, 1);
@@ -98,11 +144,11 @@
 
 
 -(void)creatUI{
-    
+    [self setNavRightItem:NSLocalizedString(@"Done", nil) withImage:nil];
+
     self.view.backgroundColor = UIColor.whiteColor;
     
     UITextView *textView = [[UITextView alloc] init];
-    
    
     self.V_text = textView;
 //    textView.frame = CGRectMake(50, 120, 200, 200);
@@ -174,6 +220,13 @@
         make.centerY.mas_equalTo(V_bg_bottom);
         make.size.mas_equalTo(CGSizeMake(70, 50));
     }];
+    
+    if (self.fyl_edit == 1) {
+        if (IS_VALID_STRING(self.Model.contect)) {
+            self.V_text.text = self.Model.contect;
+        }
+        
+    }
     
 }
 

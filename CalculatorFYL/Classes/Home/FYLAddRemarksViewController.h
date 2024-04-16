@@ -10,6 +10,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FYLAddRemarksViewController : BaseViewController
+@property(nonatomic,strong)FYLHistoryModel * Model;
+/// 1 编辑  0添加
+@property(nonatomic,assign)NSInteger fyl_edit;
 
 @end
 
