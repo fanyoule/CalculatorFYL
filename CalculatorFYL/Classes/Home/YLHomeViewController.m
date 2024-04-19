@@ -353,6 +353,7 @@ int percent = 0;
         model.userName = @"123";
         NSString * ids_time = [NSString stringWithFormat:@"%@%u",[[ToolManagement sharedManager]currentTimeStr],arc4random_uniform(1000)];
         model.IDs = ids_time.doubleValue;
+        model.resultStr =jieguo;
         BOOL success = [model zx_dbSave];
         if (success) {
             [self readHistoryData];
@@ -573,13 +574,13 @@ int percent = 0;
                     if (indexType == 0) {//插入备注
                         [weakSelf addRemarksModel:model withType:0];
                     }else if (indexType == 1){//分段求和
-                        
+                        [weakSelf getPiecewiseSummationSelectedModel:model];
                     }else if (indexType == 2){//求和
-                        
+                        [weakSelf getAllSummation];
                     }else if (indexType == 3){//复制
-                        
+                        [weakSelf copyCurrentModelContect:model];
                     }else if (indexType == 4){//复制全部
-                        
+                        [weakSelf copyAlllistModelContect];
                     }else if (indexType == 5){//删除行
                         [weakSelf deleteCurrentModel:model];
                     }else if (indexType == 6){//清空
@@ -592,9 +593,9 @@ int percent = 0;
                     }else if (indexType == 1) {//编辑
                         [weakSelf addRemarksModel:model withType:1];
                     }else if (indexType == 2) {//复制
-                       
+                        [weakSelf copyCurrentModelContect:model];
                     }else if (indexType == 3) {//复制全部
-                        
+                        [weakSelf copyAlllistModelContect];
                     }else if (indexType == 4) {//删除
                         [weakSelf deleteCurrentModel:model];
                     }else if (indexType == 5){//清空
@@ -610,6 +611,119 @@ int percent = 0;
         }
     }
     
+}
+#pragma mark -- 分段求和
+-(void)getPiecewiseSummationSelectedModel:(FYLHistoryModel *)model{
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    __block int i = 0;
+    [array addObject:[NSMutableArray array]];
+    //self.signInModel.rewards是一个数组
+    [self.dataArray enumerateObjectsUsingBlock:^(FYLHistoryModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.state == HistoryTypeStatus_beizhu) {
+            i++;
+            NSMutableArray * arr_group = [NSMutableArray array];
+            [array addObject:arr_group];
+        }else{
+          NSMutableArray * arr = array[i];
+          [arr addObject:obj];
+        }
+        
+    }];
+    NSMutableArray * arr_resultModel = [NSMutableArray array];
+    [array enumerateObjectsUsingBlock:^(NSMutableArray *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj containsObject:model]) {
+            [arr_resultModel addObjectsFromArray:obj];
+            *stop = YES;
+        }
+    }];
+    NSMutableArray * arr_result = [NSMutableArray array];
+    [arr_resultModel enumerateObjectsUsingBlock:^(FYLHistoryModel *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [arr_result addObject:obj.resultStr];
+    }];
+    if (arr_result.count>0) {
+        NSString * jsExpString = [arr_result componentsJoinedByString:@"+"];
+        //计算表达式
+        NSDecimalNumber* computeResult = [MSParser parserComputeNumberExpression:jsExpString error:nil];
+        NSDecimal decimal = computeResult.decimalValue;
+        NSDecimal desDecimal;
+        NSDecimalRound(&desDecimal, &decimal , 3, NSRoundPlain);
+        NSLog(@"保留3位小数计算结果为：%@",[NSDecimalNumber decimalNumberWithDecimal:desDecimal]);
+        NSString * jieguo = [NSString stringWithFormat:@"%@",[NSDecimalNumber decimalNumberWithDecimal:desDecimal].stringValue];
+
+        pointFlag = 0;
+        secondFlag = 0;
+        equalFlag = 0;
+        leftbrackets = 0;
+        percent = 0;
+        numpoint = 0;
+        
+        [self clearDate];
+        self.L_contect.text= jieguo;
+        [self refreshWidthContent];
+    }
+    
+    
+    //最后array会是一个二维数组
+    NSLog(@"%@", array);
+    
+}
+#pragma mark -- 求总和
+-(void)getAllSummation{
+    NSMutableArray * arr_result = [NSMutableArray array];
+    [self.dataArray enumerateObjectsUsingBlock:^(FYLHistoryModel *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.state == HistoryTypeStatus_nol && IS_VALID_STRING(obj.resultStr)) {
+            [arr_result addObject:obj.resultStr];
+        }
+    }];
+    if (arr_result.count>0) {
+        NSString * jsExpString = [arr_result componentsJoinedByString:@"+"];
+        //计算表达式
+        NSDecimalNumber* computeResult = [MSParser parserComputeNumberExpression:jsExpString error:nil];
+        NSDecimal decimal = computeResult.decimalValue;
+        NSDecimal desDecimal;
+        NSDecimalRound(&desDecimal, &decimal , 3, NSRoundPlain);
+        NSLog(@"保留3位小数计算结果为：%@",[NSDecimalNumber decimalNumberWithDecimal:desDecimal]);
+        NSString * jieguo = [NSString stringWithFormat:@"%@",[NSDecimalNumber decimalNumberWithDecimal:desDecimal].stringValue];
+        
+        
+        
+        pointFlag = 0;
+        secondFlag = 0;
+        equalFlag = 0;
+        leftbrackets = 0;
+        percent = 0;
+        numpoint = 0;
+        
+        [self clearDate];
+        self.L_contect.text= jieguo;
+        [self refreshWidthContent];
+    }
+   
+    
+}
+#pragma mark -- 复制全部
+-(void)copyAlllistModelContect{
+    NSMutableString * contect_all = [[NSMutableString alloc]init];
+    [self.dataArray enumerateObjectsUsingBlock:^(FYLHistoryModel *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (IS_VALID_STRING(obj.contect)) {
+            [contect_all appendString:[NSString stringWithFormat:@"\n%@",obj.contect]];
+        }
+    }];
+    NSLog(@"contect_all-----:%@",contect_all);
+    
+    
+    if(IS_VALID_STRING(contect_all)){
+        UIPasteboard *generalPasteboard = [UIPasteboard pasteboardWithName:UIPasteboardNameGeneral create:TRUE];;
+        generalPasteboard.string = contect_all;
+    }
+}
+
+#pragma mark -- 复制该行
+-(void)copyCurrentModelContect:(FYLHistoryModel *)model{
+    if(IS_VALID_STRING(model.contect)){
+        UIPasteboard *generalPasteboard = [UIPasteboard pasteboardWithName:UIPasteboardNameGeneral create:TRUE];;
+        generalPasteboard.string = model.contect;
+    }
 }
 #pragma mark -- 清空
 -(void)deleteAllModel{
