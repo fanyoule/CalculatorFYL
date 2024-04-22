@@ -182,6 +182,7 @@
 		678FD1FB2BD5FC4600B5187A /* FYLlocalArchiveDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 678FD1FA2BD5FC4600B5187A /* FYLlocalArchiveDetailsViewController.m */; };
 		678FD1FE2BD62C5600B5187A /* FYLlocalArchiveDetailsBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 678FD1FD2BD62C5600B5187A /* FYLlocalArchiveDetailsBottomView.m */; };
 		678FD2002BD62C6C00B5187A /* FYLlocalArchiveDetailsBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 678FD1FF2BD62C6C00B5187A /* FYLlocalArchiveDetailsBottomView.xib */; };
+		678FD2042BD64A5600B5187A /* FYLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 678FD2032BD64A5600B5187A /* FYLSettingsViewController.m */; };
 		67DB322D2BB2D27900D3AD80 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 67DB32292BB2D27900D3AD80 /* click.wav */; };
 		67DB322E2BB2D27900D3AD80 /* click2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 67DB322A2BB2D27900D3AD80 /* click2.wav */; };
 		67DB322F2BB2D27900D3AD80 /* click3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 67DB322B2BB2D27900D3AD80 /* click3.wav */; };
@@ -536,6 +537,8 @@
 		678FD1FC2BD62C5600B5187A /* FYLlocalArchiveDetailsBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLlocalArchiveDetailsBottomView.h; sourceTree = "<group>"; };
 		678FD1FD2BD62C5600B5187A /* FYLlocalArchiveDetailsBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLlocalArchiveDetailsBottomView.m; sourceTree = "<group>"; };
 		678FD1FF2BD62C6C00B5187A /* FYLlocalArchiveDetailsBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYLlocalArchiveDetailsBottomView.xib; sourceTree = "<group>"; };
+		678FD2022BD64A5600B5187A /* FYLSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLSettingsViewController.h; sourceTree = "<group>"; };
+		678FD2032BD64A5600B5187A /* FYLSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLSettingsViewController.m; sourceTree = "<group>"; };
 		67DB32292BB2D27900D3AD80 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
 		67DB322A2BB2D27900D3AD80 /* click2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click2.wav; sourceTree = "<group>"; };
 		67DB322B2BB2D27900D3AD80 /* click3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click3.wav; sourceTree = "<group>"; };
@@ -809,6 +812,7 @@
 		67246C112BAC23170088B0A3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				678FD2012BD64A2F00B5187A /* Settings */,
 				67246C362BAC25D70088B0A3 /* My */,
 				67246C322BAC258E0088B0A3 /* Home */,
 			);
@@ -1158,6 +1162,15 @@
 			path = ZXDataHandle;
 			sourceTree = "<group>";
 		};
+		678FD2012BD64A2F00B5187A /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				678FD2022BD64A5600B5187A /* FYLSettingsViewController.h */,
+				678FD2032BD64A5600B5187A /* FYLSettingsViewController.m */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		67DB32282BB2D25900D3AD80 /* music */ = {
 			isa = PBXGroup;
 			children = (
@@ -1498,6 +1511,7 @@
 				672468D72BAC1B880088B0A3 /* BaseModel.m in Sources */,
 				678FD1FE2BD62C5600B5187A /* FYLlocalArchiveDetailsBottomView.m in Sources */,
 				67246C592BAC3B480088B0A3 /* PublicHelpers.m in Sources */,
+				678FD2042BD64A5600B5187A /* FYLSettingsViewController.m in Sources */,
 				6725DA652BBAB7D000695EA1 /* MSElementTable.m in Sources */,
 				67850B6D2BAEA5ED00A44336 /* FYLRegularKeyboardView.m in Sources */,
 				6789CFE52BCD34510024FB54 /* ZXDataStoreSQlite.m in Sources */,

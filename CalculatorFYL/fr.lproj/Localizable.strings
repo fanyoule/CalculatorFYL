@@ -7,6 +7,7 @@
 */
 "Insert note" = "Insérer une remarque";
 "Remarks" = "Commentaires";
+"Done" = "Dorn";
 "On file" = "Archive";
 "Clear" = "Clairement";
 "Open local archive" = "Ouvrir une archive locale";
@@ -14,4 +15,4 @@
 "Save current record" = "Conserver l'enregistrement actuel";
 "Cancel" = "Annulation";
 "Make sure" = "Assurez - vous";
-
+"Settings" = "Paramètres";

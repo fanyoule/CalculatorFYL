@@ -7,9 +7,11 @@
 */
 "Insert note" = "Вставить примечание";
 "Remarks" = "Замечания";
+"Done" = "Дорн.";
 "On file" = "Архив";
 "Clear" = "Очистить";
 "Save current record" = "Сохранить текущую запись";
 "Open local archive" = "Открыть локальный архив";
 "Cancel" = "Отменить";
 "Make sure" = "Обеспечить";
+"Settings" = "Настройка";

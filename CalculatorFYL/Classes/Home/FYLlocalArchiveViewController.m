@@ -29,7 +29,7 @@ UITableViewDelegate
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navTitle = NSLocalizedString(@"On file", nil);
+    self.navTitle =[YLUserToolManager getTextTag:3];
     
     [self creatUI];
     
@@ -55,7 +55,7 @@ UITableViewDelegate
 #pragma mark -- 清空
 -(void)rightItemClicked{
 
-    [[ZZAlertViewTools alloc]showSheet:@"" message:@"" cancelTitle:@"Cancel" titleArray:@[NSLocalizedString(@"Make sure", nil)] confirm:^(NSInteger buttonTag) {
+    [[ZZAlertViewTools alloc]showSheet:@"" message:@"" cancelTitle:[YLUserToolManager getTextTag:7] titleArray:@[[YLUserToolManager getTextTag:8]] confirm:^(NSInteger buttonTag) {
         if (buttonTag == 0) {
             BOOL success = [FYLOnFileModel zx_dbDropTable];
             if (success) {
@@ -102,7 +102,7 @@ UITableViewDelegate
 
 
 -(void)creatUI{
-    [self setNavRightItem:NSLocalizedString(@"Clear", nil) withImage:nil];
+    [self setNavRightItem:[YLUserToolManager getTextTag:4] withImage:nil];
     
     self.tableV.backgroundColor = UIColor.blackColor;
     [self.tableV registerClass:[FYLlocalArchiveTableViewCell class] forCellReuseIdentifier:@"FYLlocalArchiveTableViewCell"];

@@ -40,7 +40,19 @@ NS_ASSUME_NONNULL_BEGIN
 +(UIColor *)getAppMainColor;
 ///获取当前字号
 +(UIFont *)getAppTitleFont;
-
+/**
+ * 0 插入备注
+ * 1备注
+ * 2完成
+ * 3存档
+ * 4清空
+ * 5保存当前记录
+ * 6打开本地存档
+ * 7取消
+ * 8确定
+ * 9设置
+ */
++(NSString *)getTextTag:(NSInteger)tag;
 
 
 

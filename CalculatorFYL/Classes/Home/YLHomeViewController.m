@@ -89,10 +89,14 @@ int percent = 0;
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)(fileUrl), &soundID);
     AudioServicesPlaySystemSound(soundID);//播放音效
 }
-
+#pragma mark -- 设置
+-(void)leftNavItemDidSelectedClicked:(UIButton *)btn{
+    
+    
+}
 #pragma mark -- 存档
 -(void)didSelectedOnFileClicked:(UIButton *)btn{
-    NSArray * arrTitle = @[NSLocalizedString(@"Save current record", nil),NSLocalizedString(@"Open local archive", nil),NSLocalizedString(@"Cancel", nil)];
+    NSArray * arrTitle = @[[YLUserToolManager getTextTag:5],[YLUserToolManager getTextTag:6],[YLUserToolManager getTextTag:7]];
     YLDIYEditBoxListView * view= [[YLDIYEditBoxListView alloc]initWithFrame:CGRectZero withIndexListCount:4 withArrTitle:arrTitle];
     view.didSelectedClickedBtnBlock = ^(NSInteger indexType) {
         if (indexType == 0) {//保存当前记录
@@ -590,14 +594,14 @@ int percent = 0;
         if (outModel.detailModelArr.count>indexPath.row) {
             [tableView deselectRowAtIndexPath:indexPath animated:NO];
             FYLHistoryModel * model = outModel.detailModelArr[indexPath.row];
-            NSArray * arrTitle = @[NSLocalizedString(@"Insert note", nil),NSLocalizedString(@"编辑", nil),NSLocalizedString(@"复制该行", nil),NSLocalizedString(@"复制全部", nil),NSLocalizedString(@"删除该行", nil),NSLocalizedString(@"清空", nil),NSLocalizedString(@"取消", nil)];
+            NSArray * arrTitle = @[[YLUserToolManager getTextTag:0],NSLocalizedString(@"编辑", nil),NSLocalizedString(@"复制该行", nil),NSLocalizedString(@"复制全部", nil),NSLocalizedString(@"删除该行", nil),NSLocalizedString(@"清空", nil),[YLUserToolManager getTextTag:7]];
             if (model.state == HistoryTypeStatus_nol) {
-                arrTitle = @[NSLocalizedString(@"Insert note", nil),NSLocalizedString(@"分段求和", nil),NSLocalizedString(@"求和", nil),NSLocalizedString(@"复制该行", nil),NSLocalizedString(@"复制全部", nil),NSLocalizedString(@"删除该行", nil),NSLocalizedString(@"清空", nil),NSLocalizedString(@"取消", nil)];
+                arrTitle = @[[YLUserToolManager getTextTag:0],NSLocalizedString(@"分段求和", nil),NSLocalizedString(@"求和", nil),NSLocalizedString(@"复制该行", nil),NSLocalizedString(@"复制全部", nil),NSLocalizedString(@"删除该行", nil),NSLocalizedString(@"清空", nil),[YLUserToolManager getTextTag:7]];
             }
            
             YLDIYEditBoxListView * view= [[YLDIYEditBoxListView alloc]initWithFrame:CGRectZero withIndexListCount:arrTitle.count withArrTitle:arrTitle];
             view.didSelectedClickedBtnBlock = ^(NSInteger indexType) {
-                NSLog(@"动态图list中某个画板--%ld",indexType);
+                
                 if (model.state == HistoryTypeStatus_nol) {
                     if (indexType == 0) {//插入备注
                         [weakSelf addRemarksModel:model withType:0];
@@ -832,6 +836,13 @@ int percent = 0;
 
 
 -(void)creatUI{
+    UIButton * B_nav_left = [UIButton buttonWithType:0];
+    B_nav_left.frame = CGRectMake(0, 0, 50, 50);
+    [B_nav_left setImage:[UIImage imageNamed:@"mine_setting"] forState:UIControlStateNormal];
+    [B_nav_left addTarget:self action:@selector(leftNavItemDidSelectedClicked:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationBar.leftView = B_nav_left;
+    
+    
     self.view.backgroundColor = UIColor.blackColor;
     CGFloat width_cell = kScreenWidth/4;
     CGFloat height_cell = width_cell;
@@ -905,14 +916,14 @@ int percent = 0;
         make.left.bottom.right.mas_equalTo(V_contect);
     }];
     UIButton * B_OnFile = [UIButton buttonWithType:0];
-    [B_OnFile setTitle:NSLocalizedString(@"On file", nil) forState:UIControlStateNormal];
+    [B_OnFile setTitle:[YLUserToolManager getTextTag:3] forState:UIControlStateNormal];
     [B_OnFile addTarget:self action:@selector(didSelectedOnFileClicked:) forControlEvents:UIControlEventTouchUpInside];
     B_OnFile.backgroundColor = [YLUserToolManager getAppMainColor];
     [B_OnFile setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
     [V_bg_storehistory addSubview:B_OnFile];
     
     UIButton * B_Clear = [UIButton buttonWithType:0];
-    [B_Clear setTitle:NSLocalizedString(@"Clear", nil) forState:UIControlStateNormal];
+    [B_Clear setTitle:[YLUserToolManager getTextTag:4] forState:UIControlStateNormal];
     [B_Clear addTarget:self action:@selector(didSelectedClearClicked:) forControlEvents:UIControlEventTouchUpInside];
     B_Clear.backgroundColor =UIColor.groupTableViewBackgroundColor;
     [B_Clear setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
@@ -937,7 +948,7 @@ int percent = 0;
     self.table_groupV.delegate = self;
     self.table_groupV.dataSource = self;
     [self.table_groupV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.navigationBar).mas_offset(20);
+        make.top.mas_equalTo(self.navigationBar.mas_bottom).mas_offset(10);
         make.left.and.right.mas_equalTo(self.view);
         make.bottom.mas_equalTo(V_contect.mas_top);
         

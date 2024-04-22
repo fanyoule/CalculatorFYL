@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navTitle = NSLocalizedString(@"Remarks", nil);
+    self.navTitle = [YLUserToolManager getTextTag:1];
     
     [self creatUI];
     
@@ -152,7 +152,7 @@
 
 
 -(void)creatUI{
-    [self setNavRightItem:NSLocalizedString(@"Done", nil) withImage:nil];
+    [self setNavRightItem:[YLUserToolManager getTextTag:2] withImage:nil];
 
     self.view.backgroundColor = UIColor.whiteColor;
     
@@ -160,7 +160,7 @@
    
     self.V_text = textView;
 //    textView.frame = CGRectMake(50, 120, 200, 200);
-    textView.placeholder = NSLocalizedString(@"Remarks", nil);
+    textView.placeholder = [YLUserToolManager getTextTag:1];
     textView.font = [UIFont systemFontOfSize:15];
     textView.textContainerInset = UIEdgeInsetsMake(5, 5, 5, 5);
     [self.view addSubview:textView];
@@ -237,7 +237,7 @@
     if (self.type == AddRemarksType_OnFile) {
         B_left_text.hidden = YES;
         B_right_text.hidden = YES;
-        self.navTitle = NSLocalizedString(@"Save current record", nil);
+        self.navTitle =[YLUserToolManager getTextTag:5];
     }
     
     

@@ -7,9 +7,11 @@
 */
 "Insert note" = "Lisää huomautus";
 "Remarks" = "Huomautuksia";
+"Done" = "Tehty";
 "On file" = "Asiakirjassa";
 "Clear" = "Tyhjennä";
 "Save current record" = "Tallenna nykyinen tietue";
 "Open local archive" = "Avaa paikallinen arkisto";
 "Cancel" = "Peruuta";
 "Make sure" = "Varmista, että";
+"Settings" = "Asetukset";
