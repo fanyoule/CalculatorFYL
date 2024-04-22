@@ -275,8 +275,8 @@
                         titleArray:(NSArray *)titleArray
                            confirm:(AlertViewBlock)confirm {
     
-    UIAlertController *sheet = [UIAlertController alertControllerWithTitle:NSLocalizedString(title, nil)
-                                                                   message:NSLocalizedString(message, nil)
+    UIAlertController *sheet = [UIAlertController alertControllerWithTitle:IS_VALID_STRING(title)?NSLocalizedString(title, nil):nil
+                                                                   message:IS_VALID_STRING(message)?NSLocalizedString(message, nil):nil
                                                             preferredStyle:UIAlertControllerStyleActionSheet];
     if (!cancelTitle) cancelTitle = NSLocalizedString(@"Cancel",@"取消");
     // 取消

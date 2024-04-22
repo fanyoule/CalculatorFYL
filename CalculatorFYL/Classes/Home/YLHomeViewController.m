@@ -13,6 +13,8 @@
 #import "FYLHistoricalRecordNewCell.h"
 #import "YLDIYEditBoxListView.h"
 #import "FYLAddRemarksViewController.h"
+#import "FYLlocalArchiveViewController.h"
+
 
 #import "ZXDataHandle.h"
 #import "ZXDecimalNumberTool.h"
@@ -87,7 +89,33 @@ int percent = 0;
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)(fileUrl), &soundID);
     AudioServicesPlaySystemSound(soundID);//播放音效
 }
-#pragma mark -- 清空
+
+#pragma mark -- 存档
+-(void)didSelectedOnFileClicked:(UIButton *)btn{
+    NSArray * arrTitle = @[NSLocalizedString(@"Save current record", nil),NSLocalizedString(@"Open local archive", nil),NSLocalizedString(@"Cancel", nil)];
+    YLDIYEditBoxListView * view= [[YLDIYEditBoxListView alloc]initWithFrame:CGRectZero withIndexListCount:4 withArrTitle:arrTitle];
+    view.didSelectedClickedBtnBlock = ^(NSInteger indexType) {
+        if (indexType == 0) {//保存当前记录
+            FYLAddRemarksViewController * vc = [[FYLAddRemarksViewController alloc]init];
+            vc.type = AddRemarksType_OnFile;
+            vc.dataArray = self.dataArray;
+            [self.navigationController pushViewController:vc animated:YES];
+        }else if (indexType == 1) {//打开本地存档
+            FYLlocalArchiveViewController * vc = [[FYLlocalArchiveViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+ 
+    };
+    [view show];
+    
+}
+#pragma mark -- 清空 所有
+-(void)didSelectedClearClicked:(UIButton *)btn{
+    [self clearDate];
+    [self deleteAllModel];
+    
+}
+#pragma mark -- 清空输入文本
 -(void)clearDate{
     self.L_contect.text=@"";
     self.V_scroll.contentSize = CGSizeMake(kScreenWidth, 50);
@@ -870,12 +898,35 @@ int percent = 0;
     UIView * V_bg_storehistory = [[UIView alloc]init];
     V_bg_storehistory.hidden = YES;
     self.V_storehistory = V_bg_storehistory;
-    V_bg_storehistory.backgroundColor = UIColor.redColor;
+    V_bg_storehistory.backgroundColor = UIColor.blackColor;
     [V_contect addSubview:V_bg_storehistory];
     [V_bg_storehistory mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(B_top.mas_bottom);
         make.left.bottom.right.mas_equalTo(V_contect);
     }];
+    UIButton * B_OnFile = [UIButton buttonWithType:0];
+    [B_OnFile setTitle:NSLocalizedString(@"On file", nil) forState:UIControlStateNormal];
+    [B_OnFile addTarget:self action:@selector(didSelectedOnFileClicked:) forControlEvents:UIControlEventTouchUpInside];
+    B_OnFile.backgroundColor = [YLUserToolManager getAppMainColor];
+    [B_OnFile setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
+    [V_bg_storehistory addSubview:B_OnFile];
+    
+    UIButton * B_Clear = [UIButton buttonWithType:0];
+    [B_Clear setTitle:NSLocalizedString(@"Clear", nil) forState:UIControlStateNormal];
+    [B_Clear addTarget:self action:@selector(didSelectedClearClicked:) forControlEvents:UIControlEventTouchUpInside];
+    B_Clear.backgroundColor =UIColor.groupTableViewBackgroundColor;
+    [B_Clear setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
+    [V_bg_storehistory addSubview:B_Clear];
+    [B_OnFile mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.and.left.and.bottom.mas_equalTo(V_bg_storehistory);
+        make.width.mas_equalTo(kScreenWidth/2 - 0.5);
+    }];
+    [B_Clear mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.and.right.and.bottom.mas_equalTo(V_bg_storehistory);
+        make.width.mas_equalTo(B_OnFile);
+    }];
+    
+    
     
     [self.table_groupV registerClass:[FYLHistoricalRecordNewCell class] forCellReuseIdentifier:@"FYLHistoricalRecordNewCell"];
     self.table_groupV.backgroundColor = UIColor.clearColor;

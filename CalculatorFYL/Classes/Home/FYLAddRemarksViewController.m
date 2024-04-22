@@ -9,6 +9,7 @@
 #import "UITextView+Placeholder.h"
 #import "ZXDataHandle.h"
 #import "ZXDecimalNumberTool.h"
+#import "FYLOnFileModel.h"
 
 @interface FYLAddRemarksViewController ()
 @property(nonatomic,strong)UITextView * V_text;
@@ -22,8 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navTitle = NSLocalizedString(@"Remarks", nil);
-    
-    
     
     [self creatUI];
     
@@ -53,55 +52,64 @@
     if (!IS_VALID_STRING(self.V_text.text)) {
         return;
     }
-    __block NSUInteger index;
-    [self.dataArray enumerateObjectsUsingBlock:^(FYLHistoryModel *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([obj isEqual:self.Model]) {
-            index = idx;
-            *stop = YES;
-            NSLog(@"需要插入的位置====：%ld",idx);
-        }
-    }];
-    if (self.fyl_edit == 1) {
-        self.Model.contect = self.V_text.text;
-        self.Model.textDirectionType = self.textDirectionType;
-        NSString * sqStr = [NSString stringWithFormat:@"IDs=%.f",self.Model.IDs];
-        BOOL res = [self.Model zx_dbUpdateWhere:sqStr];
-        NSLog(@"修改结果--%i",res);
-        if (res) {
-            [self.navigationController popViewControllerAnimated:YES];
-        }
-        
-    }else{
-        FYLHistoryModel * remarksModel = [[FYLHistoryModel alloc]init];
-        remarksModel.time = self.Model.time;
-        remarksModel.state = HistoryTypeStatus_beizhu;
-        remarksModel.contect = self.V_text.text;
-        remarksModel.userName = @"123";
-        remarksModel.textDirectionType = self.textDirectionType;
+    if (self.type == AddRemarksType_OnFile) {
+        FYLOnFileModel *cat = [[FYLOnFileModel alloc]init];
+        cat.title = self.V_text.text;
+        cat.listCount =[NSString stringWithFormat:@"%ld",self.dataArray.count];
         NSString * ids_time = [NSString stringWithFormat:@"%@%u",[[ToolManagement sharedManager]currentTimeStr],arc4random_uniform(1000)];
-        remarksModel.IDs = ids_time.doubleValue;
-        [self.dataArray insertObject:remarksModel atIndex:index+1];
-        [FYLHistoryModel zx_dbDropTable];
-        BOOL res = [self.dataArray zx_dbSave];
-        NSLog(@"添加结果--%i",res);
-        if (res) {
+        cat.IDs = ids_time.doubleValue;
+        cat.resArrJson = [self.dataArray zx_toJsonStr];
+        BOOL success = [cat zx_dbSave];
+        if (success) {
             [self.navigationController popViewControllerAnimated:YES];
+            
+        }
+       
+    }else{
+        __block NSUInteger index;
+        [self.dataArray enumerateObjectsUsingBlock:^(FYLHistoryModel *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj isEqual:self.Model]) {
+                index = idx;
+                *stop = YES;
+                NSLog(@"需要插入的位置====：%ld",idx);
+            }
+        }];
+        if (self.fyl_edit == 1) {
+            self.Model.contect = self.V_text.text;
+            self.Model.textDirectionType = self.textDirectionType;
+            NSString * sqStr = [NSString stringWithFormat:@"IDs=%.f",self.Model.IDs];
+            BOOL res = [self.Model zx_dbUpdateWhere:sqStr];
+            NSLog(@"修改结果--%i",res);
+            if (res) {
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+            
+        }else{
+            FYLHistoryModel * remarksModel = [[FYLHistoryModel alloc]init];
+            remarksModel.time = self.Model.time;
+            remarksModel.state = HistoryTypeStatus_beizhu;
+            remarksModel.contect = self.V_text.text;
+            remarksModel.userName = @"123";
+            remarksModel.textDirectionType = self.textDirectionType;
+            NSString * ids_time = [NSString stringWithFormat:@"%@%u",[[ToolManagement sharedManager]currentTimeStr],arc4random_uniform(1000)];
+            remarksModel.IDs = ids_time.doubleValue;
+            [self.dataArray insertObject:remarksModel atIndex:index+1];
+            [FYLHistoryModel zx_dbDropTable];
+            BOOL res = [self.dataArray zx_dbSave];
+            NSLog(@"添加结果--%i",res);
+            if (res) {
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+            
         }
         
     }
     
     
     
-    NSMutableArray *appleArr = [NSMutableArray array];
-//    for (NSUInteger i = 0; i < 10; i++) {
-//        Apple *apple = [[Apple alloc]init];
-//        apple.name = @"嘻哈苹果";
-//        apple.dec = @"很好吃哦";
-//        apple.soldMoney = 100 + i;
-//        [appleArr addObject:apple];
-//    }
-//    BOOL res = [appleArr zx_dbSave];
-//    NSLog(@"结果--%i",res);
+    
+    
+   
 }
 -(void)didSelectedLeftTextClicked:(UIButton *)btn{
     if (btn.tag == 0) {
@@ -225,8 +233,14 @@
         if (IS_VALID_STRING(self.Model.contect)) {
             self.V_text.text = self.Model.contect;
         }
-        
     }
+    if (self.type == AddRemarksType_OnFile) {
+        B_left_text.hidden = YES;
+        B_right_text.hidden = YES;
+        self.navTitle = NSLocalizedString(@"Save current record", nil);
+    }
+    
+    
     
 }
 

@@ -8,4 +8,9 @@
 "Insert note" = "插入备注";
 "Remarks" = "备注";
 "Done" = "完成";
-
+"On file" = "存档";
+"Clear" = "清空";
+"Save current record" = "保存当前记录";
+"Open local archive" = "打开本地存档";
+"Cancel" = "取消";
+"Make sure" = "确定";

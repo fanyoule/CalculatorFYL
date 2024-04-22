@@ -147,6 +147,9 @@
 		6732FFD52BC65CCA00DCB42C /* FYLAddRemarksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6732FFD42BC65CCA00DCB42C /* FYLAddRemarksViewController.m */; };
 		6732FFEC2BC66D1F00DCB42C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6732FFEA2BC66D1F00DCB42C /* Localizable.strings */; };
 		6732FFEF2BC66D9D00DCB42C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6732FFED2BC66D9D00DCB42C /* InfoPlist.strings */; };
+		67657BF62BD3A178007210D8 /* FYLlocalArchiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67657BF52BD3A178007210D8 /* FYLlocalArchiveViewController.m */; };
+		67657BF92BD3A2ED007210D8 /* FYLlocalArchiveTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67657BF82BD3A2ED007210D8 /* FYLlocalArchiveTableViewCell.m */; };
+		676F22112BD270EC00B77E9F /* FYLOnFileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 676F22102BD270EC00B77E9F /* FYLOnFileModel.m */; };
 		67850B6A2BAE826B00A44336 /* YLUserToolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67850B682BAE826B00A44336 /* YLUserToolManager.m */; };
 		67850B6D2BAEA5ED00A44336 /* FYLRegularKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67850B6C2BAEA5ED00A44336 /* FYLRegularKeyboardView.m */; };
 		67850B6F2BAEA5F800A44336 /* FYLRegularKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67850B6E2BAEA5F800A44336 /* FYLRegularKeyboardView.xib */; };
@@ -176,6 +179,9 @@
 		6789CFE42BCD34510024FB54 /* ZXDataStoreCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6789CFC62BCD34510024FB54 /* ZXDataStoreCache.m */; };
 		6789CFE52BCD34510024FB54 /* ZXDataStoreSQlite.m in Sources */ = {isa = PBXBuildFile; fileRef = 6789CFC82BCD34510024FB54 /* ZXDataStoreSQlite.m */; };
 		6789CFE62BCD34510024FB54 /* USAGE.md in Resources */ = {isa = PBXBuildFile; fileRef = 6789CFCA2BCD34510024FB54 /* USAGE.md */; };
+		678FD1FB2BD5FC4600B5187A /* FYLlocalArchiveDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 678FD1FA2BD5FC4600B5187A /* FYLlocalArchiveDetailsViewController.m */; };
+		678FD1FE2BD62C5600B5187A /* FYLlocalArchiveDetailsBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 678FD1FD2BD62C5600B5187A /* FYLlocalArchiveDetailsBottomView.m */; };
+		678FD2002BD62C6C00B5187A /* FYLlocalArchiveDetailsBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 678FD1FF2BD62C6C00B5187A /* FYLlocalArchiveDetailsBottomView.xib */; };
 		67DB322D2BB2D27900D3AD80 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 67DB32292BB2D27900D3AD80 /* click.wav */; };
 		67DB322E2BB2D27900D3AD80 /* click2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 67DB322A2BB2D27900D3AD80 /* click2.wav */; };
 		67DB322F2BB2D27900D3AD80 /* click3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 67DB322B2BB2D27900D3AD80 /* click3.wav */; };
@@ -461,6 +467,12 @@
 		6732FFFD2BC66EBD00DCB42C /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		6732FFFE2BC66EDE00DCB42C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		6732FFFF2BC66EDE00DCB42C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		67657BF42BD3A178007210D8 /* FYLlocalArchiveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLlocalArchiveViewController.h; sourceTree = "<group>"; };
+		67657BF52BD3A178007210D8 /* FYLlocalArchiveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLlocalArchiveViewController.m; sourceTree = "<group>"; };
+		67657BF72BD3A2ED007210D8 /* FYLlocalArchiveTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLlocalArchiveTableViewCell.h; sourceTree = "<group>"; };
+		67657BF82BD3A2ED007210D8 /* FYLlocalArchiveTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLlocalArchiveTableViewCell.m; sourceTree = "<group>"; };
+		676F220F2BD270EC00B77E9F /* FYLOnFileModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLOnFileModel.h; sourceTree = "<group>"; };
+		676F22102BD270EC00B77E9F /* FYLOnFileModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLOnFileModel.m; sourceTree = "<group>"; };
 		67850B682BAE826B00A44336 /* YLUserToolManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLUserToolManager.m; sourceTree = "<group>"; };
 		67850B692BAE826B00A44336 /* YLUserToolManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLUserToolManager.h; sourceTree = "<group>"; };
 		67850B6B2BAEA5ED00A44336 /* FYLRegularKeyboardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLRegularKeyboardView.h; sourceTree = "<group>"; };
@@ -519,6 +531,11 @@
 		6789CFCB2BCD34510024FB54 /* ZXDataHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXDataHandle.h; sourceTree = "<group>"; };
 		6789CFCC2BCD34510024FB54 /* ZXDataHandleHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXDataHandleHeaders.h; sourceTree = "<group>"; };
 		6789CFCD2BCD34510024FB54 /* ZXDataHandleLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXDataHandleLog.h; sourceTree = "<group>"; };
+		678FD1F92BD5FC4600B5187A /* FYLlocalArchiveDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLlocalArchiveDetailsViewController.h; sourceTree = "<group>"; };
+		678FD1FA2BD5FC4600B5187A /* FYLlocalArchiveDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLlocalArchiveDetailsViewController.m; sourceTree = "<group>"; };
+		678FD1FC2BD62C5600B5187A /* FYLlocalArchiveDetailsBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLlocalArchiveDetailsBottomView.h; sourceTree = "<group>"; };
+		678FD1FD2BD62C5600B5187A /* FYLlocalArchiveDetailsBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLlocalArchiveDetailsBottomView.m; sourceTree = "<group>"; };
+		678FD1FF2BD62C6C00B5187A /* FYLlocalArchiveDetailsBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYLlocalArchiveDetailsBottomView.xib; sourceTree = "<group>"; };
 		67DB32292BB2D27900D3AD80 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
 		67DB322A2BB2D27900D3AD80 /* click2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click2.wav; sourceTree = "<group>"; };
 		67DB322B2BB2D27900D3AD80 /* click3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click3.wav; sourceTree = "<group>"; };
@@ -808,6 +825,10 @@
 				67246C342BAC25AC0088B0A3 /* YLHomeViewController.m */,
 				6732FFD32BC65CCA00DCB42C /* FYLAddRemarksViewController.h */,
 				6732FFD42BC65CCA00DCB42C /* FYLAddRemarksViewController.m */,
+				67657BF42BD3A178007210D8 /* FYLlocalArchiveViewController.h */,
+				67657BF52BD3A178007210D8 /* FYLlocalArchiveViewController.m */,
+				678FD1F92BD5FC4600B5187A /* FYLlocalArchiveDetailsViewController.h */,
+				678FD1FA2BD5FC4600B5187A /* FYLlocalArchiveDetailsViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1012,6 +1033,8 @@
 				6725DA752BBABE7C00695EA1 /* YLShareDeviceOuterModel.m */,
 				67261E8D2BB7ECB000433DD1 /* FYLHistoryModel.h */,
 				67261E8E2BB7ECB000433DD1 /* FYLHistoryModel.m */,
+				676F220F2BD270EC00B77E9F /* FYLOnFileModel.h */,
+				676F22102BD270EC00B77E9F /* FYLOnFileModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1030,6 +1053,8 @@
 			children = (
 				67261E902BB8181F00433DD1 /* FYLHistoricalRecordNewCell.h */,
 				67261E912BB8181F00433DD1 /* FYLHistoricalRecordNewCell.m */,
+				67657BF72BD3A2ED007210D8 /* FYLlocalArchiveTableViewCell.h */,
+				67657BF82BD3A2ED007210D8 /* FYLlocalArchiveTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1045,6 +1070,9 @@
 				67850B722BAEB3D500A44336 /* FYLVIPKeyboardView.h */,
 				67850B732BAEB3D500A44336 /* FYLVIPKeyboardView.m */,
 				67850B702BAEB3C300A44336 /* FYLVIPKeyboardView.xib */,
+				678FD1FC2BD62C5600B5187A /* FYLlocalArchiveDetailsBottomView.h */,
+				678FD1FD2BD62C5600B5187A /* FYLlocalArchiveDetailsBottomView.m */,
+				678FD1FF2BD62C6C00B5187A /* FYLlocalArchiveDetailsBottomView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1356,6 +1384,7 @@
 				673200722BC6837D00DCB42C /* eight.mp3 in Resources */,
 				6724692D2BAC1BC80088B0A3 /* text_emoji_28.png in Resources */,
 				673200702BC6837D00DCB42C /* five.mp3 in Resources */,
+				678FD2002BD62C6C00B5187A /* FYLlocalArchiveDetailsBottomView.xib in Resources */,
 				6724693E2BAC1BC80088B0A3 /* www6*6_red.bmp in Resources */,
 				673200622BC6837D00DCB42C /* gang_seven.mp3 in Resources */,
 				672469332BAC1BC80088B0A3 /* text_emoji_34.png in Resources */,
@@ -1460,12 +1489,14 @@
 				6725DA732BBAB7D000695EA1 /* MSValueOperator.m in Sources */,
 				672468912BAC1A680088B0A3 /* ViewController.m in Sources */,
 				672468DF2BAC1B880088B0A3 /* ZJ_UserLoginInfomation.m in Sources */,
+				676F22112BD270EC00B77E9F /* FYLOnFileModel.m in Sources */,
 				6789CFE22BCD34510024FB54 /* SqlResult.m in Sources */,
 				6724688B2BAC1A680088B0A3 /* AppDelegate.m in Sources */,
 				6725DA6E2BBAB7D000695EA1 /* MSNumber.m in Sources */,
 				6789CFD52BCD34510024FB54 /* NSString+ZXRegular.m in Sources */,
 				6725DA712BBAB7D000695EA1 /* MSPairOperator.m in Sources */,
 				672468D72BAC1B880088B0A3 /* BaseModel.m in Sources */,
+				678FD1FE2BD62C5600B5187A /* FYLlocalArchiveDetailsBottomView.m in Sources */,
 				67246C592BAC3B480088B0A3 /* PublicHelpers.m in Sources */,
 				6725DA652BBAB7D000695EA1 /* MSElementTable.m in Sources */,
 				67850B6D2BAEA5ED00A44336 /* FYLRegularKeyboardView.m in Sources */,
@@ -1484,6 +1515,7 @@
 				6732FFD52BC65CCA00DCB42C /* FYLAddRemarksViewController.m in Sources */,
 				6789CFD72BCD34510024FB54 /* ZXDataType.m in Sources */,
 				6789CFDB2BCD34510024FB54 /* NSDictionary+ZXDataConvert.m in Sources */,
+				67657BF62BD3A178007210D8 /* FYLlocalArchiveViewController.m in Sources */,
 				6725DA6F2BBAB7D000695EA1 /* MSNumberGroup.m in Sources */,
 				6789CFDD2BCD34510024FB54 /* NSObject+ZXToJson.m in Sources */,
 				6789CFDC2BCD34510024FB54 /* NSObject+ZXToDic.m in Sources */,
@@ -1494,6 +1526,7 @@
 				6789CFD32BCD34510024FB54 /* NSObject+ZXSafetySet.m in Sources */,
 				6725DA792BBAC2C000695EA1 /* YLDIYEditBoxListView.m in Sources */,
 				6789CFD02BCD34510024FB54 /* NSMutableArray+ZXSafetySet.m in Sources */,
+				678FD1FB2BD5FC4600B5187A /* FYLlocalArchiveDetailsViewController.m in Sources */,
 				67246D3A2BAC3F0B0088B0A3 /* NSMutableAttributedString+WY_Extension.m in Sources */,
 				6725DA6D2BBAB7D000695EA1 /* MSFunctionOperator.m in Sources */,
 				67246C392BAC25ED0088B0A3 /* YLMyViewController.m in Sources */,
@@ -1514,6 +1547,7 @@
 				67246D3B2BAC3F0B0088B0A3 /* NSMutableParagraphStyle+WY_Extension.m in Sources */,
 				67850B742BAEB3D500A44336 /* FYLVIPKeyboardView.m in Sources */,
 				6789CFD92BCD34510024FB54 /* NSArray+ZXDataConvert.m in Sources */,
+				67657BF92BD3A2ED007210D8 /* FYLlocalArchiveTableViewCell.m in Sources */,
 				672468DB2BAC1B880088B0A3 /* YLTabbar_View.m in Sources */,
 				67246D2D2BAC3DAC0088B0A3 /* ToolManagement.m in Sources */,
 				6725DA702BBAB7D000695EA1 /* MSOperator.m in Sources */,
