@@ -15,3 +15,21 @@
 "Cancel" = "Annulla";
 "Make sure" = "Assicurati che";
 "Settings" = "Impostazioni";
+"recovery" = "recupero";
+"delete" = "elimina";
+//设置
+"Upgrade VIP" = "Aggiorna VIP";
+"Sound" = "Suono";
+"Theme" = "Tema";
+"Vibrate" = "Vibra";
+"Keyboard" = "Tastiera";
+"Font Size" = "Dimensione carattere";
+"Decimal Places" = "Posti decimali";
+"Thousands 9,999" = "Migliaia 9.999";
+"Date" = "Data";
+"Order" = "Ordine";
+"Language" = "Lingua";
+"Recycle" = "Ricicla";
+"Feedback" = "Feedback";
+"Share" = "Condividi";
+"Rate" = "Tasso";

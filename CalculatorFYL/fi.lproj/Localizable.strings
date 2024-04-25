@@ -15,3 +15,21 @@
 "Cancel" = "Peruuta";
 "Make sure" = "Varmista, että";
 "Settings" = "Asetukset";
+"recovery" = "hyödyntäminen";
+"delete" = "Poista";
+//设置
+"Upgrade VIP" = "Päivitä VIP";
+"Sound" = "Ääni";
+"Theme" = "Teema";
+"Vibrate" = "Tärinää";
+"Keyboard" = "Näppäimistö";
+"Font Size" = "Kirjasikoko";
+"Decimal Places" = "Desimaalipaikat";
+"Thousands 9,999" = "Tuhannet 9 999";
+"Date" = "Päivämäärä";
+"Order" = "Järjestys";
+"Language" = "Kieli";
+"Recycle" = "Kierrätä";
+"Feedback" = "Palaute";
+"Share" = "Osuus";
+"Rate" = "Rate";

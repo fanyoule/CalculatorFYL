@@ -15,3 +15,21 @@
 "Cancel" = "취소";
 "Make sure" = "확보";
 "Settings" = "설치";
+"recovery" = "복구";
+"delete" = "삭제";
+//设置
+"Upgrade VIP" = "VIP 승급";
+"Sound" = "소리";
+"Theme" = "주제";
+"Vibrate" = "진동";
+"Keyboard" = "키보드";
+"Font Size" = "글꼴 크기";
+"Decimal Places" = "소수점";
+"Thousands 9,999" = "천9999";
+"Date" = "날짜";
+"Order" = "순서";
+"Language" = "언어";
+"Recycle" = "재활용";
+"Feedback" = "피드백";
+"Share" = "공유";
+"Rate" = "속도";

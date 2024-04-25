@@ -183,6 +183,9 @@
 		678FD1FE2BD62C5600B5187A /* FYLlocalArchiveDetailsBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 678FD1FD2BD62C5600B5187A /* FYLlocalArchiveDetailsBottomView.m */; };
 		678FD2002BD62C6C00B5187A /* FYLlocalArchiveDetailsBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 678FD1FF2BD62C6C00B5187A /* FYLlocalArchiveDetailsBottomView.xib */; };
 		678FD2042BD64A5600B5187A /* FYLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 678FD2032BD64A5600B5187A /* FYLSettingsViewController.m */; };
+		67C95F912BD9FCE900EE4713 /* FYLSettingsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67C95F902BD9FCE900EE4713 /* FYLSettingsListCell.xib */; };
+		67C95F922BD9FCE900EE4713 /* FYLSettingsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C95F8F2BD9FCE900EE4713 /* FYLSettingsListCell.m */; };
+		67C95F942BDA221100EE4713 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 67C95F932BDA221100EE4713 /* logo.png */; };
 		67DB322D2BB2D27900D3AD80 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 67DB32292BB2D27900D3AD80 /* click.wav */; };
 		67DB322E2BB2D27900D3AD80 /* click2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 67DB322A2BB2D27900D3AD80 /* click2.wav */; };
 		67DB322F2BB2D27900D3AD80 /* click3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 67DB322B2BB2D27900D3AD80 /* click3.wav */; };
@@ -539,6 +542,10 @@
 		678FD1FF2BD62C6C00B5187A /* FYLlocalArchiveDetailsBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYLlocalArchiveDetailsBottomView.xib; sourceTree = "<group>"; };
 		678FD2022BD64A5600B5187A /* FYLSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLSettingsViewController.h; sourceTree = "<group>"; };
 		678FD2032BD64A5600B5187A /* FYLSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLSettingsViewController.m; sourceTree = "<group>"; };
+		67C95F8E2BD9FCE900EE4713 /* FYLSettingsListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLSettingsListCell.h; sourceTree = "<group>"; };
+		67C95F8F2BD9FCE900EE4713 /* FYLSettingsListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLSettingsListCell.m; sourceTree = "<group>"; };
+		67C95F902BD9FCE900EE4713 /* FYLSettingsListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYLSettingsListCell.xib; sourceTree = "<group>"; };
+		67C95F932BDA221100EE4713 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		67DB32292BB2D27900D3AD80 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
 		67DB322A2BB2D27900D3AD80 /* click2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click2.wav; sourceTree = "<group>"; };
 		67DB322B2BB2D27900D3AD80 /* click3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click3.wav; sourceTree = "<group>"; };
@@ -614,6 +621,7 @@
 		672468882BAC1A680088B0A3 /* CalculatorFYL */ = {
 			isa = PBXGroup;
 			children = (
+				67C95F932BDA221100EE4713 /* logo.png */,
 				672468892BAC1A680088B0A3 /* AppDelegate.h */,
 				6724688A2BAC1A680088B0A3 /* AppDelegate.m */,
 				67246B202BAC1BFB0088B0A3 /* Utils */,
@@ -1165,10 +1173,21 @@
 		678FD2012BD64A2F00B5187A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				67B6F3DA2BD8EE15006B6122 /* Cell */,
 				678FD2022BD64A5600B5187A /* FYLSettingsViewController.h */,
 				678FD2032BD64A5600B5187A /* FYLSettingsViewController.m */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		67B6F3DA2BD8EE15006B6122 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				67C95F8E2BD9FCE900EE4713 /* FYLSettingsListCell.h */,
+				67C95F8F2BD9FCE900EE4713 /* FYLSettingsListCell.m */,
+				67C95F902BD9FCE900EE4713 /* FYLSettingsListCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		67DB32282BB2D25900D3AD80 /* music */ = {
@@ -1366,6 +1385,7 @@
 				673200572BC6837D00DCB42C /* gang_three.mp3 in Resources */,
 				6732005A2BC6837D00DCB42C /* gang_dengyu.mp3 in Resources */,
 				672469352BAC1BC80088B0A3 /* text_emoji_36.png in Resources */,
+				67C95F942BDA221100EE4713 /* logo.png in Resources */,
 				6724691F2BAC1BC80088B0A3 /* text_emoji_14.png in Resources */,
 				6724691C2BAC1BC80088B0A3 /* text_emoji_11.png in Resources */,
 				67DB322D2BB2D27900D3AD80 /* click.wav in Resources */,
@@ -1409,6 +1429,7 @@
 				6732005F2BC6837D00DCB42C /* night.mp3 in Resources */,
 				6732005D2BC6837D00DCB42C /* dingding.mp3 in Resources */,
 				672468992BAC1A6A0088B0A3 /* Base in Resources */,
+				67C95F912BD9FCE900EE4713 /* FYLSettingsListCell.xib in Resources */,
 				672469172BAC1BC80088B0A3 /* text_emoji_06.png in Resources */,
 				67DB32302BB2D27900D3AD80 /* click1.wav in Resources */,
 				672468942BAC1A680088B0A3 /* Base in Resources */,
@@ -1576,6 +1597,7 @@
 				672468E02BAC1B880088B0A3 /* BaseViewController.m in Sources */,
 				672468DD2BAC1B880088B0A3 /* YLTabBarViewController.m in Sources */,
 				672468D92BAC1B880088B0A3 /* NavigationBarHandler.m in Sources */,
+				67C95F922BD9FCE900EE4713 /* FYLSettingsListCell.m in Sources */,
 				672468D82BAC1B880088B0A3 /* BaseNavigationBar.m in Sources */,
 				67246D2A2BAC3D4B0088B0A3 /* ZZAlertViewTools.m in Sources */,
 			);

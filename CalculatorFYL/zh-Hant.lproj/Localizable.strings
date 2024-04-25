@@ -15,3 +15,21 @@
 "Cancel" = "取消";
 "Make sure" = "確定";
 "Settings" = "設定";
+"recovery" = "恢復";
+"delete" = "删去";
+//设置
+"Upgrade VIP" = "陞級VIP";
+"Sound" = "聲音";
+"Theme" = "主題";
+"Vibrate" = "振動";
+"Keyboard" = "鍵盤";
+"Font Size" = "字體大小";
+"Decimal Places" = "小數位";
+"Thousands 9,999" = "千 9,999";
+"Date" = "日期";
+"Order" = "量级";
+"Language" = "語言";
+"Recycle" = "回收利用";
+"Feedback" = "反饋";
+"Share" = "共有";
+"Rate" = "好評";

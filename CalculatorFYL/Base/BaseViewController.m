@@ -257,8 +257,8 @@ static UIImage *BackgroundImage = nil;
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
-    [keyWindow endEditing:YES];
+//    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+//    [keyWindow endEditing:YES];
 }
 
 - (void)myPop

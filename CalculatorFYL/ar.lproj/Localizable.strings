@@ -15,3 +15,21 @@
 "Cancel" = "ألغى";
 "Make sure" = "أكّد";
 "Settings" = "ضبط";
+"recovery" = "استعاد";
+"delete" = "حذف";
+//设置
+"Upgrade VIP" = "ترقية كبار الشخصيات";
+"Sound" = "صوت .";
+"Theme" = "موضوع .";
+"Vibrate" = "اهتزازي";
+"Keyboard" = "لوحة المفاتيح .";
+"Font Size" = "حجم الخط";
+"Decimal Places" = "عشري";
+"Thousands 9,999" = "9,999 ألف";
+"Date" = "تواريخ";
+"Order" = "متتابعة";
+"Language" = "لغة";
+"Recycle" = "إعادة التدوير";
+"Feedback" = "تغذية مرتدة";
+"Share" = "مشترك";
+"Rate" = "سرعة .";

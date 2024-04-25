@@ -14,6 +14,7 @@
 #import "YLDIYEditBoxListView.h"
 #import "FYLAddRemarksViewController.h"
 #import "FYLlocalArchiveViewController.h"
+#import "FYLSettingsViewController.h"
 
 
 #import "ZXDataHandle.h"
@@ -91,8 +92,8 @@ int percent = 0;
 }
 #pragma mark -- 设置
 -(void)leftNavItemDidSelectedClicked:(UIButton *)btn{
-    
-    
+    FYLSettingsViewController * vc = [[FYLSettingsViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark -- 存档
 -(void)didSelectedOnFileClicked:(UIButton *)btn{
@@ -948,7 +949,7 @@ int percent = 0;
     self.table_groupV.delegate = self;
     self.table_groupV.dataSource = self;
     [self.table_groupV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.navigationBar.mas_bottom).mas_offset(10);
+        make.top.mas_equalTo(self.navigationBar.mas_bottom).mas_offset(-10);
         make.left.and.right.mas_equalTo(self.view);
         make.bottom.mas_equalTo(V_contect.mas_top);
         

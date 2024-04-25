@@ -15,3 +15,21 @@
 "Cancel" = "Anuluj";
 "Make sure" = "Upewnij się, że";
 "Settings" = "Ustawienia";
+"recovery" = "odzyskiwanie";
+"delete" = "usunąć";
+//设置
+"Upgrade VIP" = "Aktualizacja VIP";
+"Sound" = "Dźwięk";
+"Theme" = "Motyw";
+"Vibrate" = "Wibracja";
+"Keyboard" = "Klawiatura";
+"Font Size" = "Rozmiar czcionki";
+"Decimal Places" = "Miejsca dziesiętne";
+"Thousands 9,999" = "Tysiące 9,999";
+"Date" = "Data";
+"Order" = "Kolejność";
+"Language" = "Język";
+"Recycle" = "Recykling";
+"Feedback" = "Informacje zwrotne";
+"Share" = "Udział";
+"Rate" = "Stawka";

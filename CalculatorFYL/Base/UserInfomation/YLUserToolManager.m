@@ -95,7 +95,35 @@
     }
     return [UIFont boldSystemFontOfSize:20];
 }
-
+/**
+ * 0 插入备注
+ * 1备注
+ * 2完成
+ * 3存档
+ * 4清空
+ * 5保存当前记录
+ * 6打开本地存档
+ * 7取消
+ * 8确定
+ * 9设置
+ * 10恢复
+ * 11删除
+ * 12升级VIP(无广告+语音报数)
+ * 13音效
+ * 14主题
+ * 15触感
+ * 16键盘
+ * 17字体大小
+ * 18小数位数
+ * 19千分位 9,999
+ * 20日期
+ * 21量级
+ * 22语言
+ * 23回收站
+ * 24帮助反馈
+ * 25分享
+ * 26赏个好评吧
+ */
 +(NSString *)getTextTag:(NSInteger)tag{
     NSString * local_languageType = [[NSUserDefaults standardUserDefaults]objectForKey:@"languageType"];
     if (tag == 0) {//插入备注
@@ -429,8 +457,551 @@
             return @"Instellingen";
         }
         
+    }else if (tag == 10){//恢复
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"recovery", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"恢复";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"恢復";
+        }else if (local_languageType.intValue == 3){//English
+            return @"recovery";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"リカバリ";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"복구";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"Восстановление";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"recupero";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"Récupération";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"Rückgewinnung";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"استعاد";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"odzyskiwanie";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"inddrivelse";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"hyödyntäminen";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"terugwinning";
+        }
+    }else if (tag == 11){//删除
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"delete", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"删除";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"删去";
+        }else if (local_languageType.intValue == 3){//English
+            return @"delete";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"削除";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"삭제";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"Исключить";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"elimina";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"Supprimer";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"löschen";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"حذف";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"usunąć";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"slet";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"Poista";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"verwijderen";
+        }
+    }else if (tag == 12){//升级VIP
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"Upgrade VIP", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"升级VIP(无广告+语音报数)";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"陞級VIP";
+        }else if (local_languageType.intValue == 3){//English
+            return @"Upgrade VIP";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"VIPのアップグレード";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"VIP 승급";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"Обновление VIP";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"Aggiorna VIP";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"Mise à niveau VIP";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"VIP upgraden";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"ترقية كبار الشخصيات";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"Aktualizacja VIP";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"Opgrader VIP";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"Päivitä VIP";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"VIP upgraden";
+        }
+    }else if (tag == 13){//音效
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"Sound", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"音效";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"聲音";
+        }else if (local_languageType.intValue == 3){//English
+            return @"Sound";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"サウンド";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"소리";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"Голос";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"Suono";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"La voix";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"Ton";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"صوت .";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"Dźwięk";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"Lyd";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"Ääni";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"Geluid";
+        }
+    }else if (tag == 14){//主题
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"Theme", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"主题";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"主題";
+        }else if (local_languageType.intValue == 3){//English
+            return @"Theme";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"トピック＃トピック＃";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"주제";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"Тема";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"Tema";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"Thèmes";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"Thema";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"موضوع .";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"Motyw";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"Tema";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"Teema";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"Thema";
+        }
+    }else if (tag == 15){//振动
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"Vibrate", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"振动";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"振動";
+        }else if (local_languageType.intValue == 3){//English
+            return @"Vibrate";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"しんどう";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"진동";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"Вибрация";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"Vibra";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"Vibrations";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"Vibration";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"اهتزازي";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"Wibracja";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"Vibrerer";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"Tärinää";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"Tribbelen";
+        }
+    }else if (tag == 16){//键盘
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"Keyboard", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"键盘";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"鍵盤";
+        }else if (local_languageType.intValue == 3){//English
+            return @"Keyboard";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"キーボード";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"키보드";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"Клавиатура";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"Tastiera";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"Clavier";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"Tastatur";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"لوحة المفاتيح .";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"Klawiatura";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"Tastatur";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"Näppäimistö";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"Toetsenbord";
+        }
+    }else if (tag == 17){//字体大小
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"Font Size", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"字体大小";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"字體大小";
+        }else if (local_languageType.intValue == 3){//English
+            return @"Font Size";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"フォントサイズ";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"글꼴 크기";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"Размер шрифта";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"Dimensione carattere";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"Taille de la police";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"Schriftgröße";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"حجم الخط";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"Rozmiar czcionki";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"Skriftstørrelse";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"Kirjasikoko";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"Lettertypegrootte";
+        }
+    }else if (tag == 18){//小数位数
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"Decimal Places", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"小数位数";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"小數位";
+        }else if (local_languageType.intValue == 3){//English
+            return @"Decimal Places";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"小数点以下のビット";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"소수점";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"Десятичный разряд";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"Posti decimali";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"Petit nombre";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"Dezimalstellen";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"عشري";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"Miejsca dziesiętne";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"Decimalsteder";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"Desimaalipaikat";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"Decimale plaatsen";
+        }
+    }else if (tag == 19){//千分位 9,999
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"Thousands 9,999", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"千分位 9,999";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"千 9,999";
+        }else if (local_languageType.intValue == 3){//English
+            return @"Thousands 9,999";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"千 9,999";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"천9999";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"В тыс. 9999";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"Migliaia 9.999";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"Milliers 9999";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"Tausende 9.999";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"9,999 ألف";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"Tysiące 9,999";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"Tusindvis 9.999";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"Tuhannet 9 999";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"Duizenden 9,999";
+        }
+    }else if (tag == 20){//日期
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"Date", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"日期";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"日期";
+        }else if (local_languageType.intValue == 3){//English
+            return @"Date";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"日付";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"날짜";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"Дата";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"Data";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"Date";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"Datum";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"تواريخ";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"Data";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"Dato";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"Päivämäärä";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"Datum";
+        }
+    }else if (tag == 21){//量级
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"Order", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"量级";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"量级";
+        }else if (local_languageType.intValue == 3){//English
+            return @"Order";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"じゅんじょ";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"순서";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"Последовательность";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"Ordine";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"Order";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"Reihenfolge";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"متتابعة";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"Kolejność";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"Rækkefølge";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"Järjestys";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"Orde";
+        }
+    }else if (tag == 22){//语言
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"Language", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"语言";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"語言";
+        }else if (local_languageType.intValue == 3){//English
+            return @"Language";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"言語";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"언어";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"Язык";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"Lingua";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"Langue";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"Sprache";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"لغة";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"Język";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"Sprog";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"Kieli";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"Taal";
+        }
+    }else if (tag == 23){//回收站
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"Recycle", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"回收站";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"回收利用";
+        }else if (local_languageType.intValue == 3){//English
+            return @"Recycle";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"リサイクル";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"재활용";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"Рекуперация";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"Ricicla";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"Recyclage";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"Recycling";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"إعادة التدوير";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"Recykling";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"Genbrug";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"Kierrätä";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"Recyclen";
+        }
+    }else if (tag == 24){//帮助反馈
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"Feedback", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"帮助反馈";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"反饋";
+        }else if (local_languageType.intValue == 3){//English
+            return @"Feedback";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"フィードバック";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"피드백";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"Обратная связь";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"Feedback";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"Feedback";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"Feedback";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"تغذية مرتدة";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"Informacje zwrotne";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"Feedback";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"Palaute";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"Feedback";
+        }
+    }else if (tag == 25){//分享
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"Share", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"分享";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"共有";
+        }else if (local_languageType.intValue == 3){//English
+            return @"Share";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"共有＃キョウユウ＃";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"공유";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"Совокупность";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"Condividi";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"Au total";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"Anteil";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"مشترك";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"Udział";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"Del";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"Osuus";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"Aandelen";
+        }
+    }else if (tag == 26){//赏个好评吧
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"Rate", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"赏个好评吧";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"好評";
+        }else if (local_languageType.intValue == 3){//English
+            return @"Rate";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"スピード＃";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"속도";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"Скорость";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"Tasso";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"Vitesse";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"Rate";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"سرعة .";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"Stawka";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"Rate";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"Rate";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"Tarief";
+        }
     }
-    
     return @"";
 }
 

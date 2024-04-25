@@ -204,6 +204,9 @@ FYLlocalArchiveDetailsBottomViewdelegate
         make.height.mas_equalTo(@60);
     }];
     FYLlocalArchiveDetailsBottomView * V_bottom = [[[NSBundle mainBundle]loadNibNamed:@"FYLlocalArchiveDetailsBottomView" owner:self options:nil]lastObject];
+    [V_bottom.B_huifu setTitle:[YLUserToolManager getTextTag:10] forState:UIControlStateNormal];
+    [V_bottom.B_shanchu setTitle:[YLUserToolManager getTextTag:11] forState:UIControlStateNormal];
+    
     V_bottom.delegate = self;
     [V_bg_bottom addSubview:V_bottom];
     [V_bottom mas_makeConstraints:^(MASConstraintMaker *make) {
