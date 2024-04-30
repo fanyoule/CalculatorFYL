@@ -83,13 +83,7 @@ int percent = 0;
 
     }
 }
--(void)playSoundEffect:(NSString *)name{
-    NSString *audioFile=[[NSBundle mainBundle] pathForResource:name ofType:nil];
-    NSURL *fileUrl=[NSURL fileURLWithPath:audioFile];
-    SystemSoundID soundID=0;//获得系统声音ID
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)(fileUrl), &soundID);
-    AudioServicesPlaySystemSound(soundID);//播放音效
-}
+
 #pragma mark -- 设置
 -(void)leftNavItemDidSelectedClicked:(UIButton *)btn{
     FYLSettingsViewController * vc = [[FYLSettingsViewController alloc]init];

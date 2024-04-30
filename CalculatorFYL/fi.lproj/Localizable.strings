@@ -33,3 +33,19 @@
 "Feedback" = "Palaute";
 "Share" = "Osuus";
 "Rate" = "Rate";
+"Purchase" = "Osto";
+"Restore" = "Palauta";
+
+"None" = "Ei mitään";
+"Default" = "Oletus";
+"Water" = "Vesi";
+"Crisp" = "Rapea";
+"Drum" = "Rumpu";
+"Wood" = "Puu";
+"Piano" = "Piano";
+"Voice" = "Ääni";
+"Chinese" = "Kiinalainen";
+"English" = "Englanti";
+"My feedback" = "Palautteeni";
+"Please leave your valuable comments,we will reply you in time" = "Jätä arvokkaat kommentit, me vastaamme sinulle ajoissa";
+"Your contact information or Email" = "Yhteystiedot tai sähköposti";

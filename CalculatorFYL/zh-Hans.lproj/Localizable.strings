@@ -33,3 +33,19 @@
 "Feedback" = "帮助反馈";
 "Share" = "分享";
 "Rate" = "赏个好评吧";
+"Purchase" = "购买";
+"Restore" = "恢复购买";
+
+"None" = "无";
+"Default" = "默认";
+"Water" = "水滴";
+"Crisp" = "清脆";
+"Drum" = "鼓声";
+"Wood" = "木质";
+"Piano" = "钢琴";
+"Voice" = "真人语音";
+"Chinese" = "中文";
+"English" = "英文";
+"My feedback" = "我的反馈";
+"Please leave your valuable comments,we will reply you in time" = "请留下您宝贵的意见或反馈，我们会及时的回复您";
+"Your contact information or Email" = "您的联系方式";

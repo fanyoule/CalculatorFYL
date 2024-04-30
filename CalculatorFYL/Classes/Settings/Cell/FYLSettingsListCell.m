@@ -23,6 +23,8 @@
 }
 
 -(void)changeUIType:(NSInteger)type{
+    self.M_sel.hidden = YES;
+    
     switch (type) {
         case 0://标题+右侧内容+右侧icon
             {
@@ -94,6 +96,20 @@
             {
                 self.L_contect.hidden = NO;
                 self.L_title.hidden = YES;
+                self.V_switch.hidden = YES;
+                self.M_right.hidden = YES;
+                self.V_right_color.hidden = YES;
+                self.L_right_contect.hidden = YES;
+                self.M_ar.hidden = YES;
+                self.L_hot.hidden = YES;
+                
+                
+            }
+            break;
+        case 6://选中按钮 + 标题
+            {
+                self.L_contect.hidden = YES;
+                self.L_title.hidden = NO;
                 self.V_switch.hidden = YES;
                 self.M_right.hidden = YES;
                 self.V_right_color.hidden = YES;

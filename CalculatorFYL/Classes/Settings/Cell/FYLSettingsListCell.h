@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FYLSettingsListCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *L_title;
 @property (weak, nonatomic) IBOutlet UILabel *L_hot;
+///选中icon
+@property (weak, nonatomic) IBOutlet UIImageView *M_sel;
 
 @property (weak, nonatomic) IBOutlet UIImageView *M_ar;
 

@@ -73,23 +73,27 @@
                             </switch>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4K-A4-wYo">
                                 <rect key="frame" x="388" y="96.666666666666671" width="20" height="20"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.23529411764705882" green="0.85098039215686272" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="aLS-zX-IqL"/>
                                     <constraint firstAttribute="width" constant="20" id="tgb-N2-GLf"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcB-sz-Nf2">
-                                <rect key="frame" x="197" y="21" width="253" height="191"/>
+                                <rect key="frame" x="197" y="21" width="25" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yoSelImg_sel" translatesAutoresizingMaskIntoConstraints="NO" id="u8I-IA-LC1">
+                                <rect key="frame" x="404.33333333333331" y="94" width="25.666666666666686" height="25"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.12941176470588234" green="0.12549019607843137" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Win-GY-PMt" firstAttribute="leading" secondItem="C4K-A4-wYo" secondAttribute="trailing" constant="6" id="2FX-zp-Tj9"/>
                             <constraint firstAttribute="bottom" secondItem="jv8-TN-PmO" secondAttribute="bottom" id="3HW-Sf-cXB"/>
+                            <constraint firstItem="Win-GY-PMt" firstAttribute="trailing" secondItem="u8I-IA-LC1" secondAttribute="trailing" id="460-Xz-i78"/>
                             <constraint firstItem="fcB-sz-Nf2" firstAttribute="leading" secondItem="Tw7-yq-Vop" secondAttribute="leading" id="B29-Bk-HiA"/>
                             <constraint firstItem="kwu-m5-Jwh" firstAttribute="centerY" secondItem="8nB-GM-cGz" secondAttribute="centerY" id="E7c-7U-13R"/>
                             <constraint firstItem="8nB-GM-cGz" firstAttribute="leading" secondItem="Tw7-yq-Vop" secondAttribute="leading" constant="20" id="GqC-fZ-mY9"/>
@@ -106,6 +110,7 @@
                             <constraint firstItem="au8-X0-IQK" firstAttribute="leading" secondItem="8nB-GM-cGz" secondAttribute="trailing" constant="10" id="r7W-cd-HUw"/>
                             <constraint firstAttribute="trailing" secondItem="fcB-sz-Nf2" secondAttribute="trailing" id="slN-4d-agc"/>
                             <constraint firstItem="Win-GY-PMt" firstAttribute="centerY" secondItem="6Ub-q5-8Gv" secondAttribute="centerY" id="tE7-2X-vAp"/>
+                            <constraint firstItem="u8I-IA-LC1" firstAttribute="centerY" secondItem="Tw7-yq-Vop" secondAttribute="centerY" id="vMj-mE-M87"/>
                             <constraint firstItem="Win-GY-PMt" firstAttribute="leading" secondItem="khV-vB-ugI" secondAttribute="trailing" constant="4" id="x1r-3m-kF8"/>
                             <constraint firstItem="8nB-GM-cGz" firstAttribute="centerY" secondItem="Tw7-yq-Vop" secondAttribute="centerY" id="xiS-iK-Qkf"/>
                             <constraint firstItem="Win-GY-PMt" firstAttribute="centerY" secondItem="khV-vB-ugI" secondAttribute="centerY" id="z1F-zz-62r"/>
@@ -127,6 +132,7 @@
                 <outlet property="L_title" destination="8nB-GM-cGz" id="CUs-QK-pas"/>
                 <outlet property="M_ar" destination="au8-X0-IQK" id="1Zb-0D-hB1"/>
                 <outlet property="M_right" destination="Win-GY-PMt" id="6eu-F9-7jZ"/>
+                <outlet property="M_sel" destination="u8I-IA-LC1" id="e6w-Ez-ZWM"/>
                 <outlet property="V_line" destination="jv8-TN-PmO" id="6JT-aw-xW9"/>
                 <outlet property="V_right_color" destination="C4K-A4-wYo" id="eSK-Ki-7yB"/>
                 <outlet property="V_switch" destination="6Ub-q5-8Gv" id="BJN-CN-pgR"/>
@@ -137,9 +143,7 @@
     <resources>
         <image name="ai" width="16.333333969116211" height="16"/>
         <image name="settingRight_icon" width="16" height="16"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="yoSelImg_sel" width="25.666666030883789" height="25"/>
         <systemColor name="systemGray5Color">
             <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

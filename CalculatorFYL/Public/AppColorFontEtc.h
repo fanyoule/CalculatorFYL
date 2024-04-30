@@ -77,8 +77,20 @@
 
 ///APP主题色 key
 #define     FYL_MainAppColor                @"MainAppColor"
+#define     FYL_MainAppColorIndex                @"MainAppColorIndex"
+
 ///APP 文字字号
 #define     FYL_TitleFont            @"MainAppTitleFont"
+///APP  音效
+#define     FYL_SoundType           @"soundType"
+///APP  触感
+#define     FYL_touchState           @"touchState"
+///APP  千分位
+#define     FYL_thousandsState           @"thousandsState"
+///APP  日期
+#define     FYL_dataState           @"dataState"
+///APP  量级
+#define     FYL_orderState           @"orderState"
 
 
 #ifdef DEBUG

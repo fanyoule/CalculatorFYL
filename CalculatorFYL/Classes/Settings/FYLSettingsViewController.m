@@ -6,7 +6,13 @@
 //
 
 #import "FYLSettingsViewController.h"
-//#import "FYLlocalArchiveTableViewCell.h"
+#import "FYLZZOneDetailViewController.h"
+#import "FYLSoundListViewController.h"
+#import "FYLThemeViewController.h"
+
+
+
+#import "FYLSettingListMolde.h"
 #import "FYLSettingsListCell.h"
 #import <StoreKit/StoreKit.h>
 
@@ -21,7 +27,10 @@ UIDocumentInteractionControllerDelegate
 @end
 
 @implementation FYLSettingsViewController
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.table_groupV reloadData];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navTitle  = [YLUserToolManager getTextTag:9];
@@ -41,10 +50,7 @@ UIDocumentInteractionControllerDelegate
                 
         }];
     }
-    
-                            
-    
-    
+   
 }
 #pragma mark -- 分享APP
 - (void)shareInApp {
@@ -73,6 +79,10 @@ UIDocumentInteractionControllerDelegate
         popover.permittedArrowDirections = UIPopoverArrowDirectionUp;
     }
 }
+
+
+
+
 
 
 
@@ -125,16 +135,26 @@ UIDocumentInteractionControllerDelegate
     }else if (indexPath.section == 1){
         if (indexPath.row == 0) {
             [cell changeUIType:2];
+            cell.L_right_contect.text = [self getSoundTypeStr];
         }else if (indexPath.row == 1){
             [cell changeUIType:3];
+            cell.V_right_color.backgroundColor = [UIColor jk_colorWithHexString:self.model.themeColor];
         }else if (indexPath.row == 2){
             [cell changeUIType:4];
+            cell.V_switch.on = self.model.touchSwitchState.intValue;
         }
     }else if (indexPath.section == 2){
         if (indexPath.row == 0||indexPath.row == 1||indexPath.row == 2) {
             [cell changeUIType:0];
         }else if (indexPath.row == 3||indexPath.row == 4||indexPath.row == 5){
             [cell changeUIType:4];
+            if (indexPath.row == 3) {//千分位
+                cell.V_switch.on = self.model.thousandsState.intValue;
+            }else if (indexPath.row == 4){//日期
+                cell.V_switch.on = self.model.dataState.intValue;
+            }else if (indexPath.row == 5){//量级
+                cell.V_switch.on = self.model.orderState.intValue;
+            }
         }
     }else if (indexPath.section == 3||indexPath.section == 4){
         [cell changeUIType:0];
@@ -152,9 +172,16 @@ UIDocumentInteractionControllerDelegate
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        
+        FYLZZOneDetailViewController * vc = [[FYLZZOneDetailViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 1){
-        
+        if (indexPath.row == 0) {
+            FYLSoundListViewController * vc = [[FYLSoundListViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }else if (indexPath.row == 1){
+            FYLThemeViewController * vc = [[FYLThemeViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
     }else if (indexPath.section == 2){
         
     }else if (indexPath.section == 3){
@@ -185,10 +212,7 @@ UIDocumentInteractionControllerDelegate
     
     self.table_groupV.backgroundColor = UIColor.blackColor;
     [self.table_groupV registerNib:[UINib nibWithNibName:@"FYLSettingsListCell" bundle:nil] forCellReuseIdentifier:@"FYLSettingsListCell"];
-//    [self.table_groupV registerClass:[FYLlocalArchiveTableViewCell class] forCellReuseIdentifier:@"FYLlocalArchiveTableViewCell"];
-//    self.tableV.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAlways;
-//    self.tableV.rowHeight = UITableViewAutomaticDimension;
-//    self.tableV.estimatedRowHeight = 30;
+
     self.table_groupV.dataSource = self;
     self.table_groupV.delegate = self;
     [self.view addSubview:self.table_groupV];

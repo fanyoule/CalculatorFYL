@@ -7,11 +7,13 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseNavigationBar.h"
+#import "FYLSettingListMolde.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseViewController : UIViewController
- 
+@property(nonatomic,strong)FYLSettingListMolde * model;
+
 @property(nonatomic,strong) BaseNavigationBar *navigationBar;
 @property(nonatomic,strong) NSString *navTitle;
 @property(nonatomic, strong)UIButton *yl_rightButton;
@@ -67,7 +69,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)updateAPartition:(NSInteger)section;
 ///从nav中删除本视图
 -(void)deleteViewController:(UIViewController *)vc;
-
+///播放声音
+-(void)playSoundEffect:(NSString *)name;
+///获取音效
+-(NSString *)getSoundTypeStr;
 
 @end
 

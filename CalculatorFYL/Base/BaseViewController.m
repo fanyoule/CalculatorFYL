@@ -9,9 +9,10 @@
 #import "NavigationBarHandler.h"
 static UIImage *BackgroundImage = nil;
 @interface BaseViewController ()
+<AVAudioPlayerDelegate>
 /** 开启关闭侧滑手势专用 */
 @property(nonatomic, assign) BOOL gesture_flag;
-
+@property(nonatomic,strong)AVAudioPlayer * player;
 @end
 
 @implementation BaseViewController
@@ -41,7 +42,7 @@ static UIImage *BackgroundImage = nil;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+    [self updateUserInfo];
     [self closeTextField];
 }
 
@@ -102,6 +103,10 @@ static UIImage *BackgroundImage = nil;
     [self setNavigationBarTitleColor:rgba(255, 254, 254, 1)];
     [self showNavigationbar];
     [self.view addSubview:self.navigationBar];
+    
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [audioSession setActive:YES error:nil];
     
 }
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
@@ -254,6 +259,54 @@ static UIImage *BackgroundImage = nil;
         [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:section]];
     }];
 }
+-(void)playSoundEffect:(NSString *)name{
+    NSString *audioFile=[[NSBundle mainBundle] pathForResource:name ofType:nil];
+    NSURL *fileUrl=[NSURL fileURLWithPath:audioFile];
+//    SystemSoundID soundID=0;//获得系统声音ID
+//    AudioServicesCreateSystemSoundID((__bridge CFURLRef)(fileUrl), &soundID);
+//    AudioServicesPlaySystemSound(soundID);//播放音效
+//    NSString *urlStr=[[NSBundle mainBundle]pathForResource:@"yh_audio_boom_5" ofType:@"mp3"];
+//    NSURL *url=[NSURL fileURLWithPath:urlStr];
+    
+    NSError * error;
+    AVAudioPlayer * player = [[AVAudioPlayer alloc]initWithContentsOfURL:fileUrl error:&error];
+    self.player = player;
+    player.volume = 1;
+    player.numberOfLoops = 0;
+    player.delegate = self;
+    [player play];
+        
+    
+}
+-(void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
+    NSLog(@"播放结束时执行的动作");
+}
+
+#pragma mark -- 获取音效
+-(NSString *)getSoundTypeStr{
+    if (self.model.soundType.intValue == 0) {
+        return [YLUserToolManager getTextTag:29];
+    }else if (self.model.soundType.intValue == 1){
+        return [YLUserToolManager getTextTag:30];
+    }else if (self.model.soundType.intValue == 2){
+        return [YLUserToolManager getTextTag:31];
+    }else if (self.model.soundType.intValue == 3){
+        return [YLUserToolManager getTextTag:32];
+    }else if (self.model.soundType.intValue == 4){
+        return [YLUserToolManager getTextTag:33];
+    }else if (self.model.soundType.intValue == 5){
+        return [YLUserToolManager getTextTag:34];
+    }else if (self.model.soundType.intValue == 6){
+        return [YLUserToolManager getTextTag:35];
+    }else if (self.model.soundType.intValue == 7){
+        return [YLUserToolManager getTextTag:37];
+    }else if (self.model.soundType.intValue == 8){
+        return [YLUserToolManager getTextTag:38];
+    }
+    
+    return [YLUserToolManager getTextTag:30];
+    
+}
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
@@ -362,6 +415,41 @@ static UIImage *BackgroundImage = nil;
     }
     return _yl_rightButton;
 }
+-(FYLSettingListMolde *)model{
+    if (!_model) {
+        _model = [[FYLSettingListMolde alloc]init];
+        NSString * soundType = [[NSUserDefaults standardUserDefaults]objectForKey:FYL_SoundType];
+        _model.soundType =IS_VALID_STRING(soundType)?soundType:@"1";
+        NSString * MainAppColor = [[NSUserDefaults standardUserDefaults]objectForKey:FYL_MainAppColor];
+        _model.themeColor =IS_VALID_STRING(MainAppColor)?MainAppColor:@"#3CD991";//
+        NSString * touchState = [[NSUserDefaults standardUserDefaults]objectForKey:FYL_touchState];
+        _model.touchSwitchState =IS_VALID_STRING(touchState)?touchState:@"0";
+        NSString * thousandsState = [[NSUserDefaults standardUserDefaults]objectForKey:FYL_thousandsState];
+        _model.thousandsState =IS_VALID_STRING(thousandsState)?thousandsState:@"0";
+        NSString * dataState = [[NSUserDefaults standardUserDefaults]objectForKey:FYL_dataState];
+        _model.dataState =IS_VALID_STRING(dataState)?dataState:@"0";
+        NSString * orderState = [[NSUserDefaults standardUserDefaults]objectForKey:FYL_orderState];
+        _model.orderState =IS_VALID_STRING(orderState)?orderState:@"1";
+    }
+    return _model;
+}
+-(void)updateUserInfo{
+    NSString * soundType = [[NSUserDefaults standardUserDefaults]objectForKey:FYL_SoundType];
+    self.model.soundType =IS_VALID_STRING(soundType)?soundType:@"1";
+    NSString * MainAppColor = [[NSUserDefaults standardUserDefaults]objectForKey:FYL_MainAppColor];
+    self.model.themeColor =IS_VALID_STRING(MainAppColor)?MainAppColor:@"#3CD991";//
+    NSString * touchState = [[NSUserDefaults standardUserDefaults]objectForKey:FYL_touchState];
+    self.model.touchSwitchState =IS_VALID_STRING(touchState)?touchState:@"0";
+    NSString * thousandsState = [[NSUserDefaults standardUserDefaults]objectForKey:FYL_thousandsState];
+    self.model.thousandsState =IS_VALID_STRING(thousandsState)?thousandsState:@"0";
+    NSString * dataState = [[NSUserDefaults standardUserDefaults]objectForKey:FYL_dataState];
+    self.model.dataState =IS_VALID_STRING(dataState)?dataState:@"0";
+    NSString * orderState = [[NSUserDefaults standardUserDefaults]objectForKey:FYL_orderState];
+    self.model.orderState =IS_VALID_STRING(orderState)?orderState:@"1";
+    
+    
+}
+
 
 -(void)dealloc{
     
