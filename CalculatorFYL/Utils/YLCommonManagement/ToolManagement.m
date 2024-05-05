@@ -145,11 +145,30 @@
     NSString *timeString = [NSString stringWithFormat:@"%ld", (long)time];
     return timeString;
 }
+-(NSString *)getCurrectTime{
+    // 获取当前日期
+    NSDate *currentDate = [NSDate date];
+    
+    // 创建一个日期格式化器
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    dateFormatter.locale = [NSLocale systemLocale];
+    dateFormatter.calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierISO8601];
+    
+    // 设置日期和时间的格式
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    
+    // 使用格式化器转换日期
+    NSString *dateString = [dateFormatter stringFromDate:currentDate];
+    return dateString;
+           
+}
 // 时间戳转时间,时间戳为13位是精确到毫秒的，10位精确到秒
 - (NSString *)getDateStringWithTimeStr:(NSString *)str{
     NSTimeInterval time=[str doubleValue]/1000;//传入的时间戳str如果是精确到毫秒的记得要/1000
     NSDate *detailDate=[NSDate dateWithTimeIntervalSince1970:time];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init]; //实例化一个NSDateFormatter对象
+    dateFormatter.locale = [NSLocale systemLocale];
+    dateFormatter.calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierISO8601];
     //设定时间格式,这里可以设置成自己需要的格式
         [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss SS"];
     NSString *currentDateStr = [dateFormatter stringFromDate: detailDate];
@@ -159,6 +178,8 @@
     NSTimeInterval time=[str doubleValue]/1000;//传入的时间戳str如果是精确到毫秒的记得要/1000
     NSDate *detailDate=[NSDate dateWithTimeIntervalSince1970:time];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init]; //实例化一个NSDateFormatter对象
+    dateFormatter.locale = [NSLocale systemLocale];
+    dateFormatter.calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierISO8601];
     //设定时间格式,这里可以设置成自己需要的格式
         [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSString *currentDateStr = [dateFormatter stringFromDate: detailDate];
@@ -178,6 +199,8 @@
 //字符串转时间戳 如：2017-4-10 17:15:10
 - (NSString *)getTimeStrWithString:(NSString *)str{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];// 创建一个时间格式化对象
+    dateFormatter.locale = [NSLocale systemLocale];
+    dateFormatter.calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierISO8601];
     [dateFormatter setDateFormat:@"YYYY-MM-dd"]; //设定时间的格式
     NSLog(@"dateFormatter == %@",dateFormatter);
     NSDate *tempDate = [dateFormatter dateFromString:str];//将字符串转换为时间对象
@@ -204,6 +227,8 @@
     NSTimeInterval timeInterval = [timestamp doubleValue];
     NSDate *detailDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.locale = [NSLocale systemLocale];
+    dateFormatter.calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierISO8601];
     // 实例化一个NSDateFormatter对象，设定时间格式，这里可以设置成自己需要的格式
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSString *dateStr = [dateFormatter stringFromDate:detailDate];
@@ -223,6 +248,8 @@
 // 日期时间增加 返回一个增加时间的日期
 - (NSString *)timeIncreasedWithDateString:(NSString *)DateString Seconds:(NSInteger)seconds{
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
+    formatter.locale = [NSLocale systemLocale];
+    formatter.calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierISO8601];
     [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSDate *date = [formatter dateFromString:DateString];
     NSTimeInterval timeInterval = seconds;

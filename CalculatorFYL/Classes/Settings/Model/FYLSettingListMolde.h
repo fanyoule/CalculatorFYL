@@ -24,7 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy)NSString * orderState;
 ///小数点位数
 @property(nonatomic,copy)NSString * decimalPlace;
-
+///语言 
+@property(nonatomic,copy)NSString * LanguageType;
 
 @end
 

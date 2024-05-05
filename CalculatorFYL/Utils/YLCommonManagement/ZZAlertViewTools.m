@@ -285,7 +285,7 @@
                                                           handler:^(UIAlertAction * _Nonnull action) {
                                                               if (confirm)confirm(cancelIndex);
                                                           }];
-    [cancelAction setValue:rgba(51, 51, 51, 1) forKey:@"titleTextColor"];
+    [cancelAction setValue:UIColor.blueColor forKey:@"titleTextColor"];
     [sheet addAction:cancelAction];
     
     if (titleArray.count > 0) {
@@ -295,7 +295,7 @@
                                                             handler:^(UIAlertAction * _Nonnull action) {
                                                                 if (confirm)confirm(i);
                                                             }];
-            [action setValue:rgba(51, 51, 51, 1) forKey:@"titleTextColor"];
+            [action setValue:UIColor.blueColor forKey:@"titleTextColor"];
             [sheet addAction:action];
         }
     }

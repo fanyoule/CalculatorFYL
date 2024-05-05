@@ -445,9 +445,43 @@ static UIImage *BackgroundImage = nil;
     self.model.orderState =IS_VALID_STRING(orderState)?orderState:@"1";
     NSString * decimalPlace = [[NSUserDefaults standardUserDefaults]objectForKey:FYL_DecimalPlace];
     self.model.decimalPlace =IS_VALID_STRING(decimalPlace)?decimalPlace:@"8";
-    
+    NSString * LanguageType = [[NSUserDefaults standardUserDefaults]objectForKey:FYL_LanguageType];
+    self.model.LanguageType =IS_VALID_STRING(LanguageType)?LanguageType:@"0";
 }
-
+-(NSString *)getUnitsContect:(NSString *)contect{
+    if (!IS_VALID_STRING(contect)) {
+        return @"";
+    }
+    NSString * state = UserDefaultObjectForKey(FYL_orderState);
+    if (!IS_VALID_STRING(state)) {
+        return @"";
+    }
+    if (state.intValue == 0) {
+        return @"";
+    }
+    NSString * zz = [contect componentsSeparatedByString:@"."].firstObject;
+    zz = [zz stringByReplacingOccurrencesOfString:@"," withString:@""];
+    if (zz.length==5) {
+        return @"(万)";
+    }else if (zz.length == 6){
+        return @"(十万)";
+    }else if (zz.length == 7){
+        return @"(百万)";
+    }else if (zz.length == 8){
+        return @"(千万)";
+    }else if (zz.length == 9){
+        return @"(亿)";
+    }else if (zz.length == 10){
+        return @"(十亿)";
+    }else if (zz.length == 11){
+        return @"(百亿)";
+    }else if (zz.length == 12){
+        return @"(千亿)";
+    }else if (zz.length == 13){
+        return @"(万亿)";
+    }
+    return @"";
+}
 
 -(void)dealloc{
     

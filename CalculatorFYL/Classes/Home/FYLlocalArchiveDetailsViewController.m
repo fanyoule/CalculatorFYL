@@ -7,6 +7,7 @@
 
 #import "FYLlocalArchiveDetailsViewController.h"
 #import "FYLOnFileModel.h"
+#import "FYLRecycleBinModel.h"
 #import "FYLHistoricalRecordNewCell.h"
 #import "YLShareDeviceOuterModel.h"
 #import "FYLlocalArchiveDetailsBottomView.h"
@@ -27,7 +28,12 @@ FYLlocalArchiveDetailsBottomViewdelegate
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navTitle = self.fileModle.title;
+    if (self.type == 1) {
+        self.navTitle = self.binModle.title;
+    }else{
+        self.navTitle = self.fileModle.title;
+    }
+    
     [self creatUI];
     [self readHistoryData];
     
@@ -35,24 +41,47 @@ FYLlocalArchiveDetailsBottomViewdelegate
 }
 -(void)readHistoryData{
     [self.dataArray removeAllObjects];
-    if (IS_VALID_STRING(self.fileModle.resArrJson)) {
-        NSLog(@"%@",self.fileModle.resArrJson);
-       NSArray * dic_arr = (NSArray *)[self.fileModle.resArrJson jk_dictionaryValue];
-        if ([dic_arr isKindOfClass:[NSArray class]]) {
-            [dic_arr enumerateObjectsUsingBlock:^(NSDictionary *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                FYLHistoryModel * histM = [[FYLHistoryModel alloc]init];
-                histM.resultStr = obj[@"resultStr"];
-                histM.userName = obj[@"userName"];
-                histM.IDs =[[NSString stringWithFormat:@"%@",obj[@"IDs"]] doubleValue] ;
-                histM.time =[NSString stringWithFormat:@"%@",obj[@"time"]];
-                histM.contect = obj[@"contect"];
-                histM.textDirectionType = [[NSString stringWithFormat:@"%@",obj[@"textDirectionType"]] doubleValue];
-                histM.state = [[NSString stringWithFormat:@"%@",obj[@"state"]] doubleValue];
-                [self.dataArray addObject:histM];
-            }];
-            [self handleDataIntoModels];
+    if (self.type == 1) {
+        if (IS_VALID_STRING(self.binModle.resArrJson)) {
+            NSLog(@"%@",self.binModle.resArrJson);
+           NSArray * dic_arr = (NSArray *)[self.binModle.resArrJson jk_dictionaryValue];
+            if ([dic_arr isKindOfClass:[NSArray class]]) {
+                [dic_arr enumerateObjectsUsingBlock:^(NSDictionary *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    FYLHistoryModel * histM = [[FYLHistoryModel alloc]init];
+                    histM.resultStr = obj[@"resultStr"];
+                    histM.userName = obj[@"userName"];
+                    histM.IDs =[[NSString stringWithFormat:@"%@",obj[@"IDs"]] doubleValue] ;
+                    histM.time =[NSString stringWithFormat:@"%@",obj[@"time"]];
+                    histM.contect = obj[@"contect"];
+                    histM.textDirectionType = [[NSString stringWithFormat:@"%@",obj[@"textDirectionType"]] doubleValue];
+                    histM.state = [[NSString stringWithFormat:@"%@",obj[@"state"]] doubleValue];
+                    [self.dataArray addObject:histM];
+                }];
+                [self handleDataIntoModels];
+            }
         }
+    }else{
+        if (IS_VALID_STRING(self.fileModle.resArrJson)) {
+            NSLog(@"%@",self.fileModle.resArrJson);
+           NSArray * dic_arr = (NSArray *)[self.fileModle.resArrJson jk_dictionaryValue];
+            if ([dic_arr isKindOfClass:[NSArray class]]) {
+                [dic_arr enumerateObjectsUsingBlock:^(NSDictionary *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    FYLHistoryModel * histM = [[FYLHistoryModel alloc]init];
+                    histM.resultStr = obj[@"resultStr"];
+                    histM.userName = obj[@"userName"];
+                    histM.IDs =[[NSString stringWithFormat:@"%@",obj[@"IDs"]] doubleValue] ;
+                    histM.time =[NSString stringWithFormat:@"%@",obj[@"time"]];
+                    histM.contect = obj[@"contect"];
+                    histM.textDirectionType = [[NSString stringWithFormat:@"%@",obj[@"textDirectionType"]] doubleValue];
+                    histM.state = [[NSString stringWithFormat:@"%@",obj[@"state"]] doubleValue];
+                    [self.dataArray addObject:histM];
+                }];
+                [self handleDataIntoModels];
+            }
+        }
+        
     }
+    
 
     
 }
@@ -68,10 +97,23 @@ FYLlocalArchiveDetailsBottomViewdelegate
             }
         }
     }else if (tag == 1){//删除
-        [self deleteCurrentModel:self.fileModle];
+        if (self.type == 1) {
+            [self deleteCurrentBinModel:self.binModle];
+        }else{
+            [self deleteCurrentModel:self.fileModle];
+        }
+        
     }
 }
 #pragma mark -- 删除
+-(void)deleteCurrentBinModel:(FYLRecycleBinModel *)model{
+    NSString * sqStr = [NSString stringWithFormat:@"IDs=%.f",model.IDs];
+    BOOL success = [FYLRecycleBinModel zx_dbDropWhere:sqStr];
+    if (success) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
 -(void)deleteCurrentModel:(FYLOnFileModel *)model{
     NSString * sqStr = [NSString stringWithFormat:@"IDs=%.f",model.IDs];
     BOOL success = [FYLOnFileModel zx_dbDropWhere:sqStr];
@@ -110,6 +152,13 @@ FYLlocalArchiveDetailsBottomViewdelegate
         NSString * timeStr = [[ToolManagement sharedManager]timeWithYearMonthDayCountDown:model.Date];
         L_title.text = timeStr;
     }
+    if (self.model.dataState.intValue == 0) {
+        L_title.hidden = YES;
+        V_root.frame = CGRectMake(0, 0, kScreenWidth, 0.1);
+    }else{
+        V_root.frame = CGRectMake(0, 0, kScreenWidth, 35);
+        L_title.hidden = NO;
+    }
     return V_root;
 }
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
@@ -123,7 +172,7 @@ FYLlocalArchiveDetailsBottomViewdelegate
         YLShareDeviceOuterModel * outerModel = self.outDataArr[indexPath.section];
         if (outerModel.detailModelArr.count>indexPath.row) {
             FYLHistoryModel * listModel = outerModel.detailModelArr[indexPath.row];
-            cell.L_contect.text = listModel.contect;
+            cell.L_contect.text =[NSString stringWithFormat:@"%@%@",listModel.contect,[self getUnitsContect:listModel.resultStr]];
             cell.L_contect.font = [YLUserToolManager getAppTitleFont];
             if (listModel.textDirectionType == 0) {
                 cell.L_contect.textAlignment = NSTextAlignmentLeft;

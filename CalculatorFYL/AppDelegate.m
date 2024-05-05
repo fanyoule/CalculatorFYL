@@ -7,6 +7,7 @@
 
 #import "AppDelegate.h"
 #import "LSSafeProtector.h"
+#import "OpenUDID.h"
 
 @interface AppDelegate ()
 
@@ -26,6 +27,9 @@
 //        [YLWiFiToolManagement yl_UploadCrashLogsShowLoading:NO withCrashType:[NSString stringWithFormat:@"%@",exception.name] withCrashLocation:[NSString stringWithFormat:@"%@",exception.userInfo[@"location"]] withCrashCause:[NSString stringWithFormat:@"%@",exception.reason]];
     }];
 #endif
+    //df095ec35b381c8596563204299bf6fbba91dee8
+    NSString * openUUID = [OpenUDID value];
+    NSLog(@"openUUID---:%@",openUUID);
     [[YXHTTPRequst shareInstance]monitoringNetworkStatus];// 检查网络状态
     [[ToolManagement sharedManager]enterTheWindowRootVC];// 进入app界面
     if (!IS_VALID_STRING(UserDefaultObjectForKey(FYL_TitleFont))) {

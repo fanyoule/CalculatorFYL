@@ -94,6 +94,9 @@
 #define     FYL_orderState           @"orderState"
 ///APP  小数点个数
 #define     FYL_DecimalPlace          @"FYL_DecimalPlace"
+///APP  语言
+#define     FYL_LanguageType          @"FYL_LanguageType"
+
 
 #ifdef DEBUG
 #define     FlurryAPIKey        @"XTF5F3FJDJB89JPD34HX"

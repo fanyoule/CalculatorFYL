@@ -12,8 +12,9 @@
 #import "FYLkeyboardViewController.h"
 #import "FYLFontSizeNewViewController.h"
 #import "FYLDecimalPlaceViewController.h"
-
-
+#import "FYLLanguageListViewController.h"
+#import "FYLRecycleBinlistViewController.h"
+#import "FYLHelpFeedbackViewController.h"
 
 #import "FYLSettingListMolde.h"
 #import "FYLSettingsListCell.h"
@@ -33,7 +34,17 @@ FYLSettingsListCellDelegate
 @implementation FYLSettingsViewController
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self.dataArray removeAllObjects];
+    [self.dataArray addObject:@[[YLUserToolManager getTextTag:12]]];
+    [self.dataArray addObject:@[[YLUserToolManager getTextTag:13],[YLUserToolManager getTextTag:14],[YLUserToolManager getTextTag:15]]];
+    [self.dataArray addObject:@[[YLUserToolManager getTextTag:16],[YLUserToolManager getTextTag:17],[YLUserToolManager getTextTag:18],[YLUserToolManager getTextTag:19],[YLUserToolManager getTextTag:20],[YLUserToolManager getTextTag:21]]];
+    [self.dataArray addObject:@[[YLUserToolManager getTextTag:22],[YLUserToolManager getTextTag:23]]];
+    [self.dataArray addObject:@[[YLUserToolManager getTextTag:24]]];
+    [self.dataArray addObject:@[[YLUserToolManager getTextTag:25]]];
+    [self.dataArray addObject:@[[YLUserToolManager getTextTag:26]]];
     [self.table_groupV reloadData];
+  
+    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -231,9 +242,16 @@ FYLSettingsListCellDelegate
             [self.navigationController pushViewController:vc animated:YES];
         }
     }else if (indexPath.section == 3){
-        
+        if (indexPath.row == 0) {
+            FYLLanguageListViewController * vc = [[FYLLanguageListViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }else if (indexPath.row == 1){
+            FYLRecycleBinlistViewController * vc = [[FYLRecycleBinlistViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
     }else if (indexPath.section == 4){
-        
+        FYLHelpFeedbackViewController * vc = [[FYLHelpFeedbackViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.section == 5){
         if (indexPath.row == 0) {
             [self shareInApp];

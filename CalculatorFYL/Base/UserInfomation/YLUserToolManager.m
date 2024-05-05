@@ -361,9 +361,10 @@
  * 39我的反馈
  * 40请留下您宝贵的意见或反馈，我们会及时的回复您
  * 41您的联系方式
+ * 42 跟随系统
  */
 +(NSString *)getTextTag:(NSInteger)tag{
-    NSString * local_languageType = [[NSUserDefaults standardUserDefaults]objectForKey:@"languageType"];
+    NSString * local_languageType = [[NSUserDefaults standardUserDefaults]objectForKey:FYL_LanguageType];
     if (tag == 0) {//插入备注
         if (local_languageType.intValue == 0) {//跟随系统
             return NSLocalizedString(@"Insert note", nil);
@@ -1718,6 +1719,38 @@
             return @"Yhteystiedot tai sähköposti";
         }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
             return @"Uw contactgegevens of e-mail";
+        }
+    }else if (tag == 42){//跟随系统
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"Auto", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"跟随系统";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"跟隨系統";
+        }else if (local_languageType.intValue == 3){//English
+            return @"Auto";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"じどうしゃ";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"자동차";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"Автомобиль";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"Auto";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"Voitures";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"Automatisch";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"السيارات";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"Automatycznie";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"Auto";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"Automaattinen";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"Automatisch";
         }
     }
    return @"";

@@ -16,7 +16,7 @@
 #import "FYLlocalArchiveViewController.h"
 #import "FYLSettingsViewController.h"
 
-
+#import "FYLRecycleBinModel.h"
 #import "ZXDataHandle.h"
 #import "ZXDecimalNumberTool.h"
 #define MaxCount 20
@@ -108,7 +108,7 @@ int percent = 0;
     [view show];
     
 }
-#pragma mark -- 清空 所有
+#pragma mark -- 清空 所有输入
 -(void)didSelectedClearClicked:(UIButton *)btn{
     [self clearDate];
     [self deleteAllModel];
@@ -577,7 +577,7 @@ int percent = 0;
         YLShareDeviceOuterModel * outerModel = self.outDataArr[indexPath.section];
         if (outerModel.detailModelArr.count>indexPath.row) {
             FYLHistoryModel * listModel = outerModel.detailModelArr[indexPath.row];
-            cell.L_contect.text = listModel.contect;
+            cell.L_contect.text =[NSString stringWithFormat:@"%@%@",listModel.contect,[self getUnitsContect:listModel.resultStr]];
             cell.L_contect.font = [YLUserToolManager getAppTitleFont];
             if (listModel.textDirectionType == 0) {
                 cell.L_contect.textAlignment = NSTextAlignmentLeft;
@@ -763,10 +763,23 @@ int percent = 0;
         generalPasteboard.string = model.contect;
     }
 }
-#pragma mark -- 清空
+#pragma mark -- 清空 历史记录
 -(void)deleteAllModel{
    BOOL success = [FYLHistoryModel zx_dbDropTable];
     if (success) {
+        NSString * time_str = [[ToolManagement sharedManager]currentTimeStr];
+        time_str = [[ToolManagement sharedManager]yl_getDateStringWithTimeStr:time_str];
+        FYLRecycleBinModel *cat = [[FYLRecycleBinModel alloc]init];
+        cat.title = time_str;
+        cat.listCount =[NSString stringWithFormat:@"%ld",self.dataArray.count];
+        NSString * ids_time = [NSString stringWithFormat:@"%@%u",[[ToolManagement sharedManager]currentTimeStr],arc4random_uniform(1000)];
+        cat.IDs = ids_time.doubleValue;
+        cat.resArrJson = [self.dataArray zx_toJsonStr];
+        BOOL success = [cat zx_dbSave];
+        if (success) {
+            NSLog(@"保存至回收站---%@",time_str);
+        }
+        
         [self readHistoryData];
     }
     

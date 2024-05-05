@@ -73,7 +73,9 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)playSoundEffect:(NSString *)name;
 ///获取音效
 -(NSString *)getSoundTypeStr;
+-(NSString *)getUnitsContect:(NSString *)contect;
 
+-(void)updateUserInfo;
 @end
 
 NS_ASSUME_NONNULL_END

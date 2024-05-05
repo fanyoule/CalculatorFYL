@@ -16,6 +16,11 @@
 		6704D0B22BE73A3B00FD71B0 /* FYLFontSizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6704D0B12BE73A3B00FD71B0 /* FYLFontSizeView.m */; };
 		6704D0B42BE73A4800FD71B0 /* FYLFontSizeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6704D0B32BE73A4800FD71B0 /* FYLFontSizeView.xib */; };
 		6704D0B72BE75C6600FD71B0 /* FYLDecimalPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6704D0B62BE75C6600FD71B0 /* FYLDecimalPlaceViewController.m */; };
+		6704D0BA2BE76D4800FD71B0 /* FYLLanguageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6704D0B92BE76D4800FD71B0 /* FYLLanguageListViewController.m */; };
+		6704D0BD2BE7805B00FD71B0 /* FYLRecycleBinModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6704D0BC2BE7805B00FD71B0 /* FYLRecycleBinModel.m */; };
+		6704D0C02BE781C600FD71B0 /* FYLRecycleBinlistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6704D0BF2BE781C600FD71B0 /* FYLRecycleBinlistViewController.m */; };
+		6704D0C32BE7880800FD71B0 /* FYLHelpFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6704D0C22BE7880800FD71B0 /* FYLHelpFeedbackViewController.m */; };
+		6704D0C72BE792F900FD71B0 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 6704D0C52BE792F900FD71B0 /* OpenUDID.m */; };
 		6724688B2BAC1A680088B0A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724688A2BAC1A680088B0A3 /* AppDelegate.m */; };
 		672468912BAC1A680088B0A3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 672468902BAC1A680088B0A3 /* ViewController.m */; };
 		672468942BAC1A680088B0A3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 672468932BAC1A680088B0A3 /* Base */; };
@@ -285,6 +290,16 @@
 		6704D0B32BE73A4800FD71B0 /* FYLFontSizeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYLFontSizeView.xib; sourceTree = "<group>"; };
 		6704D0B52BE75C6600FD71B0 /* FYLDecimalPlaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLDecimalPlaceViewController.h; sourceTree = "<group>"; };
 		6704D0B62BE75C6600FD71B0 /* FYLDecimalPlaceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLDecimalPlaceViewController.m; sourceTree = "<group>"; };
+		6704D0B82BE76D4800FD71B0 /* FYLLanguageListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLLanguageListViewController.h; sourceTree = "<group>"; };
+		6704D0B92BE76D4800FD71B0 /* FYLLanguageListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLLanguageListViewController.m; sourceTree = "<group>"; };
+		6704D0BB2BE7805B00FD71B0 /* FYLRecycleBinModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLRecycleBinModel.h; sourceTree = "<group>"; };
+		6704D0BC2BE7805B00FD71B0 /* FYLRecycleBinModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLRecycleBinModel.m; sourceTree = "<group>"; };
+		6704D0BE2BE781C600FD71B0 /* FYLRecycleBinlistViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLRecycleBinlistViewController.h; sourceTree = "<group>"; };
+		6704D0BF2BE781C600FD71B0 /* FYLRecycleBinlistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLRecycleBinlistViewController.m; sourceTree = "<group>"; };
+		6704D0C12BE7880800FD71B0 /* FYLHelpFeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLHelpFeedbackViewController.h; sourceTree = "<group>"; };
+		6704D0C22BE7880800FD71B0 /* FYLHelpFeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLHelpFeedbackViewController.m; sourceTree = "<group>"; };
+		6704D0C42BE792F900FD71B0 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
+		6704D0C52BE792F900FD71B0 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		672468862BAC1A680088B0A3 /* CalculatorFYL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalculatorFYL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		672468892BAC1A680088B0A3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6724688A2BAC1A680088B0A3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -743,6 +758,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6704D0C62BE792F900FD71B0 /* OpenUDID */ = {
+			isa = PBXGroup;
+			children = (
+				6704D0C42BE792F900FD71B0 /* OpenUDID.h */,
+				6704D0C52BE792F900FD71B0 /* OpenUDID.m */,
+			);
+			path = OpenUDID;
+			sourceTree = "<group>";
+		};
 		6724687D2BAC1A680088B0A3 = {
 			isa = PBXGroup;
 			children = (
@@ -930,6 +954,7 @@
 		672469112BAC1BC80088B0A3 /* 3SDK */ = {
 			isa = PBXGroup;
 			children = (
+				6704D0C62BE792F900FD71B0 /* OpenUDID */,
 				67E063072BE0FDCC0051C09F /* ColorPickerClasses */,
 				6725DA642BBAB7D000695EA1 /* MathStringExpression */,
 				67DB32282BB2D25900D3AD80 /* music */,
@@ -1195,6 +1220,8 @@
 				67261E8E2BB7ECB000433DD1 /* FYLHistoryModel.m */,
 				676F220F2BD270EC00B77E9F /* FYLOnFileModel.h */,
 				676F22102BD270EC00B77E9F /* FYLOnFileModel.m */,
+				6704D0BB2BE7805B00FD71B0 /* FYLRecycleBinModel.h */,
+				6704D0BC2BE7805B00FD71B0 /* FYLRecycleBinModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1338,6 +1365,12 @@
 				6704D0A92BE732CE00FD71B0 /* FYLFontSizeNewViewController.m */,
 				6704D0B52BE75C6600FD71B0 /* FYLDecimalPlaceViewController.h */,
 				6704D0B62BE75C6600FD71B0 /* FYLDecimalPlaceViewController.m */,
+				6704D0B82BE76D4800FD71B0 /* FYLLanguageListViewController.h */,
+				6704D0B92BE76D4800FD71B0 /* FYLLanguageListViewController.m */,
+				6704D0BE2BE781C600FD71B0 /* FYLRecycleBinlistViewController.h */,
+				6704D0BF2BE781C600FD71B0 /* FYLRecycleBinlistViewController.m */,
+				6704D0C12BE7880800FD71B0 /* FYLHelpFeedbackViewController.h */,
+				6704D0C22BE7880800FD71B0 /* FYLHelpFeedbackViewController.m */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1858,16 +1891,20 @@
 				67E063192BE0FDCC0051C09F /* RSSelectionLayer.m in Sources */,
 				67E063182BE0FDCC0051C09F /* RSGenerateOperation.m in Sources */,
 				6725DA732BBAB7D000695EA1 /* MSValueOperator.m in Sources */,
+				6704D0C02BE781C600FD71B0 /* FYLRecycleBinlistViewController.m in Sources */,
 				672468912BAC1A680088B0A3 /* ViewController.m in Sources */,
 				672468DF2BAC1B880088B0A3 /* ZJ_UserLoginInfomation.m in Sources */,
 				676F22112BD270EC00B77E9F /* FYLOnFileModel.m in Sources */,
 				6789CFE22BCD34510024FB54 /* SqlResult.m in Sources */,
+				6704D0C72BE792F900FD71B0 /* OpenUDID.m in Sources */,
+				6704D0BA2BE76D4800FD71B0 /* FYLLanguageListViewController.m in Sources */,
 				67E063172BE0FDCC0051C09F /* RSColorPickerView.m in Sources */,
 				6724688B2BAC1A680088B0A3 /* AppDelegate.m in Sources */,
 				6725DA6E2BBAB7D000695EA1 /* MSNumber.m in Sources */,
 				6789CFD52BCD34510024FB54 /* NSString+ZXRegular.m in Sources */,
 				6725DA712BBAB7D000695EA1 /* MSPairOperator.m in Sources */,
 				672468D72BAC1B880088B0A3 /* BaseModel.m in Sources */,
+				6704D0BD2BE7805B00FD71B0 /* FYLRecycleBinModel.m in Sources */,
 				678FD1FE2BD62C5600B5187A /* FYLlocalArchiveDetailsBottomView.m in Sources */,
 				67246C592BAC3B480088B0A3 /* PublicHelpers.m in Sources */,
 				678FD2042BD64A5600B5187A /* FYLSettingsViewController.m in Sources */,
@@ -1913,6 +1950,7 @@
 				6789CFD02BCD34510024FB54 /* NSMutableArray+ZXSafetySet.m in Sources */,
 				678FD1FB2BD5FC4600B5187A /* FYLlocalArchiveDetailsViewController.m in Sources */,
 				67246D3A2BAC3F0B0088B0A3 /* NSMutableAttributedString+WY_Extension.m in Sources */,
+				6704D0C32BE7880800FD71B0 /* FYLHelpFeedbackViewController.m in Sources */,
 				6725DA6D2BBAB7D000695EA1 /* MSFunctionOperator.m in Sources */,
 				67246C392BAC25ED0088B0A3 /* YLMyViewController.m in Sources */,
 				67E0630A2BE0FDCC0051C09F /* UIImage+ANImageBitmapRep.m in Sources */,
