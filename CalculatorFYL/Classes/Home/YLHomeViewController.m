@@ -124,8 +124,8 @@ int percent = 0;
 -(void)fyl_RegularKeyboardDidSelectedButton:(UIButton *)btn{
     NSLog(@"btn.titleLabel.text----:%@",btn.titleLabel.text);
 //    [self playSoundEffect:@"chu.ogg"];
-    
-    
+    [[YLUserToolManager sharedManager]analogButtonTactileFeedback];
+    [[YLUserToolManager sharedManager]clickKeyboardSound:btn];
     if ([btn.titleLabel.text isEqualToString:@"0"]) {
         if (percent == 1) {
             return;
@@ -367,8 +367,9 @@ int percent = 0;
         NSDecimalNumber* computeResult = [MSParser parserComputeNumberExpression:jsExpString error:nil];
         NSDecimal decimal = computeResult.decimalValue;
         NSDecimal desDecimal;
-        NSDecimalRound(&desDecimal, &decimal , 3, NSRoundPlain);
-        NSLog(@"保留3位小数计算结果为：%@",[NSDecimalNumber decimalNumberWithDecimal:desDecimal]);
+        NSInteger index = self.model.decimalPlace.intValue;
+        NSDecimalRound(&desDecimal, &decimal , index, NSRoundPlain);
+        NSLog(@"保留%ld位小数计算结果为：%@",index,[NSDecimalNumber decimalNumberWithDecimal:desDecimal]);
         NSString * jieguo = [NSString stringWithFormat:@"%@",[NSDecimalNumber decimalNumberWithDecimal:desDecimal].stringValue];
         self.L_contect.text= jieguo;
         [self refreshWidthContent];
@@ -496,7 +497,7 @@ int percent = 0;
                 make.height.mas_equalTo(height_cell*2);
             }];
         } completion:^(BOOL finished) {
-            [btn setTitle:@"下" forState:UIControlStateNormal];
+            [btn setTitle:@"v" forState:UIControlStateNormal];
             CGFloat width_cell = kScreenWidth/4;
             CGFloat height_cell = width_cell;
             [self.V_bg_bottom mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -514,7 +515,7 @@ int percent = 0;
             }];
         } completion:^(BOOL finished) {
             self.V_storehistory.hidden = NO;
-            [btn setTitle:@"上" forState:UIControlStateNormal];
+            [btn setTitle:@"^" forState:UIControlStateNormal];
             [self.V_bg_bottom mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.height.mas_equalTo(@0);
             }];
@@ -536,6 +537,9 @@ int percent = 0;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (self.model.dataState.intValue == 0) {
+        return 0.1;
+    }
     return 35;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -552,6 +556,13 @@ int percent = 0;
         YLShareDeviceOuterModel * model = self.outDataArr[section];
         NSString * timeStr = [[ToolManagement sharedManager]timeWithYearMonthDayCountDown:model.Date];
         L_title.text = timeStr;
+    }
+    if (self.model.dataState.intValue == 0) {
+        L_title.hidden = YES;
+        V_root.frame = CGRectMake(0, 0, kScreenWidth, 0.1);
+    }else{
+        V_root.frame = CGRectMake(0, 0, kScreenWidth, 35);
+        L_title.hidden = NO;
     }
     return V_root;
 }
@@ -829,6 +840,37 @@ int percent = 0;
     [self.table_groupV reloadData];
 }
 
+-(void)changeAppMainColor{
+    NSString * CHARACTERS = UserDefaultObjectForKey(FYL_CHARACTERS);
+    if (IS_VALID_STRING(CHARACTERS)&&[CHARACTERS isEqualToString:@"1"]) {
+        [self.vipKey changeColor];
+    }else{
+        [self.regularKey changeColor];
+    }
+}
+-(void)changeAppKeyBoard{
+    [self.vipKey removeFromSuperview];
+    [self.regularKey removeFromSuperview];
+    
+    NSString * CHARACTERS = UserDefaultObjectForKey(FYL_CHARACTERS);
+    if (IS_VALID_STRING(CHARACTERS)&&[CHARACTERS isEqualToString:@"1"]) {
+        [self.vipKey initializeData];
+        [self.V_bg_bottom addSubview:self.vipKey];
+        [self.vipKey mas_makeConstraints:^(MASConstraintMaker *make) {
+           make.edges.mas_equalTo(self.V_bg_bottom);
+        }];
+        [self.vipKey changeColor];
+    }else{
+        [self.regularKey initializeData];
+        [self.V_bg_bottom addSubview:self.regularKey];
+        [self.regularKey mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(self.V_bg_bottom);
+        }];
+        [self.regularKey changeColor];
+    }
+}
+
+
 
 -(void)creatUI{
     UIButton * B_nav_left = [UIButton buttonWithType:0];
@@ -850,8 +892,8 @@ int percent = 0;
         make.bottom.mas_equalTo(self.view);
         make.height.mas_equalTo(height_cell*5);
     }];
-    BOOL user_one = YES;
-    if (user_one) {
+    NSString * CHARACTERS = UserDefaultObjectForKey(FYL_CHARACTERS);
+    if (IS_VALID_STRING(CHARACTERS)&&[CHARACTERS isEqualToString:@"1"]) {
         [self.vipKey initializeData];
         [V_bg_bottom addSubview:self.vipKey];
         [self.vipKey mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -874,7 +916,7 @@ int percent = 0;
         make.height.mas_equalTo(20+50);
     }];
     UIButton * B_top = [UIButton buttonWithType:0];
-    [B_top setTitle:NSLocalizedString(@"下", nil) forState:UIControlStateNormal];
+    [B_top setTitle:NSLocalizedString(@"v", nil) forState:UIControlStateNormal];
     [B_top addTarget:self action:@selector(didSelectedxiagxiaClicked:) forControlEvents:UIControlEventTouchUpInside];
     [V_contect addSubview:B_top];
     [B_top mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -950,7 +992,7 @@ int percent = 0;
     }];
     
     [self.view layoutIfNeeded];
-    
+    [self changeAppMainColor];
 }
 
 -(FYLRegularKeyboardView *)regularKey{

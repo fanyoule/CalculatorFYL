@@ -10,6 +10,7 @@
 #import "FYLThemeCollectionViewCell.h"
 #import "FYLThemeCollectionColorZDYViewCell.h"
 #import "FYLRootCollectionView.h"
+#import "YLHomeViewController.h"
 
 @interface FYLThemeViewController ()
 <
@@ -139,6 +140,11 @@ FYLThemeCollectionColorZDYViewCelldelegate
     self.regularKey.B_dengyu.backgroundColor = [UIColor jk_colorWithHexString:colorStr];
     [[NSUserDefaults standardUserDefaults]setObject:colorStr forKey:FYL_MainAppColor];
     [[NSUserDefaults standardUserDefaults]synchronize];
+    
+    if ([self.navigationController.childViewControllers.firstObject isKindOfClass:[YLHomeViewController class]]) {
+        YLHomeViewController * vc = (YLHomeViewController *)self.navigationController.childViewControllers.firstObject;
+        [vc changeAppMainColor];
+    }
 }
 -(void)creatUI{
     [self.dataArray addObject:@"#70b67f"];

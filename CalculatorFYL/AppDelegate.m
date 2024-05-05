@@ -28,6 +28,13 @@
 #endif
     [[YXHTTPRequst shareInstance]monitoringNetworkStatus];// 检查网络状态
     [[ToolManagement sharedManager]enterTheWindowRootVC];// 进入app界面
+    if (!IS_VALID_STRING(UserDefaultObjectForKey(FYL_TitleFont))) {
+        UserDefaultSetObjectForKey(@"20", FYL_TitleFont)
+    }
+    if (!IS_VALID_STRING(UserDefaultObjectForKey(FYL_DecimalPlace))) {
+        UserDefaultSetObjectForKey(@"8", FYL_DecimalPlace)
+    }
+    
     
     
     return YES;

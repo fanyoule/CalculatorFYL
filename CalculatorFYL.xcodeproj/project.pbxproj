@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6704D0992BE7178300FD71B0 /* FYLkeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6704D0982BE7178300FD71B0 /* FYLkeyboardViewController.m */; };
+		6704D09C2BE7293100FD71B0 /* zhengchang.png in Resources */ = {isa = PBXBuildFile; fileRef = 6704D09A2BE7293100FD71B0 /* zhengchang.png */; };
+		6704D09D2BE7293100FD71B0 /* guibing.png in Resources */ = {isa = PBXBuildFile; fileRef = 6704D09B2BE7293100FD71B0 /* guibing.png */; };
+		6704D0A02BE7299300FD71B0 /* FYLkeyboardSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6704D09F2BE7299300FD71B0 /* FYLkeyboardSelectView.m */; };
+		6704D0A22BE729A300FD71B0 /* FYLkeyboardSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6704D0A12BE729A300FD71B0 /* FYLkeyboardSelectView.xib */; };
+		6704D0AA2BE732CE00FD71B0 /* FYLFontSizeNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6704D0A92BE732CE00FD71B0 /* FYLFontSizeNewViewController.m */; };
+		6704D0B22BE73A3B00FD71B0 /* FYLFontSizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6704D0B12BE73A3B00FD71B0 /* FYLFontSizeView.m */; };
+		6704D0B42BE73A4800FD71B0 /* FYLFontSizeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6704D0B32BE73A4800FD71B0 /* FYLFontSizeView.xib */; };
+		6704D0B72BE75C6600FD71B0 /* FYLDecimalPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6704D0B62BE75C6600FD71B0 /* FYLDecimalPlaceViewController.m */; };
 		6724688B2BAC1A680088B0A3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724688A2BAC1A680088B0A3 /* AppDelegate.m */; };
 		672468912BAC1A680088B0A3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 672468902BAC1A680088B0A3 /* ViewController.m */; };
 		672468942BAC1A680088B0A3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 672468932BAC1A680088B0A3 /* Base */; };
@@ -262,6 +271,20 @@
 /* Begin PBXFileReference section */
 		34770DB41E8B5C45E20FA86F /* Pods-CalculatorFYL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorFYL.release.xcconfig"; path = "Target Support Files/Pods-CalculatorFYL/Pods-CalculatorFYL.release.xcconfig"; sourceTree = "<group>"; };
 		4E26AD402AEEF2CEEC4FD367 /* libPods-CalculatorFYL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CalculatorFYL.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6704D0972BE7178300FD71B0 /* FYLkeyboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLkeyboardViewController.h; sourceTree = "<group>"; };
+		6704D0982BE7178300FD71B0 /* FYLkeyboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLkeyboardViewController.m; sourceTree = "<group>"; };
+		6704D09A2BE7293100FD71B0 /* zhengchang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhengchang.png; sourceTree = "<group>"; };
+		6704D09B2BE7293100FD71B0 /* guibing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guibing.png; sourceTree = "<group>"; };
+		6704D09E2BE7299300FD71B0 /* FYLkeyboardSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLkeyboardSelectView.h; sourceTree = "<group>"; };
+		6704D09F2BE7299300FD71B0 /* FYLkeyboardSelectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLkeyboardSelectView.m; sourceTree = "<group>"; };
+		6704D0A12BE729A300FD71B0 /* FYLkeyboardSelectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYLkeyboardSelectView.xib; sourceTree = "<group>"; };
+		6704D0A82BE732CE00FD71B0 /* FYLFontSizeNewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLFontSizeNewViewController.h; sourceTree = "<group>"; };
+		6704D0A92BE732CE00FD71B0 /* FYLFontSizeNewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLFontSizeNewViewController.m; sourceTree = "<group>"; };
+		6704D0B02BE73A3B00FD71B0 /* FYLFontSizeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLFontSizeView.h; sourceTree = "<group>"; };
+		6704D0B12BE73A3B00FD71B0 /* FYLFontSizeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLFontSizeView.m; sourceTree = "<group>"; };
+		6704D0B32BE73A4800FD71B0 /* FYLFontSizeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYLFontSizeView.xib; sourceTree = "<group>"; };
+		6704D0B52BE75C6600FD71B0 /* FYLDecimalPlaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLDecimalPlaceViewController.h; sourceTree = "<group>"; };
+		6704D0B62BE75C6600FD71B0 /* FYLDecimalPlaceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLDecimalPlaceViewController.m; sourceTree = "<group>"; };
 		672468862BAC1A680088B0A3 /* CalculatorFYL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalculatorFYL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		672468892BAC1A680088B0A3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6724688A2BAC1A680088B0A3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1309,6 +1332,12 @@
 				67DAF5012BDFAAA300379C2F /* FYLSoundListViewController.m */,
 				67E062D72BE09E7F0051C09F /* FYLThemeViewController.h */,
 				67E062D82BE09E7F0051C09F /* FYLThemeViewController.m */,
+				6704D0972BE7178300FD71B0 /* FYLkeyboardViewController.h */,
+				6704D0982BE7178300FD71B0 /* FYLkeyboardViewController.m */,
+				6704D0A82BE732CE00FD71B0 /* FYLFontSizeNewViewController.h */,
+				6704D0A92BE732CE00FD71B0 /* FYLFontSizeNewViewController.m */,
+				6704D0B52BE75C6600FD71B0 /* FYLDecimalPlaceViewController.h */,
+				6704D0B62BE75C6600FD71B0 /* FYLDecimalPlaceViewController.m */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1320,6 +1349,12 @@
 				6791F7652BDB485C0013DFD5 /* FYLZZOneDetailViews.m */,
 				6791F7692BDB4EE60013DFD5 /* FYLZZOneDetailViews.xib */,
 				6791F7612BDB3E0B0013DFD5 /* WechatIMG45.jpg */,
+				6704D09E2BE7299300FD71B0 /* FYLkeyboardSelectView.h */,
+				6704D09F2BE7299300FD71B0 /* FYLkeyboardSelectView.m */,
+				6704D0A12BE729A300FD71B0 /* FYLkeyboardSelectView.xib */,
+				6704D0B02BE73A3B00FD71B0 /* FYLFontSizeView.h */,
+				6704D0B12BE73A3B00FD71B0 /* FYLFontSizeView.m */,
+				6704D0B32BE73A4800FD71B0 /* FYLFontSizeView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1344,6 +1379,8 @@
 		67DB32282BB2D25900D3AD80 /* music */ = {
 			isa = PBXGroup;
 			children = (
+				6704D09B2BE7293100FD71B0 /* guibing.png */,
+				6704D09A2BE7293100FD71B0 /* zhengchang.png */,
 				67E062AA2BE07C9B0051C09F /* zh */,
 				67E062A92BE07C710051C09F /* en */,
 				6732004B2BC6837C00DCB42C /* clear.mp3 */,
@@ -1652,6 +1689,7 @@
 				67DB322F2BB2D27900D3AD80 /* click3.wav in Resources */,
 				672469232BAC1BC80088B0A3 /* text_emoji_18.png in Resources */,
 				6724692E2BAC1BC80088B0A3 /* text_emoji_29.png in Resources */,
+				6704D09D2BE7293100FD71B0 /* guibing.png in Resources */,
 				672469252BAC1BC80088B0A3 /* text_emoji_20.png in Resources */,
 				6732005C2BC6837D00DCB42C /* jian.mp3 in Resources */,
 				6732FFEF2BC66D9D00DCB42C /* InfoPlist.strings in Resources */,
@@ -1682,6 +1720,7 @@
 				672469372BAC1BC80088B0A3 /* text_emoji_38.png in Resources */,
 				67DB322E2BB2D27900D3AD80 /* qingcui.wav in Resources */,
 				6732006B2BC6837D00DCB42C /* gang_one.mp3 in Resources */,
+				6704D0B42BE73A4800FD71B0 /* FYLFontSizeView.xib in Resources */,
 				672469212BAC1BC80088B0A3 /* text_emoji_16.png in Resources */,
 				673200672BC6837D00DCB42C /* six.mp3 in Resources */,
 				673200552BC6837D00DCB42C /* two.mp3 in Resources */,
@@ -1720,6 +1759,7 @@
 				672469172BAC1BC80088B0A3 /* text_emoji_06.png in Resources */,
 				67DB32302BB2D27900D3AD80 /* click1.wav in Resources */,
 				672468942BAC1A680088B0A3 /* Base in Resources */,
+				6704D0A22BE729A300FD71B0 /* FYLkeyboardSelectView.xib in Resources */,
 				673200612BC6837D00DCB42C /* dada.mp3 in Resources */,
 				6724691D2BAC1BC80088B0A3 /* text_emoji_12.png in Resources */,
 				67E062C02BE086910051C09F /* jia_en.mp3 in Resources */,
@@ -1735,6 +1775,7 @@
 				673200632BC6837D00DCB42C /* fu.mp3 in Resources */,
 				672469342BAC1BC80088B0A3 /* text_emoji_35.png in Resources */,
 				672469362BAC1BC80088B0A3 /* text_emoji_37.png in Resources */,
+				6704D09C2BE7293100FD71B0 /* zhengchang.png in Resources */,
 				672469152BAC1BC80088B0A3 /* text_emoji_04.png in Resources */,
 				67E062BE2BE0863D0051C09F /* fu_en.mp3 in Resources */,
 				67E062C42BE086E80051C09F /* night_en.mp3 in Resources */,
@@ -1867,6 +1908,7 @@
 				67E063142BE0FDCC0051C09F /* BGRSLoupeLayer.m in Sources */,
 				6725DA792BBAC2C000695EA1 /* YLDIYEditBoxListView.m in Sources */,
 				67E0630B2BE0FDCC0051C09F /* CGContextCreator.m in Sources */,
+				6704D0A02BE7299300FD71B0 /* FYLkeyboardSelectView.m in Sources */,
 				67E063092BE0FDCC0051C09F /* OSCommonImage.m in Sources */,
 				6789CFD02BCD34510024FB54 /* NSMutableArray+ZXSafetySet.m in Sources */,
 				678FD1FB2BD5FC4600B5187A /* FYLlocalArchiveDetailsViewController.m in Sources */,
@@ -1874,6 +1916,8 @@
 				6725DA6D2BBAB7D000695EA1 /* MSFunctionOperator.m in Sources */,
 				67246C392BAC25ED0088B0A3 /* YLMyViewController.m in Sources */,
 				67E0630A2BE0FDCC0051C09F /* UIImage+ANImageBitmapRep.m in Sources */,
+				6704D0992BE7178300FD71B0 /* FYLkeyboardViewController.m in Sources */,
+				6704D0AA2BE732CE00FD71B0 /* FYLFontSizeNewViewController.m in Sources */,
 				6725DA692BBAB7D000695EA1 /* NSError+MSExpression.m in Sources */,
 				6725DA6A2BBAB7D000695EA1 /* MSExpressionHelper.m in Sources */,
 				67E0630F2BE0FDCC0051C09F /* BitmapDrawManipulator.m in Sources */,
@@ -1894,6 +1938,7 @@
 				67246D3B2BAC3F0B0088B0A3 /* NSMutableParagraphStyle+WY_Extension.m in Sources */,
 				67E062DD2BE0F5C20051C09F /* FYLThemeCollectionViewCell.m in Sources */,
 				67850B742BAEB3D500A44336 /* FYLVIPKeyboardView.m in Sources */,
+				6704D0B72BE75C6600FD71B0 /* FYLDecimalPlaceViewController.m in Sources */,
 				6789CFD92BCD34510024FB54 /* NSArray+ZXDataConvert.m in Sources */,
 				67E0630E2BE0FDCC0051C09F /* BitmapCropManipulator.m in Sources */,
 				67E063152BE0FDCC0051C09F /* RSColorFunctions.m in Sources */,
@@ -1917,6 +1962,7 @@
 				672468E02BAC1B880088B0A3 /* BaseViewController.m in Sources */,
 				672468DD2BAC1B880088B0A3 /* YLTabBarViewController.m in Sources */,
 				672468D92BAC1B880088B0A3 /* NavigationBarHandler.m in Sources */,
+				6704D0B22BE73A3B00FD71B0 /* FYLFontSizeView.m in Sources */,
 				67C95F922BD9FCE900EE4713 /* FYLSettingsListCell.m in Sources */,
 				672468D82BAC1B880088B0A3 /* BaseNavigationBar.m in Sources */,
 				67246D2A2BAC3D4B0088B0A3 /* ZZAlertViewTools.m in Sources */,

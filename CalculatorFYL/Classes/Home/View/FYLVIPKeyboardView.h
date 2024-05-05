@@ -58,7 +58,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)initializeData;
 
-
+-(void)changeColor;
 
 @end
 

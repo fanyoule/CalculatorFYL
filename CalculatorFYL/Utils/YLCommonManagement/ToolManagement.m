@@ -321,7 +321,7 @@
 }
 // 是否开启触觉反馈
 - (BOOL)whetherToTurnOnHapticFeedback{
-    NSString *str = UserDefaultObjectForKey(TACTILEFEEDBACK);
+    NSString *str = UserDefaultObjectForKey(FYL_touchState);
     if(!IS_VALID_STRING(str)){
         return YES;
     }

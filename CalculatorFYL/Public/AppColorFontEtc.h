@@ -48,8 +48,7 @@
 #define     STOPDEVICEMIC                    @"STOPDEVICEMIC"
 // 刷新名称
 #define     REFRESHTHENAME                   @"REFRESHTHENAME"
-// 触觉反馈
-#define     TACTILEFEEDBACK                  @"TACTILEFEEDBACK"
+
 // 烟花音效是否开启
 #define   FIREWORKSSOUNDEFFECT               @"FIREWORKSSOUNDEFFECT"
 
@@ -83,6 +82,8 @@
 #define     FYL_TitleFont            @"MainAppTitleFont"
 ///APP  音效
 #define     FYL_SoundType           @"soundType"
+///APP  角色
+#define     FYL_CHARACTERS           @"CHARACTERS"
 ///APP  触感
 #define     FYL_touchState           @"touchState"
 ///APP  千分位
@@ -91,7 +92,8 @@
 #define     FYL_dataState           @"dataState"
 ///APP  量级
 #define     FYL_orderState           @"orderState"
-
+///APP  小数点个数
+#define     FYL_DecimalPlace          @"FYL_DecimalPlace"
 
 #ifdef DEBUG
 #define     FlurryAPIKey        @"XTF5F3FJDJB89JPD34HX"

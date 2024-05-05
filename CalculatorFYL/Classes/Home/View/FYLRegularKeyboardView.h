@@ -50,7 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign) CGPoint startPoint;
 
 -(void)initializeData;
-
+-(void)changeColor;
 @end
 
 NS_ASSUME_NONNULL_END

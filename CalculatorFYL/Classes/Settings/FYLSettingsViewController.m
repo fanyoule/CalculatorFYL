@@ -9,6 +9,9 @@
 #import "FYLZZOneDetailViewController.h"
 #import "FYLSoundListViewController.h"
 #import "FYLThemeViewController.h"
+#import "FYLkeyboardViewController.h"
+#import "FYLFontSizeNewViewController.h"
+#import "FYLDecimalPlaceViewController.h"
 
 
 
@@ -20,7 +23,8 @@
 <
 UITableViewDelegate,
 UITableViewDataSource,
-UIDocumentInteractionControllerDelegate
+UIDocumentInteractionControllerDelegate,
+FYLSettingsListCellDelegate
 >
 @property(nonatomic,strong)UIDocumentInteractionController *documentInteractionController;
 
@@ -39,6 +43,37 @@ UIDocumentInteractionControllerDelegate
     
     // Do any additional setup after loading the view.
 }
+#pragma mark -- 触感
+-(void)fyl_SettingsListCellDidChangeSwitch:(UISwitch *)switchButton withIndexPath:(NSIndexPath *)path{
+    if (path.section == 1) {//触感
+        if (switchButton.on == YES) {
+            UserDefaultSetObjectForKey(@"1",FYL_touchState);
+        }else{
+            UserDefaultSetObjectForKey(@"0",FYL_touchState);
+        }
+    }else if (path.section == 2){
+        if (path.row == 3) {//千分位
+            if (switchButton.on == YES) {
+                UserDefaultSetObjectForKey(@"1",FYL_thousandsState);
+            }else{
+                UserDefaultSetObjectForKey(@"0",FYL_thousandsState);
+            }
+        }else if (path.row == 4){//日期
+            if (switchButton.on == YES) {
+                UserDefaultSetObjectForKey(@"1",FYL_dataState);
+            }else{
+                UserDefaultSetObjectForKey(@"0",FYL_dataState);
+            }
+        }else if (path.row == 5){//量级
+            if (switchButton.on == YES) {
+                UserDefaultSetObjectForKey(@"1",FYL_orderState);
+            }else{
+                UserDefaultSetObjectForKey(@"0",FYL_orderState);
+            }
+        }
+    }
+}
+
 #pragma mark -- APP评价
 -(void)getAPPEvaluation{
     if([SKStoreReviewController respondsToSelector:@selector(requestReview)]) {
@@ -118,6 +153,8 @@ UIDocumentInteractionControllerDelegate
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     FYLSettingsListCell * cell = [tableView dequeueReusableCellWithIdentifier:@"FYLSettingsListCell" forIndexPath:indexPath];
+    cell.delegate = self;
+    cell.indexPath = indexPath;
     if (self.dataArray.count>indexPath.section) {
         NSArray * arr = self.dataArray[indexPath.section];
         if (arr.count>indexPath.row) {
@@ -183,7 +220,16 @@ UIDocumentInteractionControllerDelegate
             [self.navigationController pushViewController:vc animated:YES];
         }
     }else if (indexPath.section == 2){
-        
+        if (indexPath.row == 0) {
+            FYLkeyboardViewController * vc = [[FYLkeyboardViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }else if (indexPath.row == 1){
+            FYLFontSizeNewViewController * vc = [[FYLFontSizeNewViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }else if (indexPath.row == 2){
+            FYLDecimalPlaceViewController * vc = [[FYLDecimalPlaceViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
     }else if (indexPath.section == 3){
         
     }else if (indexPath.section == 4){

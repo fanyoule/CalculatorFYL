@@ -22,7 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,copy)NSString * dataState;
 ///量级开关 0关  1开
 @property(nonatomic,copy)NSString * orderState;
-
+///小数点位数
+@property(nonatomic,copy)NSString * decimalPlace;
 
 
 @end

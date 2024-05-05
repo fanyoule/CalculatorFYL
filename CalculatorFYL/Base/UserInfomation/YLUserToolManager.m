@@ -15,7 +15,7 @@
 @interface YLUserToolManager()
 //跑秒
 @property(nonatomic,strong)dispatch_source_t timer;
-
+@property(nonatomic,strong)AVAudioPlayer * player;
 
 
 @end
@@ -95,6 +95,229 @@
     }
     return [UIFont boldSystemFontOfSize:20];
 }
+// 模拟按钮触觉反馈
+- (void)analogButtonTactileFeedback{
+    if([self whetherToTurnOnHapticFeedback] == NO){
+        return;
+    }
+    UINotificationFeedbackGenerator *generator = [[UINotificationFeedbackGenerator alloc] init];
+    [generator notificationOccurred:UINotificationFeedbackTypeSuccess];
+}
+// 是否开启触觉反馈
+- (BOOL)whetherToTurnOnHapticFeedback{
+    NSString *str = UserDefaultObjectForKey(FYL_touchState);
+    if(!IS_VALID_STRING(str)){
+        return YES;
+    }
+    if([str isEqualToString:@"1"]){
+        return YES;
+    }else{
+        return NO;
+    }
+}
+// 点击键盘声音
+-(void)clickKeyboardSound:(UIButton *)btn{
+    NSString * selIndex = UserDefaultObjectForKey(FYL_SoundType);
+    if (IS_VALID_STRING(selIndex)) {
+        switch (selIndex.intValue) {
+            case 0:
+                {
+                    
+                }
+                break;
+            case 1://默认
+                {
+                    [self playSoundEffect:@"click1.wav"];
+                }
+                break;
+            case 2://水滴
+                {
+                    [self playSoundEffect:@"shuidi.mp3"];
+                }
+                break;
+            case 3://清脆
+                {
+                    [self playSoundEffect:@"qingcui.wav"];
+                }
+                break;
+            case 4://鼓声
+                {
+                    [self playSoundEffect:@"click.wav"];
+                }
+                break;
+            case 5://木质
+                {
+                    [self playSoundEffect:@"dada.mp3"];
+                }
+                break;
+            case 6://钢琴
+                {
+                    [self playSoundEffect:@"gang_two.mp3"];
+                }
+                break;
+            case 7://中文
+                {
+                    [self didSelectedkeyboard:btn withIndexType:7];
+                }
+                break;
+            case 8://英文
+                {
+                    [self didSelectedkeyboard:btn withIndexType:8];
+                }
+                break;
+                
+            default:
+                break;
+        }
+        
+        
+        
+    }
+    
+    
+}
+-(void)didSelectedkeyboard:(UIButton *)btn withIndexType:(NSInteger)type{
+    if ([btn.titleLabel.text isEqualToString:@"0"]) {
+        if (type == 7) {
+            [self playSoundEffect:@"zero"];
+        }else if (type == 8){
+            [self playSoundEffect:@"zero_en"];
+        }
+    }else if ([btn.titleLabel.text isEqualToString:@"1"]){
+        if (type == 7) {
+            [self playSoundEffect:@"one"];
+        }else if (type == 8){
+            [self playSoundEffect:@"one_en"];
+        }
+
+    }else if ([btn.titleLabel.text isEqualToString:@"2"]){
+        if (type == 7) {
+            [self playSoundEffect:@"two"];
+        }else if (type == 8){
+            [self playSoundEffect:@"two_en"];
+        }
+
+    }else if ([btn.titleLabel.text isEqualToString:@"3"]){
+        if (type == 7) {
+            [self playSoundEffect:@"three"];
+        }else if (type == 8){
+            [self playSoundEffect:@"three_en"];
+        }
+
+    }else if ([btn.titleLabel.text isEqualToString:@"4"]){
+        if (type == 7) {
+            [self playSoundEffect:@"four"];
+        }else if (type == 8){
+            [self playSoundEffect:@"four_en"];
+        }
+    }else if ([btn.titleLabel.text isEqualToString:@"5"]){
+        if (type == 7) {
+            [self playSoundEffect:@"five"];
+        }else if (type == 8){
+            [self playSoundEffect:@"five_en"];
+        }
+    }else if ([btn.titleLabel.text isEqualToString:@"6"]){
+        if (type == 7) {
+            [self playSoundEffect:@"six"];
+        }else if (type == 8){
+            [self playSoundEffect:@"six_en"];
+        }
+
+    }else if ([btn.titleLabel.text isEqualToString:@"7"]){
+        if (type == 7) {
+            [self playSoundEffect:@"seven"];
+        }else if (type == 8){
+            [self playSoundEffect:@"seven_en"];
+        }
+
+    }else if ([btn.titleLabel.text isEqualToString:@"8"]){
+        if (type == 7) {
+            [self playSoundEffect:@"eight"];
+        }else if (type == 8){
+            [self playSoundEffect:@"eight_en"];
+        }
+
+    }else if ([btn.titleLabel.text isEqualToString:@"9"]){
+        if (type == 7) {
+            [self playSoundEffect:@"night"];
+        }else if (type == 8){
+            [self playSoundEffect:@"night_en"];
+        }
+
+    }else if ([btn.titleLabel.text isEqualToString:@"."]){
+        if (type == 7) {
+            [self playSoundEffect:@"dian"];
+        }else if (type == 8){
+            [self playSoundEffect:@"dian_en"];
+        }
+
+    }else if ([btn.titleLabel.text isEqualToString:@"C"]){
+        
+    }else if ([btn.titleLabel.text isEqualToString:@"÷"]){
+        if (type == 7) {
+            [self playSoundEffect:@"chu"];
+        }else if (type == 8){
+            [self playSoundEffect:@"chu_en"];
+        }
+    }else if ([btn.titleLabel.text isEqualToString:@"×"]){
+        if (type == 7) {
+            [self playSoundEffect:@"cheng"];
+        }else if (type == 8){
+            [self playSoundEffect:@"cheng_en"];
+        }
+    }else if ([btn.titleLabel.text isEqualToString:@"←"]){
+        
+        
+    }else if ([btn.titleLabel.text isEqualToString:@"-"]){
+        if (type == 7) {
+            [self playSoundEffect:@"jian"];
+        }else if (type == 8){
+            [self playSoundEffect:@"jian_en"];
+        }
+      
+    }else if ([btn.titleLabel.text isEqualToString:@"+"]){
+        if (type == 7) {
+            [self playSoundEffect:@"jia"];
+        }else if (type == 8){
+            [self playSoundEffect:@"jia_en"];
+        }
+
+    }else if ([btn.titleLabel.text isEqualToString:@"="]){
+        if (type == 7) {
+            [self playSoundEffect:@"dengyu"];
+        }else if (type == 8){
+            [self playSoundEffect:@"dengyu_en"];
+        }
+    }else if ([btn.titleLabel.text isEqualToString:@"()"]){
+        if (type == 7) {
+            [self playSoundEffect:@"kuohao"];
+        }else if (type == 8){
+            [self playSoundEffect:@"kuohao_en"];
+        }
+    }else if ([btn.titleLabel.text isEqualToString:@"%"]){
+        if (type == 7) {
+            [self playSoundEffect:@"baifenhao"];
+        }else if (type == 8){
+            [self playSoundEffect:@"baifenhao_en"];
+        }
+    }
+    
+    
+    
+}
+
+-(void)playSoundEffect:(NSString *)name{
+    NSString *audioFile=[[NSBundle mainBundle] pathForResource:name ofType:nil];
+    NSURL *fileUrl=[NSURL fileURLWithPath:audioFile];
+    NSError * error;
+    AVAudioPlayer * player = [[AVAudioPlayer alloc]initWithContentsOfURL:fileUrl error:&error];
+    self.player = player;
+    player.volume = 1;
+    player.numberOfLoops = 0;
+//    player.delegate = self;
+    [player play];
+}
+
 /**
  * 0 插入备注
  * 1备注

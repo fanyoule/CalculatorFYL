@@ -18,7 +18,9 @@
     // Initialization code
 }
 - (IBAction)didSelectedSwitchClicked:(UISwitch *)sender {
-    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(fyl_SettingsListCellDidChangeSwitch:withIndexPath:)]) {
+        [self.delegate fyl_SettingsListCellDidChangeSwitch:sender withIndexPath:self.indexPath];
+    }
     
 }
 

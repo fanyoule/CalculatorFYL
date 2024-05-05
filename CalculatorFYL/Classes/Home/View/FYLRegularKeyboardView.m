@@ -82,7 +82,30 @@
     
     
 }
-
+-(void)changeColor{
+    NSString * colorStr = UserDefaultObjectForKey(FYL_MainAppColor);
+    if (IS_VALID_STRING(colorStr)) {
+        self.B_c.backgroundColor = [UIColor jk_colorWithHexString:colorStr];
+        self.B_chu.backgroundColor = [UIColor jk_colorWithHexString:colorStr];
+        self.B_shan.backgroundColor = [UIColor jk_colorWithHexString:colorStr];
+        self.B_cheng.backgroundColor = [UIColor jk_colorWithHexString:colorStr];
+        self.B_jian.backgroundColor = [UIColor jk_colorWithHexString:colorStr];
+        self.B_jia.backgroundColor = [UIColor jk_colorWithHexString:colorStr];
+        self.B_dengyu.backgroundColor = [UIColor jk_colorWithHexString:colorStr];
+        
+    }else{
+        colorStr = @"#Bfde44";
+        self.B_c.backgroundColor = [UIColor jk_colorWithHexString:colorStr];
+        self.B_chu.backgroundColor = [UIColor jk_colorWithHexString:colorStr];
+        self.B_shan.backgroundColor = [UIColor jk_colorWithHexString:colorStr];
+        self.B_cheng.backgroundColor = [UIColor jk_colorWithHexString:colorStr];
+        self.B_jian.backgroundColor = [UIColor jk_colorWithHexString:colorStr];
+        self.B_jia.backgroundColor = [UIColor jk_colorWithHexString:colorStr];
+        self.B_dengyu.backgroundColor = [UIColor jk_colorWithHexString:colorStr];
+        
+    }
+    
+}
 -(void)longPressAction:(UILongPressGestureRecognizer *)sender{
     UIButton * btn =(UIButton *) sender.view;
     [sender.view.superview bringSubviewToFront:btn];

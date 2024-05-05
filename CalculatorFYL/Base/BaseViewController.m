@@ -262,12 +262,6 @@ static UIImage *BackgroundImage = nil;
 -(void)playSoundEffect:(NSString *)name{
     NSString *audioFile=[[NSBundle mainBundle] pathForResource:name ofType:nil];
     NSURL *fileUrl=[NSURL fileURLWithPath:audioFile];
-//    SystemSoundID soundID=0;//获得系统声音ID
-//    AudioServicesCreateSystemSoundID((__bridge CFURLRef)(fileUrl), &soundID);
-//    AudioServicesPlaySystemSound(soundID);//播放音效
-//    NSString *urlStr=[[NSBundle mainBundle]pathForResource:@"yh_audio_boom_5" ofType:@"mp3"];
-//    NSURL *url=[NSURL fileURLWithPath:urlStr];
-    
     NSError * error;
     AVAudioPlayer * player = [[AVAudioPlayer alloc]initWithContentsOfURL:fileUrl error:&error];
     self.player = player;
@@ -430,6 +424,9 @@ static UIImage *BackgroundImage = nil;
         _model.dataState =IS_VALID_STRING(dataState)?dataState:@"0";
         NSString * orderState = [[NSUserDefaults standardUserDefaults]objectForKey:FYL_orderState];
         _model.orderState =IS_VALID_STRING(orderState)?orderState:@"1";
+        NSString * decimalPlace = [[NSUserDefaults standardUserDefaults]objectForKey:FYL_DecimalPlace];
+        _model.decimalPlace =IS_VALID_STRING(decimalPlace)?decimalPlace:@"8";
+        
     }
     return _model;
 }
@@ -446,7 +443,8 @@ static UIImage *BackgroundImage = nil;
     self.model.dataState =IS_VALID_STRING(dataState)?dataState:@"0";
     NSString * orderState = [[NSUserDefaults standardUserDefaults]objectForKey:FYL_orderState];
     self.model.orderState =IS_VALID_STRING(orderState)?orderState:@"1";
-    
+    NSString * decimalPlace = [[NSUserDefaults standardUserDefaults]objectForKey:FYL_DecimalPlace];
+    self.model.decimalPlace =IS_VALID_STRING(decimalPlace)?decimalPlace:@"8";
     
 }
 

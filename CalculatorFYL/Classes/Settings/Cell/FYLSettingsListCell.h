@@ -8,7 +8,11 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+@protocol FYLSettingsListCellDelegate <NSObject>
 
+-(void)fyl_SettingsListCellDidChangeSwitch:(UISwitch *)switchButton withIndexPath:(NSIndexPath *)path;
+
+@end
 @interface FYLSettingsListCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *L_title;
 @property (weak, nonatomic) IBOutlet UILabel *L_hot;
@@ -25,6 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *L_right_contect;
 @property (weak, nonatomic) IBOutlet UIView *V_line;
 @property (weak, nonatomic) IBOutlet UILabel *L_contect;
+@property(nonatomic,strong)NSIndexPath * indexPath;
+@property(nonatomic,weak)id<FYLSettingsListCellDelegate>delegate;
 -(void)changeUIType:(NSInteger)type;
 
 @end

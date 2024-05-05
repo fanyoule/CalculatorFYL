@@ -36,10 +36,12 @@ FYLZZOneDetailViewdelegate
         self.selectedIndex = 1;
         self.detailView.B_one.selected = YES;
         self.detailView.B_two.selected = NO;
+        UserDefaultSetObjectForKey(@"0", FYL_CHARACTERS);
     }else if (btn.tag == 1){
         self.selectedIndex = 2;
         self.detailView.B_one.selected = NO;
         self.detailView.B_two.selected = YES;
+        UserDefaultSetObjectForKey(@"1", FYL_CHARACTERS);
     }else if (btn.tag == 2){//Purchase
        
         

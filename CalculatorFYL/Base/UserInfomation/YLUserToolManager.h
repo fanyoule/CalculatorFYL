@@ -86,8 +86,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 +(NSString *)getTextTag:(NSInteger)tag;
 
-
-
+// 模拟按钮触觉反馈
+- (void)analogButtonTactileFeedback;
+// 点击键盘声音
+-(void)clickKeyboardSound:(UIButton *)btn;
 @end
 
 NS_ASSUME_NONNULL_END
