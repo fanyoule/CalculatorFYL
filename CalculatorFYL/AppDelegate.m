@@ -7,7 +7,7 @@
 
 #import "AppDelegate.h"
 #import "LSSafeProtector.h"
-#import "OpenUDID.h"
+
 
 @interface AppDelegate ()
 

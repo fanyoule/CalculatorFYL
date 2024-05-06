@@ -161,6 +161,9 @@
 		6732FFD52BC65CCA00DCB42C /* FYLAddRemarksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6732FFD42BC65CCA00DCB42C /* FYLAddRemarksViewController.m */; };
 		6732FFEC2BC66D1F00DCB42C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6732FFEA2BC66D1F00DCB42C /* Localizable.strings */; };
 		6732FFEF2BC66D9D00DCB42C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6732FFED2BC66D9D00DCB42C /* InfoPlist.strings */; };
+		674A65872BE8ECC0004A284F /* FYLHelpFeedbackListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 674A65862BE8ECC0004A284F /* FYLHelpFeedbackListViewController.m */; };
+		674A658A2BE8EDB0004A284F /* FYLHelpFeedbackListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 674A65892BE8EDB0004A284F /* FYLHelpFeedbackListTableViewCell.m */; };
+		674A658D2BE8EF32004A284F /* FYLHelpFeedbackListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 674A658C2BE8EF32004A284F /* FYLHelpFeedbackListModel.m */; };
 		67657BF62BD3A178007210D8 /* FYLlocalArchiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67657BF52BD3A178007210D8 /* FYLlocalArchiveViewController.m */; };
 		67657BF92BD3A2ED007210D8 /* FYLlocalArchiveTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67657BF82BD3A2ED007210D8 /* FYLlocalArchiveTableViewCell.m */; };
 		676F22112BD270EC00B77E9F /* FYLOnFileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 676F22102BD270EC00B77E9F /* FYLOnFileModel.m */; };
@@ -558,6 +561,12 @@
 		6732FFFD2BC66EBD00DCB42C /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		6732FFFE2BC66EDE00DCB42C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		6732FFFF2BC66EDE00DCB42C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		674A65852BE8ECC0004A284F /* FYLHelpFeedbackListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLHelpFeedbackListViewController.h; sourceTree = "<group>"; };
+		674A65862BE8ECC0004A284F /* FYLHelpFeedbackListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLHelpFeedbackListViewController.m; sourceTree = "<group>"; };
+		674A65882BE8EDB0004A284F /* FYLHelpFeedbackListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLHelpFeedbackListTableViewCell.h; sourceTree = "<group>"; };
+		674A65892BE8EDB0004A284F /* FYLHelpFeedbackListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLHelpFeedbackListTableViewCell.m; sourceTree = "<group>"; };
+		674A658B2BE8EF32004A284F /* FYLHelpFeedbackListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLHelpFeedbackListModel.h; sourceTree = "<group>"; };
+		674A658C2BE8EF32004A284F /* FYLHelpFeedbackListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLHelpFeedbackListModel.m; sourceTree = "<group>"; };
 		67657BF42BD3A178007210D8 /* FYLlocalArchiveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLlocalArchiveViewController.h; sourceTree = "<group>"; };
 		67657BF52BD3A178007210D8 /* FYLlocalArchiveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLlocalArchiveViewController.m; sourceTree = "<group>"; };
 		67657BF72BD3A2ED007210D8 /* FYLlocalArchiveTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLlocalArchiveTableViewCell.h; sourceTree = "<group>"; };
@@ -1371,6 +1380,8 @@
 				6704D0BF2BE781C600FD71B0 /* FYLRecycleBinlistViewController.m */,
 				6704D0C12BE7880800FD71B0 /* FYLHelpFeedbackViewController.h */,
 				6704D0C22BE7880800FD71B0 /* FYLHelpFeedbackViewController.m */,
+				674A65852BE8ECC0004A284F /* FYLHelpFeedbackListViewController.h */,
+				674A65862BE8ECC0004A284F /* FYLHelpFeedbackListViewController.m */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1405,6 +1416,8 @@
 				67E0631B2BE0FF3E0051C09F /* FYLThemeCollectionColorZDYViewCell.m */,
 				67E0631D2BE102F20051C09F /* FYLRootCollectionView.h */,
 				67E0631E2BE102F20051C09F /* FYLRootCollectionView.m */,
+				674A65882BE8EDB0004A284F /* FYLHelpFeedbackListTableViewCell.h */,
+				674A65892BE8EDB0004A284F /* FYLHelpFeedbackListTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1497,6 +1510,8 @@
 			children = (
 				67E062D42BE08CB30051C09F /* FYLSettingListMolde.h */,
 				67E062D52BE08CB30051C09F /* FYLSettingListMolde.m */,
+				674A658B2BE8EF32004A284F /* FYLHelpFeedbackListModel.h */,
+				674A658C2BE8EF32004A284F /* FYLHelpFeedbackListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1886,6 +1901,7 @@
 				67246D3C2BAC3F0B0088B0A3 /* UILabel+WY_Extension.m in Sources */,
 				67246C552BAC3B0F0088B0A3 /* MBProgressHUD+XBLoading.m in Sources */,
 				67246D232BAC3C760088B0A3 /* UITextField+LimitLength.m in Sources */,
+				674A658D2BE8EF32004A284F /* FYLHelpFeedbackListModel.m in Sources */,
 				67850B6A2BAE826B00A44336 /* YLUserToolManager.m in Sources */,
 				67246D472BAC3F480088B0A3 /* YLWKViewController.m in Sources */,
 				67E063192BE0FDCC0051C09F /* RSSelectionLayer.m in Sources */,
@@ -1968,6 +1984,7 @@
 				6789CFD22BCD34510024FB54 /* NSObject+ZXGetProperty.m in Sources */,
 				67246D192BAC3BBE0088B0A3 /* YXHTTPRequst.m in Sources */,
 				6725DA672BBAB7D000695EA1 /* MSScaner.m in Sources */,
+				674A658A2BE8EDB0004A284F /* FYLHelpFeedbackListTableViewCell.m in Sources */,
 				67246D222BAC3C760088B0A3 /* SHMEmojiMethod.m in Sources */,
 				6732007B2BC6ACAA00DCB42C /* UITextView+Placeholder.m in Sources */,
 				6789CFD42BCD34510024FB54 /* NSString+ZXDataConvert.m in Sources */,
@@ -2001,6 +2018,7 @@
 				672468DD2BAC1B880088B0A3 /* YLTabBarViewController.m in Sources */,
 				672468D92BAC1B880088B0A3 /* NavigationBarHandler.m in Sources */,
 				6704D0B22BE73A3B00FD71B0 /* FYLFontSizeView.m in Sources */,
+				674A65872BE8ECC0004A284F /* FYLHelpFeedbackListViewController.m in Sources */,
 				67C95F922BD9FCE900EE4713 /* FYLSettingsListCell.m in Sources */,
 				672468D82BAC1B880088B0A3 /* BaseNavigationBar.m in Sources */,
 				67246D2A2BAC3D4B0088B0A3 /* ZZAlertViewTools.m in Sources */,

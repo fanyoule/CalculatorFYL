@@ -73,7 +73,7 @@ static NSString * showing_400 = @"2";
             
             if(responseObject && [responseObject isKindOfClass:[NSDictionary class]]){
                 BaseModel *model = [BaseModel loadModelWithDictionary:responseObject];
-                if(model.code.intValue == 1||model.code.intValue == 500){
+                if(model.code.intValue == 200){
 
                     //存入数据，有就更新
 //                    [[CacheToolManagement sharedManager] writeCacheData:responseObject initialURL:initialURL url:urlString parameters:parame];
@@ -119,7 +119,7 @@ static NSString * showing_400 = @"2";
             
             if(responseObject && [responseObject isKindOfClass:[NSDictionary class]]){
                 BaseModel *model = [BaseModel loadModelWithDictionary:responseObject];
-                if(model.code.intValue == 1||model.code.intValue == 500){
+                if(model.code.intValue == 200){
                   
                     //存入数据，有就更新
 //                    [[CacheToolManagement sharedManager] writeCacheData:responseObject initialURL:initialURL url:urlString parameters:parame];

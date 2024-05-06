@@ -179,126 +179,126 @@
 -(void)didSelectedkeyboard:(UIButton *)btn withIndexType:(NSInteger)type{
     if ([btn.titleLabel.text isEqualToString:@"0"]) {
         if (type == 7) {
-            [self playSoundEffect:@"zero"];
+            [self playSoundEffect:@"zero.mp3"];
         }else if (type == 8){
-            [self playSoundEffect:@"zero_en"];
+            [self playSoundEffect:@"zero_en.mp3"];
         }
     }else if ([btn.titleLabel.text isEqualToString:@"1"]){
         if (type == 7) {
-            [self playSoundEffect:@"one"];
+            [self playSoundEffect:@"one.mp3"];
         }else if (type == 8){
-            [self playSoundEffect:@"one_en"];
+            [self playSoundEffect:@"one_en.mp3"];
         }
 
     }else if ([btn.titleLabel.text isEqualToString:@"2"]){
         if (type == 7) {
-            [self playSoundEffect:@"two"];
+            [self playSoundEffect:@"two.mp3"];
         }else if (type == 8){
-            [self playSoundEffect:@"two_en"];
+            [self playSoundEffect:@"two_en.mp3"];
         }
 
     }else if ([btn.titleLabel.text isEqualToString:@"3"]){
         if (type == 7) {
-            [self playSoundEffect:@"three"];
+            [self playSoundEffect:@"three.mp3"];
         }else if (type == 8){
-            [self playSoundEffect:@"three_en"];
+            [self playSoundEffect:@"three_en.mp3"];
         }
 
     }else if ([btn.titleLabel.text isEqualToString:@"4"]){
         if (type == 7) {
-            [self playSoundEffect:@"four"];
+            [self playSoundEffect:@"four.mp3"];
         }else if (type == 8){
-            [self playSoundEffect:@"four_en"];
+            [self playSoundEffect:@"four_en.mp3"];
         }
     }else if ([btn.titleLabel.text isEqualToString:@"5"]){
         if (type == 7) {
-            [self playSoundEffect:@"five"];
+            [self playSoundEffect:@"five.mp3"];
         }else if (type == 8){
-            [self playSoundEffect:@"five_en"];
+            [self playSoundEffect:@"five_en.mp3"];
         }
     }else if ([btn.titleLabel.text isEqualToString:@"6"]){
         if (type == 7) {
-            [self playSoundEffect:@"six"];
+            [self playSoundEffect:@"six.mp3"];
         }else if (type == 8){
-            [self playSoundEffect:@"six_en"];
+            [self playSoundEffect:@"six_en.mp3"];
         }
 
     }else if ([btn.titleLabel.text isEqualToString:@"7"]){
         if (type == 7) {
-            [self playSoundEffect:@"seven"];
+            [self playSoundEffect:@"seven.mp3"];
         }else if (type == 8){
-            [self playSoundEffect:@"seven_en"];
+            [self playSoundEffect:@"seven_en.mp3"];
         }
 
     }else if ([btn.titleLabel.text isEqualToString:@"8"]){
         if (type == 7) {
-            [self playSoundEffect:@"eight"];
+            [self playSoundEffect:@"eight.mp3"];
         }else if (type == 8){
-            [self playSoundEffect:@"eight_en"];
+            [self playSoundEffect:@"eight_en.mp3"];
         }
 
     }else if ([btn.titleLabel.text isEqualToString:@"9"]){
         if (type == 7) {
-            [self playSoundEffect:@"night"];
+            [self playSoundEffect:@"night.mp3"];
         }else if (type == 8){
-            [self playSoundEffect:@"night_en"];
+            [self playSoundEffect:@"night_en.mp3"];
         }
 
     }else if ([btn.titleLabel.text isEqualToString:@"."]){
         if (type == 7) {
-            [self playSoundEffect:@"dian"];
+            [self playSoundEffect:@"dian.mp3"];
         }else if (type == 8){
-            [self playSoundEffect:@"dian_en"];
+            [self playSoundEffect:@"dian_en.mp3"];
         }
 
     }else if ([btn.titleLabel.text isEqualToString:@"C"]){
         
     }else if ([btn.titleLabel.text isEqualToString:@"÷"]){
         if (type == 7) {
-            [self playSoundEffect:@"chu"];
+            [self playSoundEffect:@"chu.mp3"];
         }else if (type == 8){
-            [self playSoundEffect:@"chu_en"];
+            [self playSoundEffect:@"chu_en.mp3"];
         }
     }else if ([btn.titleLabel.text isEqualToString:@"×"]){
         if (type == 7) {
-            [self playSoundEffect:@"cheng"];
+            [self playSoundEffect:@"cheng.mp3"];
         }else if (type == 8){
-            [self playSoundEffect:@"cheng_en"];
+            [self playSoundEffect:@"cheng_en.mp3"];
         }
     }else if ([btn.titleLabel.text isEqualToString:@"←"]){
         
         
     }else if ([btn.titleLabel.text isEqualToString:@"-"]){
         if (type == 7) {
-            [self playSoundEffect:@"jian"];
+            [self playSoundEffect:@"jian.mp3"];
         }else if (type == 8){
-            [self playSoundEffect:@"jian_en"];
+            [self playSoundEffect:@"jian_en.mp3"];
         }
       
     }else if ([btn.titleLabel.text isEqualToString:@"+"]){
         if (type == 7) {
-            [self playSoundEffect:@"jia"];
+            [self playSoundEffect:@"jia.mp3"];
         }else if (type == 8){
-            [self playSoundEffect:@"jia_en"];
+            [self playSoundEffect:@"jia_en.mp3"];
         }
 
     }else if ([btn.titleLabel.text isEqualToString:@"="]){
         if (type == 7) {
-            [self playSoundEffect:@"dengyu"];
+            [self playSoundEffect:@"dengyu.mp3"];
         }else if (type == 8){
-            [self playSoundEffect:@"dengyu_en"];
+            [self playSoundEffect:@"dengyu_en.mp3"];
         }
     }else if ([btn.titleLabel.text isEqualToString:@"()"]){
         if (type == 7) {
-            [self playSoundEffect:@"kuohao"];
+            [self playSoundEffect:@"kuohao.mp3"];
         }else if (type == 8){
-            [self playSoundEffect:@"kuohao_en"];
+            [self playSoundEffect:@"kuohao_en.mp3"];
         }
     }else if ([btn.titleLabel.text isEqualToString:@"%"]){
         if (type == 7) {
-            [self playSoundEffect:@"baifenhao"];
+            [self playSoundEffect:@"baifenhao.mp3"];
         }else if (type == 8){
-            [self playSoundEffect:@"baifenhao_en"];
+            [self playSoundEffect:@"baifenhao_en.mp3"];
         }
     }
     
@@ -1692,9 +1692,9 @@
         if (local_languageType.intValue == 0) {//跟随系统
             return NSLocalizedString(@"Your contact information or Email", nil);
         }else if (local_languageType.intValue == 1){//简体中文
-            return @"您的聯繫方式";
+            return @"您的联系方式";
         }else if (local_languageType.intValue == 2){//繁体中文
-            return @"請留下您寶貴的意見或迴響，我們會及時的回復您";
+            return @"您的聯繫方式";
         }else if (local_languageType.intValue == 3){//English
             return @"Your contact information or Email";
         }else if (local_languageType.intValue == 4){//日语  日本語

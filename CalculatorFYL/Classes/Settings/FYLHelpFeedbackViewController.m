@@ -7,6 +7,8 @@
 
 #import "FYLHelpFeedbackViewController.h"
 #import "UITextView+Placeholder.h"
+#import "FYLHelpFeedbackListViewController.h"
+
 @interface FYLHelpFeedbackViewController ()
 @property(nonatomic,strong)UITextView *V_text;
 @property(nonatomic,strong)UITextField * T_phone;
@@ -30,9 +32,8 @@
 
 -(void)rightItemClicked{
     [self.view endEditing:YES];
-    
-    
-    
+    FYLHelpFeedbackListViewController * vc = [[FYLHelpFeedbackListViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 #pragma mark -- 确定
@@ -41,7 +42,16 @@
     if (!IS_VALID_STRING(self.V_text.text)) {
         return;
     }
-    
+    //df095ec35b381c8596563204299bf6fbba91dee8
+    NSString * openUUID = [OpenUDID value];
+    NSMutableDictionary * parm = [NSMutableDictionary dictionary];
+    [parm setObject:openUUID forKey:@"uniqueld"];
+    [parm setObject:self.V_text.text forKey:@"content"];
+    [[YXHTTPRequst shareInstance]yl_networking:API_feedbackadd parameters:parm method:YXRequstMethodTypePOST showLoadingView:YES showLoadingTitle:@"" showErrorView:YES success:^(NSURLSessionDataTask *task, id responseObject) {
+            
+    } failsure:^(NSURLSessionDataTask *task, id cacheData, NSError *error) {
+        
+    }];
     
     
     

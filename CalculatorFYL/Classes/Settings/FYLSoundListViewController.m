@@ -223,19 +223,39 @@ UITableViewDataSource
         });
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             if(indexPath.row == 0){//中文
+                self.table_groupV.userInteractionEnabled = NO;
                 [self playSoundEffect:@"one.mp3"];
-                [self playSoundEffect:@"jia.mp3"];
-                [self playSoundEffect:@"two.mp3"];
-                [self playSoundEffect:@"dengyu.mp3"];
-                [self playSoundEffect:@"three.mp3"];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self playSoundEffect:@"jia.mp3"];
+                });
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self playSoundEffect:@"two.mp3"];
+                });
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self playSoundEffect:@"dengyu.mp3"];
+                });
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self playSoundEffect:@"three.mp3"];
+                    self.table_groupV.userInteractionEnabled = YES;
+                });
+                
             }else if (indexPath.row == 1){//英文
+                self.table_groupV.userInteractionEnabled = NO;
                 [self playSoundEffect:@"one_en.mp3"];
-                [self playSoundEffect:@"jia_en.mp3"];
-                [self playSoundEffect:@"two_en.mp3"];
-                [self playSoundEffect:@"dengyu_en.mp3"];
-                [self playSoundEffect:@"three_en.mp3"];
-                
-                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self playSoundEffect:@"jia_en.mp3"];
+                });
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self playSoundEffect:@"two_en.mp3"];
+                });
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self playSoundEffect:@"dengyu_en.mp3"];
+                });
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self playSoundEffect:@"three_en.mp3"];
+                    self.table_groupV.userInteractionEnabled = YES;
+                });
+     
             }
         });
         
