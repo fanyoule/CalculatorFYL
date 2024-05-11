@@ -37,9 +37,10 @@ FYLVIPKeyboardViewdelegate
 @property(nonatomic,strong)NSMutableArray * outDataArr;
 ///方向 0向下 1向上
 @property(nonatomic,assign)NSInteger directionType;
-//@property (strong, nonatomic) advancedCalculator *calculate;
-//@property int flag;
-
+///需要千分位的内容
+@property(nonatomic,strong)NSMutableString * thousandsStr;
+///已输入内容
+@property(nonatomic,copy)NSString * contectStr;
 
 @end
 
@@ -66,6 +67,10 @@ int numpoint = 0;
 int leftbrackets = 0;
 //百分比 1已输入百分比 0未输入百分比
 int percent = 0;
+//是否千分位
+int thousands = 0;
+///当前输入文字的类型  0暂无  1数字   2运算符（+-*/） 3（%）  4左括号(  5右括号） 6小数点.
+int typeOfInput = 0;
 
 
 -(void)viewDidLayoutSubviews{
@@ -103,7 +108,6 @@ int percent = 0;
             FYLlocalArchiveViewController * vc = [[FYLlocalArchiveViewController alloc]init];
             [self.navigationController pushViewController:vc animated:YES];
         }
- 
     };
     [view show];
     
@@ -116,12 +120,46 @@ int percent = 0;
 }
 #pragma mark -- 清空输入文本
 -(void)clearDate{
+    self.thousandsStr = [[NSMutableString alloc]initWithString:@""];
+    self.contectStr = @"";
     self.L_contect.text=@"";
     self.V_scroll.contentSize = CGSizeMake(kScreenWidth, 50);
     [self.V_scroll setContentOffset:CGPointMake(5, 0) animated:NO];
+    
+    
+    
+}
+#pragma mark -- 千分位处理
+-(NSString *)changethousandsStr:(NSString *)contect{
+    NSString * yz = UserDefaultObjectForKey(FYL_orderState);
+    if (yz.intValue == 1) {
+        if ([contect isEqualToString:@"÷"]
+            ||[contect isEqualToString:@"×"]
+            ||[contect isEqualToString:@"-"]
+            ||[contect isEqualToString:@"+"]
+            ||[contect isEqualToString:@"%"]
+            ||[contect isEqualToString:@"="]
+            ||[contect isEqualToString:@"C"]
+            ||[contect isEqualToString:@")"]
+            ||[contect isEqualToString:@"("]) {
+            self.thousandsStr = [NSMutableString stringWithString:@""];
+            if ([contect isEqualToString:@"C"]||[contect isEqualToString:@"="]) {
+                self.contectStr = @"";
+            }else{
+                self.contectStr = [NSString stringWithFormat:@"%@%@",self.L_contect.text,contect];
+            }
+            
+        }else{
+            [self.thousandsStr appendString:contect];
+        }
+        
+    }
+    
+    return self.thousandsStr;
 }
 
 -(void)fyl_RegularKeyboardDidSelectedButton:(UIButton *)btn{
+  
     NSLog(@"btn.titleLabel.text----:%@",btn.titleLabel.text);
 //    [self playSoundEffect:@"chu.ogg"];
     [[YLUserToolManager sharedManager]analogButtonTactileFeedback];
@@ -132,8 +170,7 @@ int percent = 0;
         }
         secondFlag = 0;
         numpoint = 1;
-        
-        
+        typeOfInput = 1;
         [self changeNumberGreateBtn:btn];
     }else if ([btn.titleLabel.text isEqualToString:@"1"]){
         if (percent == 1) {
@@ -141,7 +178,7 @@ int percent = 0;
         }
         secondFlag = 0;
         numpoint = 1;
-        
+        typeOfInput = 1;
         [self changeNumberGreateBtn:btn];
 
     }else if ([btn.titleLabel.text isEqualToString:@"2"]){
@@ -150,7 +187,7 @@ int percent = 0;
         }
         secondFlag = 0;
         numpoint = 1;
-        
+        typeOfInput = 1;
         
         [self changeNumberGreateBtn:btn];
 
@@ -160,7 +197,7 @@ int percent = 0;
         }
         secondFlag = 0;
         numpoint = 1;
-        
+        typeOfInput = 1;
         
         [self changeNumberGreateBtn:btn];
 
@@ -170,7 +207,7 @@ int percent = 0;
         }
         secondFlag = 0;
         numpoint = 1;
-        
+        typeOfInput = 1;
         
         [self changeNumberGreateBtn:btn];
 
@@ -180,7 +217,7 @@ int percent = 0;
         }
         secondFlag = 0;
         numpoint = 1;
-        
+        typeOfInput = 1;
         
         [self changeNumberGreateBtn:btn];
 
@@ -190,7 +227,7 @@ int percent = 0;
         }
         secondFlag = 0;
         numpoint = 1;
-        
+        typeOfInput = 1;
         
         
         [self changeNumberGreateBtn:btn];
@@ -201,7 +238,7 @@ int percent = 0;
         }
         secondFlag = 0;
         numpoint = 1;
-        
+        typeOfInput = 1;
         
         
         [self changeNumberGreateBtn:btn];
@@ -212,7 +249,7 @@ int percent = 0;
         }
         secondFlag = 0;
         numpoint = 1;
-        
+        typeOfInput = 1;
         
         
         
@@ -224,7 +261,7 @@ int percent = 0;
         }
         secondFlag = 0;
         numpoint = 1;
-        
+        typeOfInput = 1;
         
         
         [self changeNumberGreateBtn:btn];
@@ -234,6 +271,7 @@ int percent = 0;
             if (!IS_VALID_STRING(self.L_contect.text)) {
                 self.L_contect.text = @"0";
             }
+            typeOfInput = 6;
             pointFlag = 1;
             [self changeNumberGreateBtn:btn];
         }
@@ -246,52 +284,54 @@ int percent = 0;
         leftbrackets = 0;
         percent = 0;
         numpoint = 0;
+        typeOfInput = 0;
         
         [self clearDate];
     }else if ([btn.titleLabel.text isEqualToString:@"÷"]){
-        if (secondFlag == 0) {
+        if (typeOfInput == 1||typeOfInput == 3||typeOfInput == 5||typeOfInput == 6) {
             pointFlag = 0;
             secondFlag = 1;
             numpoint = 2;
             percent = 0;
+            typeOfInput = 2;
             
             [self changeNumberGreateBtn:btn];
         }
 
     }else if ([btn.titleLabel.text isEqualToString:@"×"]){
-        if (secondFlag == 0) {
+        if (typeOfInput == 1||typeOfInput == 3||typeOfInput == 5||typeOfInput == 6) {
             pointFlag = 0;
             secondFlag = 1;
             numpoint = 2;
             percent = 0;
+            typeOfInput = 2;
             
             [self changeNumberGreateBtn:btn];
         }
         
 
     }else if ([btn.titleLabel.text isEqualToString:@"←"]){
-        
-        
-        
+    
         [self clearLastBit];
-        
-        
+ 
     }else if ([btn.titleLabel.text isEqualToString:@"-"]){
-        if (secondFlag == 0) {
+        if (typeOfInput == 1||typeOfInput == 3||typeOfInput == 5||typeOfInput == 6) {
             pointFlag = 0;
             secondFlag = 1;
             numpoint = 2;
             percent = 0;
+            typeOfInput = 2;
             
             [self changeNumberGreateBtn:btn];
         }
       
     }else if ([btn.titleLabel.text isEqualToString:@"+"]){
-        if (secondFlag == 0) {
+        if (typeOfInput == 1||typeOfInput == 3||typeOfInput == 5||typeOfInput == 6) {
             pointFlag = 0;
             secondFlag = 1;
             numpoint = 2;
             percent = 0;
+            typeOfInput = 2;
             
             [self changeNumberGreateBtn:btn];
         }
@@ -303,44 +343,82 @@ int percent = 0;
         leftbrackets = 0;
         percent = 0;
         numpoint = 1;
+        typeOfInput = 0;
         
         [self actionEqual];
         if ([self.L_contect.text containsString:@"."]) {
             pointFlag = 1;
         }
-    }else if ([btn.titleLabel.text isEqualToString:@"()"]){
-        secondFlag = 0;
-        if (leftbrackets != 0) {
-            leftbrackets--;
-            NSMutableString *originalString=[NSMutableString stringWithString:self.L_contect.text];
-            [originalString appendString:@")"];
-            self.L_contect.text=originalString;
-            [self refreshWidthContent];
-        }else{
-            leftbrackets++;
-            NSMutableString *originalString=[NSMutableString stringWithString:self.L_contect.text];
-            [originalString appendString:@"("];
-            self.L_contect.text=originalString;
-            [self refreshWidthContent];
+        BOOL is_include = [self fyl_WhetherToIncludeAnOperator:self.L_contect.text];
+        if (!is_include) {
+            typeOfInput = 1;
         }
-        
+    }else if ([btn.titleLabel.text isEqualToString:@"()"]){
+        if (leftbrackets != 0  ) {
+            if(typeOfInput ==1||typeOfInput == 3||typeOfInput == 6){
+                typeOfInput = 5;
+                leftbrackets--;
+                NSMutableString *originalString=[NSMutableString stringWithString:self.L_contect.text];
+                [originalString appendString:@")"];
+                self.L_contect.text=originalString;
+                [self refreshWidthContent];
+            }
+
+        }else{
+            if(typeOfInput == 2){
+                leftbrackets++;
+                typeOfInput = 4;
+                NSMutableString *originalString=[NSMutableString stringWithString:self.L_contect.text];
+                [originalString appendString:@"("];
+                self.L_contect.text=originalString;
+                [self refreshWidthContent];
+            }
+        }
     }else if ([btn.titleLabel.text isEqualToString:@"%"]){
-        if (secondFlag == 0 && numpoint == 1 && percent == 0) {
+        if (typeOfInput == 1) {
             pointFlag = 0;
             percent = 1;
-            
-            
+            typeOfInput = 3;
             [self changeNumberGreateBtn:btn];
         }
 
     }
-    
+ 
+}
+#pragma mark -- 是否包含运算符
+///是否包含运算符
+-(BOOL)fyl_WhetherToIncludeAnOperator:(NSString *)contect{
+    NSLog(@"contect首字符：%@",[contect substringToIndex:1]);
+    if([contect containsString:@"+"]
+       ||([contect containsString:@"-"]&&![[contect substringToIndex:1] isEqualToString:@"-"])
+       ||[contect containsString:@"×"]
+       ||[contect containsString:@"÷"]
+       ||[contect containsString:@"("]
+       ||[contect containsString:@")"]
+       ||[contect containsString:@"%"])
+    {
+        return YES;
+    }
+    return NO;
     
 }
 -(void)changeNumberGreateBtn:(UIButton *)btn{
    
     NSMutableString *originalString=[NSMutableString stringWithString:self.L_contect.text];
-    [originalString appendString:[[btn titleLabel] text]];
+//    NSString * yy = [self changethousandsStr:[[btn titleLabel] text]];
+//    if (IS_VALID_STRING(yy)) {
+//        NSString * zz = [self getCommaTextWithString:yy];
+//        if ([zz containsString:@","]) {
+//            NSString * allStr = [NSString stringWithFormat:@"%@%@",IS_VALID_STRING(self.contectStr)?self.contectStr:@"",zz];
+//            originalString = [NSMutableString stringWithString:allStr];
+//        }else{
+//            [originalString appendString:[[btn titleLabel] text]];
+//        }
+//        
+//    }else{
+        [originalString appendString:[[btn titleLabel] text]];
+//    }
+    
     self.L_contect.text=originalString;
     [self refreshWidthContent];
 }
@@ -351,12 +429,15 @@ int percent = 0;
     if(!IS_VALID_STRING(self.L_contect.text)){
         return;
     }
+    self.contectStr = @"";
+    self.thousandsStr = [NSMutableString stringWithString:@""];
     
     NSString* jsExpString = self.L_contect.text;
     NSString* old_str = self.L_contect.text;
     jsExpString = [jsExpString stringByReplacingOccurrencesOfString:@"×" withString:@"*"];
     jsExpString = [jsExpString stringByReplacingOccurrencesOfString:@"÷" withString:@"/"];
     jsExpString = [jsExpString stringByReplacingOccurrencesOfString:@"%" withString:@"*0.01"];
+    jsExpString = [jsExpString stringByReplacingOccurrencesOfString:@"," withString:@""];
     //表达式预测试
     BOOL allRight = [MSExpressionHelper helperCheckExpression:jsExpString usingBlock:^(NSError *error, NSRange range) {
         NSLog(@"%@",error);
@@ -371,13 +452,21 @@ int percent = 0;
         NSDecimalRound(&desDecimal, &decimal , index, NSRoundPlain);
         NSLog(@"保留%ld位小数计算结果为：%@",index,[NSDecimalNumber decimalNumberWithDecimal:desDecimal]);
         NSString * jieguo = [NSString stringWithFormat:@"%@",[NSDecimalNumber decimalNumberWithDecimal:desDecimal].stringValue];
+        NSString * yz = UserDefaultObjectForKey(FYL_orderState);
+        NSString * orderstr = @"";
+        if (yz.intValue == 1) {
+            orderstr = [self getCommaTextWithString:jieguo];
+        }
         self.L_contect.text= jieguo;
+        self.contectStr = jieguo;
+        self.thousandsStr = [NSMutableString stringWithString:jieguo];
+        
         [self refreshWidthContent];
         NSString * calculateResult_new2 = old_str;
         NSString * currtime = [[PublicHelpers shareManager]getCurrentDate];
         FYLHistoryModel * model = [[FYLHistoryModel alloc]init];
         model.time = [[ToolManagement sharedManager]getTimeStrWithString:currtime];
-        model.contect = [NSString stringWithFormat:@"%@=%@",calculateResult_new2,jieguo];
+        model.contect = [NSString stringWithFormat:@"%@=%@",calculateResult_new2,orderstr];
         model.userName = @"123";
         NSString * ids_time = [NSString stringWithFormat:@"%@%u",[[ToolManagement sharedManager]currentTimeStr],arc4random_uniform(1000)];
         model.IDs = ids_time.doubleValue;
@@ -391,13 +480,6 @@ int percent = 0;
         NSString* jsExpression = [MSParser parserJSExpressionFromExpression:jsExpString error:nil];
         NSLog(@"转JS表达式结果为：%@",jsExpression);
     }
-    
-
-    
-    
-    
-    
-    
 
 }
 -(void)refreshWidthContent{
@@ -408,6 +490,7 @@ int percent = 0;
         [self.V_scroll setContentOffset:CGPointMake(width_text-kScreenWidth, 0) animated:NO];
     }
 }
+
 #pragma mark -- 末尾清除
 -(void)clearLastBit{
     NSInteger length=[self.L_contect.text length];
@@ -417,13 +500,53 @@ int percent = 0;
         [delResultString deleteCharactersInRange:NSMakeRange(length-1, 1)];
         self.L_contect.text=delResultString;
         NSString * lastStr_new = [self.L_contect.text substringWithRange:NSMakeRange(self.L_contect.text.length-1, 1)];
+        if ([lastStr_new isEqualToString:@"÷"]||[lastStr_new isEqualToString:@"×"]||[lastStr_new isEqualToString:@"-"]||[lastStr_new isEqualToString:@"+"]) {
+            typeOfInput = 2;
+            self.thousandsStr = [NSMutableString stringWithString:@""];
+            self.contectStr = [NSString stringWithFormat:@"%@",self.L_contect.text];
+        }else if ([lastStr_new isEqualToString:@"("]){
+            typeOfInput = 4;
+            self.thousandsStr = [NSMutableString stringWithString:@""];
+            self.contectStr = [NSString stringWithFormat:@"%@",self.L_contect.text];
+        }else if ([lastStr_new isEqualToString:@")"]){
+            typeOfInput = 5;
+            self.thousandsStr = [NSMutableString stringWithString:@""];
+            self.contectStr = [NSString stringWithFormat:@"%@",self.L_contect.text];
+        }else if ([lastStr_new isEqualToString:@"."]){
+            typeOfInput = 6;
+            [self.thousandsStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        }else if ([lastStr_new isEqualToString:@"%"]){
+            typeOfInput = 3;
+        }else if ([lastStr_new isEqualToString:@"1"]
+                  ||[lastStr_new isEqualToString:@"2"]
+                  ||[lastStr_new isEqualToString:@"3"]
+                  ||[lastStr_new isEqualToString:@"4"]
+                  ||[lastStr_new isEqualToString:@"5"]
+                  ||[lastStr_new isEqualToString:@"6"]
+                  ||[lastStr_new isEqualToString:@"7"]
+                  ||[lastStr_new isEqualToString:@"8"]
+                  ||[lastStr_new isEqualToString:@"9"]
+                  ||[lastStr_new isEqualToString:@"0"]
+                  )
+        {
+            [self.thousandsStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            typeOfInput = 1;
+        }else{
+            self.thousandsStr = [NSMutableString stringWithString:@""];
+            self.contectStr = [NSString stringWithFormat:@"%@",self.L_contect.text];
+            typeOfInput = 0;
+        }
+        
+        
+        
+        
         if ([lastStr_old isEqualToString:@"÷"]||[lastStr_old isEqualToString:@"×"]||[lastStr_old isEqualToString:@"-"]||[lastStr_old isEqualToString:@"+"]) {
             secondFlag = 0;
             
         }else if ([lastStr_old isEqualToString:@"("]){
-            
+            leftbrackets = 0;
         }else if ([lastStr_old isEqualToString:@")"]){
-            
+            leftbrackets = 1;
         }else if ([lastStr_old isEqualToString:@"."]){
             pointFlag = 0;
             
@@ -433,55 +556,9 @@ int percent = 0;
         else{
             
         }
-       
+        
     }
     
-}
-
--(void)setNumberDisplay:(NSString *)numberDisplay{
-    self.L_contect.text=[self setNumber:numberDisplay];
-    CGFloat width_text = [self.L_contect.text jk_widthWithFont:PxM56Font constrainedToHeight:50];
-    if (width_text>kScreenWidth) {
-        self.L_contect.frame = CGRectMake(0, 15, width_text, 30);
-        self.V_scroll.contentSize = CGSizeMake(width_text+30, 50);
-        [self.V_scroll setContentOffset:CGPointMake(width_text-kScreenWidth, 0) animated:NO];
-    }
-}
-
--(NSString *)setNumber:(NSString *)number{
-    NSMutableString *strnumber=[[NSMutableString alloc]init];
-    strnumber=[number mutableCopy];
-    int length=(int)strnumber.length;
-    int index;
-    NSRange rang=[strnumber rangeOfString:@"."];
-    if (rang.length>0) {
-        for ( int j=0; j<=length; j++) {
-            NSString *Char=[strnumber substringWithRange:NSMakeRange(j, 1)];
-            if ([Char isEqualToString:@"."]) {
-                index=j;
-                break;
-            }
-        }if (3<index&&index<=9) {
-            for (int i=index; i>3; i=i-3) {//找出小数点为位置i
-                if ([[strnumber substringWithRange:NSMakeRange(i-4,1)]isEqualToString:@"-"]) {
-                    break;
-                }else{
-                    [strnumber insertString:@"," atIndex:i-3];
-                }
-            }
-        }
-    } else if (3<length) {
-        for (int i=length; i>3; i=i-3) {
-            if ([[strnumber substringWithRange:NSMakeRange(i-4,1)]isEqualToString:@"-"]) {
-                break;
-            }else{
-                [strnumber insertString:@"," atIndex:i-3];
-            }
-        }
-    }
-
-    number=[strnumber copy];
-    return number;
 }
 
 
@@ -700,10 +777,6 @@ int percent = 0;
         [self refreshWidthContent];
     }
     
-    
-    //最后array会是一个二维数组
-    NSLog(@"%@", array);
-    
 }
 #pragma mark -- 求总和
 -(void)getAllSummation{
@@ -852,7 +925,7 @@ int percent = 0;
     
     [self.table_groupV reloadData];
 }
-
+#pragma mark -- 改变整体颜色
 -(void)changeAppMainColor{
     NSString * CHARACTERS = UserDefaultObjectForKey(FYL_CHARACTERS);
     if (IS_VALID_STRING(CHARACTERS)&&[CHARACTERS isEqualToString:@"1"]) {
@@ -861,6 +934,7 @@ int percent = 0;
         [self.regularKey changeColor];
     }
 }
+#pragma mark -- 改变键盘类型
 -(void)changeAppKeyBoard{
     [self.vipKey removeFromSuperview];
     [self.regularKey removeFromSuperview];
@@ -886,6 +960,8 @@ int percent = 0;
 
 
 -(void)creatUI{
+    NSMutableString * yyzz = [NSMutableString string];
+    self.thousandsStr = yyzz;
     UIButton * B_nav_left = [UIButton buttonWithType:0];
     B_nav_left.frame = CGRectMake(0, 0, 50, 50);
     [B_nav_left setImage:[UIImage imageNamed:@"mine_setting"] forState:UIControlStateNormal];
