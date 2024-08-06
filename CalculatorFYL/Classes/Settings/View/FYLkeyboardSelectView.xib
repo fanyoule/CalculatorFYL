@@ -45,17 +45,22 @@
                         <action selector="didSelectedPuTongClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="nf9-WY-1GA"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vviipp" translatesAutoresizingMaskIntoConstraints="NO" id="hcO-fN-Cyu">
+                    <rect key="frame" x="346" y="79" width="32" height="16"/>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="QAw-At-Dmk" firstAttribute="centerX" secondItem="yMp-uj-9gT" secondAttribute="centerX" id="0uj-fB-DKo"/>
+                <constraint firstItem="hcO-fN-Cyu" firstAttribute="top" secondItem="6GO-YP-fEA" secondAttribute="top" id="4Oc-N7-Snk"/>
                 <constraint firstItem="6GO-YP-fEA" firstAttribute="width" secondItem="yMp-uj-9gT" secondAttribute="width" id="Cr5-Ge-NfX"/>
                 <constraint firstItem="SaY-ca-Hfj" firstAttribute="centerX" secondItem="6GO-YP-fEA" secondAttribute="centerX" id="GbZ-yG-ltK"/>
                 <constraint firstItem="6GO-YP-fEA" firstAttribute="top" secondItem="yMp-uj-9gT" secondAttribute="top" id="NFY-kU-YOl"/>
                 <constraint firstItem="6GO-YP-fEA" firstAttribute="leading" secondItem="yMp-uj-9gT" secondAttribute="trailing" constant="15" id="YiE-zY-UBd"/>
                 <constraint firstItem="yMp-uj-9gT" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="aUn-Ef-LuS"/>
                 <constraint firstItem="SaY-ca-Hfj" firstAttribute="centerY" secondItem="QAw-At-Dmk" secondAttribute="centerY" id="cNH-7e-Dm3"/>
+                <constraint firstItem="hcO-fN-Cyu" firstAttribute="trailing" secondItem="6GO-YP-fEA" secondAttribute="trailing" id="lIh-cz-6Sz"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="6GO-YP-fEA" secondAttribute="trailing" constant="15" id="lYU-fY-Fir"/>
                 <constraint firstItem="yMp-uj-9gT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="mvt-bU-6Ce"/>
                 <constraint firstItem="SaY-ca-Hfj" firstAttribute="top" secondItem="6GO-YP-fEA" secondAttribute="bottom" constant="20" id="vaX-fz-9wF"/>
@@ -69,6 +74,7 @@
     </objects>
     <resources>
         <image name="guibing.png" width="1179" height="2556"/>
+        <image name="vviipp" width="32" height="16"/>
         <image name="yoSelImg_nol" width="25.666666030883789" height="25"/>
         <image name="yoSelImg_sel" width="25.666666030883789" height="25"/>
         <image name="zhengchang.png" width="1179" height="2556"/>

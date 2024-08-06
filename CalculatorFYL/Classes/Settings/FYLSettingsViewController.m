@@ -166,6 +166,7 @@ FYLSettingsListCellDelegate
     FYLSettingsListCell * cell = [tableView dequeueReusableCellWithIdentifier:@"FYLSettingsListCell" forIndexPath:indexPath];
     cell.delegate = self;
     cell.indexPath = indexPath;
+    cell.L_right_contect.text = @"";
     if (self.dataArray.count>indexPath.section) {
         NSArray * arr = self.dataArray[indexPath.section];
         if (arr.count>indexPath.row) {

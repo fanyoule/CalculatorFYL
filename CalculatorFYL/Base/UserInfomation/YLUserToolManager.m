@@ -362,7 +362,14 @@
  * 40请留下您宝贵的意见或反馈，我们会及时的回复您
  * 41您的联系方式
  * 42 跟随系统
+ * 43编辑
+ * 44复制该行
+ * 45复制全部
+ * 46删除该行
+ * 47求和
+ * 48分段求和
  */
+
 +(NSString *)getTextTag:(NSInteger)tag{
     NSString * local_languageType = [[NSUserDefaults standardUserDefaults]objectForKey:FYL_LanguageType];
     if (tag == 0) {//插入备注
@@ -1751,6 +1758,198 @@
             return @"Automaattinen";
         }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
             return @"Automatisch";
+        }
+    }else if (tag == 43){//编辑
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"edit", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"编辑";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"編輯";
+        }else if (local_languageType.intValue == 3){//English
+            return @"edit";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"編集";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"편집";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"Редактирование";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"modifica";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"Modifier";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"bearbeiten";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"تحرير .";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"edytuj";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"redigér";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"muokkaa";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"bewerken";
+        }
+    }else if (tag == 44){//复制该行
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"Copy That Row", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"复制该行";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"複製該行";
+        }else if (local_languageType.intValue == 3){//English
+            return @"Copy That Row";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"ローをコピー";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"행 복사";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"Копировать строку";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"Copia quella riga";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"Copier la ligne";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"Diese Zeile kopieren";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"نسخ هذا الخط";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"Kopiuj ten wiersz";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"Kopiér den række";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"Kopioi rivi";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"Kopieer die rij";
+        }
+    }else if (tag == 45){//复制全部
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"Copy", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"复制全部";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"複製";
+        }else if (local_languageType.intValue == 3){//English
+            return @"Copy";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"レプリケーション";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"복제";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"Копирование";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"Copia";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"Copier";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"Kopieren";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"نسخ";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"Kopiuj";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"Kopiér";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"Kopioi";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"Kopiëren";
+        }
+    }else if (tag == 46){//删除该行
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"Delete That Row", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"删除该行";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"删除該行";
+        }else if (local_languageType.intValue == 3){//English
+            return @"Delete That Row";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"行を削除";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"행 삭제";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"Удалить строку";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"Elimina quella riga";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"Supprimer la ligne";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"Diese Zeile löschen";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"حذف صف";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"Usuń ten wiersz";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"Slet den række";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"Poista tuo rivi";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"Die rij verwijderen";
+        }
+    }else if (tag == 47){//求和
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"Sum", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"求和";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"總和";
+        }else if (local_languageType.intValue == 3){//English
+            return @"Sum";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"合計＃ゴウケイ＃";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"합계";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"Сумма";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"Somma";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"Somme";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"Summe";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"مجموع";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"Suma";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"Summe";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"Summa";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"Som";
+        }
+    }else if (tag == 48){//分段求和
+        if (local_languageType.intValue == 0) {//跟随系统
+            return NSLocalizedString(@"Subsection sum", nil);
+        }else if (local_languageType.intValue == 1){//简体中文
+            return @"分段求和";
+        }else if (local_languageType.intValue == 2){//繁体中文
+            return @"分項合計";
+        }else if (local_languageType.intValue == 3){//English
+            return @"Subsection sum";
+        }else if (local_languageType.intValue == 4){//日语  日本語
+            return @"セクション合計";
+        }else if (local_languageType.intValue == 5){//韩语 한국어
+            return @"항목별 합계";
+        }else if (local_languageType.intValue == 6){//俄语 Русский
+            return @"Итого по подразделу";
+        }else if (local_languageType.intValue == 7){//意大利语 Italiano
+            return @"Somma sottosezione";
+        }else if (local_languageType.intValue == 8){//法语 Français
+            return @"Total des sous - alinéas";
+        }else if (local_languageType.intValue == 9){//德语 Deutsch
+            return @"Unterabschnittssumme";
+        }else if (local_languageType.intValue == 10){//阿拉伯语 العربية
+            return @"المجموع الفرعي";
+        }else if (local_languageType.intValue == 11){//波兰语 Polski
+            return @"Suma podsekcji";
+        }else if (local_languageType.intValue == 12){//丹麦语 Dansk
+            return @"Underafdelingsbeløb";
+        }else if (local_languageType.intValue == 13){//芬兰语 Suomi
+            return @"Alajakson summa";
+        }else if (local_languageType.intValue == 14){//荷兰语 Nederlands
+            return @"Subsectiesom";
         }
     }
    return @"";

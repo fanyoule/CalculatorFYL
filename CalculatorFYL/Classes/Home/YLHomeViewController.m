@@ -574,7 +574,8 @@ int typeOfInput = 0;
                 make.height.mas_equalTo(height_cell*2);
             }];
         } completion:^(BOOL finished) {
-            [btn setTitle:@"v" forState:UIControlStateNormal];
+            
+            [btn setImage:[UIImage imageNamed:@"zhanshi_iocn"] forState:UIControlStateNormal];
             CGFloat width_cell = kScreenWidth/4;
             CGFloat height_cell = width_cell;
             [self.V_bg_bottom mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -592,7 +593,8 @@ int typeOfInput = 0;
             }];
         } completion:^(BOOL finished) {
             self.V_storehistory.hidden = NO;
-            [btn setTitle:@"^" forState:UIControlStateNormal];
+
+            [btn setImage:[UIImage imageNamed:@"shouqi_icon"] forState:UIControlStateNormal];
             [self.V_bg_bottom mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.height.mas_equalTo(@0);
             }];
@@ -677,9 +679,9 @@ int typeOfInput = 0;
         if (outModel.detailModelArr.count>indexPath.row) {
             [tableView deselectRowAtIndexPath:indexPath animated:NO];
             FYLHistoryModel * model = outModel.detailModelArr[indexPath.row];
-            NSArray * arrTitle = @[[YLUserToolManager getTextTag:0],NSLocalizedString(@"编辑", nil),NSLocalizedString(@"复制该行", nil),NSLocalizedString(@"复制全部", nil),NSLocalizedString(@"删除该行", nil),NSLocalizedString(@"清空", nil),[YLUserToolManager getTextTag:7]];
+            NSArray * arrTitle = @[[YLUserToolManager getTextTag:0],[YLUserToolManager getTextTag:43],[YLUserToolManager getTextTag:44],[YLUserToolManager getTextTag:45],[YLUserToolManager getTextTag:46],[YLUserToolManager getTextTag:4],[YLUserToolManager getTextTag:7]];
             if (model.state == HistoryTypeStatus_nol) {
-                arrTitle = @[[YLUserToolManager getTextTag:0],NSLocalizedString(@"分段求和", nil),NSLocalizedString(@"求和", nil),NSLocalizedString(@"复制该行", nil),NSLocalizedString(@"复制全部", nil),NSLocalizedString(@"删除该行", nil),NSLocalizedString(@"清空", nil),[YLUserToolManager getTextTag:7]];
+                arrTitle = @[[YLUserToolManager getTextTag:0],[YLUserToolManager getTextTag:48],[YLUserToolManager getTextTag:47],[YLUserToolManager getTextTag:44],[YLUserToolManager getTextTag:45],[YLUserToolManager getTextTag:43],[YLUserToolManager getTextTag:46],[YLUserToolManager getTextTag:7]];
             }
            
             YLDIYEditBoxListView * view= [[YLDIYEditBoxListView alloc]initWithFrame:CGRectZero withIndexListCount:arrTitle.count withArrTitle:arrTitle];
@@ -1002,10 +1004,11 @@ int typeOfInput = 0;
     [V_contect mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(V_bg_bottom.mas_top);
         make.left.and.right.mas_equalTo(self.view);
-        make.height.mas_equalTo(20+50);
+        make.height.mas_equalTo(10+50);
     }];
+    //展开or收起
     UIButton * B_top = [UIButton buttonWithType:0];
-    [B_top setTitle:NSLocalizedString(@"v", nil) forState:UIControlStateNormal];
+    [B_top setImage:[UIImage imageNamed:@"zhanshi_iocn"] forState:UIControlStateNormal];
     [B_top addTarget:self action:@selector(didSelectedxiagxiaClicked:) forControlEvents:UIControlEventTouchUpInside];
     [V_contect addSubview:B_top];
     [B_top mas_makeConstraints:^(MASConstraintMaker *make) {
