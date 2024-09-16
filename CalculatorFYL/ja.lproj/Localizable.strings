@@ -1,0 +1,58 @@
+/* 
+  Localizable.strings
+  CalculatorFYL
+
+  Created by tianhao on 2024/4/10.
+  
+*/
+"Insert note" = "コメントの挿入";
+"Remarks" = "コメント";
+"Done" = "ドーン";
+"On file" = "アーカイブ";
+"Clear" = "はっきりした";
+"Save current record" = "現在のレコードを保存";
+"Open local archive" = "ローカルアーカイブを開く";
+"Cancel" = "キャンセル";
+"Make sure" = "確実に";
+"Settings" = "設定＃セッテイ＃";
+"recovery" = "リカバリ";
+"delete" = "削除";
+//设置
+"Upgrade VIP" = "VIPのアップグレード";
+"Sound" = "サウンド";
+"Theme" = "トピック＃トピック＃";
+"Vibrate" = "しんどう";
+"Keyboard" = "キーボード";
+"Font Size" = "フォントサイズ";
+"Decimal Places" = "小数点以下のビット";
+"Thousands 9,999" = "千 9,999";
+"Date" = "日付";
+"Order" = "じゅんじょ";
+"Language" = "言語";
+"Recycle" = "リサイクル";
+"Feedback" = "フィードバック";
+"Share" = "共有＃キョウユウ＃";
+"Rate" = "スピード";
+"Purchase" = "購入する";
+"Restore" = "リカバリ";
+
+"None" = "一つもない";
+"Default" = "約束を破る";
+"Water" = "水";
+"Crisp" = "カリカリした";
+"Drum" = "ドラム";
+"Wood" = "もくざい";
+"Piano" = "ピアノ";
+"Voice" = "声";
+"Chinese" = "中国人";
+"English" = "英語";
+"My feedback" = "私のフィードバック";
+"Please leave your valuable comments,we will reply you in time" = "貴重なご意見を残していただければ、すぐにご返事いたします";
+"Your contact information or Email" = "お問い合わせ情報またはEメール";
+"Auto" = "じどうしゃ";
+"edit" = "編集";
+"Copy That Row" = "ローをコピー";
+"Copy" = "レプリケーション";
+"Delete That Row" = "行を削除";
+"Sum" = "合計＃ゴウケイ＃";
+"Subsection sum" = "セクション合計";

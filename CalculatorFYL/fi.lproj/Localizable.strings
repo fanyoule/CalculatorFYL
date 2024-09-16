@@ -1,0 +1,58 @@
+/* 
+  Localizable.strings
+  CalculatorFYL
+ 芬兰语
+  Created by tianhao on 2024/4/10.
+  
+*/
+"Insert note" = "Lisää huomautus";
+"Remarks" = "Huomautuksia";
+"Done" = "Tehty";
+"On file" = "Asiakirjassa";
+"Clear" = "Tyhjennä";
+"Save current record" = "Tallenna nykyinen tietue";
+"Open local archive" = "Avaa paikallinen arkisto";
+"Cancel" = "Peruuta";
+"Make sure" = "Varmista, että";
+"Settings" = "Asetukset";
+"recovery" = "hyödyntäminen";
+"delete" = "Poista";
+//设置
+"Upgrade VIP" = "Päivitä VIP";
+"Sound" = "Ääni";
+"Theme" = "Teema";
+"Vibrate" = "Tärinää";
+"Keyboard" = "Näppäimistö";
+"Font Size" = "Kirjasikoko";
+"Decimal Places" = "Desimaalipaikat";
+"Thousands 9,999" = "Tuhannet 9 999";
+"Date" = "Päivämäärä";
+"Order" = "Järjestys";
+"Language" = "Kieli";
+"Recycle" = "Kierrätä";
+"Feedback" = "Palaute";
+"Share" = "Osuus";
+"Rate" = "Rate";
+"Purchase" = "Osto";
+"Restore" = "Palauta";
+
+"None" = "Ei mitään";
+"Default" = "Oletus";
+"Water" = "Vesi";
+"Crisp" = "Rapea";
+"Drum" = "Rumpu";
+"Wood" = "Puu";
+"Piano" = "Piano";
+"Voice" = "Ääni";
+"Chinese" = "Kiinalainen";
+"English" = "Englanti";
+"My feedback" = "Palautteeni";
+"Please leave your valuable comments,we will reply you in time" = "Jätä arvokkaat kommentit, me vastaamme sinulle ajoissa";
+"Your contact information or Email" = "Yhteystiedot tai sähköposti";
+"Auto" = "Automaattinen";
+"edit" = "muokkaa";
+"Copy That Row" = "Kopioi rivi";
+"Copy" = "Kopioi";
+"Delete That Row" = "Poista tuo rivi";
+"Sum" = "Summa";
+"Subsection sum" = "Alajakson summa";

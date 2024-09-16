@@ -1,0 +1,58 @@
+/* 
+  Localizable.strings
+  CalculatorFYL
+波兰语
+  Created by tianhao on 2024/4/10.
+  
+*/
+"Insert note" = "Wstaw notatkę";
+"Remarks" = "Uwagi";
+"Done" = "Gotowe";
+"On file" = "W aktach";
+"Clear" = "Wyczyść";
+"Save current record" = "Zapisz bieżący rekord";
+"Open local archive" = "Otwórz lokalne archiwum";
+"Cancel" = "Anuluj";
+"Make sure" = "Upewnij się, że";
+"Settings" = "Ustawienia";
+"recovery" = "odzyskiwanie";
+"delete" = "usunąć";
+//设置
+"Upgrade VIP" = "Aktualizacja VIP";
+"Sound" = "Dźwięk";
+"Theme" = "Motyw";
+"Vibrate" = "Wibracja";
+"Keyboard" = "Klawiatura";
+"Font Size" = "Rozmiar czcionki";
+"Decimal Places" = "Miejsca dziesiętne";
+"Thousands 9,999" = "Tysiące 9,999";
+"Date" = "Data";
+"Order" = "Kolejność";
+"Language" = "Język";
+"Recycle" = "Recykling";
+"Feedback" = "Informacje zwrotne";
+"Share" = "Udział";
+"Rate" = "Stawka";
+"Purchase" = "Zakup";
+"Restore" = "Przywróć";
+
+"None" = "Żadnych";
+"Default" = "Domyślne";
+"Water" = "Woda";
+"Crisp" = "Chrupiące";
+"Drum" = "Bęben";
+"Wood" = "Drewno";
+"Piano" = "Fortepian";
+"Voice" = "Głos";
+"Chinese" = "Chiński";
+"English" = "Angielski";
+"My feedback" = "Moja opinia";
+"Please leave your valuable comments,we will reply you in time" = "Zostaw swoje cenne komentarze, odpowiemy na czas";
+"Your contact information or Email" = "Twoje dane kontaktowe lub e-mail";
+"Auto" = "Automatycznie";
+"edit" = "edytuj";
+"Copy That Row" = "Kopiuj ten wiersz";
+"Copy" = "Kopiuj";
+"Delete That Row" = "Usuń ten wiersz";
+"Sum" = "Suma";
+"Subsection sum" = "Suma podsekcji";

@@ -1,0 +1,58 @@
+/* 
+  Localizable.strings
+  CalculatorFYL
+
+  Created by tianhao on 2024/4/10.
+  
+*/
+"Insert note" = "Notiz einfügen";
+"Remarks" = "Bemerkungen";
+"Done" = "Fertig";
+"On file" = "In der Datei";
+"Clear" = "Löschen";
+"Save current record" = "Aktueller Datensatz speichern";
+"Open local archive" = "Lokales Archiv öffnen";
+"Cancel" = "Abbrechen";
+"Make sure" = "Stellen Sie sicher";
+"Settings" = "Einstellungen";
+"recovery" = "Rückgewinnung";
+"delete" = "löschen";
+//设置
+"Upgrade VIP" = "VIP upgraden";
+"Sound" = "Ton";
+"Theme" = "Thema";
+"Vibrate" = "Vibration";
+"Keyboard" = "Tastatur";
+"Font Size" = "Schriftgröße";
+"Decimal Places" = "Dezimalstellen";
+"Thousands 9,999" = "Tausende 9.999";
+"Date" = "Datum";
+"Order" = "Reihenfolge";
+"Language" = "Sprache";
+"Recycle" = "Recycling";
+"Feedback" = "Feedback";
+"Share" = "Anteil";
+"Rate" = "Rate";
+"Purchase" = "Kauf";
+"Restore" = "Wiederherstellen";
+
+"None" = "Keine";
+"Default" = "Standard";
+"Water" = "Wasser";
+"Crisp" = "Knackig";
+"Drum" = "Trommel";
+"Wood" = "Holz";
+"Piano" = "Klavier";
+"Voice" = "Stimme";
+"Chinese" = "Chinesisch";
+"English" = "Englisch";
+"My feedback" = "Mein Feedback";
+"Please leave your valuable comments,we will reply you in time" = "Bitte hinterlassen Sie Ihre wertvollen Kommentare, wir werden Ihnen rechtzeitig antworten";
+"Your contact information or Email" = "Ihre Kontaktdaten oder E-Mail";
+"Auto" = "Automatisch";
+"edit" = "bearbeiten";
+"Copy That Row" = "Diese Zeile kopieren";
+"Copy" = "Kopieren";
+"Delete That Row" = "Diese Zeile löschen";
+"Sum" = "Summe";
+"Subsection sum" = "Unterabschnittssumme";

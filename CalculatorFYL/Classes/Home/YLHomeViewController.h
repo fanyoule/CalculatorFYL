@@ -11,6 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YLHomeViewController : BaseViewController
 
+-(void)changeAppMainColor;
+-(void)changeAppKeyBoard;
+
 @end
 
 NS_ASSUME_NONNULL_END

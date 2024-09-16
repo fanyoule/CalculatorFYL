@@ -32,7 +32,7 @@
     if (self =[super init]) {
         if ([dic isKindOfClass:[NSDictionary class]]) {
             [self setValuesForKeysWithDictionary:dic];
-            self.datas = dic;
+            self.data = dic;
         }
         
     }

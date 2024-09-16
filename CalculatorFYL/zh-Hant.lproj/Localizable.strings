@@ -1,0 +1,59 @@
+/* 
+  Localizable.strings
+  CalculatorFYL
+
+  Created by tianhao on 2024/4/10.
+  
+*/
+"Insert note" = "插入備註";
+"Remarks" = "備註";
+"Done" = "完成";
+"On file" = "存檔";
+"Clear" = "清空";
+"Save current record" = "保存當前記錄";
+"Open local archive" = "打開本地存檔";
+"Cancel" = "取消";
+"Make sure" = "確定";
+"Settings" = "設定";
+"recovery" = "恢復";
+"delete" = "删去";
+//设置
+"Upgrade VIP" = "陞級VIP";
+"Sound" = "聲音";
+"Theme" = "主題";
+"Vibrate" = "振動";
+"Keyboard" = "鍵盤";
+"Font Size" = "字體大小";
+"Decimal Places" = "小數位";
+"Thousands 9,999" = "千 9,999";
+"Date" = "日期";
+"Order" = "量级";
+"Language" = "語言";
+"Recycle" = "回收利用";
+"Feedback" = "反饋";
+"Share" = "共有";
+"Rate" = "好評";
+"Purchase" = "購買";
+"Restore" = "恢復";
+
+"None" = "無";
+"Default" = "默認";
+"Water" = "水滴";
+"Crisp" = "清脆";
+"Drum" = "鼓聲";
+"Wood" = "木質";
+"Piano" = "鋼琴";
+"Voice" = "真人語音";
+"Chinese" = "中文";
+"English" = "英文";
+"My feedback" = "我的迴響";
+"Please leave your valuable comments,we will reply you in time" = "請留下您寶貴的意見或迴響，我們會及時的回復您";
+"Your contact information or Email" = "您的聯繫方式";
+"Auto" = "跟隨系統";
+"edit" = "編輯";
+
+"Copy That Row" = "複製該行";
+"Copy" = "複製";
+"Delete That Row" = "删除該行";
+"Sum" = "總和";
+"Subsection sum" = "分項合計";

@@ -35,6 +35,7 @@
 
 //获取当前时间 yyyy-MM-dd
 - (NSString *)getCurrentDate;
+- (NSString *)getCurrentDateHHMMSS;
 
 //获取当前时间 hour
 - (NSInteger)getCurrentHour;

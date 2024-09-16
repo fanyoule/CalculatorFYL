@@ -1,0 +1,59 @@
+/* 
+  Localizable.strings
+  CalculatorFYL
+阿拉伯语
+  Created by tianhao on 2024/4/10.
+  
+*/
+"Insert note" = "إدراج ملاحظة";
+"Remarks" = "ملاحظات";
+"Done" = "دون";
+"On file" = "الأرشيف";
+"Clear" = "واضح";
+"Save current record" = "حفظ السجل الحالي";
+"Open local archive" = "فتح الأرشيف المحلي";
+"Cancel" = "ألغى";
+"Make sure" = "أكّد";
+"Settings" = "ضبط";
+"recovery" = "استعاد";
+"delete" = "حذف";
+//设置
+"Upgrade VIP" = "ترقية كبار الشخصيات";
+"Sound" = "صوت .";
+"Theme" = "موضوع .";
+"Vibrate" = "اهتزازي";
+"Keyboard" = "لوحة المفاتيح .";
+"Font Size" = "حجم الخط";
+"Decimal Places" = "عشري";
+"Thousands 9,999" = "9,999 ألف";
+"Date" = "تواريخ";
+"Order" = "متتابعة";
+"Language" = "لغة";
+"Recycle" = "إعادة التدوير";
+"Feedback" = "تغذية مرتدة";
+"Share" = "مشترك";
+"Rate" = "سرعة .";
+"Purchase" = "شراء";
+"Restore" = "استعاد";
+
+"None" = "لا أحد";
+"Default" = "خرق";
+"Water" = "ماء .";
+"Crisp" = "هش";
+"Drum" = "براميل";
+"Wood" = "الخشب .";
+"Piano" = "بيانو .";
+"Voice" = "صوت";
+"Chinese" = "الصينية";
+"English" = "إنجليزي";
+"My feedback" = "ملاحظاتي";
+"Please leave your valuable comments,we will reply you in time" = "يرجى ترك التعليقات القيمة الخاصة بك ، ونحن سوف الرد عليك في الوقت المناسب";
+"Your contact information or Email" = "معلومات الاتصال الخاصة بك أو البريد الإلكتروني";
+"Auto" = "السيارات";
+"edit" = "تحرير .";
+
+"Copy That Row" = "نسخ هذا الخط";
+"Copy" = "نسخ";
+"Delete That Row" = "حذف صف";
+"Sum" = "مجموع";
+"Subsection sum" = "المجموع الفرعي";

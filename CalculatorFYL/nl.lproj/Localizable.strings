@@ -1,0 +1,58 @@
+/* 
+  Localizable.strings
+  CalculatorFYL
+ 荷兰语
+  Created by tianhao on 2024/4/10.
+  
+*/
+"Insert note" = "Notitie invoegen";
+"Remarks" = "Opmerkingen";
+"Done" = "Gereed";
+"On file" = "In bestand";
+"Clear" = "Clear";
+"Save current record" = "Huidige record opslaan";
+"Open local archive" = "Lokaal archief openen";
+"Cancel" = "Annuleren";
+"Make sure" = "Zorg ervoor";
+"Settings" = "Instellingen";
+"recovery" = "terugwinning";
+"delete" = "verwijderen";
+//设置
+"Upgrade VIP" = "VIP upgraden";
+"Sound" = "Geluid";
+"Theme" = "Thema";
+"Vibrate" = "Tribbelen";
+"Keyboard" = "Toetsenbord";
+"Font Size" = "Lettertypegrootte";
+"Decimal Places" = "Decimale plaatsen";
+"Thousands 9,999" = "Duizenden 9,999";
+"Date" = "Datum";
+"Order" = "Orde";
+"Language" = "Taal";
+"Recycle" = "Recyclen";
+"Feedback" = "Feedback";
+"Share" = "Aandelen";
+"Rate" = "Tarief";
+"Purchase" = "Aankoop";
+"Restore" = "Herstellen";
+
+"None" = "Geen";
+"Default" = "Standaard";
+"Water" = "Water";
+"Crisp" = "Crisp";
+"Drum" = "Trommel";
+"Wood" = "Hout";
+"Piano" = "Piano";
+"Voice" = "Stem";
+"Chinese" = "Chinees";
+"English" = "Engels";
+"My feedback" = "Mijn feedback";
+"Please leave your valuable comments,we will reply you in time" = "Laat uw waardevolle opmerkingen achter, wij zullen u op tijd antwoorden";
+"Your contact information or Email" = "Uw contactgegevens of e-mail";
+"Auto" = "Automatisch";
+"edit" = "bewerken";
+"Copy That Row" = "Kopieer die rij";
+"Copy" = "Kopiëren";
+"Delete That Row" = "Die rij verwijderen";
+"Sum" = "Som";
+"Subsection sum" = "Subsectiesom";
